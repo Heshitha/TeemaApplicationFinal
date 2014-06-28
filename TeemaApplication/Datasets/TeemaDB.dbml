@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TeemaFinalDB" Class="TeemaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;Persist Security Info=True;User ID=TeemaApplication" SettingsObjectName="TeemaApplication.Properties.Settings" SettingsPropertyName="TeemaFinalDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Branch" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Branch_Department" Member="Departments" ThisKey="BranchID" OtherKey="BranchID" Type="Department" />
+      <Association Name="UserAccount_Branch" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_Branch1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department" Member="Departments">
+    <Type Name="Department">
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Department_Employee" Member="Employees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Employee" />
+      <Association Name="Department_SubDepartment" Member="SubDepartments" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="SubDepartment" />
+      <Association Name="Branch_Department" Member="Branch" ThisKey="BranchID" OtherKey="BranchID" Type="Branch" IsForeignKey="true" />
+      <Association Name="UserAccount_Department" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_Department1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Designation" Member="Designations">
+    <Type Name="Designation">
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Designation" Member="Designation1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Designation_Employee" Member="Employees" ThisKey="DesignationID" OtherKey="DesignationID" Type="Employee" />
+      <Association Name="UserAccount_Designation" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_Designation1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DesignationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TokenNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EPFNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NICNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfAppointed" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeCatagory" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeGrade" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEPFApply" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPieceRateApply" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAssignedToSubDepartment" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_FixedIncentiveAllowance" Member="FixedIncentiveAllowances" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="FixedIncentiveAllowance" />
+      <Association Name="Employee_SalaryDetail" Member="SalaryDetail" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="SalaryDetail" Cardinality="One" />
+      <Association Name="Employee_VariableIncentiveAllowance" Member="VariableIncentiveAllowances" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="VariableIncentiveAllowance" />
+      <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="Designation_Employee" Member="Designation" ThisKey="DesignationID" OtherKey="DesignationID" Type="Designation" IsForeignKey="true" />
+      <Association Name="SubDepartment_Employee" Member="SubDepartment" ThisKey="SubDepartmentID" OtherKey="SubDepartmentID" Type="SubDepartment" IsForeignKey="true" />
+      <Association Name="UserAccount_Employee" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_Employee1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FixedIncentiveAllowance" Member="FixedIncentiveAllowances">
+    <Type Name="FixedIncentiveAllowance">
+      <Column Name="FIAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_FixedIncentiveAllowance" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="UserAccount_FixedIncentiveAllowance" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_FixedIncentiveAllowance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubDepartment" Member="SubDepartments">
+    <Type Name="SubDepartment">
+      <Column Name="SubDepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubDepartmentName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SubDepartment_Employee" Member="Employees" ThisKey="SubDepartmentID" OtherKey="SubDepartmentID" Type="Employee" />
+      <Association Name="Department_SubDepartment" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="UserAccount_SubDepartment" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_SubDepartment1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccount" Member="UserAccounts">
+    <Type Name="UserAccount">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Priviledge" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserAccount_Branch" Member="Branches" ThisKey="UserID" OtherKey="CreatedBy" Type="Branch" />
+      <Association Name="UserAccount_Branch1" Member="Branches1" ThisKey="UserID" OtherKey="ModifiedBy" Type="Branch" />
+      <Association Name="UserAccount_Department" Member="Departments" ThisKey="UserID" OtherKey="CreatedBy" Type="Department" />
+      <Association Name="UserAccount_Department1" Member="Departments1" ThisKey="UserID" OtherKey="ModifiedBy" Type="Department" />
+      <Association Name="UserAccount_Designation" Member="Designations" ThisKey="UserID" OtherKey="CreatedBy" Type="Designation" />
+      <Association Name="UserAccount_Designation1" Member="Designations1" ThisKey="UserID" OtherKey="ModifiedBy" Type="Designation" />
+      <Association Name="UserAccount_Employee" Member="Employees" ThisKey="UserID" OtherKey="CreatedBy" Type="Employee" />
+      <Association Name="UserAccount_Employee1" Member="Employees1" ThisKey="UserID" OtherKey="ModifiedBy" Type="Employee" />
+      <Association Name="UserAccount_FixedIncentiveAllowance" Member="FixedIncentiveAllowances" ThisKey="UserID" OtherKey="CreatedBy" Type="FixedIncentiveAllowance" />
+      <Association Name="UserAccount_FixedIncentiveAllowance1" Member="FixedIncentiveAllowances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="FixedIncentiveAllowance" />
+      <Association Name="UserAccount_SubDepartment" Member="SubDepartments" ThisKey="UserID" OtherKey="CreatedBy" Type="SubDepartment" />
+      <Association Name="UserAccount_SubDepartment1" Member="SubDepartments1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SubDepartment" />
+      <Association Name="UserAccount_SalaryDetail" Member="SalaryDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="SalaryDetail" />
+      <Association Name="UserAccount_SalaryDetail1" Member="SalaryDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryDetail" />
+      <Association Name="UserAccount_VariableIncentiveAllowance" Member="VariableIncentiveAllowances" ThisKey="UserID" OtherKey="CreatedBy" Type="VariableIncentiveAllowance" />
+      <Association Name="UserAccount_VariableIncentiveAllowance1" Member="VariableIncentiveAllowances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="VariableIncentiveAllowance" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
+    <Type Name="SalaryDetail">
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateRateOfSalary" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DayRate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EPFETFTotalSalary" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BasicSalary" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BudgetAllowance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ProductionSalesPerforValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WorkShopIncentiveValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_SalaryDetail" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="UserAccount_SalaryDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_SalaryDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VariableIncentiveAllowance" Member="VariableIncentiveAllowances">
+    <Type Name="VariableIncentiveAllowance">
+      <Column Name="VIAID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_VariableIncentiveAllowance" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="UserAccount_VariableIncentiveAllowance" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_VariableIncentiveAllowance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
