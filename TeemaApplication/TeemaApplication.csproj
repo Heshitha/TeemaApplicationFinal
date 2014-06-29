@@ -85,6 +85,12 @@
     <Compile Include="CreateOverTime.Designer.cs">
       <DependentUpon>CreateOverTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateSalaryAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSalaryAdvance.Designer.cs">
+      <DependentUpon>CreateSalaryAdvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\EmployeeDataSet.cs">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOverTime.resx">
       <DependentUpon>CreateOverTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSalaryAdvance.resx">
+      <DependentUpon>CreateSalaryAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditEmployeeDetails.resx">
       <DependentUpon>EditEmployeeDetails.cs</DependentUpon>
