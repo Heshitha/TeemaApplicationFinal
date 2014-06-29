@@ -37,10 +37,10 @@
             this.myAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAccountsListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.overtimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,7 @@
             this.approveOvertimeToolStripMenuItem.Name = "approveOvertimeToolStripMenuItem";
             this.approveOvertimeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.approveOvertimeToolStripMenuItem.Text = "Approve Overtime";
+            this.approveOvertimeToolStripMenuItem.Click += new System.EventHandler(this.approveOvertimeToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 

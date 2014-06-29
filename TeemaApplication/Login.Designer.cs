@@ -30,14 +30,14 @@
         {
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.gbxLogin = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cmbBranch = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbxLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,24 @@
             this.gbxLogin.TabIndex = 12;
             this.gbxLogin.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Branch";
+            // 
+            // cmbBranch
+            // 
+            this.cmbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBranch.FormattingEnabled = true;
+            this.cmbBranch.Location = new System.Drawing.Point(85, 74);
+            this.cmbBranch.Name = "cmbBranch";
+            this.cmbBranch.Size = new System.Drawing.Size(168, 21);
+            this.cmbBranch.TabIndex = 4;
+            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
@@ -89,6 +107,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(168, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "1234";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUserName
@@ -97,6 +116,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(169, 20);
             this.txtUserName.TabIndex = 0;
+            this.txtUserName.Text = "Heshitha";
             // 
             // btnLogin
             // 
@@ -119,24 +139,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // cmbBranch
-            // 
-            this.cmbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBranch.FormattingEnabled = true;
-            this.cmbBranch.Location = new System.Drawing.Point(85, 74);
-            this.cmbBranch.Name = "cmbBranch";
-            this.cmbBranch.Size = new System.Drawing.Size(168, 21);
-            this.cmbBranch.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Branch";
             // 
             // frmLogin
             // 

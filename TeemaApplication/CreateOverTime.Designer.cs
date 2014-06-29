@@ -45,14 +45,6 @@
             this.dtpOvertimeDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
-            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnStartFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnShiftTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOTFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOTTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnPrintForm = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails = new System.Windows.Forms.GroupBox();
@@ -63,6 +55,9 @@
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
             this.lblWorkingBranch = new System.Windows.Forms.Label();
+            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
@@ -140,6 +135,7 @@
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(202, 20);
             this.txtReason.TabIndex = 10;
+            this.txtReason.Leave += new System.EventHandler(this.txtReason_Leave);
             // 
             // label5
             // 
@@ -156,6 +152,7 @@
             this.txtSupervisor.Name = "txtSupervisor";
             this.txtSupervisor.Size = new System.Drawing.Size(202, 20);
             this.txtSupervisor.TabIndex = 8;
+            this.txtSupervisor.Leave += new System.EventHandler(this.txtSupervisor_Leave);
             // 
             // label4
             // 
@@ -231,73 +228,17 @@
             // 
             this.dgvEmployeeDetails.AllowUserToAddRows = false;
             this.dgvEmployeeDetails.AllowUserToDeleteRows = false;
+            this.dgvEmployeeDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnEntitled,
             this.clmnTokenNo,
-            this.clmnEmployeeName,
-            this.clmnOperation,
-            this.clmnStartFrom,
-            this.clmnShiftTo,
-            this.clmnOTFrom,
-            this.clmnOTTo});
+            this.clmnEmployeeName});
             this.dgvEmployeeDetails.Location = new System.Drawing.Point(6, 19);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
             this.dgvEmployeeDetails.Size = new System.Drawing.Size(526, 282);
             this.dgvEmployeeDetails.TabIndex = 0;
-            // 
-            // clmnEntitled
-            // 
-            this.clmnEntitled.DataPropertyName = "Entitled";
-            this.clmnEntitled.FalseValue = "False";
-            this.clmnEntitled.HeaderText = "Entitled";
-            this.clmnEntitled.Name = "clmnEntitled";
-            this.clmnEntitled.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmnEntitled.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.clmnEntitled.TrueValue = "True";
-            // 
-            // clmnTokenNo
-            // 
-            this.clmnTokenNo.DataPropertyName = "TokenNo";
-            this.clmnTokenNo.HeaderText = "Token No";
-            this.clmnTokenNo.Name = "clmnTokenNo";
-            // 
-            // clmnEmployeeName
-            // 
-            this.clmnEmployeeName.DataPropertyName = "Name";
-            this.clmnEmployeeName.HeaderText = "Name";
-            this.clmnEmployeeName.Name = "clmnEmployeeName";
-            // 
-            // clmnOperation
-            // 
-            this.clmnOperation.DataPropertyName = "Operation";
-            this.clmnOperation.HeaderText = "Operation";
-            this.clmnOperation.Name = "clmnOperation";
-            // 
-            // clmnStartFrom
-            // 
-            this.clmnStartFrom.DataPropertyName = "StartFrom";
-            this.clmnStartFrom.HeaderText = "Start From";
-            this.clmnStartFrom.Name = "clmnStartFrom";
-            // 
-            // clmnShiftTo
-            // 
-            this.clmnShiftTo.DataPropertyName = "ShiftTo";
-            this.clmnShiftTo.HeaderText = "Shift To";
-            this.clmnShiftTo.Name = "clmnShiftTo";
-            // 
-            // clmnOTFrom
-            // 
-            this.clmnOTFrom.DataPropertyName = "OTFrom";
-            this.clmnOTFrom.HeaderText = "OT From";
-            this.clmnOTFrom.Name = "clmnOTFrom";
-            // 
-            // clmnOTTo
-            // 
-            this.clmnOTTo.DataPropertyName = "OTTo";
-            this.clmnOTTo.HeaderText = "OT To";
-            this.clmnOTTo.Name = "clmnOTTo";
             // 
             // btnSubmit
             // 
@@ -412,6 +353,28 @@
             this.lblWorkingBranch.TabIndex = 0;
             this.lblWorkingBranch.Text = "Working Branch";
             // 
+            // clmnEntitled
+            // 
+            this.clmnEntitled.DataPropertyName = "Entitled";
+            this.clmnEntitled.FalseValue = "False";
+            this.clmnEntitled.HeaderText = "Entitled";
+            this.clmnEntitled.Name = "clmnEntitled";
+            this.clmnEntitled.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnEntitled.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clmnEntitled.TrueValue = "True";
+            // 
+            // clmnTokenNo
+            // 
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnEmployeeName
+            // 
+            this.clmnEmployeeName.DataPropertyName = "Name";
+            this.clmnEmployeeName.HeaderText = "Name";
+            this.clmnEmployeeName.Name = "clmnEmployeeName";
+            // 
             // frmCreateOverTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,10 +435,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn clmnEntitled;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOperation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnStartFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnShiftTo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTTo;
     }
 }

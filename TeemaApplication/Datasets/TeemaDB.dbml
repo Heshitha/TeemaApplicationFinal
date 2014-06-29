@@ -127,11 +127,11 @@
       <Association Name="UserAccount_SalaryDetail1" Member="SalaryDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryDetail" />
       <Association Name="UserAccount_VariableIncentiveAllowance" Member="VariableIncentiveAllowances" ThisKey="UserID" OtherKey="CreatedBy" Type="VariableIncentiveAllowance" />
       <Association Name="UserAccount_VariableIncentiveAllowance1" Member="VariableIncentiveAllowances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="VariableIncentiveAllowance" />
-      <Association Name="UserAccount_OvertimeEmployeeDetail" Member="OvertimeEmployeeDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="OvertimeEmployeeDetail" />
-      <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="OvertimeEmployeeDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="OvertimeEmployeeDetail" />
       <Association Name="UserAccount_OverTimeRecord" Member="OverTimeRecords" ThisKey="UserID" OtherKey="ApprovedBy" Type="OverTimeRecord" />
       <Association Name="UserAccount_OverTimeRecord1" Member="OverTimeRecords1" ThisKey="UserID" OtherKey="CreatedBy" Type="OverTimeRecord" />
       <Association Name="UserAccount_OverTimeRecord2" Member="OverTimeRecords2" ThisKey="UserID" OtherKey="ModifiedBy" Type="OverTimeRecord" />
+      <Association Name="UserAccount_OvertimeEmployeeDetail" Member="OvertimeEmployeeDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="OvertimeEmployeeDetail" />
+      <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="OvertimeEmployeeDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="OvertimeEmployeeDetail" />
     </Type>
   </Table>
   <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
@@ -168,26 +168,6 @@
       <Association Name="UserAccount_VariableIncentiveAllowance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.OvertimeEmployeeDetails" Member="OvertimeEmployeeDetails">
-    <Type Name="OvertimeEmployeeDetail">
-      <Column Name="OTEmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="OTID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Operation" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="StartFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ShiftTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="OTFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="OTTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Employee_OvertimeEmployeeDetail" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
-      <Association Name="UserAccount_OvertimeEmployeeDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
-      <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
-      <Association Name="OverTimeRecord_OvertimeEmployeeDetail" Member="OverTimeRecord" ThisKey="OTID" OtherKey="OTID" Type="OverTimeRecord" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.OverTimeRecord" Member="OverTimeRecords">
     <Type Name="OverTimeRecord">
       <Column Name="OTID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -204,6 +184,26 @@
       <Association Name="UserAccount_OverTimeRecord" Member="UserAccount" ThisKey="ApprovedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_OverTimeRecord1" Member="UserAccount1" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_OverTimeRecord2" Member="UserAccount2" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OvertimeEmployeeDetails" Member="OvertimeEmployeeDetails">
+    <Type Name="OvertimeEmployeeDetail">
+      <Column Name="OTEmployeeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OTID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Operation" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="StartFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ShiftTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OTFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OTTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_OvertimeEmployeeDetail" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="OverTimeRecord_OvertimeEmployeeDetail" Member="OverTimeRecord" ThisKey="OTID" OtherKey="OTID" Type="OverTimeRecord" IsForeignKey="true" />
+      <Association Name="UserAccount_OvertimeEmployeeDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

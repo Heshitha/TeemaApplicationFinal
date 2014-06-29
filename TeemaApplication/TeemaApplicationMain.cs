@@ -192,5 +192,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void approveOvertimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmApproveOvertime frm = new frmApproveOvertime();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

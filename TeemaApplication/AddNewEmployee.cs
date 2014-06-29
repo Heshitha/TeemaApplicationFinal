@@ -52,6 +52,7 @@ namespace TeemaApplication
             EmployeeUtilities.fillDesignationComboBox(db, cmbDesignation);
             dgvFixedIncentives.DataSource = ds.FixedIncentive;
             dgvVariableIncentive.DataSource = ds.VariableIncentive;
+            cmbDateRateOfSalary.SelectedIndex = 0;
         }
 
         private void cmbWorkingBranch_SelectedIndexChanged(object sender, EventArgs e)

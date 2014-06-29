@@ -106,15 +106,10 @@ namespace TeemaApplication
             dt.Columns.Add("Entitled", typeof(bool));
             dt.Columns.Add("TokenNo");
             dt.Columns.Add("Name");
-            dt.Columns.Add("Operation");
-            dt.Columns.Add("StartFrom");
-            dt.Columns.Add("ShiftTo");
-            dt.Columns.Add("OTFrom");
-            dt.Columns.Add("OTTo");
 
             foreach (Employee employee in subdepartment.Employees)
             {
-                dt.Rows.Add(false, employee.TokenNo, employee.Name, "", "", "", "", "");
+                dt.Rows.Add(false, employee.TokenNo, employee.Name);
             }
 
             dgvEmployeeDetails.DataSource = dt;
@@ -127,15 +122,10 @@ namespace TeemaApplication
             dt.Columns.Add("Entitled", typeof(bool));
             dt.Columns.Add("TokenNo");
             dt.Columns.Add("Name");
-            dt.Columns.Add("Operation");
-            dt.Columns.Add("StartFrom");
-            dt.Columns.Add("ShiftTo");
-            dt.Columns.Add("OTFrom");
-            dt.Columns.Add("OTTo");
 
             foreach (Employee employee in department.Employees)
             {
-                dt.Rows.Add(false, employee.TokenNo, employee.Name, "", "", "", "", "");
+                dt.Rows.Add(false, employee.TokenNo, employee.Name);
             }
 
             dgvEmployeeDetails.DataSource = dt;
@@ -143,69 +133,76 @@ namespace TeemaApplication
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            OverTimeRecord otRecord = new OverTimeRecord
+            if (true)
             {
-                OvertimeDate = dtpOvertimeDate.Value,
-                Supervisor = txtSupervisor.Text,
-                Reason = txtReason.Text,
-                CreatedBy = LoginDetails.LoggedUsedID,
-                CreatedDate = DateTime.Now,
-                ModifiedBy = LoginDetails.LoggedUsedID,
-                ModifiedDate = DateTime.Now
-            };
+                OverTimeRecord otRecord = new OverTimeRecord
+                    {
+                        OvertimeDate = dtpOvertimeDate.Value,
+                        Supervisor = txtSupervisor.Text,
+                        Reason = txtReason.Text,
+                        CreatedBy = LoginDetails.LoggedUsedID,
+                        CreatedDate = DateTime.Now,
+                        ModifiedBy = LoginDetails.LoggedUsedID,
+                        ModifiedDate = DateTime.Now
+                    };
 
-            db.OverTimeRecords.InsertOnSubmit(otRecord);
-            db.SubmitChanges();
+                db.OverTimeRecords.InsertOnSubmit(otRecord);
+                db.SubmitChanges();
 
-            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
-            {
-                if (Convert.ToBoolean(row.Cells["clmnEntitled"].Value.ToString()) == true)
+                foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
                 {
-                    try
+                    if (Convert.ToBoolean(row.Cells["clmnEntitled"].Value.ToString()) == true)
                     {
-                        string tokenNo = row.Cells["clmnTokenNo"].Value.ToString().Trim();
-                        Employee employee = db.Employees.Where(emp => emp.TokenNo.Equals(tokenNo)).Single();
-                        string shiftStartText = row.Cells["clmnStartFrom"].Value.ToString();
-                        string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
-                        string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
-                        string otEndText = row.Cells["clmnOTTo"].Value.ToString();
-                        string Operation = row.Cells["clmnOperation"].Value.ToString();
-
-                        DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText);
-                        DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText);
-                        DateTime otStart = generateDateTimeInstanceFromTime(otStartText);
-                        DateTime otEnd = generateDateTimeInstanceFromTime(otEndText);
-
-                        OvertimeEmployeeDetail overEmpDet = new OvertimeEmployeeDetail
+                        try
                         {
-                            OverTimeRecord = otRecord,
-                            Employee = employee,
-                            Operation = Operation,
-                            StartFrom = shiftStart,
-                            ShiftTo = shiftEnd,
-                            OTFrom = otStart,
-                            OTTo = otEnd,
-                            CreatedBy = LoginDetails.LoggedUsedID,
-                            CreatedDate = DateTime.Now,
-                            ModifiedBy = LoginDetails.LoggedUsedID,
-                            ModifiedDate = DateTime.Now
-                        };
+                            string tokenNo = row.Cells["clmnTokenNo"].Value.ToString().Trim();
+                            Employee employee = db.Employees.Where(emp => emp.TokenNo.Equals(tokenNo)).Single();
+                            //string shiftStartText = row.Cells["clmnStartFrom"].Value.ToString();
+                            //string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
+                            //string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
+                            //string otEndText = row.Cells["clmnOTTo"].Value.ToString();
+                            //string Operation = row.Cells["clmnOperation"].Value.ToString();
 
-                        db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
-                        db.SubmitChanges();
+                            //DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText);
+                            //DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText);
+                            //DateTime otStart = generateDateTimeInstanceFromTime(otStartText);
+                            //DateTime otEnd = generateDateTimeInstanceFromTime(otEndText);
 
-                    }
-                    catch (Exception ex)
-                    {
+                            OvertimeEmployeeDetail overEmpDet = new OvertimeEmployeeDetail
+                            {
+                                OverTimeRecord = otRecord,
+                                Employee = employee,
+                                //Operation = Operation,
+                                //StartFrom = shiftStart,
+                                //ShiftTo = shiftEnd,
+                                //OTFrom = otStart,
+                                //OTTo = otEnd,
+                                CreatedBy = LoginDetails.LoggedUsedID,
+                                CreatedDate = DateTime.Now,
+                                ModifiedBy = LoginDetails.LoggedUsedID,
+                                ModifiedDate = DateTime.Now
+                            };
 
+                            db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
+                            db.SubmitChanges();
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
                     }
                 }
-            }
 
-            Utilities.ShowInformationBox("You have successfully created overtime request. Press print form button to get the printed copy.");
-            btnPrintForm.Enabled = true;
-            overtimeID = otRecord.OTID;
-            txtFormNo.Text = otRecord.OTID.ToString();
+                Utilities.ShowInformationBox("You have successfully created overtime request. Press print form button to get the printed copy.");
+                btnPrintForm.Enabled = true;
+                overtimeID = otRecord.OTID;
+                txtFormNo.Text = otRecord.OTID.ToString();
+            }
+            else
+            {
+                Utilities.ShowErrorBox("Looks like you have to fill details in table. Please make sure that operation field is requiered and time must be enterd as 24h format. Eg : 7.30 PM must be 1930.");
+            }
         }
 
         private DateTime generateDateTimeInstanceFromTime(string TimeText)
@@ -248,11 +245,11 @@ namespace TeemaApplication
                 otedRow.SerialNo = count;
                 otedRow.TokenNo = x.Employee.TokenNo.ToString();
                 otedRow.Name = x.Employee.Name;
-                otedRow.Operation = x.Operation;
-                otedRow.NormalFrom = x.StartFrom;
-                otedRow.ShiftTo = x.ShiftTo;
-                otedRow.OTFrom = x.OTFrom;
-                otedRow.OTTo = x.OTTo;
+                //otedRow.Operation = x.Operation;
+                //otedRow.NormalFrom = x.StartFrom;
+                //otedRow.ShiftTo = x.ShiftTo;
+                //otedRow.OTFrom = x.OTFrom;
+                //otedRow.OTTo = x.OTTo;
 
                 otds.OvertimeEmployeeDetails.AddOvertimeEmployeeDetailsRow(otedRow);
             }
@@ -269,6 +266,50 @@ namespace TeemaApplication
             Calendar calender = dtfi.Calendar;
             txtWeek.Text = calender.GetWeekOfYear(dtpOvertimeDate.Value, dtfi.CalendarWeekRule, dtfi.FirstDayOfWeek).ToString();
             txtDay.Text = dtpOvertimeDate.Value.DayOfWeek.ToString();
+        }
+
+        private void txtSupervisor_Leave(object sender, EventArgs e)
+        {
+            Utilities.checkIfContainText(txtSupervisor);
+        }
+
+        private void txtReason_Leave(object sender, EventArgs e)
+        {
+            Utilities.checkIfContainText(txtReason);
+        }
+
+        private bool checkIfDataGridViewFilledCorrectly()
+        {
+            bool result = true;
+            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["clmnEntitled"].Value.ToString()) == true)
+                {
+                    try
+                    {
+                        string shiftStartText = row.Cells["clmnStartFrom"].Value.ToString();
+                        string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
+                        string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
+                        string otEndText = row.Cells["clmnOTTo"].Value.ToString();
+                        string Operation = row.Cells["clmnOperation"].Value.ToString();
+
+                        DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText);
+                        DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText);
+                        DateTime otStart = generateDateTimeInstanceFromTime(otStartText);
+                        DateTime otEnd = generateDateTimeInstanceFromTime(otEndText);
+
+                        if (string.IsNullOrEmpty(Operation.Trim()))
+                        {
+                            result = false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        result = false;
+                    }
+                }
+            }
+            return result;
         }
     }
 }
