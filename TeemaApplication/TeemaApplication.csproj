@@ -88,6 +88,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\LeaveReportsDataSet.cs">
+      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\LeaveReportsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\OvertimeReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,13 +212,24 @@
     <None Include="Datasets\EmployeeDataSet.xss">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\LeaveReportsDataSet.xsc">
+      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\LeaveReportsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LeaveReportsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\LeaveReportsDataSet.xss">
+      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\OvertimeReportDataSet.xsc">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OvertimeReportDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>OvertimeReportDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xss">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
