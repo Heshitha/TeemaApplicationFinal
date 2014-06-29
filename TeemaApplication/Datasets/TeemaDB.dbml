@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TeemaFinalDB" Class="TeemaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;Persist Security Info=True;User ID=TeemaApplication" SettingsObjectName="TeemaApplication.Properties.Settings" SettingsPropertyName="TeemaFinalDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;Persist Security Info=True;User ID=Teemaapplication" SettingsObjectName="TeemaApplication.Properties.Settings" SettingsPropertyName="TeemaFinalDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Branch" Member="Branches">
     <Type Name="Branch">
       <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -132,6 +132,10 @@
       <Association Name="UserAccount_OverTimeRecord2" Member="OverTimeRecords2" ThisKey="UserID" OtherKey="ModifiedBy" Type="OverTimeRecord" />
       <Association Name="UserAccount_OvertimeEmployeeDetail" Member="OvertimeEmployeeDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="OvertimeEmployeeDetail" />
       <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="OvertimeEmployeeDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="OvertimeEmployeeDetail" />
+      <Association Name="UserAccount_SalaryAdvance" Member="SalaryAdvances" ThisKey="UserID" OtherKey="CreatedBy" Type="SalaryAdvance" />
+      <Association Name="UserAccount_SalaryAdvance1" Member="SalaryAdvances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryAdvance" />
+      <Association Name="UserAccount_SalaryAdvanceEmployeeDetail" Member="SalaryAdvanceEmployeeDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="SalaryAdvanceEmployeeDetail" />
+      <Association Name="UserAccount_SalaryAdvanceEmployeeDetail1" Member="SalaryAdvanceEmployeeDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryAdvanceEmployeeDetail" />
     </Type>
   </Table>
   <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
@@ -204,6 +208,42 @@
       <Association Name="OverTimeRecord_OvertimeEmployeeDetail" Member="OverTimeRecord" ThisKey="OTID" OtherKey="OTID" Type="OverTimeRecord" IsForeignKey="true" />
       <Association Name="UserAccount_OvertimeEmployeeDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_OvertimeEmployeeDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalaryAdvance" Member="SalaryAdvances">
+    <Type Name="SalaryAdvance">
+      <Column Name="SalaryAdvanceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SalaryMonth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApprovedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SalaryAdvance_SalaryAdvanceEmployeeDetail" Member="SalaryAdvanceEmployeeDetails" ThisKey="SalaryAdvanceID" OtherKey="SalaryAdvanceID" Type="SalaryAdvanceEmployeeDetail" />
+      <Association Name="UserAccount_SalaryAdvance" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_SalaryAdvance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalaryAdvanceEmployeeDetails" Member="SalaryAdvanceEmployeeDetails">
+    <Type Name="SalaryAdvanceEmployeeDetail">
+      <Column Name="SalAdvEmpID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SalaryAdvanceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EPFSal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DayWages" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FixedInsentive" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VariableInsentive" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SalaryAdvance_SalaryAdvanceEmployeeDetail" Member="SalaryAdvance" ThisKey="SalaryAdvanceID" OtherKey="SalaryAdvanceID" Type="SalaryAdvance" IsForeignKey="true" />
+      <Association Name="UserAccount_SalaryAdvanceEmployeeDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_SalaryAdvanceEmployeeDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

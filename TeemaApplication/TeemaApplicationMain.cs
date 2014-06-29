@@ -207,9 +207,9 @@ namespace TeemaApplication
             frm.Show();
         }
 
-        private void enterPieceRateDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void createSalaryAdvanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddPieceRate frm = new frmAddPieceRate();
+            CreateSalaryAdvance frm = new CreateSalaryAdvance();
             frm.MdiParent = this;
             frm.Show();
         }

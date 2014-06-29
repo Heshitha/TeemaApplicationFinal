@@ -41,9 +41,9 @@
             this.createOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewOvertimeFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pieceRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.tsmiEmployee,
             this.tsmiUserAccount,
             this.overtimeToolStripMenuItem,
-            this.pieceRateToolStripMenuItem});
+            this.salaryAdvanceToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -146,20 +146,20 @@
             this.viewOvertimeFormsToolStripMenuItem.Text = "View Overtime Forms";
             this.viewOvertimeFormsToolStripMenuItem.Click += new System.EventHandler(this.viewOvertimeFormsToolStripMenuItem_Click);
             // 
-            // pieceRateToolStripMenuItem
+            // salaryAdvanceToolStripMenuItem
             // 
-            this.pieceRateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterPieceRateDetailsToolStripMenuItem});
-            this.pieceRateToolStripMenuItem.Name = "pieceRateToolStripMenuItem";
-            this.pieceRateToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.pieceRateToolStripMenuItem.Text = "Piece Rate";
+            this.salaryAdvanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createSalaryAdvanceToolStripMenuItem});
+            this.salaryAdvanceToolStripMenuItem.Name = "salaryAdvanceToolStripMenuItem";
+            this.salaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.salaryAdvanceToolStripMenuItem.Text = "Salary Advance";
             // 
-            // enterPieceRateDetailsToolStripMenuItem
+            // createSalaryAdvanceToolStripMenuItem
             // 
-            this.enterPieceRateDetailsToolStripMenuItem.Name = "enterPieceRateDetailsToolStripMenuItem";
-            this.enterPieceRateDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.enterPieceRateDetailsToolStripMenuItem.Text = "Enter Piece Rate Details";
-            this.enterPieceRateDetailsToolStripMenuItem.Click += new System.EventHandler(this.enterPieceRateDetailsToolStripMenuItem_Click);
+            this.createSalaryAdvanceToolStripMenuItem.Name = "createSalaryAdvanceToolStripMenuItem";
+            this.createSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.createSalaryAdvanceToolStripMenuItem.Text = "Create Salary Advance";
+            this.createSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.createSalaryAdvanceToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -195,8 +195,8 @@
         private System.Windows.Forms.ToolStripMenuItem createOvertimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveOvertimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewOvertimeFormsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pieceRateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enterPieceRateDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryAdvanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createSalaryAdvanceToolStripMenuItem;
     }
 }
 
