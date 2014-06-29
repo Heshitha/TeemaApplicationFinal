@@ -127,9 +127,19 @@ namespace TeemaApplication
         {
             SalaryAdvance saladv = new SalaryAdvance
             {
-                                
+                SalaryMonth = dtpSalaryMonth.Value,
+                RequestDate  = System.DateTime.Today,
+                Department =   (Department)cmbDepartment.SelectedItem,
+
+                CreatedBy = LoginDetails.LoggedUsedID,
+                CreatedDate = DateTime.Now,
+                ModifiedBy = LoginDetails.LoggedUsedID,
+                ModifiedDate = DateTime.Now
+          
             };
 
+            db.SalaryAdvances.InsertOnSubmit(saladv);
+            db.SubmitChanges();
 
         }
 
