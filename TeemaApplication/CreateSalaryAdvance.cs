@@ -141,7 +141,42 @@ namespace TeemaApplication
             db.SalaryAdvances.InsertOnSubmit(saladv);
             db.SubmitChanges();
 
-        }
+            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["clmnEntitled"].Value.ToString()) == true)
+                {
+                    try
+                    {
+                        string tokenNo = row.Cells["clmnTokenNo"].Value.ToString().Trim();
+                        Employee employee = db.Employees.Where(emp => emp.TokenNo.Equals(tokenNo)).Single();
+                        //string shiftStartText = row.Cells["clmnStartFrom"].Value.ToString();
+                        //string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
+                        //string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
+                        //string otEndText = row.Cells["clmnOTTo"].Value.ToString();
+                        //string Operation = row.Cells["clmnOperation"].Value.ToString();
+
+                        //DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText);
+                        //DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText);
+                        //DateTime otStart = generateDateTimeInstanceFromTime(otStartText);
+                        //DateTime otEnd = generateDateTimeInstanceFromTime(otEndText);
+
+                        SalaryAdvanceEmployeeDetail saladvempdet = new SalaryAdvanceEmployeeDetail
+                        {
+                            SalaryAdvance = saladv,
+                            
+                        };
+
+                      //  db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
+                        db.SubmitChanges();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+
 
        
 
