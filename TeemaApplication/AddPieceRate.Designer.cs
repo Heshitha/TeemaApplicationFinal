@@ -314,7 +314,7 @@
             this.dgvEnterPieceUnitsForEmployees.Location = new System.Drawing.Point(6, 6);
             this.dgvEnterPieceUnitsForEmployees.Name = "dgvEnterPieceUnitsForEmployees";
             this.dgvEnterPieceUnitsForEmployees.RowHeadersVisible = false;
-            this.dgvEnterPieceUnitsForEmployees.Size = new System.Drawing.Size(453, 380);
+            this.dgvEnterPieceUnitsForEmployees.Size = new System.Drawing.Size(453, 415);
             this.dgvEnterPieceUnitsForEmployees.TabIndex = 0;
             this.dgvEnterPieceUnitsForEmployees.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnterPieceUnitsForEmployees_CellEndEdit);
             this.dgvEnterPieceUnitsForEmployees.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnterPieceUnitsForEmployees_DataError);
