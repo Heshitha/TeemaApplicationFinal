@@ -149,16 +149,7 @@ namespace TeemaApplication
                     {
                         string tokenNo = row.Cells["clmnTokenNo"].Value.ToString().Trim();
                         Employee employee = db.Employees.Where(emp => emp.TokenNo.Equals(tokenNo)).Single();
-                        //string shiftStartText = row.Cells["clmnStartFrom"].Value.ToString();
-                        //string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
-                        //string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
-                        //string otEndText = row.Cells["clmnOTTo"].Value.ToString();
-                        //string Operation = row.Cells["clmnOperation"].Value.ToString();
 
-                        //DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText);
-                        //DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText);
-                        //DateTime otStart = generateDateTimeInstanceFromTime(otStartText);
-                        //DateTime otEnd = generateDateTimeInstanceFromTime(otEndText);
 
                         SalaryAdvanceEmployeeDetail saladvempdet = new SalaryAdvanceEmployeeDetail
                         {
@@ -181,7 +172,18 @@ namespace TeemaApplication
                     {
 
                     }
+
+                    Utilities.ShowInformationBox("You have successfully created Salary Advance request. Press print form button to get the printed copy.");
+                    btnPrintForm.Enabled = true;
+                    
+                    txtFormNo.Text = saladv.SalaryAdvanceID.ToString();
                 }
+
+                else
+                {
+                    Utilities.ShowErrorBox("Please select Employees");
+                }
+
             }
         }
        
