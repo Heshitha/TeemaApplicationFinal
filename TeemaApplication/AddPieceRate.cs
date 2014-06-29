@@ -121,7 +121,18 @@ namespace TeemaApplication
             if (e.ColumnIndex == 3)
             {
                 double unitRate = Convert.ToDouble(txtPieceUnitRate.Text);
-                //double uni
+                double pieceQty = Convert.ToDouble(dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[3].Value);
+                double payment = unitRate * pieceQty;
+                dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[5].Value = payment;
+            }
+            if (e.ColumnIndex == 0)
+            {
+                DataGridViewCheckBoxCell chkBox = dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[0] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(chkBox.Value))
+                {
+                    dgvEnterPieceUnitsForEmployees.CurrentCell = dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[3];
+                    dgvEnterPieceUnitsForEmployees.BeginEdit(true);
+                }
             }
         }
 
