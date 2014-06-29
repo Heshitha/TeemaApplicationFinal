@@ -169,7 +169,7 @@ namespace TeemaApplication
                     }
                     catch (Exception ex)
                     {
-
+                        Utilities.ShowExceptionBox(ex.Message);
                     }
 
                    
