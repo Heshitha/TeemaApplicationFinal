@@ -40,8 +40,10 @@
             this.overtimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.viewOvertimeFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pieceRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEmployee,
             this.tsmiUserAccount,
-            this.overtimeToolStripMenuItem});
+            this.overtimeToolStripMenuItem,
+            this.pieceRateToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -143,6 +146,21 @@
             this.viewOvertimeFormsToolStripMenuItem.Text = "View Overtime Forms";
             this.viewOvertimeFormsToolStripMenuItem.Click += new System.EventHandler(this.viewOvertimeFormsToolStripMenuItem_Click);
             // 
+            // pieceRateToolStripMenuItem
+            // 
+            this.pieceRateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enterPieceRateDetailsToolStripMenuItem});
+            this.pieceRateToolStripMenuItem.Name = "pieceRateToolStripMenuItem";
+            this.pieceRateToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.pieceRateToolStripMenuItem.Text = "Piece Rate";
+            // 
+            // enterPieceRateDetailsToolStripMenuItem
+            // 
+            this.enterPieceRateDetailsToolStripMenuItem.Name = "enterPieceRateDetailsToolStripMenuItem";
+            this.enterPieceRateDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.enterPieceRateDetailsToolStripMenuItem.Text = "Enter Piece Rate Details";
+            this.enterPieceRateDetailsToolStripMenuItem.Click += new System.EventHandler(this.enterPieceRateDetailsToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +195,8 @@
         private System.Windows.Forms.ToolStripMenuItem createOvertimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveOvertimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewOvertimeFormsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pieceRateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enterPieceRateDetailsToolStripMenuItem;
     }
 }
 

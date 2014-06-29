@@ -206,5 +206,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void enterPieceRateDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddPieceRate frm = new frmAddPieceRate();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

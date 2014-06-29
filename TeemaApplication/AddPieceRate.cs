@@ -44,5 +44,105 @@ namespace TeemaApplication
         {
             this.Dispose();
         }
+
+        private void frmAddPieceRate_Load(object sender, EventArgs e)
+        {
+            Utilities.fillBranchComboBox(db, cmbWorkingBranch);
+        }
+
+        private void cmbWorkingBranch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Utilities.fillDepartmentComboBox((Branch)cmbWorkingBranch.SelectedItem, cmbDepartment);
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (chbSearchFromSubDepartment.Checked)
+            {
+                Utilities.fillSubDepartmentComboBox((Department)cmbDepartment.SelectedItem, cmbSubDepartment);
+                cmbSubDepartment.Enabled = true;
+            }
+            else
+            {
+                cmbSubDepartment.Enabled = false;
+                cmbSubDepartment.DataBindings.Clear();
+
+                List<Employee> lstEmployees = ((Department)cmbDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
+
+                fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+            }
+        }
+
+        private void fillEmployeeDetailsForEnterPieceUnitsForEmployees(List<Employee> employeeList)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Entitled", typeof(bool));
+            dt.Columns.Add("TokenNo");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("PieceRate", typeof(double));
+            dt.Columns.Add("Measure");
+            dt.Columns.Add("Payement", typeof(double));
+
+            foreach (Employee x in employeeList)
+            {
+                dt.Rows.Add(false, x.TokenNo, x.Name, 0, "", 0);
+            }
+
+            dgvEnterPieceUnitsForEmployees.DataSource = dt;
+        }
+
+        private void cmbSubDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Employee> lstEmployees = ((SubDepartment)cmbSubDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
+
+            fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+        }
+
+        private void chbSearchFromSubDepartment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbSearchFromSubDepartment.Checked)
+            {
+                Utilities.fillSubDepartmentComboBox((Department)cmbDepartment.SelectedItem, cmbSubDepartment);
+                cmbSubDepartment.Enabled = true;
+            }
+            else
+            {
+                cmbSubDepartment.Enabled = false;
+                cmbSubDepartment.DataBindings.Clear();
+
+                List<Employee> lstEmployees = ((Department)cmbDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
+
+                fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+            }
+        }
+
+        private void dgvEnterPieceUnitsForEmployees_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                double unitRate = Convert.ToDouble(txtPieceUnitRate.Text);
+                //double uni
+            }
+        }
+
+        private void dgvEnterPieceUnitsForEmployees_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Utilities.ShowErrorBox("Please enter correct values for fields in table.");
+        }
+
+        private void txtPieceUnitRate_Leave(object sender, EventArgs e)
+        {
+            Utilities.checkIfContainDoubleValue(txtPieceUnitRate);
+        }
+
+        private void txtPieceRateCatagory_Leave(object sender, EventArgs e)
+        {
+            Utilities.checkIfContainText(txtPieceRateCatagory);
+        }
+
+        private void txtPieceUnitMeasure_Leave(object sender, EventArgs e)
+        {
+            Utilities.checkIfContainText(txtPieceUnitMeasure);
+        }
     }
 }

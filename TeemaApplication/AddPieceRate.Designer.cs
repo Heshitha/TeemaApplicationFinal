@@ -39,26 +39,16 @@
             this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
             this.lblWorkingBranch = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPieceRateCatagory = new System.Windows.Forms.TextBox();
-            this.txtPieceUnitMeasure = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpEnteredDate = new System.Windows.Forms.DateTimePicker();
             this.txtPieceUnitRate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtPieceUnitMeasure = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPieceRateCatagory = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbcEnterPieceRates = new System.Windows.Forms.TabControl();
             this.tbpEnterPieceRateToEmployees = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dtpEnteredDate = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTotalValue = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTotalPiecesCount = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAvragePayement = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNumberOfWorkers = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dgvEnterPieceUnitsForEmployees = new System.Windows.Forms.DataGridView();
             this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,12 +56,22 @@
             this.clmnPieceRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnPayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAvragePayement = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNumberOfWorkers = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTotalValue = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTotalPiecesCount = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcEnterPieceRates.SuspendLayout();
             this.tbpEnterPieceRateToEmployees.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnterPieceUnitsForEmployees)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFormTopic
@@ -127,6 +127,7 @@
             this.chbSearchFromSubDepartment.TabIndex = 6;
             this.chbSearchFromSubDepartment.Text = "Search From Sub Department";
             this.chbSearchFromSubDepartment.UseVisualStyleBackColor = true;
+            this.chbSearchFromSubDepartment.CheckedChanged += new System.EventHandler(this.chbSearchFromSubDepartment_CheckedChanged);
             // 
             // label7
             // 
@@ -148,6 +149,7 @@
             this.cmbSubDepartment.Name = "cmbSubDepartment";
             this.cmbSubDepartment.Size = new System.Drawing.Size(193, 21);
             this.cmbSubDepartment.TabIndex = 3;
+            this.cmbSubDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbSubDepartment_SelectedIndexChanged);
             // 
             // lblDepartment
             // 
@@ -168,6 +170,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(193, 21);
             this.cmbDepartment.TabIndex = 2;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // cmbWorkingBranch
             // 
@@ -179,6 +182,7 @@
             this.cmbWorkingBranch.Name = "cmbWorkingBranch";
             this.cmbWorkingBranch.Size = new System.Drawing.Size(193, 21);
             this.cmbWorkingBranch.TabIndex = 1;
+            this.cmbWorkingBranch.SelectedIndexChanged += new System.EventHandler(this.cmbWorkingBranch_SelectedIndexChanged);
             // 
             // lblWorkingBranch
             // 
@@ -206,21 +210,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Piece Rate Details";
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Piece Rate Catagory";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Entered Date";
             // 
-            // txtPieceRateCatagory
+            // dtpEnteredDate
             // 
-            this.txtPieceRateCatagory.Location = new System.Drawing.Point(117, 19);
-            this.txtPieceRateCatagory.Name = "txtPieceRateCatagory";
-            this.txtPieceRateCatagory.Size = new System.Drawing.Size(172, 20);
-            this.txtPieceRateCatagory.TabIndex = 2;
+            this.dtpEnteredDate.Location = new System.Drawing.Point(117, 98);
+            this.dtpEnteredDate.Name = "dtpEnteredDate";
+            this.dtpEnteredDate.Size = new System.Drawing.Size(172, 20);
+            this.dtpEnteredDate.TabIndex = 7;
+            // 
+            // txtPieceUnitRate
+            // 
+            this.txtPieceUnitRate.Location = new System.Drawing.Point(117, 71);
+            this.txtPieceUnitRate.Name = "txtPieceUnitRate";
+            this.txtPieceUnitRate.Size = new System.Drawing.Size(172, 20);
+            this.txtPieceUnitRate.TabIndex = 6;
+            this.txtPieceUnitRate.Text = "0";
+            this.txtPieceUnitRate.Leave += new System.EventHandler(this.txtPieceUnitRate_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Piece Unit Rate";
             // 
             // txtPieceUnitMeasure
             // 
@@ -228,6 +250,7 @@
             this.txtPieceUnitMeasure.Name = "txtPieceUnitMeasure";
             this.txtPieceUnitMeasure.Size = new System.Drawing.Size(172, 20);
             this.txtPieceUnitMeasure.TabIndex = 4;
+            this.txtPieceUnitMeasure.Leave += new System.EventHandler(this.txtPieceUnitMeasure_Leave);
             // 
             // label2
             // 
@@ -238,21 +261,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Piece Unit Measure";
             // 
-            // txtPieceUnitRate
+            // txtPieceRateCatagory
             // 
-            this.txtPieceUnitRate.Location = new System.Drawing.Point(117, 71);
-            this.txtPieceUnitRate.Name = "txtPieceUnitRate";
-            this.txtPieceUnitRate.Size = new System.Drawing.Size(172, 20);
-            this.txtPieceUnitRate.TabIndex = 6;
+            this.txtPieceRateCatagory.Location = new System.Drawing.Point(117, 19);
+            this.txtPieceRateCatagory.Name = "txtPieceRateCatagory";
+            this.txtPieceRateCatagory.Size = new System.Drawing.Size(172, 20);
+            this.txtPieceRateCatagory.TabIndex = 2;
+            this.txtPieceRateCatagory.Leave += new System.EventHandler(this.txtPieceRateCatagory_Leave);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Piece Unit Rate";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Piece Rate Catagory";
             // 
             // tbcEnterPieceRates
             // 
@@ -275,113 +299,6 @@
             this.tbpEnterPieceRateToEmployees.Text = "Enter Piece Units For Employees";
             this.tbpEnterPieceRateToEmployees.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(465, 364);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Enter Average Rate For Employees";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dtpEnteredDate
-            // 
-            this.dtpEnteredDate.Location = new System.Drawing.Point(117, 98);
-            this.dtpEnteredDate.Name = "dtpEnteredDate";
-            this.dtpEnteredDate.Size = new System.Drawing.Size(172, 20);
-            this.dtpEnteredDate.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Entered Date";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtAvragePayement);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtNumberOfWorkers);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtTotalValue);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtTotalPiecesCount);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(12, 307);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(295, 126);
-            this.groupBox2.TabIndex = 37;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Average Payments";
-            // 
-            // txtTotalValue
-            // 
-            this.txtTotalValue.Location = new System.Drawing.Point(117, 45);
-            this.txtTotalValue.Name = "txtTotalValue";
-            this.txtTotalValue.Size = new System.Drawing.Size(172, 20);
-            this.txtTotalValue.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Total Value";
-            // 
-            // txtTotalPiecesCount
-            // 
-            this.txtTotalPiecesCount.Location = new System.Drawing.Point(117, 19);
-            this.txtTotalPiecesCount.Name = "txtTotalPiecesCount";
-            this.txtTotalPiecesCount.Size = new System.Drawing.Size(172, 20);
-            this.txtTotalPiecesCount.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Total Pieces Count";
-            // 
-            // txtAvragePayement
-            // 
-            this.txtAvragePayement.Location = new System.Drawing.Point(117, 97);
-            this.txtAvragePayement.Name = "txtAvragePayement";
-            this.txtAvragePayement.Size = new System.Drawing.Size(172, 20);
-            this.txtAvragePayement.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Avrage Payement";
-            // 
-            // txtNumberOfWorkers
-            // 
-            this.txtNumberOfWorkers.Location = new System.Drawing.Point(117, 71);
-            this.txtNumberOfWorkers.Name = "txtNumberOfWorkers";
-            this.txtNumberOfWorkers.Size = new System.Drawing.Size(172, 20);
-            this.txtNumberOfWorkers.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Number Of Workers";
-            // 
             // dgvEnterPieceUnitsForEmployees
             // 
             this.dgvEnterPieceUnitsForEmployees.AllowUserToAddRows = false;
@@ -399,6 +316,8 @@
             this.dgvEnterPieceUnitsForEmployees.RowHeadersVisible = false;
             this.dgvEnterPieceUnitsForEmployees.Size = new System.Drawing.Size(453, 380);
             this.dgvEnterPieceUnitsForEmployees.TabIndex = 0;
+            this.dgvEnterPieceUnitsForEmployees.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnterPieceUnitsForEmployees_CellEndEdit);
+            this.dgvEnterPieceUnitsForEmployees.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnterPieceUnitsForEmployees_DataError);
             // 
             // clmnEntitled
             // 
@@ -438,6 +357,105 @@
             this.clmnPayement.HeaderText = "Payement";
             this.clmnPayement.Name = "clmnPayement";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(465, 427);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Enter Average Rate For Employees";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtAvragePayement);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtNumberOfWorkers);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txtTotalValue);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtTotalPiecesCount);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(12, 307);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(295, 126);
+            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Average Payments";
+            // 
+            // txtAvragePayement
+            // 
+            this.txtAvragePayement.Location = new System.Drawing.Point(117, 97);
+            this.txtAvragePayement.Name = "txtAvragePayement";
+            this.txtAvragePayement.ReadOnly = true;
+            this.txtAvragePayement.Size = new System.Drawing.Size(172, 20);
+            this.txtAvragePayement.TabIndex = 14;
+            this.txtAvragePayement.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Avrage Payement";
+            // 
+            // txtNumberOfWorkers
+            // 
+            this.txtNumberOfWorkers.Location = new System.Drawing.Point(117, 71);
+            this.txtNumberOfWorkers.Name = "txtNumberOfWorkers";
+            this.txtNumberOfWorkers.ReadOnly = true;
+            this.txtNumberOfWorkers.Size = new System.Drawing.Size(172, 20);
+            this.txtNumberOfWorkers.TabIndex = 12;
+            this.txtNumberOfWorkers.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Number Of Workers";
+            // 
+            // txtTotalValue
+            // 
+            this.txtTotalValue.Location = new System.Drawing.Point(117, 45);
+            this.txtTotalValue.Name = "txtTotalValue";
+            this.txtTotalValue.ReadOnly = true;
+            this.txtTotalValue.Size = new System.Drawing.Size(172, 20);
+            this.txtTotalValue.TabIndex = 10;
+            this.txtTotalValue.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Total Value";
+            // 
+            // txtTotalPiecesCount
+            // 
+            this.txtTotalPiecesCount.Location = new System.Drawing.Point(117, 19);
+            this.txtTotalPiecesCount.Name = "txtTotalPiecesCount";
+            this.txtTotalPiecesCount.ReadOnly = true;
+            this.txtTotalPiecesCount.Size = new System.Drawing.Size(172, 20);
+            this.txtTotalPiecesCount.TabIndex = 8;
+            this.txtTotalPiecesCount.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Total Pieces Count";
+            // 
             // frmAddPieceRate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +470,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddPieceRate";
             this.Text = "AddPieceRate";
+            this.Load += new System.EventHandler(this.frmAddPieceRate_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmAddPieceRate_MouseDown);
             this.gbxDepartmentDetails.ResumeLayout(false);
             this.gbxDepartmentDetails.PerformLayout();
@@ -459,9 +478,9 @@
             this.groupBox1.PerformLayout();
             this.tbcEnterPieceRates.ResumeLayout(false);
             this.tbpEnterPieceRateToEmployees.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnterPieceUnitsForEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEnterPieceUnitsForEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
