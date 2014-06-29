@@ -41,6 +41,7 @@
             this.createOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveOvertimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.viewOvertimeFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +116,8 @@
             // 
             this.overtimeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createOvertimeToolStripMenuItem,
-            this.approveOvertimeToolStripMenuItem});
+            this.approveOvertimeToolStripMenuItem,
+            this.viewOvertimeFormsToolStripMenuItem});
             this.overtimeToolStripMenuItem.Name = "overtimeToolStripMenuItem";
             this.overtimeToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.overtimeToolStripMenuItem.Text = "Overtime";
@@ -123,16 +125,23 @@
             // createOvertimeToolStripMenuItem
             // 
             this.createOvertimeToolStripMenuItem.Name = "createOvertimeToolStripMenuItem";
-            this.createOvertimeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.createOvertimeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.createOvertimeToolStripMenuItem.Text = "Create Overtime";
             this.createOvertimeToolStripMenuItem.Click += new System.EventHandler(this.createOvertimeToolStripMenuItem_Click);
             // 
             // approveOvertimeToolStripMenuItem
             // 
             this.approveOvertimeToolStripMenuItem.Name = "approveOvertimeToolStripMenuItem";
-            this.approveOvertimeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.approveOvertimeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.approveOvertimeToolStripMenuItem.Text = "Approve Overtime";
             this.approveOvertimeToolStripMenuItem.Click += new System.EventHandler(this.approveOvertimeToolStripMenuItem_Click);
+            // 
+            // viewOvertimeFormsToolStripMenuItem
+            // 
+            this.viewOvertimeFormsToolStripMenuItem.Name = "viewOvertimeFormsToolStripMenuItem";
+            this.viewOvertimeFormsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.viewOvertimeFormsToolStripMenuItem.Text = "View Overtime Forms";
+            this.viewOvertimeFormsToolStripMenuItem.Click += new System.EventHandler(this.viewOvertimeFormsToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -167,6 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem overtimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createOvertimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveOvertimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewOvertimeFormsToolStripMenuItem;
     }
 }
 

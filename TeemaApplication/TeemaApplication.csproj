@@ -128,6 +128,12 @@
     <Compile Include="MyAccountDetails.Designer.cs">
       <DependentUpon>MyAccountDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="OvertimeForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OvertimeForms.Designer.cs">
+      <DependentUpon>OvertimeForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\EmployeeReport.cs">
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvertimeForms.resx">
+      <DependentUpon>OvertimeForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

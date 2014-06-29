@@ -1,6 +1,6 @@
 ﻿namespace TeemaApplication
 {
-    partial class frmApproveOvertime
+    partial class frmOvertimeForms
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,13 @@
             this.lblWorkingBranch = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnNormalFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnShiftTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOTFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOTTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtOvertimeDate = new System.Windows.Forms.TextBox();
             this.cmbFormNo = new System.Windows.Forms.ComboBox();
@@ -52,14 +59,6 @@
             this.txtWeek = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnNormalFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnShiftTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOTFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnOTTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnApprove = new System.Windows.Forms.Button();
             this.btnPrintForm = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,9 +72,9 @@
             this.lblFormTopic.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormTopic.Location = new System.Drawing.Point(12, 9);
             this.lblFormTopic.Name = "lblFormTopic";
-            this.lblFormTopic.Size = new System.Drawing.Size(341, 31);
-            this.lblFormTopic.TabIndex = 20;
-            this.lblFormTopic.Text = "Approve Overtime Request";
+            this.lblFormTopic.Size = new System.Drawing.Size(215, 31);
+            this.lblFormTopic.TabIndex = 21;
+            this.lblFormTopic.Text = "Overtime Details";
             // 
             // btnClose
             // 
@@ -87,10 +86,10 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(821, 12);
+            this.btnClose.Location = new System.Drawing.Point(822, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 27;
+            this.btnClose.TabIndex = 28;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -106,7 +105,7 @@
             this.gbxDepartmentDetails.Location = new System.Drawing.Point(12, 43);
             this.gbxDepartmentDetails.Name = "gbxDepartmentDetails";
             this.gbxDepartmentDetails.Size = new System.Drawing.Size(295, 99);
-            this.gbxDepartmentDetails.TabIndex = 36;
+            this.gbxDepartmentDetails.TabIndex = 39;
             this.gbxDepartmentDetails.TabStop = false;
             this.gbxDepartmentDetails.Text = "Department Details";
             // 
@@ -167,7 +166,7 @@
             this.groupBox2.Location = new System.Drawing.Point(313, 43);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(538, 307);
-            this.groupBox2.TabIndex = 35;
+            this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employees";
             // 
@@ -191,6 +190,48 @@
             this.dgvEmployeeDetails.Size = new System.Drawing.Size(526, 282);
             this.dgvEmployeeDetails.TabIndex = 0;
             // 
+            // clmnTokenNo
+            // 
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnEmployeeName
+            // 
+            this.clmnEmployeeName.DataPropertyName = "Name";
+            this.clmnEmployeeName.HeaderText = "Name";
+            this.clmnEmployeeName.Name = "clmnEmployeeName";
+            // 
+            // clmnOperation
+            // 
+            this.clmnOperation.DataPropertyName = "Operation";
+            this.clmnOperation.HeaderText = "Operation";
+            this.clmnOperation.Name = "clmnOperation";
+            // 
+            // clmnNormalFrom
+            // 
+            this.clmnNormalFrom.DataPropertyName = "NormalFrom";
+            this.clmnNormalFrom.HeaderText = "Normal From";
+            this.clmnNormalFrom.Name = "clmnNormalFrom";
+            // 
+            // clmnShiftTo
+            // 
+            this.clmnShiftTo.DataPropertyName = "ShiftTo";
+            this.clmnShiftTo.HeaderText = "Shift To";
+            this.clmnShiftTo.Name = "clmnShiftTo";
+            // 
+            // clmnOTFrom
+            // 
+            this.clmnOTFrom.DataPropertyName = "OTFrom";
+            this.clmnOTFrom.HeaderText = "OT From";
+            this.clmnOTFrom.Name = "clmnOTFrom";
+            // 
+            // clmnOTTo
+            // 
+            this.clmnOTTo.DataPropertyName = "OTTo";
+            this.clmnOTTo.HeaderText = "OT To";
+            this.clmnOTTo.Name = "clmnOTTo";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtOvertimeDate);
@@ -208,7 +249,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 148);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 176);
-            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overtime Details";
             // 
@@ -316,85 +357,32 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Overtime Date";
             // 
-            // clmnTokenNo
-            // 
-            this.clmnTokenNo.DataPropertyName = "TokenNo";
-            this.clmnTokenNo.HeaderText = "Token No";
-            this.clmnTokenNo.Name = "clmnTokenNo";
-            // 
-            // clmnEmployeeName
-            // 
-            this.clmnEmployeeName.DataPropertyName = "Name";
-            this.clmnEmployeeName.HeaderText = "Name";
-            this.clmnEmployeeName.Name = "clmnEmployeeName";
-            // 
-            // clmnOperation
-            // 
-            this.clmnOperation.DataPropertyName = "Operation";
-            this.clmnOperation.HeaderText = "Operation";
-            this.clmnOperation.Name = "clmnOperation";
-            // 
-            // clmnNormalFrom
-            // 
-            this.clmnNormalFrom.DataPropertyName = "NormalFrom";
-            this.clmnNormalFrom.HeaderText = "Normal From";
-            this.clmnNormalFrom.Name = "clmnNormalFrom";
-            // 
-            // clmnShiftTo
-            // 
-            this.clmnShiftTo.DataPropertyName = "ShiftTo";
-            this.clmnShiftTo.HeaderText = "Shift To";
-            this.clmnShiftTo.Name = "clmnShiftTo";
-            // 
-            // clmnOTFrom
-            // 
-            this.clmnOTFrom.DataPropertyName = "OTFrom";
-            this.clmnOTFrom.HeaderText = "OT From";
-            this.clmnOTFrom.Name = "clmnOTFrom";
-            // 
-            // clmnOTTo
-            // 
-            this.clmnOTTo.DataPropertyName = "OTTo";
-            this.clmnOTTo.HeaderText = "OT To";
-            this.clmnOTTo.Name = "clmnOTTo";
-            // 
-            // btnApprove
-            // 
-            this.btnApprove.Location = new System.Drawing.Point(695, 357);
-            this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(75, 23);
-            this.btnApprove.TabIndex = 37;
-            this.btnApprove.Text = "Approve";
-            this.btnApprove.UseVisualStyleBackColor = true;
-            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
-            // 
             // btnPrintForm
             // 
-            this.btnPrintForm.Location = new System.Drawing.Point(776, 357);
+            this.btnPrintForm.Location = new System.Drawing.Point(777, 356);
             this.btnPrintForm.Name = "btnPrintForm";
             this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
-            this.btnPrintForm.TabIndex = 38;
+            this.btnPrintForm.TabIndex = 40;
             this.btnPrintForm.Text = "Print Form";
             this.btnPrintForm.UseVisualStyleBackColor = true;
             this.btnPrintForm.Click += new System.EventHandler(this.btnPrintForm_Click);
             // 
-            // frmApproveOvertime
+            // frmOvertimeForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 392);
+            this.ClientSize = new System.Drawing.Size(864, 392);
             this.Controls.Add(this.btnPrintForm);
-            this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.gbxDepartmentDetails);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblFormTopic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmApproveOvertime";
-            this.Text = "ApproveOvertime";
-            this.Load += new System.EventHandler(this.frmApproveOvertime_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ApproveOvertime_MouseDown);
+            this.Name = "frmOvertimeForms";
+            this.Text = "OvertimeForms";
+            this.Load += new System.EventHandler(this.frmOvertimeForms_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmOvertimeForms_MouseDown);
             this.gbxDepartmentDetails.ResumeLayout(false);
             this.gbxDepartmentDetails.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -411,12 +399,23 @@
         private System.Windows.Forms.Label lblFormTopic;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox gbxDepartmentDetails;
+        private System.Windows.Forms.TextBox txtSubDepartment;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.TextBox txtBranch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.Label lblWorkingBranch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvEmployeeDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOperation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnNormalFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnShiftTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTTo;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtOvertimeDate;
         private System.Windows.Forms.ComboBox cmbFormNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtReason;
@@ -428,18 +427,6 @@
         private System.Windows.Forms.TextBox txtWeek;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSubDepartment;
-        private System.Windows.Forms.TextBox txtDepartment;
-        private System.Windows.Forms.TextBox txtBranch;
-        private System.Windows.Forms.TextBox txtOvertimeDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOperation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnNormalFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnShiftTo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTTo;
-        private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Button btnPrintForm;
     }
 }
