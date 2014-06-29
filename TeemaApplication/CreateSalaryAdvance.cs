@@ -142,7 +142,7 @@ namespace TeemaApplication
             db.SubmitChanges();
 
             foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
-            {
+           {
                 if (Convert.ToBoolean(row.Cells["clmnEntitled"].Value.ToString()) == true)
                 {
                     try
@@ -161,7 +161,6 @@ namespace TeemaApplication
                             ModifiedBy = LoginDetails.LoggedUsedID,
                             ModifiedDate = DateTime.Now
 
-
                         };
 
                         db.SalaryAdvanceEmployeeDetails.InsertOnSubmit(saladvempdet);
@@ -173,18 +172,14 @@ namespace TeemaApplication
 
                     }
 
-                    Utilities.ShowInformationBox("You have successfully created Salary Advance request. Press print form button to get the printed copy.");
-                    btnPrintForm.Enabled = true;
-                    
-                    txtFormNo.Text = saladv.SalaryAdvanceID.ToString();
+                   
                 }
-
-                else
-                {
-                    Utilities.ShowErrorBox("Please select Employees");
-                }
-
             }
+            Utilities.ShowInformationBox("You have successfully created Salary Advance request. Press print form button to get the printed copy.");
+            btnPrintForm.Enabled = true;
+
+            txtFormNo.Text = saladv.SalaryAdvanceID.ToString();
+       
         }
        
 
