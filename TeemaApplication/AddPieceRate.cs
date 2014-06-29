@@ -120,20 +120,37 @@ namespace TeemaApplication
         {
             if (e.ColumnIndex == 3)
             {
-                double unitRate = Convert.ToDouble(txtPieceUnitRate.Text);
+                double unitRate = Utilities.getDoubleValueFromTextBox(txtPieceUnitRate);
                 double pieceQty = Convert.ToDouble(dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[3].Value);
                 double payment = unitRate * pieceQty;
                 dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[5].Value = payment;
             }
-            if (e.ColumnIndex == 0)
+            calculateAveragePaymentDetails();
+        }
+
+        private void calculateAveragePaymentDetails()
+        {
+            double totalPiecesCount = 0;
+            int numberOfWorkers = 0;
+            double unitRate = Utilities.getDoubleValueFromTextBox(txtPieceUnitRate);
+
+            foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
             {
-                DataGridViewCheckBoxCell chkBox = dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[0] as DataGridViewCheckBoxCell;
-                if (Convert.ToBoolean(chkBox.Value))
+                DataGridViewCheckBoxCell chkCell = x.Cells[0] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(chkCell.Value))
                 {
-                    dgvEnterPieceUnitsForEmployees.CurrentCell = dgvEnterPieceUnitsForEmployees.Rows[e.RowIndex].Cells[3];
-                    dgvEnterPieceUnitsForEmployees.BeginEdit(true);
+                    numberOfWorkers++;
+                    totalPiecesCount += Convert.ToDouble(x.Cells[3].Value);
                 }
             }
+
+            double totalValue = totalPiecesCount * unitRate;
+            double avaragePayement = totalValue / numberOfWorkers;
+
+            txtTotalPiecesCount.Text = totalPiecesCount.ToString("0.00");
+            txtTotalValue.Text = totalValue.ToString("0.00");
+            txtNumberOfWorkers.Text = numberOfWorkers.ToString();
+            txtAvragePayement.Text = avaragePayement.ToString("0.00");
         }
 
         private void dgvEnterPieceUnitsForEmployees_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -144,6 +161,14 @@ namespace TeemaApplication
         private void txtPieceUnitRate_Leave(object sender, EventArgs e)
         {
             Utilities.checkIfContainDoubleValue(txtPieceUnitRate);
+            double unitRate = Utilities.getDoubleValueFromTextBox(txtPieceUnitRate);
+            foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
+            {
+                double pieceQty = Convert.ToDouble(x.Cells[3].Value);
+                double payment = unitRate * pieceQty;
+                x.Cells[5].Value = payment;
+            }
+            calculateAveragePaymentDetails();
         }
 
         private void txtPieceRateCatagory_Leave(object sender, EventArgs e)
@@ -153,7 +178,13 @@ namespace TeemaApplication
 
         private void txtPieceUnitMeasure_Leave(object sender, EventArgs e)
         {
-            Utilities.checkIfContainText(txtPieceUnitMeasure);
+            if (Utilities.checkIfContainText(txtPieceUnitMeasure))
+            {
+                foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
+                {
+                    x.Cells[4].Value = txtPieceUnitMeasure.Text;
+                }
+            }
         }
     }
 }

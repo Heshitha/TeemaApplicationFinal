@@ -50,12 +50,6 @@
             this.tbcEnterPieceRates = new System.Windows.Forms.TabControl();
             this.tbpEnterPieceRateToEmployees = new System.Windows.Forms.TabPage();
             this.dgvEnterPieceUnitsForEmployees = new System.Windows.Forms.DataGridView();
-            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnWorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPieceRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtAvragePayement = new System.Windows.Forms.TextBox();
@@ -66,6 +60,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotalPiecesCount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnWorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnPieceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnPayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcEnterPieceRates.SuspendLayout();
@@ -308,7 +308,7 @@
             this.clmnEntitled,
             this.clmnTokenNo,
             this.clmnWorkerName,
-            this.clmnPieceRate,
+            this.clmnPieceQty,
             this.clmnMeasure,
             this.clmnPayement});
             this.dgvEnterPieceUnitsForEmployees.Location = new System.Drawing.Point(6, 6);
@@ -318,44 +318,6 @@
             this.dgvEnterPieceUnitsForEmployees.TabIndex = 0;
             this.dgvEnterPieceUnitsForEmployees.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnterPieceUnitsForEmployees_CellEndEdit);
             this.dgvEnterPieceUnitsForEmployees.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnterPieceUnitsForEmployees_DataError);
-            // 
-            // clmnEntitled
-            // 
-            this.clmnEntitled.DataPropertyName = "Entitled";
-            this.clmnEntitled.FalseValue = "False";
-            this.clmnEntitled.HeaderText = "Entitled";
-            this.clmnEntitled.Name = "clmnEntitled";
-            this.clmnEntitled.TrueValue = "True";
-            // 
-            // clmnTokenNo
-            // 
-            this.clmnTokenNo.DataPropertyName = "TokenNo";
-            this.clmnTokenNo.HeaderText = "Token No";
-            this.clmnTokenNo.Name = "clmnTokenNo";
-            // 
-            // clmnWorkerName
-            // 
-            this.clmnWorkerName.DataPropertyName = "Name";
-            this.clmnWorkerName.HeaderText = "Worker Name";
-            this.clmnWorkerName.Name = "clmnWorkerName";
-            // 
-            // clmnPieceRate
-            // 
-            this.clmnPieceRate.DataPropertyName = "PieceRate";
-            this.clmnPieceRate.HeaderText = "Piece Rate";
-            this.clmnPieceRate.Name = "clmnPieceRate";
-            // 
-            // clmnMeasure
-            // 
-            this.clmnMeasure.DataPropertyName = "Measure";
-            this.clmnMeasure.HeaderText = "Measure";
-            this.clmnMeasure.Name = "clmnMeasure";
-            // 
-            // clmnPayement
-            // 
-            this.clmnPayement.DataPropertyName = "Payement";
-            this.clmnPayement.HeaderText = "Payement";
-            this.clmnPayement.Name = "clmnPayement";
             // 
             // tabPage2
             // 
@@ -456,6 +418,44 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Total Pieces Count";
             // 
+            // clmnEntitled
+            // 
+            this.clmnEntitled.DataPropertyName = "Entitled";
+            this.clmnEntitled.FalseValue = "False";
+            this.clmnEntitled.HeaderText = "Entitled";
+            this.clmnEntitled.Name = "clmnEntitled";
+            this.clmnEntitled.TrueValue = "True";
+            // 
+            // clmnTokenNo
+            // 
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnWorkerName
+            // 
+            this.clmnWorkerName.DataPropertyName = "Name";
+            this.clmnWorkerName.HeaderText = "Worker Name";
+            this.clmnWorkerName.Name = "clmnWorkerName";
+            // 
+            // clmnPieceQty
+            // 
+            this.clmnPieceQty.DataPropertyName = "PieceRate";
+            this.clmnPieceQty.HeaderText = "Piece Qty";
+            this.clmnPieceQty.Name = "clmnPieceQty";
+            // 
+            // clmnMeasure
+            // 
+            this.clmnMeasure.DataPropertyName = "Measure";
+            this.clmnMeasure.HeaderText = "Measure";
+            this.clmnMeasure.Name = "clmnMeasure";
+            // 
+            // clmnPayement
+            // 
+            this.clmnPayement.DataPropertyName = "Payement";
+            this.clmnPayement.HeaderText = "Payement";
+            this.clmnPayement.Name = "clmnPayement";
+            // 
             // frmAddPieceRate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,7 +523,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn clmnEntitled;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnWorkerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmnPieceRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnPieceQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnMeasure;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnPayement;
     }
