@@ -47,7 +47,7 @@
             this.txtFormNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpOvertimeDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpSalaryMonth = new System.Windows.Forms.DateTimePicker();
             this.btnPrintForm = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
@@ -228,7 +228,7 @@
             this.groupBox1.Controls.Add(this.txtFormNo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpOvertimeDate);
+            this.groupBox1.Controls.Add(this.dtpSalaryMonth);
             this.groupBox1.Location = new System.Drawing.Point(12, 174);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 82);
@@ -262,12 +262,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Salary Month";
             // 
-            // dtpOvertimeDate
+            // dtpSalaryMonth
             // 
-            this.dtpOvertimeDate.Location = new System.Drawing.Point(87, 45);
-            this.dtpOvertimeDate.Name = "dtpOvertimeDate";
-            this.dtpOvertimeDate.Size = new System.Drawing.Size(202, 20);
-            this.dtpOvertimeDate.TabIndex = 0;
+            this.dtpSalaryMonth.CustomFormat = "MMMM - yyyy";
+            this.dtpSalaryMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalaryMonth.Location = new System.Drawing.Point(87, 45);
+            this.dtpSalaryMonth.Name = "dtpSalaryMonth";
+            this.dtpSalaryMonth.Size = new System.Drawing.Size(202, 20);
+            this.dtpSalaryMonth.TabIndex = 0;
             // 
             // btnPrintForm
             // 
@@ -338,7 +340,7 @@
         private System.Windows.Forms.TextBox txtFormNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpOvertimeDate;
+        private System.Windows.Forms.DateTimePicker dtpSalaryMonth;
         private System.Windows.Forms.Button btnPrintForm;
         private System.Windows.Forms.Button btnSubmit;
     }

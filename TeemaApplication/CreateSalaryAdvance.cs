@@ -125,8 +125,15 @@ namespace TeemaApplication
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            SalaryAdvance saladv = new SalaryAdvance
+            {
+                                
+            };
+
 
         }
+
+       
 
     }
 }
