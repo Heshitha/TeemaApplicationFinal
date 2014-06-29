@@ -128,14 +128,14 @@ namespace TeemaApplication
             SalaryAdvance saladv = new SalaryAdvance
             {
                 SalaryMonth = dtpSalaryMonth.Value,
-                RequestDate  = System.DateTime.Today,
-                Department =   (Department)cmbDepartment.SelectedItem,
+                RequestDate = System.DateTime.Today,
+                Department = (Department)cmbDepartment.SelectedItem,
 
                 CreatedBy = LoginDetails.LoggedUsedID,
                 CreatedDate = DateTime.Now,
                 ModifiedBy = LoginDetails.LoggedUsedID,
                 ModifiedDate = DateTime.Now
-          
+
             };
 
             db.SalaryAdvances.InsertOnSubmit(saladv);
@@ -163,10 +163,10 @@ namespace TeemaApplication
                         SalaryAdvanceEmployeeDetail saladvempdet = new SalaryAdvanceEmployeeDetail
                         {
                             SalaryAdvance = saladv,
-                            
+
                         };
 
-                      //  db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
+                        //  db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
                         db.SubmitChanges();
 
                     }
@@ -176,8 +176,7 @@ namespace TeemaApplication
                     }
                 }
             }
-
-
+        }
        
 
     }
