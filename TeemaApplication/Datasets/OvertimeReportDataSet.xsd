@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OvertimeReportDataSet" targetNamespace="http://tempuri.org/OvertimeReportDataSet.xsd" xmlns:mstns="http://tempuri.org/OvertimeReportDataSet.xsd" xmlns="http://tempuri.org/OvertimeReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OvertimeReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OvertimeReportDataSet" msprop:Generator_UserDSName="OvertimeReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OvertimeDetails" msprop:Generator_TableClassName="OvertimeDetailsDataTable" msprop:Generator_TableVarName="tableOvertimeDetails" msprop:Generator_RowChangedName="OvertimeDetailsRowChanged" msprop:Generator_TablePropName="OvertimeDetails" msprop:Generator_RowDeletingName="OvertimeDetailsRowDeleting" msprop:Generator_RowChangingName="OvertimeDetailsRowChanging" msprop:Generator_RowEvHandlerName="OvertimeDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="OvertimeDetailsRowDeleted" msprop:Generator_RowClassName="OvertimeDetailsRow" msprop:Generator_UserTableName="OvertimeDetails" msprop:Generator_RowEvArgName="OvertimeDetailsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" type="xs:int" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Week" msprop:Generator_ColumnVarNameInTable="columnWeek" msprop:Generator_ColumnPropNameInRow="Week" msprop:Generator_ColumnPropNameInTable="WeekColumn" msprop:Generator_UserColumnName="Week" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msprop:Generator_ColumnVarNameInTable="columnDay" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_UserColumnName="Day" type="xs:string" minOccurs="0" />
+              <xs:element name="Supervisor" msprop:Generator_ColumnVarNameInTable="columnSupervisor" msprop:Generator_ColumnPropNameInRow="Supervisor" msprop:Generator_ColumnPropNameInTable="SupervisorColumn" msprop:Generator_UserColumnName="Supervisor" type="xs:string" minOccurs="0" />
+              <xs:element name="Reason" msprop:Generator_ColumnVarNameInTable="columnReason" msprop:Generator_ColumnPropNameInRow="Reason" msprop:Generator_ColumnPropNameInTable="ReasonColumn" msprop:Generator_UserColumnName="Reason" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApprovedBy" msprop:Generator_ColumnVarNameInTable="columnApprovedBy" msprop:Generator_ColumnPropNameInRow="ApprovedBy" msprop:Generator_ColumnPropNameInTable="ApprovedByColumn" msprop:Generator_UserColumnName="ApprovedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OvertimeEmployeeDetails" msprop:Generator_TableClassName="OvertimeEmployeeDetailsDataTable" msprop:Generator_TableVarName="tableOvertimeEmployeeDetails" msprop:Generator_RowChangedName="OvertimeEmployeeDetailsRowChanged" msprop:Generator_TablePropName="OvertimeEmployeeDetails" msprop:Generator_RowDeletingName="OvertimeEmployeeDetailsRowDeleting" msprop:Generator_RowChangingName="OvertimeEmployeeDetailsRowChanging" msprop:Generator_RowEvHandlerName="OvertimeEmployeeDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="OvertimeEmployeeDetailsRowDeleted" msprop:Generator_RowClassName="OvertimeEmployeeDetailsRow" msprop:Generator_UserTableName="OvertimeEmployeeDetails" msprop:Generator_RowEvArgName="OvertimeEmployeeDetailsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FormNo" msprop:Generator_ColumnVarNameInTable="columnFormNo" msprop:Generator_ColumnPropNameInRow="FormNo" msprop:Generator_ColumnPropNameInTable="FormNoColumn" msprop:Generator_UserColumnName="FormNo" type="xs:int" minOccurs="0" />
+              <xs:element name="SerialNo" msprop:Generator_ColumnVarNameInTable="columnSerialNo" msprop:Generator_ColumnPropNameInRow="SerialNo" msprop:Generator_ColumnPropNameInTable="SerialNoColumn" msprop:Generator_UserColumnName="SerialNo" type="xs:int" minOccurs="0" />
+              <xs:element name="TokenNo" msprop:Generator_ColumnVarNameInTable="columnTokenNo" msprop:Generator_ColumnPropNameInRow="TokenNo" msprop:Generator_ColumnPropNameInTable="TokenNoColumn" msprop:Generator_UserColumnName="TokenNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Operation" msprop:Generator_ColumnVarNameInTable="columnOperation" msprop:Generator_ColumnPropNameInRow="Operation" msprop:Generator_ColumnPropNameInTable="OperationColumn" msprop:Generator_UserColumnName="Operation" type="xs:string" minOccurs="0" />
+              <xs:element name="NormalFrom" msprop:Generator_ColumnVarNameInTable="columnNormalFrom" msprop:Generator_ColumnPropNameInRow="NormalFrom" msprop:Generator_ColumnPropNameInTable="NormalFromColumn" msprop:Generator_UserColumnName="NormalFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShiftTo" msprop:Generator_ColumnVarNameInTable="columnShiftTo" msprop:Generator_ColumnPropNameInRow="ShiftTo" msprop:Generator_ColumnPropNameInTable="ShiftToColumn" msprop:Generator_UserColumnName="ShiftTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OTFrom" msprop:Generator_ColumnVarNameInTable="columnOTFrom" msprop:Generator_ColumnPropNameInRow="OTFrom" msprop:Generator_ColumnPropNameInTable="OTFromColumn" msprop:Generator_UserColumnName="OTFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OTTo" msprop:Generator_ColumnVarNameInTable="columnOTTo" msprop:Generator_ColumnPropNameInRow="OTTo" msprop:Generator_ColumnPropNameInTable="OTToColumn" msprop:Generator_UserColumnName="OTTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NoHrs" msprop:Generator_ColumnVarNameInTable="columnNoHrs" msprop:Generator_ColumnPropNameInRow="NoHrs" msprop:Generator_ColumnPropNameInTable="NoHrsColumn" msprop:Generator_UserColumnName="NoHrs" type="xs:double" minOccurs="0" />
+              <xs:element name="SecurityOfficerIn" msprop:Generator_ColumnVarNameInTable="columnSecurityOfficerIn" msprop:Generator_ColumnPropNameInRow="SecurityOfficerIn" msprop:Generator_ColumnPropNameInTable="SecurityOfficerInColumn" msprop:Generator_UserColumnName="SecurityOfficerIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SecurityOfficeOut" msprop:Generator_ColumnVarNameInTable="columnSecurityOfficeOut" msprop:Generator_ColumnPropNameInRow="SecurityOfficeOut" msprop:Generator_ColumnPropNameInTable="SecurityOfficeOutColumn" msprop:Generator_UserColumnName="SecurityOfficeOut" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

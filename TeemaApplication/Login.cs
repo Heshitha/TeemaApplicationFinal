@@ -18,6 +18,7 @@ namespace TeemaApplication
         public frmLogin()
         {
             InitializeComponent();
+            Utilities.fillBranchComboBox(db, cmbBranch);
         }
 
         public DialogResult ShowDialog(bool flag)
@@ -31,6 +32,7 @@ namespace TeemaApplication
                     LoginDetails.LoggedUserName = useraccount.Name;
                     LoginDetails.LoggedUsedID = useraccount.UserID;
                     LoginDetails.Priviledge = useraccount.Priviledge;
+                    LoginDetails.Branch = (Branch)cmbBranch.SelectedItem;
                 }
                 else
                 {

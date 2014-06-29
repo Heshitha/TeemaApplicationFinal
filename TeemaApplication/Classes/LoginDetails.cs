@@ -11,5 +11,6 @@ namespace TeemaApplication.Classes
         public static int LoggedUsedID = 0;
         public static string LoggedUserName = "";
         public static int Priviledge = 0;
+        public static Datasets.Branch Branch = null;
     }
 }

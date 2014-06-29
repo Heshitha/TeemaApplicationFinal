@@ -30,33 +30,43 @@
         {
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.gbxSearchCatagory = new System.Windows.Forms.GroupBox();
-            this.cmbSubDepartment = new System.Windows.Forms.ComboBox();
-            this.rdbSearchBySubDepartment = new System.Windows.Forms.RadioButton();
-            this.cmbDepartment = new System.Windows.Forms.ComboBox();
-            this.rdbSearchByDepartment = new System.Windows.Forms.RadioButton();
-            this.cmbBranch = new System.Windows.Forms.ComboBox();
-            this.rdbSearchByBranch = new System.Windows.Forms.RadioButton();
-            this.rdbAllEmployees = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpOvertimeDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtFormNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtReason = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSupervisor = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDay = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtWeek = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpOvertimeDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.gbxSearchCatagory.SuspendLayout();
+            this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOperation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnStartFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnShiftTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOTFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnOTTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnPrintForm = new System.Windows.Forms.Button();
+            this.gbxDepartmentDetails = new System.Windows.Forms.GroupBox();
+            this.chbSearchFromSubDepartment = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbSubDepartment = new System.Windows.Forms.ComboBox();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
+            this.lblWorkingBranch = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
+            this.gbxDepartmentDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFormTopic
@@ -79,208 +89,41 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(491, 12);
+            this.btnClose.Location = new System.Drawing.Point(821, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 26;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // gbxSearchCatagory
-            // 
-            this.gbxSearchCatagory.Controls.Add(this.cmbSubDepartment);
-            this.gbxSearchCatagory.Controls.Add(this.rdbSearchBySubDepartment);
-            this.gbxSearchCatagory.Controls.Add(this.cmbDepartment);
-            this.gbxSearchCatagory.Controls.Add(this.rdbSearchByDepartment);
-            this.gbxSearchCatagory.Controls.Add(this.cmbBranch);
-            this.gbxSearchCatagory.Controls.Add(this.rdbSearchByBranch);
-            this.gbxSearchCatagory.Controls.Add(this.rdbAllEmployees);
-            this.gbxSearchCatagory.Location = new System.Drawing.Point(12, 43);
-            this.gbxSearchCatagory.Name = "gbxSearchCatagory";
-            this.gbxSearchCatagory.Size = new System.Drawing.Size(208, 193);
-            this.gbxSearchCatagory.TabIndex = 27;
-            this.gbxSearchCatagory.TabStop = false;
-            this.gbxSearchCatagory.Text = "Search Catagory";
-            // 
-            // cmbSubDepartment
-            // 
-            this.cmbSubDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubDepartment.FormattingEnabled = true;
-            this.cmbSubDepartment.Location = new System.Drawing.Point(6, 165);
-            this.cmbSubDepartment.Name = "cmbSubDepartment";
-            this.cmbSubDepartment.Size = new System.Drawing.Size(196, 21);
-            this.cmbSubDepartment.TabIndex = 6;
-            // 
-            // rdbSearchBySubDepartment
-            // 
-            this.rdbSearchBySubDepartment.AutoSize = true;
-            this.rdbSearchBySubDepartment.Location = new System.Drawing.Point(6, 142);
-            this.rdbSearchBySubDepartment.Name = "rdbSearchBySubDepartment";
-            this.rdbSearchBySubDepartment.Size = new System.Drawing.Size(154, 17);
-            this.rdbSearchBySubDepartment.TabIndex = 5;
-            this.rdbSearchBySubDepartment.TabStop = true;
-            this.rdbSearchBySubDepartment.Text = "Search By Sub Department";
-            this.rdbSearchBySubDepartment.UseVisualStyleBackColor = true;
-            // 
-            // cmbDepartment
-            // 
-            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Location = new System.Drawing.Point(6, 115);
-            this.cmbDepartment.Name = "cmbDepartment";
-            this.cmbDepartment.Size = new System.Drawing.Size(196, 21);
-            this.cmbDepartment.TabIndex = 4;
-            // 
-            // rdbSearchByDepartment
-            // 
-            this.rdbSearchByDepartment.AutoSize = true;
-            this.rdbSearchByDepartment.Location = new System.Drawing.Point(6, 92);
-            this.rdbSearchByDepartment.Name = "rdbSearchByDepartment";
-            this.rdbSearchByDepartment.Size = new System.Drawing.Size(132, 17);
-            this.rdbSearchByDepartment.TabIndex = 3;
-            this.rdbSearchByDepartment.TabStop = true;
-            this.rdbSearchByDepartment.Text = "Search By Department";
-            this.rdbSearchByDepartment.UseVisualStyleBackColor = true;
-            // 
-            // cmbBranch
-            // 
-            this.cmbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBranch.FormattingEnabled = true;
-            this.cmbBranch.Location = new System.Drawing.Point(6, 65);
-            this.cmbBranch.Name = "cmbBranch";
-            this.cmbBranch.Size = new System.Drawing.Size(196, 21);
-            this.cmbBranch.TabIndex = 2;
-            // 
-            // rdbSearchByBranch
-            // 
-            this.rdbSearchByBranch.AutoSize = true;
-            this.rdbSearchByBranch.Location = new System.Drawing.Point(6, 42);
-            this.rdbSearchByBranch.Name = "rdbSearchByBranch";
-            this.rdbSearchByBranch.Size = new System.Drawing.Size(111, 17);
-            this.rdbSearchByBranch.TabIndex = 1;
-            this.rdbSearchByBranch.TabStop = true;
-            this.rdbSearchByBranch.Text = "Search By Branch";
-            this.rdbSearchByBranch.UseVisualStyleBackColor = true;
-            // 
-            // rdbAllEmployees
-            // 
-            this.rdbAllEmployees.AutoSize = true;
-            this.rdbAllEmployees.Checked = true;
-            this.rdbAllEmployees.Location = new System.Drawing.Point(6, 19);
-            this.rdbAllEmployees.Name = "rdbAllEmployees";
-            this.rdbAllEmployees.Size = new System.Drawing.Size(90, 17);
-            this.rdbAllEmployees.TabIndex = 0;
-            this.rdbAllEmployees.TabStop = true;
-            this.rdbAllEmployees.Text = "All Employees";
-            this.rdbAllEmployees.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtFormNo);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtReason);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtSupervisor);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDay);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtWeek);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpOvertimeDate);
-            this.groupBox1.Location = new System.Drawing.Point(226, 43);
+            this.groupBox1.Location = new System.Drawing.Point(12, 174);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(295, 176);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overtime Details";
             // 
-            // dtpOvertimeDate
+            // txtFormNo
             // 
-            this.dtpOvertimeDate.Location = new System.Drawing.Point(87, 45);
-            this.dtpOvertimeDate.Name = "dtpOvertimeDate";
-            this.dtpOvertimeDate.Size = new System.Drawing.Size(202, 20);
-            this.dtpOvertimeDate.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Overtime Date";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Week";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(87, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Day";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(87, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Supervisor";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(87, 149);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(202, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Reason";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(87, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 20);
-            this.textBox5.TabIndex = 12;
+            this.txtFormNo.Location = new System.Drawing.Point(87, 19);
+            this.txtFormNo.Name = "txtFormNo";
+            this.txtFormNo.ReadOnly = true;
+            this.txtFormNo.Size = new System.Drawing.Size(202, 20);
+            this.txtFormNo.TabIndex = 12;
             // 
             // label6
             // 
@@ -291,53 +134,294 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Form No";
             // 
+            // txtReason
+            // 
+            this.txtReason.Location = new System.Drawing.Point(87, 149);
+            this.txtReason.Name = "txtReason";
+            this.txtReason.Size = new System.Drawing.Size(202, 20);
+            this.txtReason.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Reason";
+            // 
+            // txtSupervisor
+            // 
+            this.txtSupervisor.Location = new System.Drawing.Point(87, 123);
+            this.txtSupervisor.Name = "txtSupervisor";
+            this.txtSupervisor.Size = new System.Drawing.Size(202, 20);
+            this.txtSupervisor.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Supervisor";
+            // 
+            // txtDay
+            // 
+            this.txtDay.Location = new System.Drawing.Point(87, 97);
+            this.txtDay.Name = "txtDay";
+            this.txtDay.ReadOnly = true;
+            this.txtDay.Size = new System.Drawing.Size(202, 20);
+            this.txtDay.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Day";
+            // 
+            // txtWeek
+            // 
+            this.txtWeek.Location = new System.Drawing.Point(87, 71);
+            this.txtWeek.Name = "txtWeek";
+            this.txtWeek.ReadOnly = true;
+            this.txtWeek.Size = new System.Drawing.Size(202, 20);
+            this.txtWeek.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Week";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Overtime Date";
+            // 
+            // dtpOvertimeDate
+            // 
+            this.dtpOvertimeDate.Location = new System.Drawing.Point(87, 45);
+            this.dtpOvertimeDate.Name = "dtpOvertimeDate";
+            this.dtpOvertimeDate.Size = new System.Drawing.Size(202, 20);
+            this.dtpOvertimeDate.TabIndex = 0;
+            this.dtpOvertimeDate.ValueChanged += new System.EventHandler(this.dtpOvertimeDate_ValueChanged);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(12, 242);
+            this.groupBox2.Controls.Add(this.dgvEmployeeDetails);
+            this.groupBox2.Location = new System.Drawing.Point(313, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(509, 246);
+            this.groupBox2.Size = new System.Drawing.Size(538, 307);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employees";
             // 
-            // button1
+            // dgvEmployeeDetails
             // 
-            this.button1.Location = new System.Drawing.Point(284, 496);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvEmployeeDetails.AllowUserToAddRows = false;
+            this.dgvEmployeeDetails.AllowUserToDeleteRows = false;
+            this.dgvEmployeeDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeeDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnEntitled,
+            this.clmnTokenNo,
+            this.clmnEmployeeName,
+            this.clmnOperation,
+            this.clmnStartFrom,
+            this.clmnShiftTo,
+            this.clmnOTFrom,
+            this.clmnOTTo});
+            this.dgvEmployeeDetails.Location = new System.Drawing.Point(6, 19);
+            this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
+            this.dgvEmployeeDetails.RowHeadersVisible = false;
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(526, 282);
+            this.dgvEmployeeDetails.TabIndex = 0;
             // 
-            // button2
+            // clmnEntitled
             // 
-            this.button2.Location = new System.Drawing.Point(446, 496);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
+            this.clmnEntitled.DataPropertyName = "Entitled";
+            this.clmnEntitled.FalseValue = "False";
+            this.clmnEntitled.HeaderText = "Entitled";
+            this.clmnEntitled.Name = "clmnEntitled";
+            this.clmnEntitled.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnEntitled.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clmnEntitled.TrueValue = "True";
             // 
-            // button3
+            // clmnTokenNo
             // 
-            this.button3.Location = new System.Drawing.Point(365, 496);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Print Form";
-            this.button3.UseVisualStyleBackColor = true;
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnEmployeeName
+            // 
+            this.clmnEmployeeName.DataPropertyName = "Name";
+            this.clmnEmployeeName.HeaderText = "Name";
+            this.clmnEmployeeName.Name = "clmnEmployeeName";
+            // 
+            // clmnOperation
+            // 
+            this.clmnOperation.DataPropertyName = "Operation";
+            this.clmnOperation.HeaderText = "Operation";
+            this.clmnOperation.Name = "clmnOperation";
+            // 
+            // clmnStartFrom
+            // 
+            this.clmnStartFrom.DataPropertyName = "StartFrom";
+            this.clmnStartFrom.HeaderText = "Start From";
+            this.clmnStartFrom.Name = "clmnStartFrom";
+            // 
+            // clmnShiftTo
+            // 
+            this.clmnShiftTo.DataPropertyName = "ShiftTo";
+            this.clmnShiftTo.HeaderText = "Shift To";
+            this.clmnShiftTo.Name = "clmnShiftTo";
+            // 
+            // clmnOTFrom
+            // 
+            this.clmnOTFrom.DataPropertyName = "OTFrom";
+            this.clmnOTFrom.HeaderText = "OT From";
+            this.clmnOTFrom.Name = "clmnOTFrom";
+            // 
+            // clmnOTTo
+            // 
+            this.clmnOTTo.DataPropertyName = "OTTo";
+            this.clmnOTTo.HeaderText = "OT To";
+            this.clmnOTTo.Name = "clmnOTTo";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(695, 358);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 30;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnPrintForm
+            // 
+            this.btnPrintForm.Enabled = false;
+            this.btnPrintForm.Location = new System.Drawing.Point(776, 358);
+            this.btnPrintForm.Name = "btnPrintForm";
+            this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintForm.TabIndex = 32;
+            this.btnPrintForm.Text = "Print Form";
+            this.btnPrintForm.UseVisualStyleBackColor = true;
+            this.btnPrintForm.Click += new System.EventHandler(this.btnPrintForm_Click);
+            // 
+            // gbxDepartmentDetails
+            // 
+            this.gbxDepartmentDetails.BackColor = System.Drawing.SystemColors.Control;
+            this.gbxDepartmentDetails.Controls.Add(this.chbSearchFromSubDepartment);
+            this.gbxDepartmentDetails.Controls.Add(this.label7);
+            this.gbxDepartmentDetails.Controls.Add(this.cmbSubDepartment);
+            this.gbxDepartmentDetails.Controls.Add(this.lblDepartment);
+            this.gbxDepartmentDetails.Controls.Add(this.cmbDepartment);
+            this.gbxDepartmentDetails.Controls.Add(this.cmbWorkingBranch);
+            this.gbxDepartmentDetails.Controls.Add(this.lblWorkingBranch);
+            this.gbxDepartmentDetails.Location = new System.Drawing.Point(12, 43);
+            this.gbxDepartmentDetails.Name = "gbxDepartmentDetails";
+            this.gbxDepartmentDetails.Size = new System.Drawing.Size(295, 125);
+            this.gbxDepartmentDetails.TabIndex = 33;
+            this.gbxDepartmentDetails.TabStop = false;
+            this.gbxDepartmentDetails.Text = "Department Details";
+            // 
+            // chbSearchFromSubDepartment
+            // 
+            this.chbSearchFromSubDepartment.AutoSize = true;
+            this.chbSearchFromSubDepartment.Location = new System.Drawing.Point(96, 74);
+            this.chbSearchFromSubDepartment.Name = "chbSearchFromSubDepartment";
+            this.chbSearchFromSubDepartment.Size = new System.Drawing.Size(166, 17);
+            this.chbSearchFromSubDepartment.TabIndex = 6;
+            this.chbSearchFromSubDepartment.Text = "Search From Sub Department";
+            this.chbSearchFromSubDepartment.UseVisualStyleBackColor = true;
+            this.chbSearchFromSubDepartment.CheckedChanged += new System.EventHandler(this.chbSearchFromSubDepartment_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Sub Department";
+            // 
+            // cmbSubDepartment
+            // 
+            this.cmbSubDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSubDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSubDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubDepartment.Enabled = false;
+            this.cmbSubDepartment.FormattingEnabled = true;
+            this.cmbSubDepartment.Location = new System.Drawing.Point(96, 97);
+            this.cmbSubDepartment.Name = "cmbSubDepartment";
+            this.cmbSubDepartment.Size = new System.Drawing.Size(193, 21);
+            this.cmbSubDepartment.TabIndex = 3;
+            this.cmbSubDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbSubDepartment_SelectedIndexChanged);
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Location = new System.Drawing.Point(6, 50);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(62, 13);
+            this.lblDepartment.TabIndex = 3;
+            this.lblDepartment.Text = "Department";
+            // 
+            // cmbDepartment
+            // 
+            this.cmbDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Location = new System.Drawing.Point(96, 47);
+            this.cmbDepartment.Name = "cmbDepartment";
+            this.cmbDepartment.Size = new System.Drawing.Size(193, 21);
+            this.cmbDepartment.TabIndex = 2;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
+            // 
+            // cmbWorkingBranch
+            // 
+            this.cmbWorkingBranch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbWorkingBranch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbWorkingBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWorkingBranch.FormattingEnabled = true;
+            this.cmbWorkingBranch.Location = new System.Drawing.Point(96, 19);
+            this.cmbWorkingBranch.Name = "cmbWorkingBranch";
+            this.cmbWorkingBranch.Size = new System.Drawing.Size(193, 21);
+            this.cmbWorkingBranch.TabIndex = 1;
+            this.cmbWorkingBranch.SelectedIndexChanged += new System.EventHandler(this.cmbWorkingBranch_SelectedIndexChanged);
+            // 
+            // lblWorkingBranch
+            // 
+            this.lblWorkingBranch.AutoSize = true;
+            this.lblWorkingBranch.Location = new System.Drawing.Point(6, 22);
+            this.lblWorkingBranch.Name = "lblWorkingBranch";
+            this.lblWorkingBranch.Size = new System.Drawing.Size(84, 13);
+            this.lblWorkingBranch.TabIndex = 0;
+            this.lblWorkingBranch.Text = "Working Branch";
             // 
             // frmCreateOverTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 531);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(863, 393);
+            this.Controls.Add(this.gbxDepartmentDetails);
+            this.Controls.Add(this.btnPrintForm);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gbxSearchCatagory);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblFormTopic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -345,10 +429,12 @@
             this.Text = "Create Over Time Request";
             this.Load += new System.EventHandler(this.frmCreateOverTime_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCreateOverTime_MouseDown);
-            this.gbxSearchCatagory.ResumeLayout(false);
-            this.gbxSearchCatagory.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).EndInit();
+            this.gbxDepartmentDetails.ResumeLayout(false);
+            this.gbxDepartmentDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,30 +444,38 @@
 
         private System.Windows.Forms.Label lblFormTopic;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.GroupBox gbxSearchCatagory;
-        private System.Windows.Forms.ComboBox cmbSubDepartment;
-        private System.Windows.Forms.RadioButton rdbSearchBySubDepartment;
-        private System.Windows.Forms.ComboBox cmbDepartment;
-        private System.Windows.Forms.RadioButton rdbSearchByDepartment;
-        private System.Windows.Forms.ComboBox cmbBranch;
-        private System.Windows.Forms.RadioButton rdbSearchByBranch;
-        private System.Windows.Forms.RadioButton rdbAllEmployees;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtFormNo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSupervisor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtWeek;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpOvertimeDate;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnPrintForm;
+        private System.Windows.Forms.GroupBox gbxDepartmentDetails;
+        private System.Windows.Forms.CheckBox chbSearchFromSubDepartment;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbSubDepartment;
+        private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.ComboBox cmbWorkingBranch;
+        private System.Windows.Forms.Label lblWorkingBranch;
+        private System.Windows.Forms.DataGridView dgvEmployeeDetails;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clmnEntitled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOperation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnStartFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnShiftTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnOTTo;
     }
 }

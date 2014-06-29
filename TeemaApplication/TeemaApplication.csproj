@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\OvertimeReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +130,12 @@
       <DependentUpon>EmployeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\OverTimeRequestForm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OverTimeRequestForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +173,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OverTimeRequestForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OverTimeRequestForm.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +193,17 @@
     </None>
     <None Include="Datasets\EmployeeDataSet.xss">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\OvertimeReportDataSet.xsc">
+      <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\OvertimeReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OvertimeReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\OvertimeReportDataSet.xss">
+      <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>

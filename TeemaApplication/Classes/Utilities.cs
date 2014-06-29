@@ -41,6 +41,11 @@ namespace TeemaApplication.Classes
             comboBox.DisplayMember = "BranchName";
             comboBox.ValueMember = "BranchID";
             comboBox.DataSource = db.Branches;
+
+            if (LoginDetails.Branch != null)
+            {
+                comboBox.Text = LoginDetails.Branch.BranchName;
+            }
         }
 
         public static void fillDepartmentComboBox(Branch branch, ComboBox comboBox)
