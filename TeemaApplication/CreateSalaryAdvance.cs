@@ -163,10 +163,17 @@ namespace TeemaApplication
                         SalaryAdvanceEmployeeDetail saladvempdet = new SalaryAdvanceEmployeeDetail
                         {
                             SalaryAdvance = saladv,
+                            Employee = employee,
+
+                            CreatedBy = LoginDetails.LoggedUsedID,
+                            CreatedDate = DateTime.Now,
+                            ModifiedBy = LoginDetails.LoggedUsedID,
+                            ModifiedDate = DateTime.Now
+
 
                         };
 
-                        //  db.OvertimeEmployeeDetails.InsertOnSubmit(overEmpDet);
+                        db.SalaryAdvanceEmployeeDetails.InsertOnSubmit(saladvempdet);
                         db.SubmitChanges();
 
                     }
