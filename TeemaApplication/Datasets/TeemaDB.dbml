@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TeemaFinalDB" Class="TeemaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;User ID=TeemaApplication" SettingsObjectName="TeemaApplication.Properties.Settings" SettingsPropertyName="TeemaFinalDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;Persist Security Info=True;User ID=TeemaApplication" SettingsObjectName="TeemaApplication.Properties.Settings" SettingsPropertyName="TeemaFinalDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Branch" Member="Branches">
     <Type Name="Branch">
       <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -25,6 +25,7 @@
       <Association Name="Department_Employee" Member="Employees" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Employee" />
       <Association Name="Department_SubDepartment" Member="SubDepartments" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="SubDepartment" />
       <Association Name="Department_SalaryAdvance" Member="SalaryAdvances" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="SalaryAdvance" />
+      <Association Name="Department_PieceRateDetail" Member="PieceRateDetails" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="PieceRateDetail" />
       <Association Name="Branch_Department" Member="Branch" ThisKey="BranchID" OtherKey="BranchID" Type="Branch" IsForeignKey="true" />
       <Association Name="UserAccount_Department" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_Department1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
@@ -69,6 +70,8 @@
       <Association Name="Employee_VariableIncentiveAllowance" Member="VariableIncentiveAllowances" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="VariableIncentiveAllowance" />
       <Association Name="Employee_OvertimeEmployeeDetail" Member="OvertimeEmployeeDetails" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="OvertimeEmployeeDetail" />
       <Association Name="Employee_SalaryAdvanceEmployeeDetail" Member="SalaryAdvanceEmployeeDetails" ThisKey="EmployeeID" OtherKey="EmpID" Type="SalaryAdvanceEmployeeDetail" />
+      <Association Name="Employee_AvaragePieceRateForEmployee" Member="AvaragePieceRateForEmployees" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="AvaragePieceRateForEmployee" />
+      <Association Name="Employee_EnteredPieceRateForEmployee" Member="EnteredPieceRateForEmployees" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="EnteredPieceRateForEmployee" />
       <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
       <Association Name="Designation_Employee" Member="Designation" ThisKey="DesignationID" OtherKey="DesignationID" Type="Designation" IsForeignKey="true" />
       <Association Name="SubDepartment_Employee" Member="SubDepartment" ThisKey="SubDepartmentID" OtherKey="SubDepartmentID" Type="SubDepartment" IsForeignKey="true" />
@@ -138,6 +141,8 @@
       <Association Name="UserAccount_SalaryAdvance1" Member="SalaryAdvances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryAdvance" />
       <Association Name="UserAccount_SalaryAdvanceEmployeeDetail" Member="SalaryAdvanceEmployeeDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="SalaryAdvanceEmployeeDetail" />
       <Association Name="UserAccount_SalaryAdvanceEmployeeDetail1" Member="SalaryAdvanceEmployeeDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryAdvanceEmployeeDetail" />
+      <Association Name="UserAccount_PieceRateDetail" Member="PieceRateDetails" ThisKey="UserID" OtherKey="CreatedBy" Type="PieceRateDetail" />
+      <Association Name="UserAccount_PieceRateDetail1" Member="PieceRateDetails1" ThisKey="UserID" OtherKey="ModifiedBy" Type="PieceRateDetail" />
     </Type>
   </Table>
   <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
@@ -248,6 +253,44 @@
       <Association Name="SalaryAdvance_SalaryAdvanceEmployeeDetail" Member="SalaryAdvance" ThisKey="SalaryAdvanceID" OtherKey="SalaryAdvanceID" Type="SalaryAdvance" IsForeignKey="true" />
       <Association Name="UserAccount_SalaryAdvanceEmployeeDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_SalaryAdvanceEmployeeDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PieceRateDetails" Member="PieceRateDetails">
+    <Type Name="PieceRateDetail">
+      <Column Name="PieceRateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Catagory" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MeasuredUnit" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UnitRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PieceRateDetail_AvaragePieceRateForEmployee" Member="AvaragePieceRateForEmployees" ThisKey="PieceRateID" OtherKey="PieceRateID" Type="AvaragePieceRateForEmployee" />
+      <Association Name="PieceRateDetail_EnteredPieceRateForEmployee" Member="EnteredPieceRateForEmployees" ThisKey="PieceRateID" OtherKey="PieceRateID" Type="EnteredPieceRateForEmployee" />
+      <Association Name="Department_PieceRateDetail" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
+      <Association Name="UserAccount_PieceRateDetail" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_PieceRateDetail1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AvaragePieceRateForEmployees" Member="AvaragePieceRateForEmployees">
+    <Type Name="AvaragePieceRateForEmployee">
+      <Column Name="APRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PieceRateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_AvaragePieceRateForEmployee" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="PieceRateDetail_AvaragePieceRateForEmployee" Member="PieceRateDetail" ThisKey="PieceRateID" OtherKey="PieceRateID" Type="PieceRateDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnteredPieceRateForEmployees" Member="EnteredPieceRateForEmployees">
+    <Type Name="EnteredPieceRateForEmployee">
+      <Column Name="EPRID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PieceRateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PieceQty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_EnteredPieceRateForEmployee" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="PieceRateDetail_EnteredPieceRateForEmployee" Member="PieceRateDetail" ThisKey="PieceRateID" OtherKey="PieceRateID" Type="PieceRateDetail" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

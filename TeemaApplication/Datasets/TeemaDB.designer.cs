@@ -69,6 +69,15 @@ namespace TeemaApplication.Datasets
     partial void InsertSalaryAdvanceEmployeeDetail(SalaryAdvanceEmployeeDetail instance);
     partial void UpdateSalaryAdvanceEmployeeDetail(SalaryAdvanceEmployeeDetail instance);
     partial void DeleteSalaryAdvanceEmployeeDetail(SalaryAdvanceEmployeeDetail instance);
+    partial void InsertPieceRateDetail(PieceRateDetail instance);
+    partial void UpdatePieceRateDetail(PieceRateDetail instance);
+    partial void DeletePieceRateDetail(PieceRateDetail instance);
+    partial void InsertAvaragePieceRateForEmployee(AvaragePieceRateForEmployee instance);
+    partial void UpdateAvaragePieceRateForEmployee(AvaragePieceRateForEmployee instance);
+    partial void DeleteAvaragePieceRateForEmployee(AvaragePieceRateForEmployee instance);
+    partial void InsertEnteredPieceRateForEmployee(EnteredPieceRateForEmployee instance);
+    partial void UpdateEnteredPieceRateForEmployee(EnteredPieceRateForEmployee instance);
+    partial void DeleteEnteredPieceRateForEmployee(EnteredPieceRateForEmployee instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -202,6 +211,30 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<SalaryAdvanceEmployeeDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PieceRateDetail> PieceRateDetails
+		{
+			get
+			{
+				return this.GetTable<PieceRateDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AvaragePieceRateForEmployee> AvaragePieceRateForEmployees
+		{
+			get
+			{
+				return this.GetTable<AvaragePieceRateForEmployee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EnteredPieceRateForEmployee> EnteredPieceRateForEmployees
+		{
+			get
+			{
+				return this.GetTable<EnteredPieceRateForEmployee>();
 			}
 		}
 	}
@@ -524,6 +557,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<SalaryAdvance> _SalaryAdvances;
 		
+		private EntitySet<PieceRateDetail> _PieceRateDetails;
+		
 		private EntityRef<Branch> _Branch;
 		
 		private EntityRef<UserAccount> _UserAccount;
@@ -555,6 +590,7 @@ namespace TeemaApplication.Datasets
 			this._Employees = new EntitySet<Employee>(new Action<Employee>(this.attach_Employees), new Action<Employee>(this.detach_Employees));
 			this._SubDepartments = new EntitySet<SubDepartment>(new Action<SubDepartment>(this.attach_SubDepartments), new Action<SubDepartment>(this.detach_SubDepartments));
 			this._SalaryAdvances = new EntitySet<SalaryAdvance>(new Action<SalaryAdvance>(this.attach_SalaryAdvances), new Action<SalaryAdvance>(this.detach_SalaryAdvances));
+			this._PieceRateDetails = new EntitySet<PieceRateDetail>(new Action<PieceRateDetail>(this.attach_PieceRateDetails), new Action<PieceRateDetail>(this.detach_PieceRateDetails));
 			this._Branch = default(EntityRef<Branch>);
 			this._UserAccount = default(EntityRef<UserAccount>);
 			this._UserAccount1 = default(EntityRef<UserAccount>);
@@ -752,6 +788,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_PieceRateDetail", Storage="_PieceRateDetails", ThisKey="DepartmentID", OtherKey="DepartmentID")]
+		public EntitySet<PieceRateDetail> PieceRateDetails
+		{
+			get
+			{
+				return this._PieceRateDetails;
+			}
+			set
+			{
+				this._PieceRateDetails.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_Department", Storage="_Branch", ThisKey="BranchID", OtherKey="BranchID", IsForeignKey=true)]
 		public Branch Branch
 		{
@@ -905,6 +954,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_SalaryAdvances(SalaryAdvance entity)
+		{
+			this.SendPropertyChanging();
+			entity.Department = null;
+		}
+		
+		private void attach_PieceRateDetails(PieceRateDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Department = this;
+		}
+		
+		private void detach_PieceRateDetails(PieceRateDetail entity)
 		{
 			this.SendPropertyChanging();
 			entity.Department = null;
@@ -1257,6 +1318,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<SalaryAdvanceEmployeeDetail> _SalaryAdvanceEmployeeDetails;
 		
+		private EntitySet<AvaragePieceRateForEmployee> _AvaragePieceRateForEmployees;
+		
+		private EntitySet<EnteredPieceRateForEmployee> _EnteredPieceRateForEmployees;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1318,6 +1383,8 @@ namespace TeemaApplication.Datasets
 			this._VariableIncentiveAllowances = new EntitySet<VariableIncentiveAllowance>(new Action<VariableIncentiveAllowance>(this.attach_VariableIncentiveAllowances), new Action<VariableIncentiveAllowance>(this.detach_VariableIncentiveAllowances));
 			this._OvertimeEmployeeDetails = new EntitySet<OvertimeEmployeeDetail>(new Action<OvertimeEmployeeDetail>(this.attach_OvertimeEmployeeDetails), new Action<OvertimeEmployeeDetail>(this.detach_OvertimeEmployeeDetails));
 			this._SalaryAdvanceEmployeeDetails = new EntitySet<SalaryAdvanceEmployeeDetail>(new Action<SalaryAdvanceEmployeeDetail>(this.attach_SalaryAdvanceEmployeeDetails), new Action<SalaryAdvanceEmployeeDetail>(this.detach_SalaryAdvanceEmployeeDetails));
+			this._AvaragePieceRateForEmployees = new EntitySet<AvaragePieceRateForEmployee>(new Action<AvaragePieceRateForEmployee>(this.attach_AvaragePieceRateForEmployees), new Action<AvaragePieceRateForEmployee>(this.detach_AvaragePieceRateForEmployees));
+			this._EnteredPieceRateForEmployees = new EntitySet<EnteredPieceRateForEmployee>(new Action<EnteredPieceRateForEmployee>(this.attach_EnteredPieceRateForEmployees), new Action<EnteredPieceRateForEmployee>(this.detach_EnteredPieceRateForEmployees));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -1807,6 +1874,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_AvaragePieceRateForEmployee", Storage="_AvaragePieceRateForEmployees", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<AvaragePieceRateForEmployee> AvaragePieceRateForEmployees
+		{
+			get
+			{
+				return this._AvaragePieceRateForEmployees;
+			}
+			set
+			{
+				this._AvaragePieceRateForEmployees.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EnteredPieceRateForEmployee", Storage="_EnteredPieceRateForEmployees", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<EnteredPieceRateForEmployee> EnteredPieceRateForEmployees
+		{
+			get
+			{
+				return this._EnteredPieceRateForEmployees;
+			}
+			set
+			{
+				this._EnteredPieceRateForEmployees.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2040,6 +2133,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_SalaryAdvanceEmployeeDetails(SalaryAdvanceEmployeeDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_AvaragePieceRateForEmployees(AvaragePieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_AvaragePieceRateForEmployees(AvaragePieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_EnteredPieceRateForEmployees(EnteredPieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_EnteredPieceRateForEmployees(EnteredPieceRateForEmployee entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -2822,6 +2939,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<SalaryAdvanceEmployeeDetail> _SalaryAdvanceEmployeeDetails1;
 		
+		private EntitySet<PieceRateDetail> _PieceRateDetails;
+		
+		private EntitySet<PieceRateDetail> _PieceRateDetails1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2865,6 +2986,8 @@ namespace TeemaApplication.Datasets
 			this._SalaryAdvances1 = new EntitySet<SalaryAdvance>(new Action<SalaryAdvance>(this.attach_SalaryAdvances1), new Action<SalaryAdvance>(this.detach_SalaryAdvances1));
 			this._SalaryAdvanceEmployeeDetails = new EntitySet<SalaryAdvanceEmployeeDetail>(new Action<SalaryAdvanceEmployeeDetail>(this.attach_SalaryAdvanceEmployeeDetails), new Action<SalaryAdvanceEmployeeDetail>(this.detach_SalaryAdvanceEmployeeDetails));
 			this._SalaryAdvanceEmployeeDetails1 = new EntitySet<SalaryAdvanceEmployeeDetail>(new Action<SalaryAdvanceEmployeeDetail>(this.attach_SalaryAdvanceEmployeeDetails1), new Action<SalaryAdvanceEmployeeDetail>(this.detach_SalaryAdvanceEmployeeDetails1));
+			this._PieceRateDetails = new EntitySet<PieceRateDetail>(new Action<PieceRateDetail>(this.attach_PieceRateDetails), new Action<PieceRateDetail>(this.detach_PieceRateDetails));
+			this._PieceRateDetails1 = new EntitySet<PieceRateDetail>(new Action<PieceRateDetail>(this.attach_PieceRateDetails1), new Action<PieceRateDetail>(this.detach_PieceRateDetails1));
 			OnCreated();
 		}
 		
@@ -3293,6 +3416,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PieceRateDetail", Storage="_PieceRateDetails", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<PieceRateDetail> PieceRateDetails
+		{
+			get
+			{
+				return this._PieceRateDetails;
+			}
+			set
+			{
+				this._PieceRateDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PieceRateDetail1", Storage="_PieceRateDetails1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<PieceRateDetail> PieceRateDetails1
+		{
+			get
+			{
+				return this._PieceRateDetails1;
+			}
+			set
+			{
+				this._PieceRateDetails1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3608,6 +3757,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_SalaryAdvanceEmployeeDetails1(SalaryAdvanceEmployeeDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_PieceRateDetails(PieceRateDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_PieceRateDetails(PieceRateDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_PieceRateDetails1(PieceRateDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_PieceRateDetails1(PieceRateDetail entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
@@ -6229,6 +6402,871 @@ namespace TeemaApplication.Datasets
 						this._ModifiedBy = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PieceRateDetails")]
+	public partial class PieceRateDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PieceRateID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Catagory;
+		
+		private string _MeasuredUnit;
+		
+		private System.Nullable<double> _UnitRate;
+		
+		private System.Nullable<int> _DepartmentID;
+		
+		private System.Nullable<int> _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private EntitySet<AvaragePieceRateForEmployee> _AvaragePieceRateForEmployees;
+		
+		private EntitySet<EnteredPieceRateForEmployee> _EnteredPieceRateForEmployees;
+		
+		private EntityRef<Department> _Department;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPieceRateIDChanging(int value);
+    partial void OnPieceRateIDChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnCatagoryChanging(string value);
+    partial void OnCatagoryChanged();
+    partial void OnMeasuredUnitChanging(string value);
+    partial void OnMeasuredUnitChanged();
+    partial void OnUnitRateChanging(System.Nullable<double> value);
+    partial void OnUnitRateChanged();
+    partial void OnDepartmentIDChanging(System.Nullable<int> value);
+    partial void OnDepartmentIDChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(System.Nullable<int> value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public PieceRateDetail()
+		{
+			this._AvaragePieceRateForEmployees = new EntitySet<AvaragePieceRateForEmployee>(new Action<AvaragePieceRateForEmployee>(this.attach_AvaragePieceRateForEmployees), new Action<AvaragePieceRateForEmployee>(this.detach_AvaragePieceRateForEmployees));
+			this._EnteredPieceRateForEmployees = new EntitySet<EnteredPieceRateForEmployee>(new Action<EnteredPieceRateForEmployee>(this.attach_EnteredPieceRateForEmployees), new Action<EnteredPieceRateForEmployee>(this.detach_EnteredPieceRateForEmployees));
+			this._Department = default(EntityRef<Department>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PieceRateID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PieceRateID
+		{
+			get
+			{
+				return this._PieceRateID;
+			}
+			set
+			{
+				if ((this._PieceRateID != value))
+				{
+					this.OnPieceRateIDChanging(value);
+					this.SendPropertyChanging();
+					this._PieceRateID = value;
+					this.SendPropertyChanged("PieceRateID");
+					this.OnPieceRateIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Catagory", DbType="VarChar(500)")]
+		public string Catagory
+		{
+			get
+			{
+				return this._Catagory;
+			}
+			set
+			{
+				if ((this._Catagory != value))
+				{
+					this.OnCatagoryChanging(value);
+					this.SendPropertyChanging();
+					this._Catagory = value;
+					this.SendPropertyChanged("Catagory");
+					this.OnCatagoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MeasuredUnit", DbType="VarChar(50)")]
+		public string MeasuredUnit
+		{
+			get
+			{
+				return this._MeasuredUnit;
+			}
+			set
+			{
+				if ((this._MeasuredUnit != value))
+				{
+					this.OnMeasuredUnitChanging(value);
+					this.SendPropertyChanging();
+					this._MeasuredUnit = value;
+					this.SendPropertyChanged("MeasuredUnit");
+					this.OnMeasuredUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitRate", DbType="Float")]
+		public System.Nullable<double> UnitRate
+		{
+			get
+			{
+				return this._UnitRate;
+			}
+			set
+			{
+				if ((this._UnitRate != value))
+				{
+					this.OnUnitRateChanging(value);
+					this.SendPropertyChanging();
+					this._UnitRate = value;
+					this.SendPropertyChanged("UnitRate");
+					this.OnUnitRateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DepartmentID", DbType="Int")]
+		public System.Nullable<int> DepartmentID
+		{
+			get
+			{
+				return this._DepartmentID;
+			}
+			set
+			{
+				if ((this._DepartmentID != value))
+				{
+					if (this._Department.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDepartmentIDChanging(value);
+					this.SendPropertyChanging();
+					this._DepartmentID = value;
+					this.SendPropertyChanged("DepartmentID");
+					this.OnDepartmentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+		public System.Nullable<int> CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int")]
+		public System.Nullable<int> ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PieceRateDetail_AvaragePieceRateForEmployee", Storage="_AvaragePieceRateForEmployees", ThisKey="PieceRateID", OtherKey="PieceRateID")]
+		public EntitySet<AvaragePieceRateForEmployee> AvaragePieceRateForEmployees
+		{
+			get
+			{
+				return this._AvaragePieceRateForEmployees;
+			}
+			set
+			{
+				this._AvaragePieceRateForEmployees.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PieceRateDetail_EnteredPieceRateForEmployee", Storage="_EnteredPieceRateForEmployees", ThisKey="PieceRateID", OtherKey="PieceRateID")]
+		public EntitySet<EnteredPieceRateForEmployee> EnteredPieceRateForEmployees
+		{
+			get
+			{
+				return this._EnteredPieceRateForEmployees;
+			}
+			set
+			{
+				this._EnteredPieceRateForEmployees.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_PieceRateDetail", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
+		public Department Department
+		{
+			get
+			{
+				return this._Department.Entity;
+			}
+			set
+			{
+				Department previousValue = this._Department.Entity;
+				if (((previousValue != value) 
+							|| (this._Department.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Department.Entity = null;
+						previousValue.PieceRateDetails.Remove(this);
+					}
+					this._Department.Entity = value;
+					if ((value != null))
+					{
+						value.PieceRateDetails.Add(this);
+						this._DepartmentID = value.DepartmentID;
+					}
+					else
+					{
+						this._DepartmentID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Department");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PieceRateDetail", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.PieceRateDetails.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.PieceRateDetails.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PieceRateDetail1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.PieceRateDetails1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.PieceRateDetails1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AvaragePieceRateForEmployees(AvaragePieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.PieceRateDetail = this;
+		}
+		
+		private void detach_AvaragePieceRateForEmployees(AvaragePieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.PieceRateDetail = null;
+		}
+		
+		private void attach_EnteredPieceRateForEmployees(EnteredPieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.PieceRateDetail = this;
+		}
+		
+		private void detach_EnteredPieceRateForEmployees(EnteredPieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.PieceRateDetail = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AvaragePieceRateForEmployees")]
+	public partial class AvaragePieceRateForEmployee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _APRID;
+		
+		private System.Nullable<int> _PieceRateID;
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<PieceRateDetail> _PieceRateDetail;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAPRIDChanging(int value);
+    partial void OnAPRIDChanged();
+    partial void OnPieceRateIDChanging(System.Nullable<int> value);
+    partial void OnPieceRateIDChanged();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    #endregion
+		
+		public AvaragePieceRateForEmployee()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._PieceRateDetail = default(EntityRef<PieceRateDetail>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_APRID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int APRID
+		{
+			get
+			{
+				return this._APRID;
+			}
+			set
+			{
+				if ((this._APRID != value))
+				{
+					this.OnAPRIDChanging(value);
+					this.SendPropertyChanging();
+					this._APRID = value;
+					this.SendPropertyChanged("APRID");
+					this.OnAPRIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PieceRateID", DbType="Int")]
+		public System.Nullable<int> PieceRateID
+		{
+			get
+			{
+				return this._PieceRateID;
+			}
+			set
+			{
+				if ((this._PieceRateID != value))
+				{
+					if (this._PieceRateDetail.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPieceRateIDChanging(value);
+					this.SendPropertyChanging();
+					this._PieceRateID = value;
+					this.SendPropertyChanged("PieceRateID");
+					this.OnPieceRateIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_AvaragePieceRateForEmployee", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.AvaragePieceRateForEmployees.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.AvaragePieceRateForEmployees.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PieceRateDetail_AvaragePieceRateForEmployee", Storage="_PieceRateDetail", ThisKey="PieceRateID", OtherKey="PieceRateID", IsForeignKey=true)]
+		public PieceRateDetail PieceRateDetail
+		{
+			get
+			{
+				return this._PieceRateDetail.Entity;
+			}
+			set
+			{
+				PieceRateDetail previousValue = this._PieceRateDetail.Entity;
+				if (((previousValue != value) 
+							|| (this._PieceRateDetail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PieceRateDetail.Entity = null;
+						previousValue.AvaragePieceRateForEmployees.Remove(this);
+					}
+					this._PieceRateDetail.Entity = value;
+					if ((value != null))
+					{
+						value.AvaragePieceRateForEmployees.Add(this);
+						this._PieceRateID = value.PieceRateID;
+					}
+					else
+					{
+						this._PieceRateID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PieceRateDetail");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EnteredPieceRateForEmployees")]
+	public partial class EnteredPieceRateForEmployee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EPRID;
+		
+		private int _PieceRateID;
+		
+		private int _EmployeeID;
+		
+		private double _PieceQty;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<PieceRateDetail> _PieceRateDetail;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEPRIDChanging(int value);
+    partial void OnEPRIDChanged();
+    partial void OnPieceRateIDChanging(int value);
+    partial void OnPieceRateIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnPieceQtyChanging(double value);
+    partial void OnPieceQtyChanged();
+    #endregion
+		
+		public EnteredPieceRateForEmployee()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._PieceRateDetail = default(EntityRef<PieceRateDetail>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EPRID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EPRID
+		{
+			get
+			{
+				return this._EPRID;
+			}
+			set
+			{
+				if ((this._EPRID != value))
+				{
+					this.OnEPRIDChanging(value);
+					this.SendPropertyChanging();
+					this._EPRID = value;
+					this.SendPropertyChanged("EPRID");
+					this.OnEPRIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PieceRateID", DbType="Int NOT NULL")]
+		public int PieceRateID
+		{
+			get
+			{
+				return this._PieceRateID;
+			}
+			set
+			{
+				if ((this._PieceRateID != value))
+				{
+					if (this._PieceRateDetail.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPieceRateIDChanging(value);
+					this.SendPropertyChanging();
+					this._PieceRateID = value;
+					this.SendPropertyChanged("PieceRateID");
+					this.OnPieceRateIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PieceQty", DbType="Float NOT NULL")]
+		public double PieceQty
+		{
+			get
+			{
+				return this._PieceQty;
+			}
+			set
+			{
+				if ((this._PieceQty != value))
+				{
+					this.OnPieceQtyChanging(value);
+					this.SendPropertyChanging();
+					this._PieceQty = value;
+					this.SendPropertyChanged("PieceQty");
+					this.OnPieceQtyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EnteredPieceRateForEmployee", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.EnteredPieceRateForEmployees.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.EnteredPieceRateForEmployees.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PieceRateDetail_EnteredPieceRateForEmployee", Storage="_PieceRateDetail", ThisKey="PieceRateID", OtherKey="PieceRateID", IsForeignKey=true)]
+		public PieceRateDetail PieceRateDetail
+		{
+			get
+			{
+				return this._PieceRateDetail.Entity;
+			}
+			set
+			{
+				PieceRateDetail previousValue = this._PieceRateDetail.Entity;
+				if (((previousValue != value) 
+							|| (this._PieceRateDetail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PieceRateDetail.Entity = null;
+						previousValue.EnteredPieceRateForEmployees.Remove(this);
+					}
+					this._PieceRateDetail.Entity = value;
+					if ((value != null))
+					{
+						value.EnteredPieceRateForEmployees.Add(this);
+						this._PieceRateID = value.PieceRateID;
+					}
+					else
+					{
+						this._PieceRateID = default(int);
+					}
+					this.SendPropertyChanged("PieceRateDetail");
 				}
 			}
 		}
