@@ -212,3 +212,5 @@ pip-log.txt
 .mr.developer.cfg
 *.suo
 *.suo
+TeemaApplication.v11.suo
+*.suo

@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="Classes\EmployeeUtilities.cs" />
     <Compile Include="Classes\LoginDetails.cs" />
+    <Compile Include="Classes\Test.cs" />
     <Compile Include="Classes\Utilities.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
