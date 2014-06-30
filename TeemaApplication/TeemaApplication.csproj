@@ -70,6 +70,12 @@
     <Compile Include="ApproveOvertime.Designer.cs">
       <DependentUpon>ApproveOvertime.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApproveSalaryAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApproveSalaryAdvance.Designer.cs">
+      <DependentUpon>ApproveSalaryAdvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\EmployeeUtilities.cs" />
     <Compile Include="Classes\LoginDetails.cs" />
     <Compile Include="Classes\Utilities.cs" />
@@ -109,15 +115,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Datasets\PersonalLeaveRecordDataSet.cs">
-      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Datasets\PersonalLeaveRecordDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -224,6 +221,9 @@
     <EmbeddedResource Include="ApproveOvertime.resx">
       <DependentUpon>ApproveOvertime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApproveSalaryAdvance.resx">
+      <DependentUpon>ApproveSalaryAdvance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateOverTime.resx">
       <DependentUpon>CreateOverTime.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,17 +315,6 @@
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xss">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Datasets\PersonalLeaveRecordDataSet.xsc">
-      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Datasets\PersonalLeaveRecordDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PersonalLeaveRecordDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Datasets\PersonalLeaveRecordDataSet.xss">
-      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>
