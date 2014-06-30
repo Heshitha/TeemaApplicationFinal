@@ -17,6 +17,8 @@ namespace TeemaApplication
 {
     public partial class frmFingerPrintDevices : Form
     {
+        TeemaDBDataContext db = new TeemaDBDataContext();
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -67,6 +69,7 @@ namespace TeemaApplication
 
         private void frmFingerPrintDevices_Load(object sender, EventArgs e)
         {
+            fillDeviceDetailsGridView();
             fillCommunicationType(cmbANDDCommunicationType);
             fillCommunicationType(cmbEDDCommunicationType);
         }
@@ -131,6 +134,103 @@ namespace TeemaApplication
             int password = Convert.ToInt32(txtEDDPassword.Text);
 
             TestDevice(communicationType, ipAddress, ipPort, password);
+        }
+
+        private void fillDeviceDetailsGridView()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("deviceID");
+            dt.Columns.Add("name");
+            dt.Columns.Add("comType");
+            dt.Columns.Add("ipAddress");
+            dt.Columns.Add("ipPort");
+            dt.Columns.Add("password");
+
+            foreach (FingerPrintDivice fpd in db.FingerPrintDivices)
+            {
+                string communicationType = fpd.CommunicationType.Value == 1 ? "TCP / IP" : "USB";
+                dt.Rows.Add(fpd.DeviceID, fpd.DeviceName, communicationType, fpd.IPAddress, fpd.IPPort, fpd.Password);
+            }
+
+            gdvDeviceDetails.DataSource = dt;
+        }
+
+        private void btnANDDAddNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FingerPrintDivice device = new FingerPrintDivice
+                {
+                    DeviceName = txtANDDDeviceName.Text,
+                    CommunicationType = (int)cmbANDDCommunicationType.SelectedValue,
+                    IPAddress = validateIP(txtANDDIpAddress) ? txtANDDIpAddress.Text : "0.0.0.0",
+                    IPPort = Convert.ToInt32(txtANDDIpPort.Text),
+                    Password = Convert.ToInt32(txtANDDPassword.Text),
+                    CreatedBy = LoginDetails.LoggedUsedID,
+                    CreatedDate = DateTime.Now,
+                    ModifiedBy = LoginDetails.LoggedUsedID,
+                    ModifiedDate = DateTime.Now,
+                };
+
+                db.FingerPrintDivices.InsertOnSubmit(device);
+                db.SubmitChanges();
+                fillDeviceDetailsGridView();
+                Utilities.ShowInformationBox("Successfully Added New Device.");
+
+                txtANDDDeviceName.Text = string.Empty;
+                txtANDDIpAddress.Text = string.Empty;
+                txtANDDIpPort.Text = string.Empty;
+                txtANDDPassword.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Utilities.ShowExceptionBox(ex.Message);
+            }
+        }
+
+        private void btnEDDDone_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int deviceID = Convert.ToInt32(txtEDDDeviceID.Text);
+                FingerPrintDivice device = db.FingerPrintDivices.Where(de => de.DeviceID == deviceID).SingleOrDefault();
+
+                device.DeviceName = txtEDDDeviceName.Text;
+                device.CommunicationType = (int)cmbEDDCommunicationType.SelectedValue;
+                device.IPAddress = validateIP(txtEDDIpAddress) ? txtEDDIpAddress.Text : "0.0.0.0";
+                device.IPPort = Convert.ToInt32(txtEDDIpPort.Text);
+                device.Password = Convert.ToInt32(txtEDDPassword.Text);
+                device.ModifiedBy = 1;
+                device.ModifiedDate = DateTime.Now;
+
+                db.SubmitChanges();
+                fillDeviceDetailsGridView();
+                Utilities.ShowInformationBox("Successfully Updated.");
+            }
+            catch (Exception ex)
+            {
+                Utilities.ShowExceptionBox(ex.Message);
+            }
+        }
+
+        private void gdvDeviceDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int deviceID = Convert.ToInt32(gdvDeviceDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+                FingerPrintDivice device = db.FingerPrintDivices.Where(de => de.DeviceID == deviceID).SingleOrDefault();
+
+                txtEDDDeviceID.Text = device.DeviceID.ToString();
+                txtEDDDeviceName.Text = device.DeviceName;
+                cmbEDDCommunicationType.SelectedValue = device.CommunicationType.Value;
+                txtEDDIpAddress.Text = device.IPAddress;
+                txtEDDIpPort.Text = device.IPPort.ToString();
+                txtEDDPassword.Text = device.Password.ToString();
+            }
+            catch (Exception ex)
+            {
+                Utilities.ShowExceptionBox(ex.Message);
+            }
         }
     }
 

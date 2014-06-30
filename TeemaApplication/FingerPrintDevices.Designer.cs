@@ -145,6 +145,7 @@
             this.btnANDDAddNew.TabIndex = 15;
             this.btnANDDAddNew.Text = "Add New";
             this.btnANDDAddNew.UseVisualStyleBackColor = true;
+            this.btnANDDAddNew.Click += new System.EventHandler(this.btnANDDAddNew_Click);
             // 
             // txtANDDPassword
             // 
@@ -269,6 +270,7 @@
             this.btnEDDDone.TabIndex = 15;
             this.btnEDDDone.Text = "Done";
             this.btnEDDDone.UseVisualStyleBackColor = true;
+            this.btnEDDDone.Click += new System.EventHandler(this.btnEDDDone_Click);
             // 
             // txtEDDPassword
             // 
@@ -392,6 +394,7 @@
             this.gdvDeviceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvDeviceDetails.Size = new System.Drawing.Size(564, 220);
             this.gdvDeviceDetails.TabIndex = 0;
+            this.gdvDeviceDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvDeviceDetails_CellClick);
             // 
             // clmnDeviceID
             // 
