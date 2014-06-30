@@ -50,7 +50,17 @@
             this.tbcEnterPieceRates = new System.Windows.Forms.TabControl();
             this.tbpEnterPieceRateToEmployees = new System.Windows.Forms.TabPage();
             this.dgvEnterPieceUnitsForEmployees = new System.Windows.Forms.DataGridView();
+            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnWorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnPieceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnPayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvEnterAverageRateForEmployees = new System.Windows.Forms.DataGridView();
+            this.clmnEntitled2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtAvragePayement = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,17 +70,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotalPiecesCount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnWorkerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPieceQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnPayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnPrintForm = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcEnterPieceRates.SuspendLayout();
             this.tbpEnterPieceRateToEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnterPieceUnitsForEmployees)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnterAverageRateForEmployees)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -319,8 +327,47 @@
             this.dgvEnterPieceUnitsForEmployees.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnterPieceUnitsForEmployees_CellEndEdit);
             this.dgvEnterPieceUnitsForEmployees.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnterPieceUnitsForEmployees_DataError);
             // 
+            // clmnEntitled
+            // 
+            this.clmnEntitled.DataPropertyName = "Entitled";
+            this.clmnEntitled.FalseValue = "False";
+            this.clmnEntitled.HeaderText = "Entitled";
+            this.clmnEntitled.Name = "clmnEntitled";
+            this.clmnEntitled.TrueValue = "True";
+            // 
+            // clmnTokenNo
+            // 
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnWorkerName
+            // 
+            this.clmnWorkerName.DataPropertyName = "Name";
+            this.clmnWorkerName.HeaderText = "Worker Name";
+            this.clmnWorkerName.Name = "clmnWorkerName";
+            // 
+            // clmnPieceQty
+            // 
+            this.clmnPieceQty.DataPropertyName = "PieceRate";
+            this.clmnPieceQty.HeaderText = "Piece Qty";
+            this.clmnPieceQty.Name = "clmnPieceQty";
+            // 
+            // clmnMeasure
+            // 
+            this.clmnMeasure.DataPropertyName = "Measure";
+            this.clmnMeasure.HeaderText = "Measure";
+            this.clmnMeasure.Name = "clmnMeasure";
+            // 
+            // clmnPayement
+            // 
+            this.clmnPayement.DataPropertyName = "Payement";
+            this.clmnPayement.HeaderText = "Payement";
+            this.clmnPayement.Name = "clmnPayement";
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dgvEnterAverageRateForEmployees);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -328,6 +375,44 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Enter Average Rate For Employees";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvEnterAverageRateForEmployees
+            // 
+            this.dgvEnterAverageRateForEmployees.AllowUserToAddRows = false;
+            this.dgvEnterAverageRateForEmployees.AllowUserToDeleteRows = false;
+            this.dgvEnterAverageRateForEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEnterAverageRateForEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnterAverageRateForEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnEntitled2,
+            this.clmnTokenNo2,
+            this.clmnName2});
+            this.dgvEnterAverageRateForEmployees.Location = new System.Drawing.Point(6, 6);
+            this.dgvEnterAverageRateForEmployees.Name = "dgvEnterAverageRateForEmployees";
+            this.dgvEnterAverageRateForEmployees.RowHeadersVisible = false;
+            this.dgvEnterAverageRateForEmployees.Size = new System.Drawing.Size(453, 415);
+            this.dgvEnterAverageRateForEmployees.TabIndex = 0;
+            // 
+            // clmnEntitled2
+            // 
+            this.clmnEntitled2.DataPropertyName = "Entitled";
+            this.clmnEntitled2.FalseValue = "False";
+            this.clmnEntitled2.HeaderText = "Entitled";
+            this.clmnEntitled2.Name = "clmnEntitled2";
+            this.clmnEntitled2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnEntitled2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clmnEntitled2.TrueValue = "True";
+            // 
+            // clmnTokenNo2
+            // 
+            this.clmnTokenNo2.DataPropertyName = "TokenNo";
+            this.clmnTokenNo2.HeaderText = "Token No";
+            this.clmnTokenNo2.Name = "clmnTokenNo2";
+            // 
+            // clmnName2
+            // 
+            this.clmnName2.DataPropertyName = "Name";
+            this.clmnName2.HeaderText = "Name";
+            this.clmnName2.Name = "clmnName2";
             // 
             // groupBox2
             // 
@@ -418,49 +503,33 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Total Pieces Count";
             // 
-            // clmnEntitled
+            // btnSubmit
             // 
-            this.clmnEntitled.DataPropertyName = "Entitled";
-            this.clmnEntitled.FalseValue = "False";
-            this.clmnEntitled.HeaderText = "Entitled";
-            this.clmnEntitled.Name = "clmnEntitled";
-            this.clmnEntitled.TrueValue = "True";
+            this.btnSubmit.Location = new System.Drawing.Point(152, 439);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 38;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // clmnTokenNo
+            // btnPrintForm
             // 
-            this.clmnTokenNo.DataPropertyName = "TokenNo";
-            this.clmnTokenNo.HeaderText = "Token No";
-            this.clmnTokenNo.Name = "clmnTokenNo";
-            // 
-            // clmnWorkerName
-            // 
-            this.clmnWorkerName.DataPropertyName = "Name";
-            this.clmnWorkerName.HeaderText = "Worker Name";
-            this.clmnWorkerName.Name = "clmnWorkerName";
-            // 
-            // clmnPieceQty
-            // 
-            this.clmnPieceQty.DataPropertyName = "PieceRate";
-            this.clmnPieceQty.HeaderText = "Piece Qty";
-            this.clmnPieceQty.Name = "clmnPieceQty";
-            // 
-            // clmnMeasure
-            // 
-            this.clmnMeasure.DataPropertyName = "Measure";
-            this.clmnMeasure.HeaderText = "Measure";
-            this.clmnMeasure.Name = "clmnMeasure";
-            // 
-            // clmnPayement
-            // 
-            this.clmnPayement.DataPropertyName = "Payement";
-            this.clmnPayement.HeaderText = "Payement";
-            this.clmnPayement.Name = "clmnPayement";
+            this.btnPrintForm.Location = new System.Drawing.Point(233, 439);
+            this.btnPrintForm.Name = "btnPrintForm";
+            this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintForm.TabIndex = 39;
+            this.btnPrintForm.Text = "Print Form";
+            this.btnPrintForm.UseVisualStyleBackColor = true;
+            this.btnPrintForm.Click += new System.EventHandler(this.btnPrintForm_Click);
             // 
             // frmAddPieceRate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 508);
+            this.Controls.Add(this.btnPrintForm);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tbcEnterPieceRates);
             this.Controls.Add(this.groupBox1);
@@ -479,6 +548,8 @@
             this.tbcEnterPieceRates.ResumeLayout(false);
             this.tbpEnterPieceRateToEmployees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnterPieceUnitsForEmployees)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnterAverageRateForEmployees)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -526,5 +597,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnPieceQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnMeasure;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnPayement;
+        private System.Windows.Forms.DataGridView dgvEnterAverageRateForEmployees;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clmnEntitled2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnName2;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnPrintForm;
     }
 }

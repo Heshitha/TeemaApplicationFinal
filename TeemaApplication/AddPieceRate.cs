@@ -69,7 +69,10 @@ namespace TeemaApplication
 
                 List<Employee> lstEmployees = ((Department)cmbDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
 
+                List<Employee> lstAllEmployees = ((Department)cmbDepartment.SelectedItem).Employees.ToList();
+
                 fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+                filldgvEnterAverageRateForEmployees(lstAllEmployees);
             }
         }
 
@@ -91,11 +94,30 @@ namespace TeemaApplication
             dgvEnterPieceUnitsForEmployees.DataSource = dt;
         }
 
+        private void filldgvEnterAverageRateForEmployees(List<Employee> employeeList)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Entitled", typeof(bool));
+            dt.Columns.Add("TokenNo");
+            dt.Columns.Add("Name");
+
+            foreach (Employee x in employeeList)
+            {
+                dt.Rows.Add(false, x.TokenNo, x.Name);
+            }
+
+            dgvEnterAverageRateForEmployees.DataSource = dt;
+        }
+
         private void cmbSubDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Employee> lstEmployees = ((SubDepartment)cmbSubDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
 
+            List<Employee> lstAllEmployees = ((Department)cmbDepartment.SelectedItem).Employees.ToList();
+
             fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+
+            filldgvEnterAverageRateForEmployees(lstAllEmployees);
         }
 
         private void chbSearchFromSubDepartment_CheckedChanged(object sender, EventArgs e)
@@ -112,7 +134,11 @@ namespace TeemaApplication
 
                 List<Employee> lstEmployees = ((Department)cmbDepartment.SelectedItem).Employees.Where(em => em.IsPieceRateApply).ToList();
 
+                List<Employee> lstAllEmployees = ((Department)cmbDepartment.SelectedItem).Employees.ToList();
+
                 fillEmployeeDetailsForEnterPieceUnitsForEmployees(lstEmployees);
+
+                filldgvEnterAverageRateForEmployees(lstAllEmployees);
             }
         }
 
@@ -185,6 +211,74 @@ namespace TeemaApplication
                     x.Cells[4].Value = txtPieceUnitMeasure.Text;
                 }
             }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Department department = (Department)cmbDepartment.SelectedItem;
+
+            PieceRateDetail pieceDetail = new PieceRateDetail
+            {
+                Date = dtpEnteredDate.Value,
+                Catagory = txtPieceRateCatagory.Text,
+                MeasuredUnit = txtPieceUnitMeasure.Text,
+                UnitRate = Utilities.getDoubleValueFromTextBox(txtPieceUnitRate),
+                Department = department,
+                CreatedBy = LoginDetails.LoggedUsedID,
+                CreatedDate = DateTime.Now,
+                ModifiedBy = LoginDetails.LoggedUsedID,
+                ModifiedDate = DateTime.Now
+            };
+
+            db.PieceRateDetails.InsertOnSubmit(pieceDetail);
+            db.SubmitChanges();
+
+            foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
+            {
+                if (Convert.ToBoolean(x.Cells[0].Value))
+                {
+                    double pieceQty = Convert.ToDouble(x.Cells[3].Value);
+                    if (pieceQty != 0)
+                    {
+                        int tokenNo = Convert.ToInt32(x.Cells[1].Value);
+                        Employee employee = department.Employees.Where(em => em.TokenNo == tokenNo).SingleOrDefault();
+                        EnteredPieceRateForEmployee epre = new EnteredPieceRateForEmployee
+                        {
+                            PieceRateDetail = pieceDetail,
+                            Employee = employee,
+                            PieceQty = pieceQty
+                        };
+
+                        db.EnteredPieceRateForEmployees.InsertOnSubmit(epre);
+                        db.SubmitChanges();
+                    }
+                }
+            }
+
+            foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
+            {
+                if (Convert.ToBoolean(x.Cells[0].Value))
+                {
+                    int tokenNo = Convert.ToInt32(x.Cells[1].Value);
+                    Employee employee = department.Employees.Where(em => em.TokenNo == tokenNo).SingleOrDefault();
+                    AvaragePieceRateForEmployee apre = new AvaragePieceRateForEmployee
+                    {
+                        PieceRateDetail = pieceDetail,
+                        Employee = employee
+                    };
+
+                    db.AvaragePieceRateForEmployees.InsertOnSubmit(apre);
+                    db.SubmitChanges();
+                }
+            }
+            Cursor.Current = Cursors.Default;
+            Utilities.ShowInformationBox("Piece rate details saved successfully.");
+        }
+
+        private void btnPrintForm_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

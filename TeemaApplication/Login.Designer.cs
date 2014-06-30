@@ -155,6 +155,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.gbxLogin.ResumeLayout(false);
             this.gbxLogin.PerformLayout();
             this.ResumeLayout(false);

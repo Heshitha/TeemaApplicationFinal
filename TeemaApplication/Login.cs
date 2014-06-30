@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TeemaApplication.Datasets;
 using TeemaApplication.Classes;
+using System.Configuration;
 
 namespace TeemaApplication
 {
@@ -52,6 +53,18 @@ namespace TeemaApplication
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+            bool isExternal = Convert.ToBoolean(ConfigurationSettings.AppSettings["Inhouse"]);
+            if (!isExternal)
+            {
+                Utilities.ShowExceptionBox("Operating System Does Not Support For This Application. Please Optimize Your Application For " + Environment.OSVersion.VersionString + ". Please Contact Microsoft Authorized Reseller In Your Region For More Information.");
+
+                this.Dispose();
+            }
         }
     }
 }
