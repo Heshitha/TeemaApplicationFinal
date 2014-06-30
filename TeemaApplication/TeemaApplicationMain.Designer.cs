@@ -43,13 +43,14 @@
             this.viewOvertimeFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.approveSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pieceRateCalculationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pieceRatePaymentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewFingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.approveSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadAttendanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.fingerPrintDevicesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.Size = new System.Drawing.Size(893, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -170,6 +171,13 @@
             this.createSalaryAdvanceToolStripMenuItem.Text = "Create Salary Advance";
             this.createSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.createSalaryAdvanceToolStripMenuItem_Click);
             // 
+            // approveSalaryAdvanceToolStripMenuItem
+            // 
+            this.approveSalaryAdvanceToolStripMenuItem.Name = "approveSalaryAdvanceToolStripMenuItem";
+            this.approveSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.approveSalaryAdvanceToolStripMenuItem.Text = "Approve Salary Advance";
+            this.approveSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.approveSalaryAdvanceToolStripMenuItem_Click);
+            // 
             // pieceRateCalculationToolStripMenuItem
             // 
             this.pieceRateCalculationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -196,7 +204,8 @@
             // fingerPrintDevicesToolStripMenuItem
             // 
             this.fingerPrintDevicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewFingerPrintDevicesToolStripMenuItem});
+            this.viewFingerPrintDevicesToolStripMenuItem,
+            this.loadAttendanceDetailsToolStripMenuItem});
             this.fingerPrintDevicesToolStripMenuItem.Name = "fingerPrintDevicesToolStripMenuItem";
             this.fingerPrintDevicesToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.fingerPrintDevicesToolStripMenuItem.Text = "Finger Print Devices";
@@ -208,18 +217,17 @@
             this.viewFingerPrintDevicesToolStripMenuItem.Text = "View Finger Print Devices";
             this.viewFingerPrintDevicesToolStripMenuItem.Click += new System.EventHandler(this.viewFingerPrintDevicesToolStripMenuItem_Click);
             // 
-            // approveSalaryAdvanceToolStripMenuItem
+            // loadAttendanceDetailsToolStripMenuItem
             // 
-            this.approveSalaryAdvanceToolStripMenuItem.Name = "approveSalaryAdvanceToolStripMenuItem";
-            this.approveSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.approveSalaryAdvanceToolStripMenuItem.Text = "Approve Salary Advance";
-            this.approveSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.approveSalaryAdvanceToolStripMenuItem_Click);
+            this.loadAttendanceDetailsToolStripMenuItem.Name = "loadAttendanceDetailsToolStripMenuItem";
+            this.loadAttendanceDetailsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.loadAttendanceDetailsToolStripMenuItem.Text = "Load Attendance Details";
             // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(893, 453);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -257,6 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem fingerPrintDevicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFingerPrintDevicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveSalaryAdvanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadAttendanceDetailsToolStripMenuItem;
     }
 }
 

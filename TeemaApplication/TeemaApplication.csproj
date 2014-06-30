@@ -175,6 +175,12 @@
     <Compile Include="FingerPrintDevices.Designer.cs">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadAttenadanceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadAttenadanceDetails.Designer.cs">
+      <DependentUpon>LoadAttenadanceDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FingerPrintDevices.resx">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadAttenadanceDetails.resx">
+      <DependentUpon>LoadAttenadanceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OvertimeForms.resx">
       <DependentUpon>OvertimeForms.cs</DependentUpon>

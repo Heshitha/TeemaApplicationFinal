@@ -81,6 +81,9 @@ namespace TeemaApplication.Datasets
     partial void InsertFingerPrintDivice(FingerPrintDivice instance);
     partial void UpdateFingerPrintDivice(FingerPrintDivice instance);
     partial void DeleteFingerPrintDivice(FingerPrintDivice instance);
+    partial void InsertEmployeeAttendance(EmployeeAttendance instance);
+    partial void UpdateEmployeeAttendance(EmployeeAttendance instance);
+    partial void DeleteEmployeeAttendance(EmployeeAttendance instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -246,6 +249,14 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<FingerPrintDivice>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EmployeeAttendance> EmployeeAttendances
+		{
+			get
+			{
+				return this.GetTable<EmployeeAttendance>();
 			}
 		}
 	}
@@ -1333,6 +1344,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<AvaragePieceRateForEmployee> _AvaragePieceRateForEmployees;
 		
+		private EntitySet<EmployeeAttendance> _EmployeeAttendances;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1396,6 +1409,7 @@ namespace TeemaApplication.Datasets
 			this._SalaryAdvanceEmployeeDetails = new EntitySet<SalaryAdvanceEmployeeDetail>(new Action<SalaryAdvanceEmployeeDetail>(this.attach_SalaryAdvanceEmployeeDetails), new Action<SalaryAdvanceEmployeeDetail>(this.detach_SalaryAdvanceEmployeeDetails));
 			this._EnteredPieceRateForEmployees = new EntitySet<EnteredPieceRateForEmployee>(new Action<EnteredPieceRateForEmployee>(this.attach_EnteredPieceRateForEmployees), new Action<EnteredPieceRateForEmployee>(this.detach_EnteredPieceRateForEmployees));
 			this._AvaragePieceRateForEmployees = new EntitySet<AvaragePieceRateForEmployee>(new Action<AvaragePieceRateForEmployee>(this.attach_AvaragePieceRateForEmployees), new Action<AvaragePieceRateForEmployee>(this.detach_AvaragePieceRateForEmployees));
+			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -1911,6 +1925,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EmployeeAttendance", Storage="_EmployeeAttendances", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<EmployeeAttendance> EmployeeAttendances
+		{
+			get
+			{
+				return this._EmployeeAttendances;
+			}
+			set
+			{
+				this._EmployeeAttendances.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2168,6 +2195,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_AvaragePieceRateForEmployees(AvaragePieceRateForEmployee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_EmployeeAttendances(EmployeeAttendance entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -2958,6 +2997,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<FingerPrintDivice> _FingerPrintDivices1;
 		
+		private EntitySet<EmployeeAttendance> _EmployeeAttendances;
+		
+		private EntitySet<EmployeeAttendance> _EmployeeAttendances1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3005,6 +3048,8 @@ namespace TeemaApplication.Datasets
 			this._PieceRateDetails1 = new EntitySet<PieceRateDetail>(new Action<PieceRateDetail>(this.attach_PieceRateDetails1), new Action<PieceRateDetail>(this.detach_PieceRateDetails1));
 			this._FingerPrintDivices = new EntitySet<FingerPrintDivice>(new Action<FingerPrintDivice>(this.attach_FingerPrintDivices), new Action<FingerPrintDivice>(this.detach_FingerPrintDivices));
 			this._FingerPrintDivices1 = new EntitySet<FingerPrintDivice>(new Action<FingerPrintDivice>(this.attach_FingerPrintDivices1), new Action<FingerPrintDivice>(this.detach_FingerPrintDivices1));
+			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
+			this._EmployeeAttendances1 = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances1), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances1));
 			OnCreated();
 		}
 		
@@ -3485,6 +3530,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_EmployeeAttendance", Storage="_EmployeeAttendances", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<EmployeeAttendance> EmployeeAttendances
+		{
+			get
+			{
+				return this._EmployeeAttendances;
+			}
+			set
+			{
+				this._EmployeeAttendances.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_EmployeeAttendance1", Storage="_EmployeeAttendances1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<EmployeeAttendance> EmployeeAttendances1
+		{
+			get
+			{
+				return this._EmployeeAttendances1;
+			}
+			set
+			{
+				this._EmployeeAttendances1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3848,6 +3919,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_FingerPrintDivices1(FingerPrintDivice entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_EmployeeAttendances1(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_EmployeeAttendances1(EmployeeAttendance entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
@@ -7711,6 +7806,359 @@ namespace TeemaApplication.Datasets
 					if ((value != null))
 					{
 						value.FingerPrintDivices1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmployeeAttendance")]
+	public partial class EmployeeAttendance : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Nullable<int> _EmployeeID;
+		
+		private System.Nullable<System.DateTime> _DateAndTime;
+		
+		private string _Mode;
+		
+		private int _AttendanceID;
+		
+		private System.Nullable<int> _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmployeeIDChanging(System.Nullable<int> value);
+    partial void OnEmployeeIDChanged();
+    partial void OnDateAndTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateAndTimeChanged();
+    partial void OnModeChanging(string value);
+    partial void OnModeChanged();
+    partial void OnAttendanceIDChanging(int value);
+    partial void OnAttendanceIDChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(System.Nullable<int> value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public EmployeeAttendance()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int")]
+		public System.Nullable<int> EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateAndTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateAndTime
+		{
+			get
+			{
+				return this._DateAndTime;
+			}
+			set
+			{
+				if ((this._DateAndTime != value))
+				{
+					this.OnDateAndTimeChanging(value);
+					this.SendPropertyChanging();
+					this._DateAndTime = value;
+					this.SendPropertyChanged("DateAndTime");
+					this.OnDateAndTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mode", DbType="VarChar(100)")]
+		public string Mode
+		{
+			get
+			{
+				return this._Mode;
+			}
+			set
+			{
+				if ((this._Mode != value))
+				{
+					this.OnModeChanging(value);
+					this.SendPropertyChanging();
+					this._Mode = value;
+					this.SendPropertyChanged("Mode");
+					this.OnModeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttendanceID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AttendanceID
+		{
+			get
+			{
+				return this._AttendanceID;
+			}
+			set
+			{
+				if ((this._AttendanceID != value))
+				{
+					this.OnAttendanceIDChanging(value);
+					this.SendPropertyChanging();
+					this._AttendanceID = value;
+					this.SendPropertyChanged("AttendanceID");
+					this.OnAttendanceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+		public System.Nullable<int> CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int")]
+		public System.Nullable<int> ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_EmployeeAttendance", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.EmployeeAttendances.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.EmployeeAttendances.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_EmployeeAttendance", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.EmployeeAttendances.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.EmployeeAttendances.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_EmployeeAttendance1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.EmployeeAttendances1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.EmployeeAttendances1.Add(this);
 						this._ModifiedBy = value.UserID;
 					}
 					else
