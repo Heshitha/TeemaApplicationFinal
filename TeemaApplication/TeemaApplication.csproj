@@ -145,6 +145,12 @@
       <DependentUpon>EmployeeReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\LeaveApplyForm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaveApplyForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\OverTimeRequestForm.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,6 +197,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LeaveApplyForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LeaveApplyForm.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\OverTimeRequestForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OverTimeRequestForm.cs</LastGenOutput>
@@ -218,7 +228,7 @@
     <None Include="Datasets\LeaveReportsDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LeaveReportsDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>LeaveReportsDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Datasets\LeaveReportsDataSet.xss">
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>

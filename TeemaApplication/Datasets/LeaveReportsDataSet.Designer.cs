@@ -301,21 +301,29 @@ namespace TeemaApplication.Datasets {
             
             private global::System.Data.DataColumn columnDepartment;
             
-            private global::System.Data.DataColumn columnNameOfAppoiment;
+            private global::System.Data.DataColumn columnDateOfAppoiment;
             
             private global::System.Data.DataColumn columnNameOfSubstitute;
             
-            private global::System.Data.DataColumn columnLEAnual;
+            private global::System.Data.DataColumn columnLeaveEntitleAnual;
             
-            private global::System.Data.DataColumn columnLECasual;
+            private global::System.Data.DataColumn columnLeaveEntitleCasual;
             
-            private global::System.Data.DataColumn columnLEOther;
+            private global::System.Data.DataColumn columnLeaveEntitleOther;
             
-            private global::System.Data.DataColumn columnTLAnual;
+            private global::System.Data.DataColumn columnTotalLeaveAnual;
             
-            private global::System.Data.DataColumn columnTLCasual;
+            private global::System.Data.DataColumn columnTotalLeaveCasual;
             
-            private global::System.Data.DataColumn columnTLOther;
+            private global::System.Data.DataColumn columnTotalLeaveOther;
+            
+            private global::System.Data.DataColumn columnLeaveBalanceAnual;
+            
+            private global::System.Data.DataColumn columnLeaveBalanceCasual;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnLeaveApplyedCategory;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -440,9 +448,9 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameOfAppoimentColumn {
+            public global::System.Data.DataColumn DateOfAppoimentColumn {
                 get {
-                    return this.columnNameOfAppoiment;
+                    return this.columnDateOfAppoiment;
                 }
             }
             
@@ -456,49 +464,81 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LEAnualColumn {
+            public global::System.Data.DataColumn LeaveEntitleAnualColumn {
                 get {
-                    return this.columnLEAnual;
+                    return this.columnLeaveEntitleAnual;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LECasualColumn {
+            public global::System.Data.DataColumn LeaveEntitleCasualColumn {
                 get {
-                    return this.columnLECasual;
+                    return this.columnLeaveEntitleCasual;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LEOtherColumn {
+            public global::System.Data.DataColumn LeaveEntitleOtherColumn {
                 get {
-                    return this.columnLEOther;
+                    return this.columnLeaveEntitleOther;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TLAnualColumn {
+            public global::System.Data.DataColumn TotalLeaveAnualColumn {
                 get {
-                    return this.columnTLAnual;
+                    return this.columnTotalLeaveAnual;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TLCasualColumn {
+            public global::System.Data.DataColumn TotalLeaveCasualColumn {
                 get {
-                    return this.columnTLCasual;
+                    return this.columnTotalLeaveCasual;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TLOtherColumn {
+            public global::System.Data.DataColumn TotalLeaveOtherColumn {
                 get {
-                    return this.columnTLOther;
+                    return this.columnTotalLeaveOther;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LeaveBalanceAnualColumn {
+                get {
+                    return this.columnLeaveBalanceAnual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LeaveBalanceCasualColumn {
+                get {
+                    return this.columnLeaveBalanceCasual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LeaveApplyedCategoryColumn {
+                get {
+                    return this.columnLeaveApplyedCategory;
                 }
             }
             
@@ -540,25 +580,29 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LeaveDetailsRow AddLeaveDetailsRow(
-                        string FormNo, 
+                        int FormNo, 
                         string Name, 
-                        string Date, 
+                        System.DateTime Date, 
                         string EPFNo, 
                         string TokenNo, 
                         string Reason, 
-                        string LeaveFrom, 
-                        string LeaveTo, 
-                        string NoOfDays, 
+                        System.DateTime LeaveFrom, 
+                        System.DateTime LeaveTo, 
+                        double NoOfDays, 
                         string Designation, 
                         string Department, 
-                        string NameOfAppoiment, 
+                        System.DateTime DateOfAppoiment, 
                         string NameOfSubstitute, 
-                        string LEAnual, 
-                        string LECasual, 
-                        string LEOther, 
-                        string TLAnual, 
-                        string TLCasual, 
-                        string TLOther) {
+                        double LeaveEntitleAnual, 
+                        double LeaveEntitleCasual, 
+                        double LeaveEntitleOther, 
+                        double TotalLeaveAnual, 
+                        double TotalLeaveCasual, 
+                        double TotalLeaveOther, 
+                        double LeaveBalanceAnual, 
+                        double LeaveBalanceCasual, 
+                        double Total, 
+                        string LeaveApplyedCategory) {
                 LeaveDetailsRow rowLeaveDetailsRow = ((LeaveDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FormNo,
@@ -572,14 +616,18 @@ namespace TeemaApplication.Datasets {
                         NoOfDays,
                         Designation,
                         Department,
-                        NameOfAppoiment,
+                        DateOfAppoiment,
                         NameOfSubstitute,
-                        LEAnual,
-                        LECasual,
-                        LEOther,
-                        TLAnual,
-                        TLCasual,
-                        TLOther};
+                        LeaveEntitleAnual,
+                        LeaveEntitleCasual,
+                        LeaveEntitleOther,
+                        TotalLeaveAnual,
+                        TotalLeaveCasual,
+                        TotalLeaveOther,
+                        LeaveBalanceAnual,
+                        LeaveBalanceCasual,
+                        Total,
+                        LeaveApplyedCategory};
                 rowLeaveDetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLeaveDetailsRow);
                 return rowLeaveDetailsRow;
@@ -613,24 +661,28 @@ namespace TeemaApplication.Datasets {
                 this.columnNoOfDays = base.Columns["NoOfDays"];
                 this.columnDesignation = base.Columns["Designation"];
                 this.columnDepartment = base.Columns["Department"];
-                this.columnNameOfAppoiment = base.Columns["NameOfAppoiment"];
+                this.columnDateOfAppoiment = base.Columns["DateOfAppoiment"];
                 this.columnNameOfSubstitute = base.Columns["NameOfSubstitute"];
-                this.columnLEAnual = base.Columns["LEAnual"];
-                this.columnLECasual = base.Columns["LECasual"];
-                this.columnLEOther = base.Columns["LEOther"];
-                this.columnTLAnual = base.Columns["TLAnual"];
-                this.columnTLCasual = base.Columns["TLCasual"];
-                this.columnTLOther = base.Columns["TLOther"];
+                this.columnLeaveEntitleAnual = base.Columns["LeaveEntitleAnual"];
+                this.columnLeaveEntitleCasual = base.Columns["LeaveEntitleCasual"];
+                this.columnLeaveEntitleOther = base.Columns["LeaveEntitleOther"];
+                this.columnTotalLeaveAnual = base.Columns["TotalLeaveAnual"];
+                this.columnTotalLeaveCasual = base.Columns["TotalLeaveCasual"];
+                this.columnTotalLeaveOther = base.Columns["TotalLeaveOther"];
+                this.columnLeaveBalanceAnual = base.Columns["LeaveBalanceAnual"];
+                this.columnLeaveBalanceCasual = base.Columns["LeaveBalanceCasual"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnLeaveApplyedCategory = base.Columns["LeaveApplyedCategory"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnFormNo = new global::System.Data.DataColumn("FormNo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFormNo = new global::System.Data.DataColumn("FormNo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFormNo);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
                 this.columnEPFNo = new global::System.Data.DataColumn("EPFNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEPFNo);
@@ -638,32 +690,40 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnTokenNo);
                 this.columnReason = new global::System.Data.DataColumn("Reason", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReason);
-                this.columnLeaveFrom = new global::System.Data.DataColumn("LeaveFrom", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLeaveFrom = new global::System.Data.DataColumn("LeaveFrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLeaveFrom);
-                this.columnLeaveTo = new global::System.Data.DataColumn("LeaveTo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLeaveTo = new global::System.Data.DataColumn("LeaveTo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLeaveTo);
-                this.columnNoOfDays = new global::System.Data.DataColumn("NoOfDays", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNoOfDays = new global::System.Data.DataColumn("NoOfDays", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoOfDays);
                 this.columnDesignation = new global::System.Data.DataColumn("Designation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDesignation);
                 this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDepartment);
-                this.columnNameOfAppoiment = new global::System.Data.DataColumn("NameOfAppoiment", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNameOfAppoiment);
+                this.columnDateOfAppoiment = new global::System.Data.DataColumn("DateOfAppoiment", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateOfAppoiment);
                 this.columnNameOfSubstitute = new global::System.Data.DataColumn("NameOfSubstitute", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameOfSubstitute);
-                this.columnLEAnual = new global::System.Data.DataColumn("LEAnual", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLEAnual);
-                this.columnLECasual = new global::System.Data.DataColumn("LECasual", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLECasual);
-                this.columnLEOther = new global::System.Data.DataColumn("LEOther", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLEOther);
-                this.columnTLAnual = new global::System.Data.DataColumn("TLAnual", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTLAnual);
-                this.columnTLCasual = new global::System.Data.DataColumn("TLCasual", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTLCasual);
-                this.columnTLOther = new global::System.Data.DataColumn("TLOther", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTLOther);
+                this.columnLeaveEntitleAnual = new global::System.Data.DataColumn("LeaveEntitleAnual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveEntitleAnual);
+                this.columnLeaveEntitleCasual = new global::System.Data.DataColumn("LeaveEntitleCasual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveEntitleCasual);
+                this.columnLeaveEntitleOther = new global::System.Data.DataColumn("LeaveEntitleOther", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveEntitleOther);
+                this.columnTotalLeaveAnual = new global::System.Data.DataColumn("TotalLeaveAnual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLeaveAnual);
+                this.columnTotalLeaveCasual = new global::System.Data.DataColumn("TotalLeaveCasual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLeaveCasual);
+                this.columnTotalLeaveOther = new global::System.Data.DataColumn("TotalLeaveOther", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLeaveOther);
+                this.columnLeaveBalanceAnual = new global::System.Data.DataColumn("LeaveBalanceAnual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveBalanceAnual);
+                this.columnLeaveBalanceCasual = new global::System.Data.DataColumn("LeaveBalanceCasual", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveBalanceCasual);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnLeaveApplyedCategory = new global::System.Data.DataColumn("LeaveApplyedCategory", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLeaveApplyedCategory);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -806,10 +866,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FormNo {
+            public int FormNo {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.FormNoColumn]));
+                        return ((int)(this[this.tableLeaveDetails.FormNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'FormNo\' in table \'LeaveDetails\' is DBNull.", e);
@@ -838,10 +898,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Date {
+            public System.DateTime Date {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.DateColumn]));
+                        return ((global::System.DateTime)(this[this.tableLeaveDetails.DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'LeaveDetails\' is DBNull.", e);
@@ -902,10 +962,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LeaveFrom {
+            public System.DateTime LeaveFrom {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.LeaveFromColumn]));
+                        return ((global::System.DateTime)(this[this.tableLeaveDetails.LeaveFromColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'LeaveFrom\' in table \'LeaveDetails\' is DBNull.", e);
@@ -918,10 +978,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LeaveTo {
+            public System.DateTime LeaveTo {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.LeaveToColumn]));
+                        return ((global::System.DateTime)(this[this.tableLeaveDetails.LeaveToColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'LeaveTo\' in table \'LeaveDetails\' is DBNull.", e);
@@ -934,10 +994,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NoOfDays {
+            public double NoOfDays {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.NoOfDaysColumn]));
+                        return ((double)(this[this.tableLeaveDetails.NoOfDaysColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NoOfDays\' in table \'LeaveDetails\' is DBNull.", e);
@@ -982,17 +1042,17 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NameOfAppoiment {
+            public System.DateTime DateOfAppoiment {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.NameOfAppoimentColumn]));
+                        return ((global::System.DateTime)(this[this.tableLeaveDetails.DateOfAppoimentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NameOfAppoiment\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateOfAppoiment\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.NameOfAppoimentColumn] = value;
+                    this[this.tableLeaveDetails.DateOfAppoimentColumn] = value;
                 }
             }
             
@@ -1014,97 +1074,161 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LEAnual {
+            public double LeaveEntitleAnual {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.LEAnualColumn]));
+                        return ((double)(this[this.tableLeaveDetails.LeaveEntitleAnualColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LEAnual\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveEntitleAnual\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.LEAnualColumn] = value;
+                    this[this.tableLeaveDetails.LeaveEntitleAnualColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LECasual {
+            public double LeaveEntitleCasual {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.LECasualColumn]));
+                        return ((double)(this[this.tableLeaveDetails.LeaveEntitleCasualColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LECasual\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveEntitleCasual\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.LECasualColumn] = value;
+                    this[this.tableLeaveDetails.LeaveEntitleCasualColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LEOther {
+            public double LeaveEntitleOther {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.LEOtherColumn]));
+                        return ((double)(this[this.tableLeaveDetails.LeaveEntitleOtherColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LEOther\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveEntitleOther\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.LEOtherColumn] = value;
+                    this[this.tableLeaveDetails.LeaveEntitleOtherColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TLAnual {
+            public double TotalLeaveAnual {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.TLAnualColumn]));
+                        return ((double)(this[this.tableLeaveDetails.TotalLeaveAnualColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TLAnual\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLeaveAnual\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.TLAnualColumn] = value;
+                    this[this.tableLeaveDetails.TotalLeaveAnualColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TLCasual {
+            public double TotalLeaveCasual {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.TLCasualColumn]));
+                        return ((double)(this[this.tableLeaveDetails.TotalLeaveCasualColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TLCasual\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLeaveCasual\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.TLCasualColumn] = value;
+                    this[this.tableLeaveDetails.TotalLeaveCasualColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TLOther {
+            public double TotalLeaveOther {
                 get {
                     try {
-                        return ((string)(this[this.tableLeaveDetails.TLOtherColumn]));
+                        return ((double)(this[this.tableLeaveDetails.TotalLeaveOtherColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TLOther\' in table \'LeaveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLeaveOther\' in table \'LeaveDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLeaveDetails.TLOtherColumn] = value;
+                    this[this.tableLeaveDetails.TotalLeaveOtherColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double LeaveBalanceAnual {
+                get {
+                    try {
+                        return ((double)(this[this.tableLeaveDetails.LeaveBalanceAnualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveBalanceAnual\' in table \'LeaveDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLeaveDetails.LeaveBalanceAnualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double LeaveBalanceCasual {
+                get {
+                    try {
+                        return ((double)(this[this.tableLeaveDetails.LeaveBalanceCasualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveBalanceCasual\' in table \'LeaveDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLeaveDetails.LeaveBalanceCasualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Total {
+                get {
+                    try {
+                        return ((double)(this[this.tableLeaveDetails.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'LeaveDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLeaveDetails.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LeaveApplyedCategory {
+                get {
+                    try {
+                        return ((string)(this[this.tableLeaveDetails.LeaveApplyedCategoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveApplyedCategory\' in table \'LeaveDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLeaveDetails.LeaveApplyedCategoryColumn] = value;
                 }
             }
             
@@ -1242,14 +1366,14 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNameOfAppoimentNull() {
-                return this.IsNull(this.tableLeaveDetails.NameOfAppoimentColumn);
+            public bool IsDateOfAppoimentNull() {
+                return this.IsNull(this.tableLeaveDetails.DateOfAppoimentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNameOfAppoimentNull() {
-                this[this.tableLeaveDetails.NameOfAppoimentColumn] = global::System.Convert.DBNull;
+            public void SetDateOfAppoimentNull() {
+                this[this.tableLeaveDetails.DateOfAppoimentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1266,74 +1390,122 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLEAnualNull() {
-                return this.IsNull(this.tableLeaveDetails.LEAnualColumn);
+            public bool IsLeaveEntitleAnualNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveEntitleAnualColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLEAnualNull() {
-                this[this.tableLeaveDetails.LEAnualColumn] = global::System.Convert.DBNull;
+            public void SetLeaveEntitleAnualNull() {
+                this[this.tableLeaveDetails.LeaveEntitleAnualColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLECasualNull() {
-                return this.IsNull(this.tableLeaveDetails.LECasualColumn);
+            public bool IsLeaveEntitleCasualNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveEntitleCasualColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLECasualNull() {
-                this[this.tableLeaveDetails.LECasualColumn] = global::System.Convert.DBNull;
+            public void SetLeaveEntitleCasualNull() {
+                this[this.tableLeaveDetails.LeaveEntitleCasualColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLEOtherNull() {
-                return this.IsNull(this.tableLeaveDetails.LEOtherColumn);
+            public bool IsLeaveEntitleOtherNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveEntitleOtherColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLEOtherNull() {
-                this[this.tableLeaveDetails.LEOtherColumn] = global::System.Convert.DBNull;
+            public void SetLeaveEntitleOtherNull() {
+                this[this.tableLeaveDetails.LeaveEntitleOtherColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTLAnualNull() {
-                return this.IsNull(this.tableLeaveDetails.TLAnualColumn);
+            public bool IsTotalLeaveAnualNull() {
+                return this.IsNull(this.tableLeaveDetails.TotalLeaveAnualColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTLAnualNull() {
-                this[this.tableLeaveDetails.TLAnualColumn] = global::System.Convert.DBNull;
+            public void SetTotalLeaveAnualNull() {
+                this[this.tableLeaveDetails.TotalLeaveAnualColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTLCasualNull() {
-                return this.IsNull(this.tableLeaveDetails.TLCasualColumn);
+            public bool IsTotalLeaveCasualNull() {
+                return this.IsNull(this.tableLeaveDetails.TotalLeaveCasualColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTLCasualNull() {
-                this[this.tableLeaveDetails.TLCasualColumn] = global::System.Convert.DBNull;
+            public void SetTotalLeaveCasualNull() {
+                this[this.tableLeaveDetails.TotalLeaveCasualColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTLOtherNull() {
-                return this.IsNull(this.tableLeaveDetails.TLOtherColumn);
+            public bool IsTotalLeaveOtherNull() {
+                return this.IsNull(this.tableLeaveDetails.TotalLeaveOtherColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTLOtherNull() {
-                this[this.tableLeaveDetails.TLOtherColumn] = global::System.Convert.DBNull;
+            public void SetTotalLeaveOtherNull() {
+                this[this.tableLeaveDetails.TotalLeaveOtherColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLeaveBalanceAnualNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveBalanceAnualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLeaveBalanceAnualNull() {
+                this[this.tableLeaveDetails.LeaveBalanceAnualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLeaveBalanceCasualNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveBalanceCasualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLeaveBalanceCasualNull() {
+                this[this.tableLeaveDetails.LeaveBalanceCasualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableLeaveDetails.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableLeaveDetails.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLeaveApplyedCategoryNull() {
+                return this.IsNull(this.tableLeaveDetails.LeaveApplyedCategoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLeaveApplyedCategoryNull() {
+                this[this.tableLeaveDetails.LeaveApplyedCategoryColumn] = global::System.Convert.DBNull;
             }
         }
         

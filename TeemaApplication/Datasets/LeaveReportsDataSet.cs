@@ -1,4 +1,7 @@
-﻿namespace TeemaApplication.Datasets {
+﻿namespace TeemaApplication.Datasets
+{
+}
+namespace TeemaApplication.Datasets {
     
     
     public partial class LeaveReportsDataSet {
