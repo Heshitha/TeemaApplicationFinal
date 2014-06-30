@@ -16,14 +16,14 @@ namespace TeemaApplication.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class OverTimeRequestForm : ReportClass {
+    public class PersonalLeaveRecordReport : ReportClass {
         
-        public OverTimeRequestForm() {
+        public PersonalLeaveRecordReport() {
         }
         
         public override string ResourceName {
             get {
-                return "OverTimeRequestForm.rpt";
+                return "PersonalLeaveRecordReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TeemaApplication.Reports {
         
         public override string FullResourceName {
             get {
-                return "TeemaApplication.Reports.OverTimeRequestForm.rpt";
+                return "TeemaApplication.Reports.PersonalLeaveRecordReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TeemaApplication.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedOverTimeRequestForm : Component, ICachedReport {
+    public class CachedPersonalLeaveRecordReport : Component, ICachedReport {
         
-        public CachedOverTimeRequestForm() {
+        public CachedPersonalLeaveRecordReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TeemaApplication.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            OverTimeRequestForm rpt = new OverTimeRequestForm();
+            PersonalLeaveRecordReport rpt = new PersonalLeaveRecordReport();
             rpt.Site = this.Site;
             return rpt;
         }

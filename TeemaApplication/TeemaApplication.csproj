@@ -105,6 +105,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\PersonalLeaveRecordDataSet.cs">
+      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\PersonalLeaveRecordDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,6 +175,12 @@
       <DependentUpon>OverTimeRequestForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\PersonalLeaveRecordReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonalLeaveRecordReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +238,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OverTimeRequestForm.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PersonalLeaveRecordReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PersonalLeaveRecordReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +280,17 @@
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xss">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PersonalLeaveRecordDataSet.xsc">
+      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PersonalLeaveRecordDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PersonalLeaveRecordDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\PersonalLeaveRecordDataSet.xss">
+      <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>
