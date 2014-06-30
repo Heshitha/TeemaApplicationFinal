@@ -38,7 +38,7 @@ namespace TeemaApplication
         {
             cmbFormNo.DisplayMember = "SalaryAdvanceID";
             cmbFormNo.ValueMember = "SalaryAdvanceID";
-            cmbFormNo.DataSource = db.SalaryAdvances.Where(SA => SA.ApprovedBy == null).ToList();
+            cmbFormNo.DataSource = db.SalaryAdvances(SA => SA.ApprovedBy == null).ToList();
         }
     }
 }

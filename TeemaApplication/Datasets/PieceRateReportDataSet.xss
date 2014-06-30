@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:PieceRateDetails" ZOrder="3" X="81" Y="94" Height="181" Width="162" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:EnteredPieceRateDetails" ZOrder="2" X="298" Y="86" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:AveragePieceRateDetails" ZOrder="1" X="364" Y="244" Height="105" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:AveragePieceRateDetails" ZOrder="1" X="301" Y="205" Height="105" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

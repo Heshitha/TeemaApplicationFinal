@@ -499,7 +499,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PieceRateDetailsRow AddPieceRateDetailsRow(string ReportID, string Branch, string Department, string SubDepartment, string From, string To, string GeneratedBy, string GeneratedDate) {
+            public PieceRateDetailsRow AddPieceRateDetailsRow(int ReportID, string Branch, string Department, string SubDepartment, System.DateTime From, System.DateTime To, string GeneratedBy, System.DateTime GeneratedDate) {
                 PieceRateDetailsRow rowPieceRateDetailsRow = ((PieceRateDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
@@ -545,7 +545,7 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReportID);
                 this.columnBranch = new global::System.Data.DataColumn("Branch", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBranch);
@@ -553,13 +553,13 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnDepartment);
                 this.columnSubDepartment = new global::System.Data.DataColumn("SubDepartment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubDepartment);
-                this.columnFrom = new global::System.Data.DataColumn("From", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFrom = new global::System.Data.DataColumn("From", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFrom);
-                this.columnTo = new global::System.Data.DataColumn("To", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTo = new global::System.Data.DataColumn("To", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTo);
                 this.columnGeneratedBy = new global::System.Data.DataColumn("GeneratedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGeneratedBy);
-                this.columnGeneratedDate = new global::System.Data.DataColumn("GeneratedDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnGeneratedDate = new global::System.Data.DataColumn("GeneratedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGeneratedDate);
             }
             
@@ -804,7 +804,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EnteredPieceRateDetailsRow AddEnteredPieceRateDetailsRow(int ReportID, string TokenID, string Name, string TotalValue) {
+            public EnteredPieceRateDetailsRow AddEnteredPieceRateDetailsRow(int ReportID, int TokenID, string Name, double TotalValue) {
                 EnteredPieceRateDetailsRow rowEnteredPieceRateDetailsRow = ((EnteredPieceRateDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
@@ -844,11 +844,11 @@ namespace TeemaApplication.Datasets {
             private void InitClass() {
                 this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReportID);
-                this.columnTokenID = new global::System.Data.DataColumn("TokenID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTokenID = new global::System.Data.DataColumn("TokenID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTokenID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnTotalValue = new global::System.Data.DataColumn("TotalValue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalValue = new global::System.Data.DataColumn("TotalValue", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalValue);
             }
             
@@ -1093,7 +1093,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AveragePieceRateDetailsRow AddAveragePieceRateDetailsRow(string ReportID, string TokenID, string Name, string TotalValue) {
+            public AveragePieceRateDetailsRow AddAveragePieceRateDetailsRow(int ReportID, int TokenID, string Name, double TotalValue) {
                 AveragePieceRateDetailsRow rowAveragePieceRateDetailsRow = ((AveragePieceRateDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
@@ -1131,13 +1131,13 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReportID);
-                this.columnTokenID = new global::System.Data.DataColumn("TokenID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTokenID = new global::System.Data.DataColumn("TokenID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTokenID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnTotalValue = new global::System.Data.DataColumn("TotalValue", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotalValue = new global::System.Data.DataColumn("TotalValue", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalValue);
             }
             
@@ -1281,10 +1281,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ReportID {
+            public int ReportID {
                 get {
                     try {
-                        return ((string)(this[this.tablePieceRateDetails.ReportIDColumn]));
+                        return ((int)(this[this.tablePieceRateDetails.ReportIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'PieceRateDetails\' is DBNull.", e);
@@ -1345,10 +1345,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string From {
+            public System.DateTime From {
                 get {
                     try {
-                        return ((string)(this[this.tablePieceRateDetails.FromColumn]));
+                        return ((global::System.DateTime)(this[this.tablePieceRateDetails.FromColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'From\' in table \'PieceRateDetails\' is DBNull.", e);
@@ -1361,10 +1361,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string To {
+            public System.DateTime To {
                 get {
                     try {
-                        return ((string)(this[this.tablePieceRateDetails.ToColumn]));
+                        return ((global::System.DateTime)(this[this.tablePieceRateDetails.ToColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'To\' in table \'PieceRateDetails\' is DBNull.", e);
@@ -1393,10 +1393,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GeneratedDate {
+            public System.DateTime GeneratedDate {
                 get {
                     try {
-                        return ((string)(this[this.tablePieceRateDetails.GeneratedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tablePieceRateDetails.GeneratedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'GeneratedDate\' in table \'PieceRateDetails\' is DBNull.", e);
@@ -1536,10 +1536,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TokenID {
+            public int TokenID {
                 get {
                     try {
-                        return ((string)(this[this.tableEnteredPieceRateDetails.TokenIDColumn]));
+                        return ((int)(this[this.tableEnteredPieceRateDetails.TokenIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TokenID\' in table \'EnteredPieceRateDetails\' is DBNull.", e);
@@ -1568,10 +1568,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalValue {
+            public double TotalValue {
                 get {
                     try {
-                        return ((string)(this[this.tableEnteredPieceRateDetails.TotalValueColumn]));
+                        return ((double)(this[this.tableEnteredPieceRateDetails.TotalValueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalValue\' in table \'EnteredPieceRateDetails\' is DBNull.", e);
@@ -1647,10 +1647,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ReportID {
+            public int ReportID {
                 get {
                     try {
-                        return ((string)(this[this.tableAveragePieceRateDetails.ReportIDColumn]));
+                        return ((int)(this[this.tableAveragePieceRateDetails.ReportIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'AveragePieceRateDetails\' is DBNull.", e);
@@ -1663,10 +1663,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TokenID {
+            public int TokenID {
                 get {
                     try {
-                        return ((string)(this[this.tableAveragePieceRateDetails.TokenIDColumn]));
+                        return ((int)(this[this.tableAveragePieceRateDetails.TokenIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TokenID\' in table \'AveragePieceRateDetails\' is DBNull.", e);
@@ -1695,10 +1695,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TotalValue {
+            public double TotalValue {
                 get {
                     try {
-                        return ((string)(this[this.tableAveragePieceRateDetails.TotalValueColumn]));
+                        return ((double)(this[this.tableAveragePieceRateDetails.TotalValueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalValue\' in table \'AveragePieceRateDetails\' is DBNull.", e);
