@@ -267,6 +267,12 @@
     <Compile Include="UserAccountList.Designer.cs">
       <DependentUpon>UserAccountList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSecurityRoutine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSecurityRoutine.Designer.cs">
+      <DependentUpon>ViewSecurityRoutine.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddNewEmployee.resx">
       <DependentUpon>AddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccountList.resx">
       <DependentUpon>UserAccountList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSecurityRoutine.resx">
+      <DependentUpon>ViewSecurityRoutine.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Datasets\BasicSalaryDetailsDataSet.xsc">
       <DependentUpon>BasicSalaryDetailsDataSet.xsd</DependentUpon>

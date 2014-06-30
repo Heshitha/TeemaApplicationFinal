@@ -7504,6 +7504,8 @@ namespace TeemaApplication.Datasets
 		
 		private System.Nullable<System.DateTime> _ModifiedDate;
 		
+		private EntitySet<EmployeeAttendance> _EmployeeAttendances;
+		
 		private EntityRef<UserAccount> _UserAccount;
 		
 		private EntityRef<UserAccount> _UserAccount1;
@@ -7536,6 +7538,7 @@ namespace TeemaApplication.Datasets
 		
 		public FingerPrintDivice()
 		{
+			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
 			this._UserAccount = default(EntityRef<UserAccount>);
 			this._UserAccount1 = default(EntityRef<UserAccount>);
 			OnCreated();
@@ -7749,6 +7752,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FingerPrintDivice_EmployeeAttendance", Storage="_EmployeeAttendances", ThisKey="DeviceID", OtherKey="DeviceId")]
+		public EntitySet<EmployeeAttendance> EmployeeAttendances
+		{
+			get
+			{
+				return this._EmployeeAttendances;
+			}
+			set
+			{
+				this._EmployeeAttendances.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_FingerPrintDivice", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
 		public UserAccount UserAccount
 		{
@@ -7836,6 +7852,18 @@ namespace TeemaApplication.Datasets
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.FingerPrintDivice = this;
+		}
+		
+		private void detach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.FingerPrintDivice = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmployeeAttendance")]
@@ -7850,6 +7878,8 @@ namespace TeemaApplication.Datasets
 		
 		private string _Mode;
 		
+		private System.Nullable<int> _DeviceId;
+		
 		private int _AttendanceID;
 		
 		private System.Nullable<int> _CreatedBy;
@@ -7861,6 +7891,8 @@ namespace TeemaApplication.Datasets
 		private System.Nullable<System.DateTime> _ModifiedDate;
 		
 		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<FingerPrintDivice> _FingerPrintDivice;
 		
 		private EntityRef<UserAccount> _UserAccount;
 		
@@ -7876,6 +7908,8 @@ namespace TeemaApplication.Datasets
     partial void OnDateAndTimeChanged();
     partial void OnModeChanging(string value);
     partial void OnModeChanged();
+    partial void OnDeviceIdChanging(System.Nullable<int> value);
+    partial void OnDeviceIdChanged();
     partial void OnAttendanceIDChanging(int value);
     partial void OnAttendanceIDChanged();
     partial void OnCreatedByChanging(System.Nullable<int> value);
@@ -7891,6 +7925,7 @@ namespace TeemaApplication.Datasets
 		public EmployeeAttendance()
 		{
 			this._Employee = default(EntityRef<Employee>);
+			this._FingerPrintDivice = default(EntityRef<FingerPrintDivice>);
 			this._UserAccount = default(EntityRef<UserAccount>);
 			this._UserAccount1 = default(EntityRef<UserAccount>);
 			OnCreated();
@@ -7956,6 +7991,30 @@ namespace TeemaApplication.Datasets
 					this._Mode = value;
 					this.SendPropertyChanged("Mode");
 					this.OnModeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeviceId", DbType="Int")]
+		public System.Nullable<int> DeviceId
+		{
+			get
+			{
+				return this._DeviceId;
+			}
+			set
+			{
+				if ((this._DeviceId != value))
+				{
+					if (this._FingerPrintDivice.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDeviceIdChanging(value);
+					this.SendPropertyChanging();
+					this._DeviceId = value;
+					this.SendPropertyChanged("DeviceId");
+					this.OnDeviceIdChanged();
 				}
 			}
 		}
@@ -8098,6 +8157,40 @@ namespace TeemaApplication.Datasets
 						this._EmployeeID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FingerPrintDivice_EmployeeAttendance", Storage="_FingerPrintDivice", ThisKey="DeviceId", OtherKey="DeviceID", IsForeignKey=true)]
+		public FingerPrintDivice FingerPrintDivice
+		{
+			get
+			{
+				return this._FingerPrintDivice.Entity;
+			}
+			set
+			{
+				FingerPrintDivice previousValue = this._FingerPrintDivice.Entity;
+				if (((previousValue != value) 
+							|| (this._FingerPrintDivice.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._FingerPrintDivice.Entity = null;
+						previousValue.EmployeeAttendances.Remove(this);
+					}
+					this._FingerPrintDivice.Entity = value;
+					if ((value != null))
+					{
+						value.EmployeeAttendances.Add(this);
+						this._DeviceId = value.DeviceID;
+					}
+					else
+					{
+						this._DeviceId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("FingerPrintDivice");
 				}
 			}
 		}

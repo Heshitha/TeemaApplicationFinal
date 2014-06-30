@@ -210,6 +210,7 @@ namespace TeemaApplication
                                 Employee = empl,
                                 Mode = mode,
                                 DateAndTime = rec.Clock,
+                                FingerPrintDivice = fpd,
                                 CreatedBy = 1,
                                 CreatedDate = DateTime.Now,
                                 ModifiedBy = 1,

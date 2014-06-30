@@ -135,7 +135,7 @@
         <classShapeMoniker Id="fe5be13f-a8d6-41ac-a691-658ddb56e01a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.351561 : 8); (1.351561 : 7.5); (1.60026016666667 : 7.5 : JumpStart); (1.76692683333333 : 7.5 : JumpEnd); (1.86588616666667 : 7.5 : JumpStart); (2.03255283333333 : 7.5 : JumpEnd); (2.13151216666667 : 7.5 : JumpStart); (2.29817883333333 : 7.5 : JumpEnd); (2.50455891666667 : 7.5 : JumpStart); (2.79622808333333 : 7.5 : JumpEnd); (3.125 : 7.5); (3.125 : 9.1875); (3.29166666666667 : 9.1875 : JumpStart); (3.45833333333333 : 9.1875 : JumpEnd); (5.6875 : 9.1875); (5.6875 : 9.65549967447917); (5.85416666666667 : 9.65549967447917 : JumpStart); (6.27083333333333 : 9.65549967447917 : JumpEnd); (6.63541416666667 : 9.65549967447917 : JumpStart); (6.80208083333333 : 9.65549967447917 : JumpEnd); (7.69791916666667 : 9.65549967447917 : JumpStart); (7.86458583333333 : 9.65549967447917 : JumpEnd); (9.38541466666667 : 9.65549967447917 : JumpStart); (9.55208133333333 : 9.65549967447917 : JumpEnd); (11.2916666666667 : 9.65549967447917 : JumpStart); (11.4583333333333 : 9.65549967447917 : JumpEnd); (11.5 : 9.65549967447917); (11.5 : 7.7147469593099); (11.75 : 7.7147469593099)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.351561 : 8); (1.351561 : 7.5); (1.43424391666667 : 7.5 : JumpStart); (1.76692683333333 : 7.5 : JumpEnd); (1.78287804166667 : 7.5 : JumpStart); (1.94954470833333 : 7.5 : JumpEnd); (1.96549591666667 : 7.5 : JumpStart); (2.13216258333333 : 7.5 : JumpEnd); (2.14811379166667 : 7.5 : JumpStart); (2.31478045833333 : 7.5 : JumpEnd); (2.50455891666667 : 7.5 : JumpStart); (2.79622808333333 : 7.5 : JumpEnd); (3.125 : 7.5); (3.125 : 9.1875); (3.29166666666667 : 9.1875 : JumpStart); (3.45833333333333 : 9.1875 : JumpEnd); (5.6875 : 9.1875); (5.6875 : 9.65549967447917); (5.85416666666667 : 9.65549967447917 : JumpStart); (6.27083333333333 : 9.65549967447917 : JumpEnd); (6.63541416666667 : 9.65549967447917 : JumpStart); (6.80208083333333 : 9.65549967447917 : JumpEnd); (7.69791916666667 : 9.65549967447917 : JumpStart); (7.86458583333333 : 9.65549967447917 : JumpEnd); (9.38541466666667 : 9.65549967447917 : JumpStart); (9.55208133333333 : 9.65549967447917 : JumpEnd); (11.2916666666667 : 9.65549967447917 : JumpStart); (11.4583333333333 : 9.65549967447917 : JumpEnd); (11.5 : 9.65549967447917); (11.5 : 7.7147469593099); (11.75 : 7.7147469593099)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_Employee1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
@@ -183,14 +183,14 @@
         <classShapeMoniker Id="bf8af5e2-e010-46f5-bc8a-fe9160ff4b86" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.9492195 : 8); (1.9492195 : 4.125); (2.13151216666667 : 4.125 : JumpStart); (2.29817883333333 : 4.125 : JumpEnd); (2.50455891666667 : 4.125 : JumpStart); (2.79622808333333 : 4.125 : JumpEnd); (3.13541666666667 : 4.125 : JumpStart); (3.45833333333333 : 4.125 : JumpEnd); (10.0416666666667 : 4.125 : JumpStart); (10.2083333333333 : 4.125 : JumpEnd); (10.375 : 4.125); (10.375 : 5.88962585449219); (12.1041666666667 : 5.88962585449219 : JumpStart); (12.2708333333333 : 5.88962585449219 : JumpEnd); (12.6666666666667 : 5.88962585449219 : JumpStart); (12.8333333333333 : 5.88962585449219 : JumpEnd); (13.1979191666667 : 5.88962585449219 : JumpStart); (13.3645858333333 : 5.88962585449219 : JumpEnd); (14.875 : 5.88962585449219)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.04882925 : 8); (2.04882925 : 4.3125); (2.14811379166667 : 4.3125 : JumpStart); (2.31478045833333 : 4.3125 : JumpEnd); (2.50455891666667 : 4.3125 : JumpStart); (2.79622808333333 : 4.3125 : JumpEnd); (3.29166666666667 : 4.3125 : JumpStart); (3.45833333333333 : 4.3125 : JumpEnd); (10.2916666666667 : 4.3125 : JumpStart); (10.4583333333333 : 4.3125 : JumpEnd); (13.1354166666667 : 4.3125 : JumpStart); (13.3020833333333 : 4.3125 : JumpEnd); (14.78125 : 4.3125); (14.78125 : 5.55850341796875); (14.875 : 5.55850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryDetail" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
         <classShapeMoniker Id="bf8af5e2-e010-46f5-bc8a-fe9160ff4b86" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.6132845 : 8); (2.6132845 : 3.875); (2.62956141666667 : 3.875 : JumpStart); (2.79622808333333 : 3.875 : JumpEnd); (3.13541666666667 : 3.875 : JumpStart); (3.45833333333333 : 3.875 : JumpEnd); (10.125 : 3.875); (10.125 : 6.38231542724609); (12.1041666666667 : 6.38231542724609 : JumpStart); (12.2708333333333 : 6.38231542724609 : JumpEnd); (12.6666666666667 : 6.38231542724609 : JumpStart); (12.8333333333333 : 6.38231542724609 : JumpEnd); (13.1979191666667 : 6.38231542724609 : JumpStart); (13.3645858333333 : 6.38231542724609 : JumpEnd); (14.875 : 6.38231542724609)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.6132845 : 8); (2.6132845 : 4.3125); (2.62956141666667 : 4.3125 : JumpStart); (2.79622808333333 : 4.3125 : JumpEnd); (3.29166666666667 : 4.3125 : JumpStart); (3.45833333333333 : 4.3125 : JumpEnd); (10.2916666666667 : 4.3125 : JumpStart); (10.4583333333333 : 4.3125 : JumpEnd); (13.1354166666667 : 4.3125 : JumpStart); (13.3020833333333 : 4.3125 : JumpEnd); (14.71875 : 4.3125); (14.71875 : 6.36900712695313); (14.875 : 6.36900712695313)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryDetail1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
@@ -298,14 +298,14 @@
         <classShapeMoniker Id="92a186ec-6771-4fc5-8a66-c4d6146db933" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.6835935 : 8); (1.6835935 : 4.99999725); (1.86588616666667 : 4.99999725 : JumpStart); (2.03255283333333 : 4.99999725 : JumpEnd); (2.13151216666667 : 4.99999725 : JumpStart); (2.29817883333333 : 4.99999725 : JumpEnd); (2.50455891666667 : 4.99999725 : JumpStart); (2.79622808333333 : 4.99999725 : JumpEnd); (3.13541666666667 : 4.99999725 : JumpStart); (3.45833333333333 : 4.99999725 : JumpEnd); (7.5 : 4.99999725)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.6835935 : 8); (1.6835935 : 4.99999725); (1.78287804166667 : 4.99999725 : JumpStart); (1.94954470833333 : 4.99999725 : JumpEnd); (1.96549591666667 : 4.99999725 : JumpStart); (2.13216258333333 : 4.99999725 : JumpEnd); (2.14811379166667 : 4.99999725 : JumpStart); (2.31478045833333 : 4.99999725 : JumpEnd); (2.50455891666667 : 4.99999725 : JumpStart); (2.79622808333333 : 4.99999725 : JumpEnd); (3.29166666666667 : 4.99999725 : JumpStart); (3.45833333333333 : 4.99999725 : JumpEnd); (7.5 : 4.99999725)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryAdvance" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
         <classShapeMoniker Id="92a186ec-6771-4fc5-8a66-c4d6146db933" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.0195285 : 8); (1.0195285 : 6.09375225); (1.60026016666667 : 6.09375225 : JumpStart); (1.76692683333333 : 6.09375225 : JumpEnd); (1.86588616666667 : 6.09375225 : JumpStart); (2.03255283333333 : 6.09375225 : JumpEnd); (2.13151216666667 : 6.09375225 : JumpStart); (2.29817883333333 : 6.09375225 : JumpEnd); (2.50455891666667 : 6.09375225 : JumpStart); (2.79622808333333 : 6.09375225 : JumpEnd); (3.13541666666667 : 6.09375225 : JumpStart); (3.45833333333333 : 6.09375225 : JumpEnd); (6.79166616666667 : 6.09375225 : JumpStart); (6.95833283333333 : 6.09375225 : JumpEnd); (7.5 : 6.09375225)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.0195285 : 8); (1.0195285 : 6.09375225); (1.43424391666667 : 6.09375225 : JumpStart); (1.76692683333333 : 6.09375225 : JumpEnd); (1.78287804166667 : 6.09375225 : JumpStart); (1.94954470833333 : 6.09375225 : JumpEnd); (1.96549591666667 : 6.09375225 : JumpStart); (2.13216258333333 : 6.09375225 : JumpEnd); (2.14811379166667 : 6.09375225 : JumpStart); (2.31478045833333 : 6.09375225 : JumpEnd); (2.50455891666667 : 6.09375225 : JumpStart); (2.79622808333333 : 6.09375225 : JumpEnd); (3.29166666666667 : 6.09375225 : JumpStart); (3.45833333333333 : 6.09375225 : JumpEnd); (6.79166616666667 : 6.09375225 : JumpStart); (6.95833283333333 : 6.09375225 : JumpEnd); (7.5 : 6.09375225)]" fixedFrom="Algorithm" fixedTo="NotFixed">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryAdvance1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
@@ -325,21 +325,21 @@
         <classShapeMoniker Id="fa0f2047-ce16-437a-bad3-b276d3738b71" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.5 : 4.96675170898438); (10.0416666666667 : 4.96675170898438 : JumpStart); (10.2083333333333 : 4.96675170898438 : JumpEnd); (10.2916666666667 : 4.96675170898438 : JumpStart); (10.4583333333333 : 4.96675170898438 : JumpEnd); (11.15625 : 4.96675170898438); (11.15625 : 4.2420068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(9.5 : 4.96675170898438); (11.15625 : 4.96675170898438); (11.15625 : 4.2420068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/TeemaDBDataContext/SalaryAdvance/SalaryAdvance_SalaryAdvanceEmployeeDetail" />
       <nodes>
         <classShapeMoniker Id="92a186ec-6771-4fc5-8a66-c4d6146db933" />
         <classShapeMoniker Id="fa0f2047-ce16-437a-bad3-b276d3738b71" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.71289475 : 8); (2.71289475 : 3.70995198567708); (3.13541666666667 : 3.70995198567708 : JumpStart); (3.45833333333333 : 3.70995198567708 : JumpEnd); (10.4166666666667 : 3.70995198567708 : JumpStart); (10.5833333333333 : 3.70995198567708 : JumpEnd); (10.625 : 3.70995198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.231447125 : 8); (2.231447125 : 3.73240397135417); (2.50455891666667 : 3.73240397135417 : JumpStart); (2.67122558333333 : 3.73240397135417 : JumpEnd); (3.29166666666667 : 3.73240397135417 : JumpStart); (3.45833333333333 : 3.73240397135417 : JumpEnd); (6.04166666666667 : 3.73240397135417 : JumpStart); (6.20833333333333 : 3.73240397135417 : JumpEnd); (6.375 : 3.73240397135417); (6.375 : 1.375); (9.91666666666667 : 1.375 : JumpStart); (10.0833333333333 : 1.375 : JumpEnd); (10.25 : 1.375); (10.25 : 2.68350341796875); (10.2916666666667 : 2.68350341796875 : JumpStart); (10.4583333333333 : 2.68350341796875 : JumpEnd); (10.625 : 2.68350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryAdvanceEmployeeDetail" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
         <classShapeMoniker Id="fa0f2047-ce16-437a-bad3-b276d3738b71" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.58789225 : 8); (2.58789225 : 4); (2.62956141666667 : 4 : JumpStart); (2.79622808333333 : 4 : JumpEnd); (3.13541666666667 : 4 : JumpStart); (3.45833333333333 : 4 : JumpEnd); (10.0416666666667 : 4 : JumpStart); (10.2083333333333 : 4 : JumpEnd); (10.4166666666667 : 4 : JumpStart); (10.5833333333333 : 4 : JumpEnd); (10.625 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.866211375 : 8); (1.866211375 : 3.98240397135417); (2.14811379166667 : 3.98240397135417 : JumpStart); (2.31478045833333 : 3.98240397135417 : JumpEnd); (2.50455891666667 : 3.98240397135417 : JumpStart); (2.79622808333333 : 3.98240397135417 : JumpEnd); (3.29166666666667 : 3.98240397135417 : JumpStart); (3.45833333333333 : 3.98240397135417 : JumpEnd); (6.125 : 3.98240397135417); (6.125 : 1.125); (10 : 1.125); (10 : 3.49400712695313); (10.2916666666667 : 3.49400712695312 : JumpStart); (10.4583333333333 : 3.49400712695313 : JumpEnd); (10.625 : 3.49400712695313)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_SalaryAdvanceEmployeeDetail1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
@@ -379,7 +379,7 @@
         <elementListCompartment Id="2825875e-af40-45d2-a5dc-e519e198c48f" absoluteBounds="3.14, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(12.75 : 6.875); (12.75 : 4.4920068359375); (12.2708333333333 : 4.4920068359375 : JumpStart); (12.1041666666667 : 4.4920068359375 : JumpEnd); (11.2395833333333 : 4.4920068359375 : JumpStart); (11.0729166666667 : 4.4920068359375 : JumpEnd); (10.5 : 4.4920068359375); (10.5 : 0.5); (5.5 : 0.5); (5.5 : 1.66429768880208); (5.125 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.21875 : 6.875); (13.21875 : 0.96875); (5.125 : 0.96875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/Employee/Employee_EnteredPieceRateForEmployee" />
       <nodes>
         <classShapeMoniker Id="fe5be13f-a8d6-41ac-a691-658ddb56e01a" />
@@ -419,45 +419,52 @@
         <elementListCompartment Id="91e5bd9e-8ebb-4768-a46f-9ea383b32338" absoluteBounds="0.515, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.2148455 : 8); (2.2148455 : 3.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(0.82226425 : 8); (0.82226425 : 3.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_FingerPrintDivice" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
         <classShapeMoniker Id="030f879f-a24a-43b6-ae7f-fa6e4590b180" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(0.82226425 : 8); (0.82226425 : 3.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.51757725 : 8); (1.51757725 : 3.48240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_FingerPrintDivice1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
         <classShapeMoniker Id="030f879f-a24a-43b6-ae7f-fa6e4590b180" />
       </nodes>
     </associationConnector>
-    <classShape Id="ec2d0a1f-5277-4de3-869c-6561cb66515b" absoluteBounds="5.625, 0.75, 2, 2.3478011067708335">
+    <classShape Id="99dfe4f7-8a25-408f-ae61-7e70509daaca" absoluteBounds="6.625, 1.625, 2, 2.5401025390625">
       <DataClassMoniker Name="/TeemaDBDataContext/EmployeeAttendance" />
       <nestedChildShapes>
-        <elementListCompartment Id="1504c2b4-5bc0-436e-a5fb-d39def6c51a7" absoluteBounds="5.64, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b69e50ca-2836-4f11-b1fb-a295bc4680a7" absoluteBounds="6.64, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(13.2812525 : 6.875); (13.2812525 : 0.90625); (10.5833333333333 : 0.90625 : JumpStart); (10.4166666666667 : 0.90625 : JumpEnd); (7.625 : 0.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.453123 : 6.875); (12.453123 : 4.4920068359375); (12.2708333333333 : 4.4920068359375 : JumpStart); (12.1041666666667 : 4.4920068359375 : JumpEnd); (11.2395833333333 : 4.4920068359375 : JumpStart); (11.0729166666667 : 4.4920068359375 : JumpEnd); (10.375 : 4.4920068359375); (10.375 : 2.15425220898438); (10.3333333333333 : 2.15425220898437 : JumpStart); (10.1666666666667 : 2.15425220898438 : JumpEnd); (10.0833333333333 : 2.15425220898437 : JumpStart); (9.91666666666667 : 2.15425220898438 : JumpEnd); (8.625 : 2.15425220898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/Employee/Employee_EmployeeAttendance" />
       <nodes>
         <classShapeMoniker Id="fe5be13f-a8d6-41ac-a691-658ddb56e01a" />
-        <classShapeMoniker Id="ec2d0a1f-5277-4de3-869c-6561cb66515b" />
+        <classShapeMoniker Id="99dfe4f7-8a25-408f-ae61-7e70509daaca" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.031330251252); (3.06607443490112 : 7.71525581635088 : JumpStart); (3.18392556509888 : 7.59740468615313 : JumpEnd); (3.3125 : 7.468830251252); (3.3125 : 3.53530110677083); (5.22134515384615 : 3.53530110677083); (5.65884515384615 : 3.09780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 3.21799967447917); (3.29166666666667 : 3.21799967447917 : JumpStart); (3.45833333333333 : 3.21799967447917 : JumpEnd); (6.04166666666667 : 3.21799967447917 : JumpStart); (6.20833333333333 : 3.21799967447917 : JumpEnd); (6.29166666666667 : 3.21799967447917 : JumpStart); (6.45833333333333 : 3.21799967447917 : JumpEnd); (6.625 : 3.21799967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TeemaDBDataContext/FingerPrintDivice/FingerPrintDivice_EmployeeAttendance" />
+      <nodes>
+        <classShapeMoniker Id="030f879f-a24a-43b6-ae7f-fa6e4590b180" />
+        <classShapeMoniker Id="99dfe4f7-8a25-408f-ae61-7e70509daaca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.71289475 : 8); (2.71289475 : 3.85740397135417); (3.29166666666667 : 3.85740397135417 : JumpStart); (3.45833333333333 : 3.85740397135417 : JumpEnd); (6.04166666666667 : 3.85740397135417 : JumpStart); (6.20833333333333 : 3.85740397135417 : JumpEnd); (6.625 : 3.85740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_EmployeeAttendance" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
-        <classShapeMoniker Id="ec2d0a1f-5277-4de3-869c-6561cb66515b" />
+        <classShapeMoniker Id="99dfe4f7-8a25-408f-ae61-7e70509daaca" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.00272345663061); (3.06607443490112 : 7.68664902172949 : JumpStart); (3.18392556509888 : 7.56879789153173 : JumpEnd); (3.21875 : 7.53397345663061); (3.21875 : 3.47280110677083); (3.29166666666667 : 3.47280110677083 : JumpStart); (3.45833333333333 : 3.47280110677083 : JumpEnd); (5.21769230769231 : 3.47280110677083); (5.625 : 3.06549341446314)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.58789225 : 8); (2.58789225 : 3.63865397135417); (3.29166666666667 : 3.63865397135417 : JumpStart); (3.45833333333333 : 3.63865397135417 : JumpEnd); (6.04166666666667 : 3.63865397135417 : JumpStart); (6.20833333333333 : 3.63865397135417 : JumpEnd); (6.29166666666667 : 3.63865397135417 : JumpStart); (6.45833333333333 : 3.63865397135417 : JumpEnd); (6.625 : 3.63865397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/TeemaDBDataContext/UserAccount/UserAccount_EmployeeAttendance1" />
       <nodes>
         <classShapeMoniker Id="8c299a79-ce7d-448e-80fe-62b1f29e309c" />
-        <classShapeMoniker Id="ec2d0a1f-5277-4de3-869c-6561cb66515b" />
+        <classShapeMoniker Id="99dfe4f7-8a25-408f-ae61-7e70509daaca" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

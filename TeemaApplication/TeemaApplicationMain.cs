@@ -241,5 +241,19 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void loadAttendanceDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLoadAttenadanceDetails frm = new frmLoadAttenadanceDetails();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void viewSecurityRoutineReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewSecurityRoutine frm = new frmViewSecurityRoutine();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

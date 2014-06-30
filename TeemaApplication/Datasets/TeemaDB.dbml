@@ -311,6 +311,7 @@
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="FingerPrintDivice_EmployeeAttendance" Member="EmployeeAttendances" ThisKey="DeviceID" OtherKey="DeviceId" Type="EmployeeAttendance" />
       <Association Name="UserAccount_FingerPrintDivice" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_FingerPrintDivice1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
@@ -320,12 +321,14 @@
       <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DateAndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Mode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DeviceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AttendanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="Employee_EmployeeAttendance" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="FingerPrintDivice_EmployeeAttendance" Member="FingerPrintDivice" ThisKey="DeviceId" OtherKey="DeviceID" Type="FingerPrintDivice" IsForeignKey="true" />
       <Association Name="UserAccount_EmployeeAttendance" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_EmployeeAttendance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
