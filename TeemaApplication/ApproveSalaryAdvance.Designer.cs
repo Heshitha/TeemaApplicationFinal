@@ -37,10 +37,7 @@
             this.lblWorkingBranch = new System.Windows.Forms.Label();
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbFormNo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpSalaryMonth = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
             this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +49,7 @@
             this.clmnVariableInsentiveAllowance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrintForm = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
+            this.cmbFormNo = new System.Windows.Forms.ComboBox();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
@@ -138,23 +136,12 @@
             // 
             this.groupBox1.Controls.Add(this.cmbFormNo);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpSalaryMonth);
             this.groupBox1.Location = new System.Drawing.Point(12, 148);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 82);
+            this.groupBox1.Size = new System.Drawing.Size(248, 59);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overtime Details";
-            // 
-            // cmbFormNo
-            // 
-            this.cmbFormNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormNo.FormattingEnabled = true;
-            this.cmbFormNo.Location = new System.Drawing.Point(87, 18);
-            this.cmbFormNo.Name = "cmbFormNo";
-            this.cmbFormNo.Size = new System.Drawing.Size(151, 21);
-            this.cmbFormNo.TabIndex = 13;
             // 
             // label6
             // 
@@ -164,24 +151,6 @@
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Form No";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Salary Month";
-            // 
-            // dtpSalaryMonth
-            // 
-            this.dtpSalaryMonth.CustomFormat = "MMMM - yyyy";
-            this.dtpSalaryMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSalaryMonth.Location = new System.Drawing.Point(87, 45);
-            this.dtpSalaryMonth.Name = "dtpSalaryMonth";
-            this.dtpSalaryMonth.Size = new System.Drawing.Size(151, 20);
-            this.dtpSalaryMonth.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -193,11 +162,12 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(728, 9);
+            this.btnClose.Location = new System.Drawing.Point(770, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 41;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgvEmployeeDetails
             // 
@@ -216,7 +186,7 @@
             this.dgvEmployeeDetails.Location = new System.Drawing.Point(266, 45);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
-            this.dgvEmployeeDetails.Size = new System.Drawing.Size(492, 318);
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(534, 318);
             this.dgvEmployeeDetails.TabIndex = 42;
             // 
             // clmnTokenNo
@@ -263,7 +233,7 @@
             // 
             // btnPrintForm
             // 
-            this.btnPrintForm.Location = new System.Drawing.Point(683, 370);
+            this.btnPrintForm.Location = new System.Drawing.Point(725, 369);
             this.btnPrintForm.Name = "btnPrintForm";
             this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
             this.btnPrintForm.TabIndex = 44;
@@ -272,18 +242,28 @@
             // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(602, 370);
+            this.btnApprove.Location = new System.Drawing.Point(644, 369);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(75, 23);
             this.btnApprove.TabIndex = 43;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
             // 
+            // cmbFormNo
+            // 
+            this.cmbFormNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormNo.FormattingEnabled = true;
+            this.cmbFormNo.Location = new System.Drawing.Point(96, 19);
+            this.cmbFormNo.Name = "cmbFormNo";
+            this.cmbFormNo.Size = new System.Drawing.Size(142, 21);
+            this.cmbFormNo.TabIndex = 13;
+            this.cmbFormNo.SelectedIndexChanged += new System.EventHandler(this.cmbFormNo_SelectedIndexChanged_1);
+            // 
             // ApproveSalaryAdvance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 402);
+            this.ClientSize = new System.Drawing.Size(812, 402);
             this.Controls.Add(this.btnPrintForm);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvEmployeeDetails);
@@ -317,10 +297,7 @@
         private System.Windows.Forms.Label lblFormTopic;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpSalaryMonth;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ComboBox cmbFormNo;
         private System.Windows.Forms.DataGridView dgvEmployeeDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
@@ -331,5 +308,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnVariableInsentiveAllowance;
         private System.Windows.Forms.Button btnPrintForm;
         private System.Windows.Forms.Button btnApprove;
+        private System.Windows.Forms.ComboBox cmbFormNo;
     }
 }
