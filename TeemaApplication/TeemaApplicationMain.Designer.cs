@@ -46,7 +46,7 @@
             this.pieceRateCalculationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.approveSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pieceRatePaymentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,8 +153,7 @@
             // salaryAdvanceToolStripMenuItem
             // 
             this.salaryAdvanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createSalaryAdvanceToolStripMenuItem,
-            this.approveSalaryAdvanceToolStripMenuItem});
+            this.createSalaryAdvanceToolStripMenuItem});
             this.salaryAdvanceToolStripMenuItem.Name = "salaryAdvanceToolStripMenuItem";
             this.salaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.salaryAdvanceToolStripMenuItem.Text = "Salary Advance";
@@ -162,14 +161,15 @@
             // createSalaryAdvanceToolStripMenuItem
             // 
             this.createSalaryAdvanceToolStripMenuItem.Name = "createSalaryAdvanceToolStripMenuItem";
-            this.createSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.createSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.createSalaryAdvanceToolStripMenuItem.Text = "Create Salary Advance";
             this.createSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.createSalaryAdvanceToolStripMenuItem_Click);
             // 
             // pieceRateCalculationToolStripMenuItem
             // 
             this.pieceRateCalculationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterPieceRateDetailsToolStripMenuItem});
+            this.enterPieceRateDetailsToolStripMenuItem,
+            this.pieceRatePaymentListToolStripMenuItem});
             this.pieceRateCalculationToolStripMenuItem.Name = "pieceRateCalculationToolStripMenuItem";
             this.pieceRateCalculationToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
             this.pieceRateCalculationToolStripMenuItem.Text = "Piece Rate Calculation";
@@ -181,12 +181,12 @@
             this.enterPieceRateDetailsToolStripMenuItem.Text = "Enter Piece Rate Details";
             this.enterPieceRateDetailsToolStripMenuItem.Click += new System.EventHandler(this.enterPieceRateDetailsToolStripMenuItem_Click);
             // 
-            // approveSalaryAdvanceToolStripMenuItem
+            // pieceRatePaymentListToolStripMenuItem
             // 
-            this.approveSalaryAdvanceToolStripMenuItem.Name = "approveSalaryAdvanceToolStripMenuItem";
-            this.approveSalaryAdvanceToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.approveSalaryAdvanceToolStripMenuItem.Text = "Approve Salary Advance";
-            this.approveSalaryAdvanceToolStripMenuItem.Click += new System.EventHandler(this.approveSalaryAdvanceToolStripMenuItem_Click);
+            this.pieceRatePaymentListToolStripMenuItem.Name = "pieceRatePaymentListToolStripMenuItem";
+            this.pieceRatePaymentListToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.pieceRatePaymentListToolStripMenuItem.Text = "Piece Rate Payment List";
+            this.pieceRatePaymentListToolStripMenuItem.Click += new System.EventHandler(this.pieceRatePaymentListToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem createSalaryAdvanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pieceRateCalculationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterPieceRateDetailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem approveSalaryAdvanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pieceRatePaymentListToolStripMenuItem;
     }
 }
 

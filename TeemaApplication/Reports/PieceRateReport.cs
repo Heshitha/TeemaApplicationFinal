@@ -16,14 +16,14 @@ namespace TeemaApplication.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class OverTimeRequestForm : ReportClass {
+    public class PieceRateReport : ReportClass {
         
-        public OverTimeRequestForm() {
+        public PieceRateReport() {
         }
         
         public override string ResourceName {
             get {
-                return "OverTimeRequestForm.rpt";
+                return "PieceRateReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TeemaApplication.Reports {
         
         public override string FullResourceName {
             get {
-                return "TeemaApplication.Reports.OverTimeRequestForm.rpt";
+                return "TeemaApplication.Reports.PieceRateReport.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace TeemaApplication.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,17 +82,25 @@ namespace TeemaApplication.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedOverTimeRequestForm : Component, ICachedReport {
+    public class CachedPieceRateReport : Component, ICachedReport {
         
-        public CachedOverTimeRequestForm() {
+        public CachedPieceRateReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace TeemaApplication.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            OverTimeRequestForm rpt = new OverTimeRequestForm();
+            PieceRateReport rpt = new PieceRateReport();
             rpt.Site = this.Site;
             return rpt;
         }
