@@ -37,11 +37,11 @@
             this.lblWorkingBranch = new System.Windows.Forms.Label();
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbFormNo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpSalaryMonth = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cmbFormNo = new System.Windows.Forms.ComboBox();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
             this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +50,8 @@
             this.clmnDayWages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnFixedInsentiveAllowance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnVariableInsentiveAllowance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPrintForm = new System.Windows.Forms.Button();
+            this.btnApprove = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
@@ -145,6 +147,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overtime Details";
             // 
+            // cmbFormNo
+            // 
+            this.cmbFormNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormNo.FormattingEnabled = true;
+            this.cmbFormNo.Location = new System.Drawing.Point(87, 18);
+            this.cmbFormNo.Name = "cmbFormNo";
+            this.cmbFormNo.Size = new System.Drawing.Size(151, 21);
+            this.cmbFormNo.TabIndex = 13;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -188,15 +199,6 @@
             this.btnClose.TabIndex = 41;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // cmbFormNo
-            // 
-            this.cmbFormNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFormNo.FormattingEnabled = true;
-            this.cmbFormNo.Location = new System.Drawing.Point(87, 18);
-            this.cmbFormNo.Name = "cmbFormNo";
-            this.cmbFormNo.Size = new System.Drawing.Size(151, 21);
-            this.cmbFormNo.TabIndex = 13;
-            // 
             // dgvEmployeeDetails
             // 
             this.dgvEmployeeDetails.AllowUserToAddRows = false;
@@ -214,7 +216,7 @@
             this.dgvEmployeeDetails.Location = new System.Drawing.Point(266, 45);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
-            this.dgvEmployeeDetails.Size = new System.Drawing.Size(492, 282);
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(492, 318);
             this.dgvEmployeeDetails.TabIndex = 42;
             // 
             // clmnTokenNo
@@ -259,11 +261,31 @@
             this.clmnVariableInsentiveAllowance.HeaderText = "Variable Insentive Allowance";
             this.clmnVariableInsentiveAllowance.Name = "clmnVariableInsentiveAllowance";
             // 
+            // btnPrintForm
+            // 
+            this.btnPrintForm.Location = new System.Drawing.Point(683, 370);
+            this.btnPrintForm.Name = "btnPrintForm";
+            this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintForm.TabIndex = 44;
+            this.btnPrintForm.Text = "Print Form";
+            this.btnPrintForm.UseVisualStyleBackColor = true;
+            // 
+            // btnApprove
+            // 
+            this.btnApprove.Location = new System.Drawing.Point(602, 370);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(75, 23);
+            this.btnApprove.TabIndex = 43;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
+            // 
             // ApproveSalaryAdvance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 390);
+            this.ClientSize = new System.Drawing.Size(770, 402);
+            this.Controls.Add(this.btnPrintForm);
+            this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvEmployeeDetails);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
@@ -272,6 +294,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ApproveSalaryAdvance";
             this.Text = "ApproveSalaryAdvance";
+            this.Load += new System.EventHandler(this.ApproveSalaryAdvance_Load);
             this.gbxDepartmentDetails.ResumeLayout(false);
             this.gbxDepartmentDetails.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -306,5 +329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnDayWages;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnFixedInsentiveAllowance;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnVariableInsentiveAllowance;
+        private System.Windows.Forms.Button btnPrintForm;
+        private System.Windows.Forms.Button btnApprove;
     }
 }
