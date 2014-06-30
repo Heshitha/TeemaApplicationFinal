@@ -235,7 +235,7 @@ namespace TeemaApplication
 
         private void approveSalaryAdvanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             frm = new frmPieceRatePaymentList();
+            ApproveSalaryAdvance frm = new ApproveSalaryAdvance();
             frm.MdiParent = this;
             frm.Show();
         }
