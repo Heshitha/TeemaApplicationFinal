@@ -39,6 +39,7 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="RealandAPI">
       <HintPath>..\..\TeemaApplication\TeemaApplication\bin\Debug\RealandAPI.dll</HintPath>
+      <HintPath>\\HESHITHA-PC\Shared For Work\RealandAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -191,7 +192,9 @@
     <Compile Include="PieceRatePaymentList.Designer.cs">
       <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PieceRateReport.cs" />
+    <Compile Include="PieceRateReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PieceRateReportDataSet.cs">
       <SubType>Component</SubType>
     </Compile>
