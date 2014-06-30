@@ -58,6 +58,12 @@
     <Compile Include="AddNewEmployee.Designer.cs">
       <DependentUpon>AddNewEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPieceRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPieceRate.Designer.cs">
+      <DependentUpon>AddPieceRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApproveOvertime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="CreateOverTime.Designer.cs">
       <DependentUpon>CreateOverTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateSalaryAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSalaryAdvance.Designer.cs">
+      <DependentUpon>CreateSalaryAdvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\EmployeeDataSet.cs">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -87,15 +99,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Datasets\LeaveReportsDataSet.cs">
-      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Datasets\LeaveReportsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\OvertimeReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -136,6 +139,12 @@
     </Compile>
     <Compile Include="MyAccountDetails.Designer.cs">
       <DependentUpon>MyAccountDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OvertimeForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OvertimeForms.Designer.cs">
+      <DependentUpon>OvertimeForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,11 +187,17 @@
     <EmbeddedResource Include="AddNewEmployee.resx">
       <DependentUpon>AddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPieceRate.resx">
+      <DependentUpon>AddPieceRate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApproveOvertime.resx">
       <DependentUpon>ApproveOvertime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOverTime.resx">
       <DependentUpon>CreateOverTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSalaryAdvance.resx">
+      <DependentUpon>CreateSalaryAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditEmployeeDetails.resx">
       <DependentUpon>EditEmployeeDetails.cs</DependentUpon>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OvertimeForms.resx">
+      <DependentUpon>OvertimeForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -239,7 +257,7 @@
     <None Include="Datasets\OvertimeReportDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OvertimeReportDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>OvertimeReportDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xss">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>

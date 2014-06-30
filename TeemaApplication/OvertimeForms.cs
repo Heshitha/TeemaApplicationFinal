@@ -15,7 +15,7 @@ using TeemaApplication.Reports;
 
 namespace TeemaApplication
 {
-    public partial class frmApproveOvertime : Form
+    public partial class frmOvertimeForms : Form
     {
         TeemaDBDataContext db = new TeemaDBDataContext();
 
@@ -27,12 +27,12 @@ namespace TeemaApplication
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public frmApproveOvertime()
+        public frmOvertimeForms()
         {
             InitializeComponent();
         }
 
-        private void ApproveOvertime_MouseDown(object sender, MouseEventArgs e)
+        private void frmOvertimeForms_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
@@ -41,21 +41,21 @@ namespace TeemaApplication
             }
         }
 
-        private void fillcmbFormNo()
-        {
-            cmbFormNo.DisplayMember = "OTID";
-            cmbFormNo.ValueMember = "OTID";
-            cmbFormNo.DataSource = db.OverTimeRecords.Where(ot => ot.ApprovedBy == null).ToList();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void frmApproveOvertime_Load(object sender, EventArgs e)
+        private void frmOvertimeForms_Load(object sender, EventArgs e)
         {
             fillcmbFormNo();
+        }
+
+        private void fillcmbFormNo()
+        {
+            cmbFormNo.DisplayMember = "OTID";
+            cmbFormNo.ValueMember = "OTID";
+            cmbFormNo.DataSource = db.OverTimeRecords.ToList();
         }
 
         private void cmbFormNo_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,62 +88,30 @@ namespace TeemaApplication
 
             foreach (OvertimeEmployeeDetail x in oTRec.OvertimeEmployeeDetails)
             {
-                dt.Rows.Add(x.Employee.TokenNo, x.Employee.Name, "", "", "", "", "");
+                try
+                {
+                    if (oTRec.ApprovedBy != null)
+                    {
+                        string Operation = x.Operation;
+                        string NormalFrom = x.StartFrom.Value.ToString("HHmm");
+                        string ShiftTo = x.ShiftTo.Value.ToString("HHmm");
+                        string OTFrom = x.OTFrom.Value.ToString("HHmm");
+                        string OTTo = x.OTTo.Value.ToString("HHmm");
+
+                        dt.Rows.Add(x.Employee.TokenNo, x.Employee.Name, Operation, NormalFrom, ShiftTo, OTFrom, OTTo);
+                    }
+                    else
+                    {
+                        dt.Rows.Add(x.Employee.TokenNo, x.Employee.Name, "", "", "", "", "");
+                    }
+                }
+                catch (Exception)
+                {
+                    
+                }
             }
 
             dgvEmployeeDetails.DataSource = dt;
-        }
-
-        private void btnApprove_Click(object sender, EventArgs e)
-        {
-            OverTimeRecord oTRec = (OverTimeRecord)cmbFormNo.SelectedItem;
-            if (oTRec.ApprovedBy != null)
-            {
-                if (checkIfDataGridViewFilledCorrectly(oTRec.OvertimeDate))
-                {
-                    oTRec.ApprovedBy = LoginDetails.LoggedUsedID;
-                    oTRec.ApprovedDate = DateTime.Now;
-                    oTRec.ModifiedBy = LoginDetails.LoggedUsedID;
-                    oTRec.ModifiedDate = DateTime.Now;
-
-                    foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
-                    {
-                        int tokenNo = Convert.ToInt32(row.Cells["clmnTokenNo"].Value.ToString().Trim());
-                        OvertimeEmployeeDetail otdetail = oTRec.OvertimeEmployeeDetails.Where(ot => ot.Employee.TokenNo == tokenNo).SingleOrDefault();
-
-                        string shiftStartText = row.Cells["clmnNormalFrom"].Value.ToString();
-                        string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
-                        string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
-                        string otEndText = row.Cells["clmnOTTo"].Value.ToString();
-                        string Operation = row.Cells["clmnOperation"].Value.ToString();
-
-                        DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText, oTRec.OvertimeDate);
-                        DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText, oTRec.OvertimeDate);
-                        DateTime otStart = generateDateTimeInstanceFromTime(otStartText, oTRec.OvertimeDate);
-                        DateTime otEnd = generateDateTimeInstanceFromTime(otEndText, oTRec.OvertimeDate);
-
-                        otdetail.Operation = Operation;
-                        otdetail.StartFrom = shiftStart;
-                        otdetail.ShiftTo = shiftEnd;
-                        otdetail.OTFrom = otStart;
-                        otdetail.OTTo = otEnd;
-                        otdetail.ModifiedBy = LoginDetails.LoggedUsedID;
-                        otdetail.ModifiedDate = DateTime.Now;
-                    }
-
-                    db.SubmitChanges();
-                    Utilities.ShowInformationBox("You have successfully approved over time details.");
-                }
-                else
-                {
-                    Utilities.ShowErrorBox("Looks like you have to fill details in table. Please make sure that operation field is requiered and time must be enterd as 24h format. Eg : 7.30 PM must be 1930.");
-                }
-            }
-            else
-            {
-                Utilities.ShowErrorBox("You have already approved this overtime request.");
-            }
-
         }
 
         private void btnPrintForm_Click(object sender, EventArgs e)
@@ -191,46 +159,6 @@ namespace TeemaApplication
             rpt.SetDataSource(otds);
             frmReportViewer frm = new frmReportViewer(rpt);
             frm.ShowDialog();
-        }
-
-        private bool checkIfDataGridViewFilledCorrectly(DateTime date)
-        {
-            bool result = true;
-            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
-            {
-                try
-                {
-                    string shiftStartText = row.Cells["clmnNormalFrom"].Value.ToString();
-                    string shiftEndText = row.Cells["clmnShiftTo"].Value.ToString();
-                    string otStartText = row.Cells["clmnOTFrom"].Value.ToString();
-                    string otEndText = row.Cells["clmnOTTo"].Value.ToString();
-                    string Operation = row.Cells["clmnOperation"].Value.ToString();
-
-                    DateTime shiftStart = generateDateTimeInstanceFromTime(shiftStartText, date);
-                    DateTime shiftEnd = generateDateTimeInstanceFromTime(shiftEndText, date);
-                    DateTime otStart = generateDateTimeInstanceFromTime(otStartText, date);
-                    DateTime otEnd = generateDateTimeInstanceFromTime(otEndText, date);
-
-                    if (string.IsNullOrEmpty(Operation.Trim()))
-                    {
-                        result = false;
-                    }
-                }
-                catch (Exception)
-                {
-                    result = false;
-                }
-            }
-            return result;
-        }
-
-        private DateTime generateDateTimeInstanceFromTime(string TimeText, DateTime overtimeDate)
-        {
-            int HourHalf = Convert.ToInt32(TimeText.Substring(0, 2));
-            int MinuteHalf = Convert.ToInt32(TimeText.Substring(2, 2));
-
-            DateTime dateTimeInstance = new DateTime(overtimeDate.Year, overtimeDate.Month, overtimeDate.Day, HourHalf, MinuteHalf, 0);
-            return dateTimeInstance;
         }
     }
 }
