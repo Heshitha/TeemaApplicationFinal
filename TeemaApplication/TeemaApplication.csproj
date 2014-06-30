@@ -37,6 +37,9 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="RealandAPI">
+      <HintPath>..\..\..\..\TEEMA\madu\Bin\RealandAPI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -158,6 +161,12 @@
     <Compile Include="EmployeeList.Designer.cs">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FingerPrintDevices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FingerPrintDevices.Designer.cs">
+      <DependentUpon>FingerPrintDevices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FingerPrintDevices.resx">
+      <DependentUpon>FingerPrintDevices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OvertimeForms.resx">
       <DependentUpon>OvertimeForms.cs</DependentUpon>
@@ -399,7 +411,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
