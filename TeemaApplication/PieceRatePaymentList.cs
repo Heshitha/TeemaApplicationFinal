@@ -221,5 +221,62 @@ namespace TeemaApplication
         {
             this.Dispose();
         }
+
+        private void printPieceRateReport()
+        {
+            PieceRateReportDataSet prds = new PieceRateReportDataSet();
+
+            
+
+            DateTime startDate = DateTime.Today;
+            DateTime endDate = DateTime.Today;
+            if (rdbDepartmentMonthlyReport.Checked)
+            {
+                DateTime dt = dtpSelectedDate.Value;
+                startDate = new DateTime(dt.Year, dt.Month, 1);
+                endDate = new DateTime(dt.Year, dt.Month, DateTime.DaysInMonth(dt.Year, dt.Month));
+            }
+            else if (rdbDepartmentDailyReport.Checked)
+            {
+                DateTime dt = dtpSelectedDate.Value;
+                startDate = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
+                endDate = new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 59);
+            }
+
+            System.Data.Linq.EntitySet<Employee> lstEmployee = new System.Data.Linq.EntitySet<Employee>();
+
+
+            if (chbSearchFromSubDepartment.Checked)
+            {
+                lstEmployee = ((SubDepartment)cmbSubDepartment.SelectedItem).Employees;
+            }
+            else
+            {
+                lstEmployee = ((Department)cmbDepartment.SelectedItem).Employees;
+            }
+
+            var AverageRecords = from x in lstEmployee
+                                 join y in db.AvaragePieceRateForEmployees on x.EmployeeID equals y.EmployeeID
+                                 where y.PieceRateDetail.Date >= startDate && y.PieceRateDetail.Date <= endDate
+                                 group y by new { x.EmployeeID, x.Name, x.TokenNo } into g
+                                 select new
+                                 {
+                                     g.Key.TokenNo,
+                                     g.Key.Name,
+                                     TotalValue = g.Sum(s => s.AvaragePayment).Value.ToString("0.00")
+                                 };
+
+
+            var EnteredRecords = from x in lstEmployee
+                                 join y in db.EnteredPieceRateForEmployees on x.EmployeeID equals y.EmployeeID
+                                 where y.PieceRateDetail.Date >= startDate && y.PieceRateDetail.Date <= endDate
+                                 group y by new { x.EmployeeID, x.Name, x.TokenNo } into g
+                                 select new
+                                 {
+                                     g.Key.TokenNo,
+                                     g.Key.Name,
+                                     TotalValue = g.Sum(s => s.PieceQty * s.PieceRateDetail.UnitRate).Value.ToString("0.00")
+                                 };
+        }
     }
 }
