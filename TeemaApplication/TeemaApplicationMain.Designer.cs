@@ -43,9 +43,10 @@
             this.viewOvertimeFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pieceRateCalculationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pieceRatePaymentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +168,8 @@
             // pieceRateCalculationToolStripMenuItem
             // 
             this.pieceRateCalculationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enterPieceRateDetailsToolStripMenuItem});
+            this.enterPieceRateDetailsToolStripMenuItem,
+            this.pieceRatePaymentListToolStripMenuItem});
             this.pieceRateCalculationToolStripMenuItem.Name = "pieceRateCalculationToolStripMenuItem";
             this.pieceRateCalculationToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
             this.pieceRateCalculationToolStripMenuItem.Text = "Piece Rate Calculation";
@@ -178,6 +180,13 @@
             this.enterPieceRateDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.enterPieceRateDetailsToolStripMenuItem.Text = "Enter Piece Rate Details";
             this.enterPieceRateDetailsToolStripMenuItem.Click += new System.EventHandler(this.enterPieceRateDetailsToolStripMenuItem_Click);
+            // 
+            // pieceRatePaymentListToolStripMenuItem
+            // 
+            this.pieceRatePaymentListToolStripMenuItem.Name = "pieceRatePaymentListToolStripMenuItem";
+            this.pieceRatePaymentListToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.pieceRatePaymentListToolStripMenuItem.Text = "Piece Rate Payment List";
+            this.pieceRatePaymentListToolStripMenuItem.Click += new System.EventHandler(this.pieceRatePaymentListToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -217,6 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem createSalaryAdvanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pieceRateCalculationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterPieceRateDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pieceRatePaymentListToolStripMenuItem;
     }
 }
 
