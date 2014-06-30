@@ -214,7 +214,7 @@ namespace TeemaApplication
 
         private void btnPrintForm_Click(object sender, EventArgs e)
         {
-
+            printPieceRateReport();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -224,8 +224,6 @@ namespace TeemaApplication
 
         private void printPieceRateReport()
         {
-            PieceRateReportDataSet prds = new PieceRateReportDataSet();
-
             
 
             DateTime startDate = DateTime.Today;
@@ -255,6 +253,20 @@ namespace TeemaApplication
                 lstEmployee = ((Department)cmbDepartment.SelectedItem).Employees;
             }
 
+            PieceRateReportDataSet prds = new PieceRateReportDataSet();
+
+            PieceRateReportDataSet.PieceRateDetailsRow row = prds.PieceRateDetails.NewPieceRateDetailsRow();
+            row.ReportID = 1;
+            row.Branch = ((Branch)cmbWorkingBranch.SelectedItem).BranchName;
+            row.Department = ((Department)cmbDepartment.SelectedItem).DepartmentName;
+            row.SubDepartment = chbSearchFromSubDepartment.Checked ? ((SubDepartment)cmbSubDepartment.SelectedItem).SubDepartmentName : "Not Assigned";
+            row.From = startDate;
+            row.To = endDate;
+            row.GeneratedBy = LoginDetails.LoggedUserName;
+            row.GeneratedDate = DateTime.Now;
+
+            prds.PieceRateDetails.AddPieceRateDetailsRow(row);
+
             var AverageRecords = from x in lstEmployee
                                  join y in db.AvaragePieceRateForEmployees on x.EmployeeID equals y.EmployeeID
                                  where y.PieceRateDetail.Date >= startDate && y.PieceRateDetail.Date <= endDate
@@ -263,8 +275,13 @@ namespace TeemaApplication
                                  {
                                      g.Key.TokenNo,
                                      g.Key.Name,
-                                     TotalValue = g.Sum(s => s.AvaragePayment).Value.ToString("0.00")
+                                     TotalValue = g.Sum(s => s.AvaragePayment).Value
                                  };
+
+            foreach (var x in AverageRecords)
+            {
+                prds.AveragePieceRateDetails.AddAveragePieceRateDetailsRow(1, x.TokenNo, x.Name, x.TotalValue);
+            }
 
 
             var EnteredRecords = from x in lstEmployee
@@ -275,8 +292,21 @@ namespace TeemaApplication
                                  {
                                      g.Key.TokenNo,
                                      g.Key.Name,
-                                     TotalValue = g.Sum(s => s.PieceQty * s.PieceRateDetail.UnitRate).Value.ToString("0.00")
+                                     TotalValue = g.Sum(s => s.PieceQty * s.PieceRateDetail.UnitRate).Value
                                  };
+
+            foreach (var x in EnteredRecords)
+            {
+                prds.EnteredPieceRateDetails.AddEnteredPieceRateDetailsRow(1, x.TokenNo, x.Name, x.TotalValue);
+            }
+
+            PieceRateReport rpt = new PieceRateReport();
+            rpt.SetDataSource(prds);
+            rpt.Subreports[0].SetDataSource(prds);
+            rpt.Subreports[1].SetDataSource(prds);
+
+            frmReportViewer frm = new frmReportViewer(rpt);
+            frm.ShowDialog();
         }
     }
 }
