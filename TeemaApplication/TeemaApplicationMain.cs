@@ -230,7 +230,9 @@ namespace TeemaApplication
 
         private void viewFingerPrintDevicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmFingerPrintDevices frm = new frmFingerPrintDevices();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void approveSalaryAdvanceToolStripMenuItem_Click(object sender, EventArgs e)

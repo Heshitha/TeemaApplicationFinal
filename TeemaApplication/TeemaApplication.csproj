@@ -139,6 +139,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\PieceRateReportDataSet.cs">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\PieceRateReportDataSet.Designer.cs">
+      <DependentUpon>PieceRateReportDataSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,18 +199,6 @@
     <Compile Include="PieceRatePaymentList.Designer.cs">
       <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PieceRateReport.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PieceRateReportDataSet.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PieceRateReportDataSet.Designer.cs" />
-    <Compile Include="PieceRateReportDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\DayOffApprvealReport.cs">
@@ -234,6 +229,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalLeaveRecordReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PieceRateReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PieceRateReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\WorkingOtherLocationReport.cs">
@@ -316,6 +317,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PersonalLeaveRecordReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PieceRateReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PieceRateReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\WorkingOtherLocationReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>WorkingOtherLocationReport.cs</LastGenOutput>
@@ -392,6 +397,17 @@
     <None Include="Datasets\PersonalLeaveRecordDataSet.xss">
       <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\PieceRateReportDataSet.xsc">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PieceRateReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PieceRateReportDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\PieceRateReportDataSet.xss">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>
     </None>
@@ -421,17 +437,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TeemaDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="PieceRateReportDataSet.xsc">
-      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PieceRateReportDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PieceRateReportDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PieceRateReportDataSet.xss">
-      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
