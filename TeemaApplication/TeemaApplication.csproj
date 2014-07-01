@@ -191,6 +191,12 @@
     <Compile Include="DayOffApply.designer.cs">
       <DependentUpon>DayOffApply.cs</DependentUpon>
     </Compile>
+    <Compile Include="DayOffApprove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayOffApprove.Designer.cs">
+      <DependentUpon>DayOffApprove.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditEmployeeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DayOffApply.resx">
       <DependentUpon>DayOffApply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayOffApprove.resx">
+      <DependentUpon>DayOffApprove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditEmployeeDetails.resx">
       <DependentUpon>EditEmployeeDetails.cs</DependentUpon>
