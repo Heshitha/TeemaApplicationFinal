@@ -256,7 +256,7 @@ namespace TeemaApplication
                 }
             }
 
-            foreach (DataGridViewRow x in dgvEnterPieceUnitsForEmployees.Rows)
+            foreach (DataGridViewRow x in dgvEnterAverageRateForEmployees.Rows)
             {
                 if (Convert.ToBoolean(x.Cells[0].Value))
                 {
@@ -265,7 +265,8 @@ namespace TeemaApplication
                     AvaragePieceRateForEmployee apre = new AvaragePieceRateForEmployee
                     {
                         PieceRateDetail = pieceDetail,
-                        Employee = employee
+                        Employee = employee,
+                        AvaragePayment = Utilities.getDoubleValueFromTextBox(txtAvragePayement)
                     };
 
                     db.AvaragePieceRateForEmployees.InsertOnSubmit(apre);

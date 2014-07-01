@@ -91,11 +91,6 @@
     <Compile Include="CreateSalaryAdvance.Designer.cs">
       <DependentUpon>CreateSalaryAdvance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Datasets\DayOffApprvealDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Datasets\EmployeeDataSet.cs">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -118,6 +113,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\PieceRateReportDataSet.cs">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\PieceRateReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -160,14 +164,14 @@
     <Compile Include="OvertimeForms.Designer.cs">
       <DependentUpon>OvertimeForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="PieceRatePaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieceRatePaymentList.Designer.cs">
+      <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\DayOffApprvealReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DayOffApprvealReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\EmployeeReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,10 +196,11 @@
       <DependentUpon>PersonalLeaveRecordReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\WorkingOtherLocationReport.cs">
+    <Compile Include="Reports\PieceRateReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkingOtherLocationReport.rpt</DependentUpon>
+      <DependentUpon>PieceRateReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportViewer.cs">
@@ -243,9 +248,8 @@
     <EmbeddedResource Include="OvertimeForms.resx">
       <DependentUpon>OvertimeForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\DayOffApprvealReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DayOffApprvealReport.cs</LastGenOutput>
+    <EmbeddedResource Include="PieceRatePaymentList.resx">
+      <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -263,9 +267,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PersonalLeaveRecordReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\WorkingOtherLocationReport.rpt">
+    <EmbeddedResource Include="Reports\PieceRateReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>WorkingOtherLocationReport.cs</LastGenOutput>
+      <LastGenOutput>PieceRateReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
@@ -273,17 +277,6 @@
     <EmbeddedResource Include="UserAccountList.resx">
       <DependentUpon>UserAccountList.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Datasets\DayOffApprvealDataSet.xsc">
-      <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Datasets\DayOffApprvealDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DayOffApprvealDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Datasets\DayOffApprvealDataSet.xss">
-      <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Datasets\EmployeeDataSet.xsc">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </None>
@@ -327,6 +320,17 @@
     </None>
     <None Include="Datasets\PersonalLeaveRecordDataSet.xss">
       <DependentUpon>PersonalLeaveRecordDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PieceRateReportDataSet.xsc">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\PieceRateReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PieceRateReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\PieceRateReportDataSet.xss">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>
