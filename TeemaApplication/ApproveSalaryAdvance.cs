@@ -102,7 +102,7 @@ namespace TeemaApplication
         {
             bool gridval = true;
                SalaryAdvance SalaryAdvance = (SalaryAdvance)cmbFormNo.SelectedItem;
-               if (SalaryAdvance.ApprovedBy != null)
+               if (SalaryAdvance.ApprovedBy == null)
                 {
                    
                         SalaryAdvance.ApprovedBy = LoginDetails.LoggedUsedID;
@@ -152,7 +152,17 @@ namespace TeemaApplication
 
         }
 
-        // check requested amount breakdown is equal to requested amount
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == Utilities.ShowWarningBox("Are you sure.?"))
+            {
+                approvesalaryadvance();
+                fillcmbFormNo();
+            }
+            
+        }
+
+       
        
     }
 }

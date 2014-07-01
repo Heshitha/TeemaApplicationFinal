@@ -258,6 +258,7 @@
             this.btnApprove.TabIndex = 43;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // ApproveSalaryAdvance
             // 
