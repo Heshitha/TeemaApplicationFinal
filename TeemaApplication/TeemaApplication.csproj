@@ -190,6 +190,12 @@
     <Compile Include="FingerPrintDevices.Designer.cs">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeaveApply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveApply.Designer.cs">
+      <DependentUpon>LeaveApply.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadAttenadanceDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FingerPrintDevices.resx">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveApply.resx">
+      <DependentUpon>LeaveApply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadAttenadanceDetails.resx">
       <DependentUpon>LoadAttenadanceDetails.cs</DependentUpon>

@@ -87,6 +87,9 @@ namespace TeemaApplication.Datasets
     partial void InsertGrantedLeave(GrantedLeave instance);
     partial void UpdateGrantedLeave(GrantedLeave instance);
     partial void DeleteGrantedLeave(GrantedLeave instance);
+    partial void InsertPersonalLeaveRecord(PersonalLeaveRecord instance);
+    partial void UpdatePersonalLeaveRecord(PersonalLeaveRecord instance);
+    partial void DeletePersonalLeaveRecord(PersonalLeaveRecord instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -268,6 +271,14 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<GrantedLeave>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PersonalLeaveRecord> PersonalLeaveRecords
+		{
+			get
+			{
+				return this.GetTable<PersonalLeaveRecord>();
 			}
 		}
 	}
@@ -1359,6 +1370,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<GrantedLeave> _GrantedLeaves;
 		
+		private EntitySet<PersonalLeaveRecord> _PersonalLeaveRecords;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1424,6 +1437,7 @@ namespace TeemaApplication.Datasets
 			this._AvaragePieceRateForEmployees = new EntitySet<AvaragePieceRateForEmployee>(new Action<AvaragePieceRateForEmployee>(this.attach_AvaragePieceRateForEmployees), new Action<AvaragePieceRateForEmployee>(this.detach_AvaragePieceRateForEmployees));
 			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
 			this._GrantedLeaves = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves), new Action<GrantedLeave>(this.detach_GrantedLeaves));
+			this._PersonalLeaveRecords = new EntitySet<PersonalLeaveRecord>(new Action<PersonalLeaveRecord>(this.attach_PersonalLeaveRecords), new Action<PersonalLeaveRecord>(this.detach_PersonalLeaveRecords));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -1965,6 +1979,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_PersonalLeaveRecord", Storage="_PersonalLeaveRecords", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<PersonalLeaveRecord> PersonalLeaveRecords
+		{
+			get
+			{
+				return this._PersonalLeaveRecords;
+			}
+			set
+			{
+				this._PersonalLeaveRecords.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2246,6 +2273,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_GrantedLeaves(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_PersonalLeaveRecords(PersonalLeaveRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_PersonalLeaveRecords(PersonalLeaveRecord entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -3044,6 +3083,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<GrantedLeave> _GrantedLeaves1;
 		
+		private EntitySet<PersonalLeaveRecord> _PersonalLeaveRecords;
+		
+		private EntitySet<PersonalLeaveRecord> _PersonalLeaveRecords1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3095,6 +3138,8 @@ namespace TeemaApplication.Datasets
 			this._EmployeeAttendances1 = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances1), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances1));
 			this._GrantedLeaves = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves), new Action<GrantedLeave>(this.detach_GrantedLeaves));
 			this._GrantedLeaves1 = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves1), new Action<GrantedLeave>(this.detach_GrantedLeaves1));
+			this._PersonalLeaveRecords = new EntitySet<PersonalLeaveRecord>(new Action<PersonalLeaveRecord>(this.attach_PersonalLeaveRecords), new Action<PersonalLeaveRecord>(this.detach_PersonalLeaveRecords));
+			this._PersonalLeaveRecords1 = new EntitySet<PersonalLeaveRecord>(new Action<PersonalLeaveRecord>(this.attach_PersonalLeaveRecords1), new Action<PersonalLeaveRecord>(this.detach_PersonalLeaveRecords1));
 			OnCreated();
 		}
 		
@@ -3627,6 +3672,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PersonalLeaveRecord", Storage="_PersonalLeaveRecords", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<PersonalLeaveRecord> PersonalLeaveRecords
+		{
+			get
+			{
+				return this._PersonalLeaveRecords;
+			}
+			set
+			{
+				this._PersonalLeaveRecords.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PersonalLeaveRecord1", Storage="_PersonalLeaveRecords1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<PersonalLeaveRecord> PersonalLeaveRecords1
+		{
+			get
+			{
+				return this._PersonalLeaveRecords1;
+			}
+			set
+			{
+				this._PersonalLeaveRecords1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4038,6 +4109,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_GrantedLeaves1(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_PersonalLeaveRecords(PersonalLeaveRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_PersonalLeaveRecords(PersonalLeaveRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_PersonalLeaveRecords1(PersonalLeaveRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_PersonalLeaveRecords1(PersonalLeaveRecord entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
@@ -8724,6 +8819,575 @@ namespace TeemaApplication.Datasets
 					if ((value != null))
 					{
 						value.GrantedLeaves1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PersonalLeaveRecord")]
+	public partial class PersonalLeaveRecord : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PersonalLeaveID;
+		
+		private int _EmployeeID;
+		
+		private System.Nullable<System.DateTime> _LeaveDate;
+		
+		private string _LeaveReason;
+		
+		private System.Nullable<bool> _IsNoPay;
+		
+		private string _LeaveType;
+		
+		private string _OtherLeaveDescription;
+		
+		private System.Nullable<double> _LeaveValue;
+		
+		private System.Nullable<System.DateTime> _LeaveFrom;
+		
+		private System.Nullable<System.DateTime> _LeaveTo;
+		
+		private System.Nullable<int> _LeaveAuthorizedDept;
+		
+		private string _SubstituteID;
+		
+		private System.Nullable<int> _LeaveApprovedDept;
+		
+		private System.Nullable<int> _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPersonalLeaveIDChanging(int value);
+    partial void OnPersonalLeaveIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnLeaveDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLeaveDateChanged();
+    partial void OnLeaveReasonChanging(string value);
+    partial void OnLeaveReasonChanged();
+    partial void OnIsNoPayChanging(System.Nullable<bool> value);
+    partial void OnIsNoPayChanged();
+    partial void OnLeaveTypeChanging(string value);
+    partial void OnLeaveTypeChanged();
+    partial void OnOtherLeaveDescriptionChanging(string value);
+    partial void OnOtherLeaveDescriptionChanged();
+    partial void OnLeaveValueChanging(System.Nullable<double> value);
+    partial void OnLeaveValueChanged();
+    partial void OnLeaveFromChanging(System.Nullable<System.DateTime> value);
+    partial void OnLeaveFromChanged();
+    partial void OnLeaveToChanging(System.Nullable<System.DateTime> value);
+    partial void OnLeaveToChanged();
+    partial void OnLeaveAuthorizedDeptChanging(System.Nullable<int> value);
+    partial void OnLeaveAuthorizedDeptChanged();
+    partial void OnSubstituteIDChanging(string value);
+    partial void OnSubstituteIDChanged();
+    partial void OnLeaveApprovedDeptChanging(System.Nullable<int> value);
+    partial void OnLeaveApprovedDeptChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(System.Nullable<int> value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public PersonalLeaveRecord()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonalLeaveID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PersonalLeaveID
+		{
+			get
+			{
+				return this._PersonalLeaveID;
+			}
+			set
+			{
+				if ((this._PersonalLeaveID != value))
+				{
+					this.OnPersonalLeaveIDChanging(value);
+					this.SendPropertyChanging();
+					this._PersonalLeaveID = value;
+					this.SendPropertyChanged("PersonalLeaveID");
+					this.OnPersonalLeaveIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveDate", DbType="Date")]
+		public System.Nullable<System.DateTime> LeaveDate
+		{
+			get
+			{
+				return this._LeaveDate;
+			}
+			set
+			{
+				if ((this._LeaveDate != value))
+				{
+					this.OnLeaveDateChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveDate = value;
+					this.SendPropertyChanged("LeaveDate");
+					this.OnLeaveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveReason", DbType="VarChar(500)")]
+		public string LeaveReason
+		{
+			get
+			{
+				return this._LeaveReason;
+			}
+			set
+			{
+				if ((this._LeaveReason != value))
+				{
+					this.OnLeaveReasonChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveReason = value;
+					this.SendPropertyChanged("LeaveReason");
+					this.OnLeaveReasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsNoPay", DbType="Bit")]
+		public System.Nullable<bool> IsNoPay
+		{
+			get
+			{
+				return this._IsNoPay;
+			}
+			set
+			{
+				if ((this._IsNoPay != value))
+				{
+					this.OnIsNoPayChanging(value);
+					this.SendPropertyChanging();
+					this._IsNoPay = value;
+					this.SendPropertyChanged("IsNoPay");
+					this.OnIsNoPayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveType", DbType="VarChar(100)")]
+		public string LeaveType
+		{
+			get
+			{
+				return this._LeaveType;
+			}
+			set
+			{
+				if ((this._LeaveType != value))
+				{
+					this.OnLeaveTypeChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveType = value;
+					this.SendPropertyChanged("LeaveType");
+					this.OnLeaveTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherLeaveDescription", DbType="VarChar(500)")]
+		public string OtherLeaveDescription
+		{
+			get
+			{
+				return this._OtherLeaveDescription;
+			}
+			set
+			{
+				if ((this._OtherLeaveDescription != value))
+				{
+					this.OnOtherLeaveDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._OtherLeaveDescription = value;
+					this.SendPropertyChanged("OtherLeaveDescription");
+					this.OnOtherLeaveDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveValue", DbType="Float")]
+		public System.Nullable<double> LeaveValue
+		{
+			get
+			{
+				return this._LeaveValue;
+			}
+			set
+			{
+				if ((this._LeaveValue != value))
+				{
+					this.OnLeaveValueChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveValue = value;
+					this.SendPropertyChanged("LeaveValue");
+					this.OnLeaveValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveFrom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LeaveFrom
+		{
+			get
+			{
+				return this._LeaveFrom;
+			}
+			set
+			{
+				if ((this._LeaveFrom != value))
+				{
+					this.OnLeaveFromChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveFrom = value;
+					this.SendPropertyChanged("LeaveFrom");
+					this.OnLeaveFromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LeaveTo
+		{
+			get
+			{
+				return this._LeaveTo;
+			}
+			set
+			{
+				if ((this._LeaveTo != value))
+				{
+					this.OnLeaveToChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveTo = value;
+					this.SendPropertyChanged("LeaveTo");
+					this.OnLeaveToChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveAuthorizedDept", DbType="Int")]
+		public System.Nullable<int> LeaveAuthorizedDept
+		{
+			get
+			{
+				return this._LeaveAuthorizedDept;
+			}
+			set
+			{
+				if ((this._LeaveAuthorizedDept != value))
+				{
+					this.OnLeaveAuthorizedDeptChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveAuthorizedDept = value;
+					this.SendPropertyChanged("LeaveAuthorizedDept");
+					this.OnLeaveAuthorizedDeptChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubstituteID", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string SubstituteID
+		{
+			get
+			{
+				return this._SubstituteID;
+			}
+			set
+			{
+				if ((this._SubstituteID != value))
+				{
+					this.OnSubstituteIDChanging(value);
+					this.SendPropertyChanging();
+					this._SubstituteID = value;
+					this.SendPropertyChanged("SubstituteID");
+					this.OnSubstituteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeaveApprovedDept", DbType="Int")]
+		public System.Nullable<int> LeaveApprovedDept
+		{
+			get
+			{
+				return this._LeaveApprovedDept;
+			}
+			set
+			{
+				if ((this._LeaveApprovedDept != value))
+				{
+					this.OnLeaveApprovedDeptChanging(value);
+					this.SendPropertyChanging();
+					this._LeaveApprovedDept = value;
+					this.SendPropertyChanged("LeaveApprovedDept");
+					this.OnLeaveApprovedDeptChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+		public System.Nullable<int> CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int")]
+		public System.Nullable<int> ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_PersonalLeaveRecord", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.PersonalLeaveRecords.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.PersonalLeaveRecords.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PersonalLeaveRecord", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.PersonalLeaveRecords.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.PersonalLeaveRecords.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_PersonalLeaveRecord1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.PersonalLeaveRecords1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.PersonalLeaveRecords1.Add(this);
 						this._ModifiedBy = value.UserID;
 					}
 					else
