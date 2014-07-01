@@ -180,7 +180,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeemaDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DayOffApply.cs" />
+    <Compile Include="DayOffApply.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DayOffApply.designer.cs">
       <DependentUpon>DayOffApply.cs</DependentUpon>
     </Compile>
@@ -268,6 +270,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FixedIncentiveAllowanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FixedIncentiveAllowanceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\LeaveApplyForm.cs">
@@ -398,6 +406,10 @@
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FixedIncentiveAllowanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FixedIncentiveAllowanceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\LeaveApplyForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
