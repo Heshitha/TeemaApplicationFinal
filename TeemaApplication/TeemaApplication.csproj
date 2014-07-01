@@ -146,6 +146,15 @@
     <Compile Include="Datasets\PieceRateReportDataSet.Designer.cs">
       <DependentUpon>PieceRateReportDataSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\SecurityRoutineReportDataset.cs">
+      <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\SecurityRoutineReportDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\TeemaDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +258,12 @@
       <DependentUpon>PieceRateReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\SecurityRoutineReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityRoutineReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\WorkingOtherLocationReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -346,6 +361,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PieceRateReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SecurityRoutineReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SecurityRoutineReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\WorkingOtherLocationReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>WorkingOtherLocationReport.cs</LastGenOutput>
@@ -435,6 +454,17 @@
     </None>
     <None Include="Datasets\PieceRateReportDataSet.xss">
       <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SecurityRoutineReportDataset.xsc">
+      <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SecurityRoutineReportDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SecurityRoutineReportDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\SecurityRoutineReportDataset.xss">
+      <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
     </None>
     <None Include="Datasets\TeemaDB.dbml.layout">
       <DependentUpon>TeemaDB.dbml</DependentUpon>
