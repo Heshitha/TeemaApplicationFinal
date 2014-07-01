@@ -70,6 +70,12 @@
     <Compile Include="ApproveOvertime.Designer.cs">
       <DependentUpon>ApproveOvertime.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApproveSalaryAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApproveSalaryAdvance.Designer.cs">
+      <DependentUpon>ApproveSalaryAdvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\EmployeeUtilities.cs" />
     <Compile Include="Classes\LoginDetails.cs" />
     <Compile Include="Classes\Utilities.cs" />
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApproveOvertime.resx">
       <DependentUpon>ApproveOvertime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApproveSalaryAdvance.resx">
+      <DependentUpon>ApproveSalaryAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOverTime.resx">
       <DependentUpon>CreateOverTime.cs</DependentUpon>

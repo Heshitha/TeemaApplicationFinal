@@ -232,5 +232,12 @@ namespace TeemaApplication
         {
 
         }
+
+        private void approveSalaryAdvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             frm = new frmPieceRatePaymentList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
