@@ -105,11 +105,6 @@ namespace TeemaApplication
                if (SalaryAdvance.ApprovedBy == null)
                 {
                    
-                        SalaryAdvance.ApprovedBy = LoginDetails.LoggedUsedID;
-                        SalaryAdvance.ApprovedDate = DateTime.Now;
-                        SalaryAdvance.ModifiedBy = LoginDetails.LoggedUsedID;
-                        SalaryAdvance.ModifiedDate = DateTime.Now;
-
                         foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
                         {
                             int tokenNo = Convert.ToInt32(row.Cells["clmnTokenNo"].Value.ToString().Trim());
@@ -140,8 +135,17 @@ namespace TeemaApplication
 
                         if (gridval == true)
                         {
+                            SalaryAdvance.ApprovedBy = LoginDetails.LoggedUsedID;
+                            SalaryAdvance.ApprovedDate = DateTime.Now;
+                            SalaryAdvance.ModifiedBy = LoginDetails.LoggedUsedID;
+                            SalaryAdvance.ModifiedDate = DateTime.Now;
+
                             db.SubmitChanges();
                             Utilities.ShowInformationBox("You have successfully approved Salary Advance requests.");
+                        }
+                        else
+                        {
+                            Utilities.ShowErrorBox("Salary advance requested amount is not correctly broken down. Please check the calculations");
                         }
                     
                 }
