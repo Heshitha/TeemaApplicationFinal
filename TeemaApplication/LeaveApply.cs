@@ -20,6 +20,14 @@ namespace TeemaApplication
 
         Employee empdata = new Employee();
 
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public frmLeaveApply()
         {
             InitializeComponent();
@@ -52,11 +60,11 @@ namespace TeemaApplication
 
                         txtEmployeeName.Text = empdata.Name;
                         txtEPFno.Text = empdata.EPFNo;
-                        txtBranch.Text = empdata.SubDepartment.Department.Branch.BranchName;
-                        txtDepartment.Text = empdata.SubDepartment.Department.DepartmentName;
+                        txtBranch.Text = empdata.Department.Branch.BranchName;
+                        txtDepartment.Text = empdata.Department.DepartmentName;
                         txtDesignation.Text = empdata.Designation.Designation1;
                         txtNicNo.Text = empdata.NICNo;
-                        txtSubDepartment.Text = empdata.SubDepartment.SubDepartmentName;
+                        txtSubDepartment.Text = empdata.IsAssignedToSubDepartment ? empdata.SubDepartment.SubDepartmentName : "Not Assigned";
                         txtTokenNo.Text = empdata.TokenNo.ToString();
 
                         if (grntslvs != null && grntslvs.EmployeeID == empdata.EmployeeID)
@@ -127,11 +135,11 @@ namespace TeemaApplication
 
                         txtEmployeeName.Text = empdata.Name;
                         txtEPFno.Text = empdata.EPFNo;
-                        txtBranch.Text = empdata.SubDepartment.Department.Branch.BranchName;
-                        txtDepartment.Text = empdata.SubDepartment.Department.DepartmentName;
+                        txtBranch.Text = empdata.Department.Branch.BranchName;
+                        txtDepartment.Text = empdata.Department.DepartmentName;
                         txtDesignation.Text = empdata.Designation.Designation1;
                         txtNicNo.Text = empdata.NICNo;
-                        txtSubDepartment.Text = empdata.SubDepartment.SubDepartmentName;
+                        txtSubDepartment.Text = empdata.IsAssignedToSubDepartment ? empdata.SubDepartment.SubDepartmentName : "Not Assigned";
                         txtTokenNo.Text = empdata.TokenNo.ToString();
 
                         if (grntslvs != null && grntslvs.EmployeeID == empdata.EmployeeID)
@@ -195,11 +203,11 @@ namespace TeemaApplication
 
                         txtEmployeeName.Text = empdata.Name;
                         txtEPFno.Text = empdata.EPFNo;
-                        txtBranch.Text = empdata.SubDepartment.Department.Branch.BranchName;
-                        txtDepartment.Text = empdata.SubDepartment.Department.DepartmentName;
+                        txtBranch.Text = empdata.Department.Branch.BranchName;
+                        txtDepartment.Text = empdata.Department.DepartmentName;
                         txtDesignation.Text = empdata.Designation.Designation1;
                         txtNicNo.Text = empdata.NICNo;
-                        txtSubDepartment.Text = empdata.SubDepartment.SubDepartmentName;
+                        txtSubDepartment.Text = empdata.IsAssignedToSubDepartment ? empdata.SubDepartment.SubDepartmentName : "Not Assigned";
                         txtTokenNo.Text = empdata.TokenNo.ToString();
 
                         if (grntslvs != null && grntslvs.EmployeeID == empdata.EmployeeID)
@@ -243,19 +251,34 @@ namespace TeemaApplication
                     {
                         Utilities.ShowInformationBox("Employee not found");
                     }
-
                 }
                 else
                 {
                     Utilities.ShowInformationBox("Please select a search method");
                 }
-
-
             }
             else
             {
                 Utilities.ShowInformationBox("Plese enter a Search Key to search");
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void frmLeaveApply_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
 
         }
     }

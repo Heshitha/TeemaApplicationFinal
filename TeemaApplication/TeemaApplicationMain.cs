@@ -262,5 +262,19 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void applyLeaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLeaveApply frm = new frmLeaveApply();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void approveLeaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLeaveApplyApprove frm = new frmLeaveApplyApprove();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -81,7 +81,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
             this.txtNicNo = new System.Windows.Forms.TextBox();
             this.txtSubDepartment = new System.Windows.Forms.TextBox();
@@ -102,6 +101,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpAddNewLeaveRecord.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -281,6 +281,7 @@
             this.btnApply.TabIndex = 7;
             this.btnApply.Text = "Apply ";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // label14
             // 
@@ -640,22 +641,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Apply Leaves";
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(594, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 19;
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
             // grpEmployeeDetails
             // 
             this.grpEmployeeDetails.Controls.Add(this.txtNicNo);
@@ -854,6 +839,23 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "NIC No";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(594, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmLeaveApply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,6 +870,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLeaveApply";
             this.Text = "Leave Apply";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLeaveApply_MouseDown);
             this.grpAddNewLeaveRecord.ResumeLayout(false);
             this.grpAddNewLeaveRecord.PerformLayout();
             this.panel3.ResumeLayout(false);
