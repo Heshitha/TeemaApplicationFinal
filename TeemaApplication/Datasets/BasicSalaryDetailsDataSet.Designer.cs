@@ -24,7 +24,7 @@ namespace TeemaApplication.Datasets {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class BasicSalaryDetailsDataSet : global::System.Data.DataSet {
         
-        private DataTable1DataTable tableDataTable1;
+        private BasicSalaryDetailsDataTable tableBasicSalaryDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace TeemaApplication.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["BasicSalaryDetails"] != null)) {
+                    base.Tables.Add(new BasicSalaryDetailsDataTable(ds.Tables["BasicSalaryDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TeemaApplication.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public BasicSalaryDetailsDataTable BasicSalaryDetails {
             get {
-                return this.tableDataTable1;
+                return this.tableBasicSalaryDetails;
             }
         }
         
@@ -152,8 +152,8 @@ namespace TeemaApplication.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["BasicSalaryDetails"] != null)) {
+                    base.Tables.Add(new BasicSalaryDetailsDataTable(ds.Tables["BasicSalaryDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TeemaApplication.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableBasicSalaryDetails = ((BasicSalaryDetailsDataTable)(base.Tables["BasicSalaryDetails"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableBasicSalaryDetails != null)) {
+                    this.tableBasicSalaryDetails.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace TeemaApplication.Datasets {
             this.Namespace = "http://tempuri.org/BasicSalaryDetailsDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableBasicSalaryDetails = new BasicSalaryDetailsDataTable();
+            base.Tables.Add(this.tableBasicSalaryDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeBasicSalaryDetails() {
             return false;
         }
         
@@ -270,19 +270,19 @@ namespace TeemaApplication.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void BasicSalaryDetailsRowChangeEventHandler(object sender, BasicSalaryDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class BasicSalaryDetailsDataTable : global::System.Data.TypedTableBase<BasicSalaryDetailsRow> {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public BasicSalaryDetailsDataTable() {
+                this.TableName = "BasicSalaryDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -290,7 +290,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal BasicSalaryDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -307,7 +307,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BasicSalaryDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -323,44 +323,44 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row this[int index] {
+            public BasicSalaryDetailsRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((BasicSalaryDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event BasicSalaryDetailsRowChangeEventHandler BasicSalaryDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event BasicSalaryDetailsRowChangeEventHandler BasicSalaryDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event BasicSalaryDetailsRowChangeEventHandler BasicSalaryDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event BasicSalaryDetailsRowChangeEventHandler BasicSalaryDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddBasicSalaryDetailsRow(BasicSalaryDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row() {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public BasicSalaryDetailsRow AddBasicSalaryDetailsRow() {
+                BasicSalaryDetailsRow rowBasicSalaryDetailsRow = ((BasicSalaryDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[0];
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                rowBasicSalaryDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBasicSalaryDetailsRow);
+                return rowBasicSalaryDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                BasicSalaryDetailsDataTable cln = ((BasicSalaryDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -368,7 +368,7 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new BasicSalaryDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -383,28 +383,28 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public BasicSalaryDetailsRow NewBasicSalaryDetailsRow() {
+                return ((BasicSalaryDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new BasicSalaryDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(BasicSalaryDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.BasicSalaryDetailsRowChanged != null)) {
+                    this.BasicSalaryDetailsRowChanged(this, new BasicSalaryDetailsRowChangeEvent(((BasicSalaryDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -412,8 +412,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.BasicSalaryDetailsRowChanging != null)) {
+                    this.BasicSalaryDetailsRowChanging(this, new BasicSalaryDetailsRowChangeEvent(((BasicSalaryDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -421,8 +421,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.BasicSalaryDetailsRowDeleted != null)) {
+                    this.BasicSalaryDetailsRowDeleted(this, new BasicSalaryDetailsRowChangeEvent(((BasicSalaryDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -430,14 +430,14 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.BasicSalaryDetailsRowDeleting != null)) {
+                    this.BasicSalaryDetailsRowDeleting(this, new BasicSalaryDetailsRowChangeEvent(((BasicSalaryDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveBasicSalaryDetailsRow(BasicSalaryDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -464,7 +464,7 @@ namespace TeemaApplication.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "BasicSalaryDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -508,15 +508,15 @@ namespace TeemaApplication.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class BasicSalaryDetailsRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private BasicSalaryDetailsDataTable tableBasicSalaryDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal BasicSalaryDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableBasicSalaryDetails = ((BasicSalaryDetailsDataTable)(this.Table));
             }
         }
         
@@ -524,22 +524,22 @@ namespace TeemaApplication.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class BasicSalaryDetailsRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private BasicSalaryDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public BasicSalaryDetailsRowChangeEvent(BasicSalaryDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row Row {
+            public BasicSalaryDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
