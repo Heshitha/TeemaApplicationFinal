@@ -185,6 +185,22 @@
     <Compile Include="OvertimeForms.Designer.cs">
       <DependentUpon>OvertimeForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="PieceRatePaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieceRatePaymentList.Designer.cs">
+      <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PieceRateReport.cs" />
+    <Compile Include="PieceRateReportDataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PieceRateReportDataSet.Designer.cs" />
+    <Compile Include="PieceRateReportDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\DayOffApprvealReport.cs">
@@ -273,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OvertimeForms.resx">
       <DependentUpon>OvertimeForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceRatePaymentList.resx">
+      <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DayOffApprvealReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -399,6 +418,17 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TeemaDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="PieceRateReportDataSet.xsc">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PieceRateReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PieceRateReportDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PieceRateReportDataSet.xss">
+      <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
