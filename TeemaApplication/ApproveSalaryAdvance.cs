@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeemaApplication.Classes;
 using TeemaApplication.Datasets;
 
 namespace TeemaApplication
@@ -23,6 +24,12 @@ namespace TeemaApplication
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        double requestedAmount = 0;
+        double EPFSalary = 0;
+        double DayWages = 0;
+        double FixedInsentiveAllowance = 0;
+        double VariableInsentiveAllowance = 0;
 
         public ApproveSalaryAdvance()
         {
@@ -73,11 +80,11 @@ namespace TeemaApplication
             DataTable DataTable = new DataTable();
             DataTable.Columns.Add("TokenNo");
             DataTable.Columns.Add("Name");
-            DataTable.Columns.Add("RequestedAmount");
-            DataTable.Columns.Add("EPFSalary");
-            DataTable.Columns.Add("DayWages");
-            DataTable.Columns.Add("FixedInsentiveAllowance");
-            DataTable.Columns.Add("VariableInsentiveAllowance");
+            DataTable.Columns.Add("RequestedAmount",typeof(double));
+            DataTable.Columns.Add("EPFSalary",typeof(double));
+            DataTable.Columns.Add("DayWages", typeof(double));
+            DataTable.Columns.Add("FixedInsentiveAllowance", typeof(double));
+            DataTable.Columns.Add("VariableInsentiveAllowance", typeof(double));
 
             foreach (SalaryAdvanceEmployeeDetail x in SalaryAdvance.SalaryAdvanceEmployeeDetails)
             {
@@ -89,6 +96,76 @@ namespace TeemaApplication
         private void cmbFormNo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             fillemployeedetailsgrid();
+        }
+
+        private void approvesalaryadvance()
+        {
+            bool gridval = true;
+               SalaryAdvance SalaryAdvance = (SalaryAdvance)cmbFormNo.SelectedItem;
+               if (SalaryAdvance.ApprovedBy != null)
+                {
+                   
+                        SalaryAdvance.ApprovedBy = LoginDetails.LoggedUsedID;
+                        SalaryAdvance.ApprovedDate = DateTime.Now;
+                        SalaryAdvance.ModifiedBy = LoginDetails.LoggedUsedID;
+                        SalaryAdvance.ModifiedDate = DateTime.Now;
+
+                        foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
+                        {
+                            int tokenNo = Convert.ToInt32(row.Cells["clmnTokenNo"].Value.ToString().Trim());
+                            SalaryAdvanceEmployeeDetail SalaryAdvanceEmployeeDetail = SalaryAdvance.SalaryAdvanceEmployeeDetails.Where(SA => SA.Employee.TokenNo == tokenNo).SingleOrDefault();
+
+                             requestedAmount = Convert.ToDouble(row.Cells["clmnRequestedAmount"].Value);
+                             EPFSalary = Convert.ToDouble(row.Cells["clmnEPFSalary"].Value);
+                             DayWages = Convert.ToDouble(row.Cells["clmnDayWages"].Value);
+                             FixedInsentiveAllowance = Convert.ToDouble(row.Cells["clmnFixedInsentiveAllowance"].Value);
+                             VariableInsentiveAllowance = Convert.ToDouble(row.Cells["clmnVariableInsentiveAllowance"].Value);
+
+                             if (requestedAmount == EPFSalary + DayWages + FixedInsentiveAllowance + VariableInsentiveAllowance)
+                             {
+                                 SalaryAdvanceEmployeeDetail.RequestAmount = requestedAmount;
+                                 SalaryAdvanceEmployeeDetail.EPFSal = EPFSalary;
+                                 SalaryAdvanceEmployeeDetail.DayWages = DayWages;
+                                 SalaryAdvanceEmployeeDetail.FixedInsentive = FixedInsentiveAllowance;
+                                 SalaryAdvanceEmployeeDetail.VariableInsentive = VariableInsentiveAllowance;
+                                 SalaryAdvanceEmployeeDetail.ModifiedBy = LoginDetails.LoggedUsedID;
+                                 SalaryAdvanceEmployeeDetail.ModifiedDate = DateTime.Now;
+                             }
+                             else
+                             {
+                                 gridval = false;
+                             }
+                           
+                        }
+
+                        if (gridval == true)
+                        {
+                            db.SubmitChanges();
+                            Utilities.ShowInformationBox("You have successfully approved Salary Advance requests.");
+                        }
+                    
+                }
+                else
+                {
+                    Utilities.ShowErrorBox("You have already approved this Salary Advance request.");
+                }
+
+        }
+
+        // check requested amount breakdown is equal to requested amount
+        private void checkgridvalues()
+        {
+            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
+            {
+                double requestedAmount = Convert.ToDouble(row.Cells["clmnRequestedAmount"].Value);
+                double EPFSalary = Convert.ToDouble(row.Cells["clmnEPFSalary"].Value);
+                double DayWages = Convert.ToDouble(row.Cells["clmnDayWages"].Value);
+                double FixedInsentiveAllowance = Convert.ToDouble(row.Cells["clmnFixedInsentiveAllowance"].Value);
+                double VariableInsentiveAllowance = Convert.ToDouble(row.Cells["clmnVariableInsentiveAllowance"].Value);
+
+
+
+            }
         }
     }
 }
