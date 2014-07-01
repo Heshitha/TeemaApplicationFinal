@@ -55,9 +55,11 @@
             this.viewSecurityRoutineByEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGrantedLeavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.applyLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dayOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dayOffApplyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +73,8 @@
             this.pieceRateCalculationToolStripMenuItem,
             this.fingerPrintDevicesToolStripMenuItem,
             this.securityToolStripMenuItem,
-            this.leaveToolStripMenuItem});
+            this.leaveToolStripMenuItem,
+            this.dayOffToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(893, 24);
@@ -286,6 +289,21 @@
             this.approveLeaveToolStripMenuItem.Text = "Approve Leave";
             this.approveLeaveToolStripMenuItem.Click += new System.EventHandler(this.approveLeaveToolStripMenuItem_Click);
             // 
+            // dayOffToolStripMenuItem
+            // 
+            this.dayOffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dayOffApplyToolStripMenuItem});
+            this.dayOffToolStripMenuItem.Name = "dayOffToolStripMenuItem";
+            this.dayOffToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.dayOffToolStripMenuItem.Text = "Day Off";
+            // 
+            // dayOffApplyToolStripMenuItem
+            // 
+            this.dayOffApplyToolStripMenuItem.Name = "dayOffApplyToolStripMenuItem";
+            this.dayOffApplyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dayOffApplyToolStripMenuItem.Text = "Day Off Apply";
+            this.dayOffApplyToolStripMenuItem.Click += new System.EventHandler(this.dayOffApplyToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +354,8 @@
         private System.Windows.Forms.ToolStripMenuItem editGrantedLeavesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem applyLeaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approveLeaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dayOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dayOffApplyToolStripMenuItem;
     }
 }
 
