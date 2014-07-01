@@ -251,5 +251,44 @@ namespace TeemaApplication
                 txtNumberofdays.Text = "0.5";
             }
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            submitapproval();
+            loadLeavesGrid();
+        }
+
+        private void submitapproval()
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dgvLeavesapplied.Rows)
+                {
+                    DataGridViewCheckBoxCell checkCell = row.Cells[5] as DataGridViewCheckBoxCell;
+                    bool IsApproved = (checkCell != null && checkCell.Value != null && true == (bool)checkCell.Value);
+
+                    int leaveID = Convert.ToInt32(row.Cells[2].Value);
+                    PersonalLeaveRecord perslvrec = db.PersonalLeaveRecords.Where(sa => sa.PersonalLeaveID == leaveID).SingleOrDefault();
+                    if (IsApproved)
+                    {
+                        perslvrec.LeaveApprovedDept = 1;
+                        perslvrec.ModifiedBy = 1;
+                        perslvrec.ModifiedDate = DateTime.Now;
+                    }
+                    else
+                    {
+                        perslvrec.LeaveApprovedDept = null;
+                        perslvrec.ModifiedBy = 1;
+                        perslvrec.ModifiedDate = DateTime.Now;
+                    }
+                    db.SubmitChanges();
+                }
+                Utilities.ShowInformationBox("Successfully Saved.");
+            }
+            catch (Exception e)
+            {
+                Utilities.ShowExceptionBox(e.Message);
+            }
+        }
     }
 }
