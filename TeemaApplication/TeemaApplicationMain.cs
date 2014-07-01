@@ -227,5 +227,10 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void viewFingerPrintDevicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

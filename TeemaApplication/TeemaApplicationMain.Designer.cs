@@ -45,8 +45,10 @@
             this.createSalaryAdvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pieceRateCalculationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterPieceRateDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pieceRatePaymentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.fingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewFingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,8 @@
             this.tsmiUserAccount,
             this.overtimeToolStripMenuItem,
             this.salaryAdvanceToolStripMenuItem,
-            this.pieceRateCalculationToolStripMenuItem});
+            this.pieceRateCalculationToolStripMenuItem,
+            this.fingerPrintDevicesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -177,7 +180,7 @@
             // enterPieceRateDetailsToolStripMenuItem
             // 
             this.enterPieceRateDetailsToolStripMenuItem.Name = "enterPieceRateDetailsToolStripMenuItem";
-            this.enterPieceRateDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.enterPieceRateDetailsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.enterPieceRateDetailsToolStripMenuItem.Text = "Enter Piece Rate Details";
             this.enterPieceRateDetailsToolStripMenuItem.Click += new System.EventHandler(this.enterPieceRateDetailsToolStripMenuItem_Click);
             // 
@@ -187,6 +190,21 @@
             this.pieceRatePaymentListToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.pieceRatePaymentListToolStripMenuItem.Text = "Piece Rate Payment List";
             this.pieceRatePaymentListToolStripMenuItem.Click += new System.EventHandler(this.pieceRatePaymentListToolStripMenuItem_Click);
+            // 
+            // fingerPrintDevicesToolStripMenuItem
+            // 
+            this.fingerPrintDevicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewFingerPrintDevicesToolStripMenuItem});
+            this.fingerPrintDevicesToolStripMenuItem.Name = "fingerPrintDevicesToolStripMenuItem";
+            this.fingerPrintDevicesToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.fingerPrintDevicesToolStripMenuItem.Text = "Finger Print Devices";
+            // 
+            // viewFingerPrintDevicesToolStripMenuItem
+            // 
+            this.viewFingerPrintDevicesToolStripMenuItem.Name = "viewFingerPrintDevicesToolStripMenuItem";
+            this.viewFingerPrintDevicesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.viewFingerPrintDevicesToolStripMenuItem.Text = "View Finger Print Devices";
+            this.viewFingerPrintDevicesToolStripMenuItem.Click += new System.EventHandler(this.viewFingerPrintDevicesToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -227,6 +245,8 @@
         private System.Windows.Forms.ToolStripMenuItem pieceRateCalculationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterPieceRateDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pieceRatePaymentListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fingerPrintDevicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewFingerPrintDevicesToolStripMenuItem;
     }
 }
 
