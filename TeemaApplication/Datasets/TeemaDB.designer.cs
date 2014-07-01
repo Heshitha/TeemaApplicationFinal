@@ -84,6 +84,9 @@ namespace TeemaApplication.Datasets
     partial void InsertEmployeeAttendance(EmployeeAttendance instance);
     partial void UpdateEmployeeAttendance(EmployeeAttendance instance);
     partial void DeleteEmployeeAttendance(EmployeeAttendance instance);
+    partial void InsertGrantedLeave(GrantedLeave instance);
+    partial void UpdateGrantedLeave(GrantedLeave instance);
+    partial void DeleteGrantedLeave(GrantedLeave instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -257,6 +260,14 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<EmployeeAttendance>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GrantedLeave> GrantedLeaves
+		{
+			get
+			{
+				return this.GetTable<GrantedLeave>();
 			}
 		}
 	}
@@ -1346,6 +1357,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<EmployeeAttendance> _EmployeeAttendances;
 		
+		private EntitySet<GrantedLeave> _GrantedLeaves;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1410,6 +1423,7 @@ namespace TeemaApplication.Datasets
 			this._EnteredPieceRateForEmployees = new EntitySet<EnteredPieceRateForEmployee>(new Action<EnteredPieceRateForEmployee>(this.attach_EnteredPieceRateForEmployees), new Action<EnteredPieceRateForEmployee>(this.detach_EnteredPieceRateForEmployees));
 			this._AvaragePieceRateForEmployees = new EntitySet<AvaragePieceRateForEmployee>(new Action<AvaragePieceRateForEmployee>(this.attach_AvaragePieceRateForEmployees), new Action<AvaragePieceRateForEmployee>(this.detach_AvaragePieceRateForEmployees));
 			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
+			this._GrantedLeaves = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves), new Action<GrantedLeave>(this.detach_GrantedLeaves));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -1938,6 +1952,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_GrantedLeave", Storage="_GrantedLeaves", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<GrantedLeave> GrantedLeaves
+		{
+			get
+			{
+				return this._GrantedLeaves;
+			}
+			set
+			{
+				this._GrantedLeaves.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2207,6 +2234,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_EmployeeAttendances(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_GrantedLeaves(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_GrantedLeaves(GrantedLeave entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -3001,6 +3040,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<EmployeeAttendance> _EmployeeAttendances1;
 		
+		private EntitySet<GrantedLeave> _GrantedLeaves;
+		
+		private EntitySet<GrantedLeave> _GrantedLeaves1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3050,6 +3093,8 @@ namespace TeemaApplication.Datasets
 			this._FingerPrintDivices1 = new EntitySet<FingerPrintDivice>(new Action<FingerPrintDivice>(this.attach_FingerPrintDivices1), new Action<FingerPrintDivice>(this.detach_FingerPrintDivices1));
 			this._EmployeeAttendances = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances));
 			this._EmployeeAttendances1 = new EntitySet<EmployeeAttendance>(new Action<EmployeeAttendance>(this.attach_EmployeeAttendances1), new Action<EmployeeAttendance>(this.detach_EmployeeAttendances1));
+			this._GrantedLeaves = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves), new Action<GrantedLeave>(this.detach_GrantedLeaves));
+			this._GrantedLeaves1 = new EntitySet<GrantedLeave>(new Action<GrantedLeave>(this.attach_GrantedLeaves1), new Action<GrantedLeave>(this.detach_GrantedLeaves1));
 			OnCreated();
 		}
 		
@@ -3556,6 +3601,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_GrantedLeave", Storage="_GrantedLeaves", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<GrantedLeave> GrantedLeaves
+		{
+			get
+			{
+				return this._GrantedLeaves;
+			}
+			set
+			{
+				this._GrantedLeaves.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_GrantedLeave1", Storage="_GrantedLeaves1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<GrantedLeave> GrantedLeaves1
+		{
+			get
+			{
+				return this._GrantedLeaves1;
+			}
+			set
+			{
+				this._GrantedLeaves1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3943,6 +4014,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_EmployeeAttendances1(EmployeeAttendance entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_GrantedLeaves(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_GrantedLeaves(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_GrantedLeaves1(GrantedLeave entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_GrantedLeaves1(GrantedLeave entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
@@ -8252,6 +8347,383 @@ namespace TeemaApplication.Datasets
 					if ((value != null))
 					{
 						value.EmployeeAttendances1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GrantedLeaves")]
+	public partial class GrantedLeave : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _LeavesID;
+		
+		private int _EmployeeID;
+		
+		private System.Nullable<int> _year;
+		
+		private System.Nullable<int> _Annual;
+		
+		private System.Nullable<int> _Casual;
+		
+		private System.Nullable<int> _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnLeavesIDChanging(int value);
+    partial void OnLeavesIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnyearChanging(System.Nullable<int> value);
+    partial void OnyearChanged();
+    partial void OnAnnualChanging(System.Nullable<int> value);
+    partial void OnAnnualChanged();
+    partial void OnCasualChanging(System.Nullable<int> value);
+    partial void OnCasualChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(System.Nullable<int> value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public GrantedLeave()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LeavesID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int LeavesID
+		{
+			get
+			{
+				return this._LeavesID;
+			}
+			set
+			{
+				if ((this._LeavesID != value))
+				{
+					this.OnLeavesIDChanging(value);
+					this.SendPropertyChanging();
+					this._LeavesID = value;
+					this.SendPropertyChanged("LeavesID");
+					this.OnLeavesIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_year", DbType="Int")]
+		public System.Nullable<int> year
+		{
+			get
+			{
+				return this._year;
+			}
+			set
+			{
+				if ((this._year != value))
+				{
+					this.OnyearChanging(value);
+					this.SendPropertyChanging();
+					this._year = value;
+					this.SendPropertyChanged("year");
+					this.OnyearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Annual", DbType="Int")]
+		public System.Nullable<int> Annual
+		{
+			get
+			{
+				return this._Annual;
+			}
+			set
+			{
+				if ((this._Annual != value))
+				{
+					this.OnAnnualChanging(value);
+					this.SendPropertyChanging();
+					this._Annual = value;
+					this.SendPropertyChanged("Annual");
+					this.OnAnnualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Casual", DbType="Int")]
+		public System.Nullable<int> Casual
+		{
+			get
+			{
+				return this._Casual;
+			}
+			set
+			{
+				if ((this._Casual != value))
+				{
+					this.OnCasualChanging(value);
+					this.SendPropertyChanging();
+					this._Casual = value;
+					this.SendPropertyChanged("Casual");
+					this.OnCasualChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+		public System.Nullable<int> CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int")]
+		public System.Nullable<int> ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_GrantedLeave", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.GrantedLeaves.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.GrantedLeaves.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_GrantedLeave", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.GrantedLeaves.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.GrantedLeaves.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_GrantedLeave1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.GrantedLeaves1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.GrantedLeaves1.Add(this);
 						this._ModifiedBy = value.UserID;
 					}
 					else

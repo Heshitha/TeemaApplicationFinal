@@ -255,5 +255,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void editGrantedLeavesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddLeaves frm = new frmAddLeaves();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

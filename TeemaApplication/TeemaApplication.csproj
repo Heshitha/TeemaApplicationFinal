@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddLeaves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLeaves.Designer.cs">
+      <DependentUpon>AddLeaves.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,12 +222,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\BasicSalaryReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BasicSalaryReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\DayOffApprvealReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,6 +294,9 @@
     <Compile Include="ViewSecurityRoutine.Designer.cs">
       <DependentUpon>ViewSecurityRoutine.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddLeaves.resx">
+      <DependentUpon>AddLeaves.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewEmployee.resx">
       <DependentUpon>AddNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,10 +335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PieceRatePaymentList.resx">
       <DependentUpon>PieceRatePaymentList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\BasicSalaryReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BasicSalaryReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DayOffApprvealReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

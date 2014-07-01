@@ -49,11 +49,13 @@
             this.pieceRatePaymentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewFingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.loadAttendanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineByEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.leaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGrantedLeavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +68,8 @@
             this.salaryAdvanceToolStripMenuItem,
             this.pieceRateCalculationToolStripMenuItem,
             this.fingerPrintDevicesToolStripMenuItem,
-            this.securityToolStripMenuItem});
+            this.securityToolStripMenuItem,
+            this.leaveToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(893, 24);
@@ -250,6 +253,21 @@
             this.viewSecurityRoutineByEmployeeToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.viewSecurityRoutineByEmployeeToolStripMenuItem.Text = "View Security Routine By Employee";
             // 
+            // leaveToolStripMenuItem
+            // 
+            this.leaveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editGrantedLeavesToolStripMenuItem});
+            this.leaveToolStripMenuItem.Name = "leaveToolStripMenuItem";
+            this.leaveToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.leaveToolStripMenuItem.Text = "Leave";
+            // 
+            // editGrantedLeavesToolStripMenuItem
+            // 
+            this.editGrantedLeavesToolStripMenuItem.Name = "editGrantedLeavesToolStripMenuItem";
+            this.editGrantedLeavesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.editGrantedLeavesToolStripMenuItem.Text = "Edit Granted Leaves";
+            this.editGrantedLeavesToolStripMenuItem.Click += new System.EventHandler(this.editGrantedLeavesToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +314,8 @@
         private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSecurityRoutineReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSecurityRoutineByEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editGrantedLeavesToolStripMenuItem;
     }
 }
 

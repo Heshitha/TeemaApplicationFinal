@@ -73,6 +73,7 @@
       <Association Name="Employee_EnteredPieceRateForEmployee" Member="EnteredPieceRateForEmployees" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="EnteredPieceRateForEmployee" />
       <Association Name="Employee_AvaragePieceRateForEmployee" Member="AvaragePieceRateForEmployees" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="AvaragePieceRateForEmployee" />
       <Association Name="Employee_EmployeeAttendance" Member="EmployeeAttendances" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="EmployeeAttendance" />
+      <Association Name="Employee_GrantedLeave" Member="GrantedLeaves" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="GrantedLeave" />
       <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
       <Association Name="Designation_Employee" Member="Designation" ThisKey="DesignationID" OtherKey="DesignationID" Type="Designation" IsForeignKey="true" />
       <Association Name="SubDepartment_Employee" Member="SubDepartment" ThisKey="SubDepartmentID" OtherKey="SubDepartmentID" Type="SubDepartment" IsForeignKey="true" />
@@ -148,6 +149,8 @@
       <Association Name="UserAccount_FingerPrintDivice1" Member="FingerPrintDivices1" ThisKey="UserID" OtherKey="ModifiedBy" Type="FingerPrintDivice" />
       <Association Name="UserAccount_EmployeeAttendance" Member="EmployeeAttendances" ThisKey="UserID" OtherKey="CreatedBy" Type="EmployeeAttendance" />
       <Association Name="UserAccount_EmployeeAttendance1" Member="EmployeeAttendances1" ThisKey="UserID" OtherKey="ModifiedBy" Type="EmployeeAttendance" />
+      <Association Name="UserAccount_GrantedLeave" Member="GrantedLeaves" ThisKey="UserID" OtherKey="CreatedBy" Type="GrantedLeave" />
+      <Association Name="UserAccount_GrantedLeave1" Member="GrantedLeaves1" ThisKey="UserID" OtherKey="ModifiedBy" Type="GrantedLeave" />
     </Type>
   </Table>
   <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
@@ -331,6 +334,22 @@
       <Association Name="FingerPrintDivice_EmployeeAttendance" Member="FingerPrintDivice" ThisKey="DeviceId" OtherKey="DeviceID" Type="FingerPrintDivice" IsForeignKey="true" />
       <Association Name="UserAccount_EmployeeAttendance" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_EmployeeAttendance1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrantedLeaves" Member="GrantedLeaves">
+    <Type Name="GrantedLeave">
+      <Column Name="LeavesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Annual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Casual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Employee_GrantedLeave" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="UserAccount_GrantedLeave" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_GrantedLeave1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
