@@ -53,14 +53,12 @@
             this.txtFullhalfday = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.chbUnApprovedOnly = new System.Windows.Forms.CheckBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.gbxSalaryMonth = new System.Windows.Forms.GroupBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.dgvLeavesapplied = new System.Windows.Forms.DataGridView();
             this.clmnTokenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +66,7 @@
             this.clmnLeaveType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnLeaveDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnApprove = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.grpEmployeeDetails = new System.Windows.Forms.GroupBox();
             this.txtNICNo = new System.Windows.Forms.TextBox();
             this.txtTokenNo = new System.Windows.Forms.TextBox();
@@ -365,15 +364,6 @@
             this.chbUnApprovedOnly.UseVisualStyleBackColor = true;
             this.chbUnApprovedOnly.CheckedChanged += new System.EventHandler(this.chbUnApprovedOnly_CheckedChanged);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(187, 460);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 42;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // gbxSalaryMonth
             // 
             this.gbxSalaryMonth.Controls.Add(this.cmbMonth);
@@ -461,15 +451,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leaves";
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(890, 496);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(86, 31);
-            this.btnSubmit.TabIndex = 38;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            // 
             // dgvLeavesapplied
             // 
             this.dgvLeavesapplied.AllowUserToAddRows = false;
@@ -489,6 +470,7 @@
             this.dgvLeavesapplied.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLeavesapplied.Size = new System.Drawing.Size(657, 208);
             this.dgvLeavesapplied.TabIndex = 3;
+            this.dgvLeavesapplied.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLeavesapplied_CellClick);
             // 
             // clmnTokenID
             // 
@@ -527,6 +509,15 @@
             this.btnApprove.HeaderText = "Approve";
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.TrueValue = "true";
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(890, 496);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(86, 31);
+            this.btnSubmit.TabIndex = 38;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // grpEmployeeDetails
             // 
@@ -736,7 +727,6 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.gbxDepartmentDetails);
             this.Controls.Add(this.gbxCreatedAdvance);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.gbxSalaryMonth);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpEmployeeDetails);
@@ -794,7 +784,6 @@
         private System.Windows.Forms.TextBox txtFullhalfday;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chbUnApprovedOnly;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox gbxSalaryMonth;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.ComboBox cmbYear;

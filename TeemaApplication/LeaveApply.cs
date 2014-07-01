@@ -279,6 +279,153 @@ namespace TeemaApplication
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            applyleave();
+        }
+
+        private void applyleave()
+        {
+            String leavetype;
+            String OtherLeaveReason;
+            String reasonforabsence;
+
+            bool ispay;
+            DateTime leavefrom;
+            DateTime leaveto;
+            TimeSpan numberofdays;
+            int substituteid;
+            String nameofsubstitue;
+
+            if (rbtOther.Checked || rbtAnnual.Checked || rbtCasual.Checked)
+            {
+                if (rbtAnnual.Checked)
+                {
+                    leavetype = "Annual";
+                }
+                else if (rbtCasual.Checked)
+                {
+                    leavetype = "Casual";
+                }
+                else if (rbtOther.Checked)
+                {
+
+                    leavetype = "Other";
+                }
+                else
+                {
+                    leavetype = "Annual";
+                }
+
+                if (txtReasonsForAbsence.Text != "")
+                {
+                    reasonforabsence = txtReasonsForAbsence.Text;
+
+                    //if (rbtFullDay.Checked)
+                    //{
+                    //    leavevalue = 1;
+                    //}
+                    //else
+                    //{
+                    //    leavevalue = 0.5F;
+                    //}
+
+                    if (rbtPay.Checked)
+                    {
+                        ispay = true;
+                    }
+                    else
+                    {
+                        ispay = false;
+                    }
+
+                    leavefrom = dtpLeaveFrom.Value;
+                    leaveto = dtpLeaveTo.Value;
+
+
+                    if (txtOtherLeaveDescription.Text != null)
+                    {
+                        OtherLeaveReason = txtOtherLeaveDescription.Text;
+                    }
+                    else
+                    {
+                        OtherLeaveReason = "";
+                    }
+
+                    if (txtSubstituteID.Text != "")
+                    {
+
+                        substituteid = Utilities.getIntValueFromTextBox(txtSubstituteID);
+
+                        Employee empname = (from emp in db.Employees
+                                            where emp.TokenNo == substituteid
+                                            select emp).SingleOrDefault();
+
+                        if (empname != null)
+                        {
+                            txtNameofSubstitue.Text = empname.Name;
+
+                            PersonalLeaveRecord persnlvrec = new PersonalLeaveRecord();
+
+
+
+                            persnlvrec.Employee = empdata;
+
+                            if (rbtFullDay.Checked)
+                            {
+                                persnlvrec.LeaveValue = 1;
+                            }
+                            else if (rbtHalfday.Checked)
+                            {
+                                persnlvrec.LeaveValue = 0.5;
+                            }
+                            persnlvrec.LeaveType = leavetype;
+                            persnlvrec.LeaveReason = reasonforabsence;
+                            persnlvrec.LeaveDate = System.DateTime.Today;
+                            persnlvrec.IsNoPay = ispay;
+                            persnlvrec.LeaveFrom = leavefrom;
+
+                            // check for full days and halfdays befor entering Leave To
+                            if (rbtFullDay.Checked)
+                            { persnlvrec.LeaveTo = leaveto; }
+                            else { persnlvrec.LeaveTo = null; }
+
+                            persnlvrec.OtherLeaveDescription = OtherLeaveReason;
+                            persnlvrec.SubstituteID = substituteid.ToString();
+                            persnlvrec.CreatedBy = LoginDetails.LoggedUsedID;
+                            persnlvrec.CreatedDate = DateTime.Now;
+                            persnlvrec.ModifiedBy = LoginDetails.LoggedUsedID;
+                            persnlvrec.ModifiedDate = DateTime.Now;
+
+                            db.PersonalLeaveRecords.InsertOnSubmit(persnlvrec);
+                            db.SubmitChanges();
+
+                            Utilities.ShowInformationBox("Leave applied successfully..!!");
+
+
+                        }
+                        else
+                        {
+                            Utilities.ShowErrorBox("Substitue employee not found..!!");
+                        }
+                    }
+                    else
+                    {
+                        Utilities.ShowErrorBox("Please add a substitute token number..!!");
+                    }
+
+                }
+                else
+                {
+                    Utilities.ShowErrorBox("Please add a Reason for absence");
+                }
+
+
+
+            }
+            else
+            {
+                Utilities.ShowErrorBox("Please select a Leave Type");
+            }
+
 
         }
     }

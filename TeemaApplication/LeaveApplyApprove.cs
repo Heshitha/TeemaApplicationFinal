@@ -167,5 +167,89 @@ namespace TeemaApplication
                 loadLeavesGrid();
             }
         }
+
+        private void dgvLeavesapplied_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fillEmployeeDetailsgrpbox();
+        }
+
+        private void fillEmployeeDetailsgrpbox()
+        {
+
+            int tokenid = Convert.ToInt32(dgvLeavesapplied.SelectedRows[0].Cells[0].Value.ToString());
+
+            Employee data = (from emp in db.Employees
+                             where emp.TokenNo == tokenid
+                             select emp).SingleOrDefault();
+
+
+            txtEmployeeName.Text = data.Name;
+            txtDesignation.Text = data.Designation.Designation1;
+            txtNICNo.Text = data.NICNo;
+            txtEPFNO.Text = data.EPFNo;
+            txtTokenNo.Text = data.TokenNo.ToString();
+
+
+            // fill leave deatails textboxes
+
+            int id = Convert.ToInt32(dgvLeavesapplied.SelectedRows[0].Cells[2].Value);
+
+            PersonalLeaveRecord pre = (from en in db.PersonalLeaveRecords
+                                       where en.PersonalLeaveID == id
+                                       select en).SingleOrDefault();
+
+            txtLeavefrom.Text = pre.LeaveFrom.Value.ToString("dd-MM-yyyy");
+
+            if (pre.LeaveTo != null)
+            {
+                txtLeaveto.Text = pre.LeaveTo.Value.ToString("dd-MM-yyyy");
+            }
+            if (pre.OtherLeaveDescription != "")
+            {
+                txtOtherleavedescription.Text = pre.OtherLeaveDescription.ToString();
+            }
+            if (pre.LeaveReason != "")
+            {
+                txtLeaveReason.Text = pre.LeaveReason.ToString();
+            }
+            if (pre.IsNoPay == true)
+            {
+                txtPaynopay.Text = "Payed";
+            }
+            else if (pre.IsNoPay == false)
+            {
+                txtPaynopay.Text = "Nopay";
+            }
+            if (pre.LeaveValue == 1)
+            {
+                txtFullhalfday.Text = "Full Day";
+            }
+            else if (pre.LeaveValue == 0.5)
+            {
+                txtFullhalfday.Text = "Half Day";
+            }
+
+
+            txtSubstitueID.Text = pre.SubstituteID;
+            txtSubstitutename.Text = pre.Employee.Name;
+
+            if (pre.LeaveTo != null)
+            {
+                DateTime leavefrom1 = pre.LeaveFrom.Value;
+                DateTime leaveto1 = pre.LeaveTo.Value;
+
+                TimeSpan numberofdays;
+
+                numberofdays = (leaveto1 - leavefrom1);
+
+                int realdays = numberofdays.Days;
+
+                txtNumberofdays.Text = Convert.ToString(realdays + 1);
+            }
+            else
+            {
+                txtNumberofdays.Text = "0.5";
+            }
+        }
     }
 }

@@ -346,7 +346,6 @@
             // 
             this.txtOtherLeaveDescription.Location = new System.Drawing.Point(133, 47);
             this.txtOtherLeaveDescription.Name = "txtOtherLeaveDescription";
-            this.txtOtherLeaveDescription.ReadOnly = true;
             this.txtOtherLeaveDescription.Size = new System.Drawing.Size(182, 20);
             this.txtOtherLeaveDescription.TabIndex = 1;
             this.txtOtherLeaveDescription.TabStop = false;
