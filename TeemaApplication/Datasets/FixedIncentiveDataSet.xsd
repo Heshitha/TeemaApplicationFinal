@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="FixedIncentiveAllowanceDataSet" targetNamespace="http://tempuri.org/FixedIncentiveAllowanceDataSet.xsd" xmlns:mstns="http://tempuri.org/FixedIncentiveAllowanceDataSet.xsd" xmlns="http://tempuri.org/FixedIncentiveAllowanceDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="FixedIncentiveDataSet" targetNamespace="http://tempuri.org/FixedIncentiveDataSet.xsd" xmlns:mstns="http://tempuri.org/FixedIncentiveDataSet.xsd" xmlns="http://tempuri.org/FixedIncentiveDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -9,10 +9,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="FixedIncentiveAllowanceDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FixedIncentiveAllowanceDataSet" msprop:Generator_UserDSName="FixedIncentiveAllowanceDataSet">
+  <xs:element name="FixedIncentiveDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FixedIncentiveDataSet" msprop:Generator_UserDSName="FixedIncentiveDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FixedIncentiveDetails" msprop:Generator_TableClassName="FixedIncentiveDetailsDataTable" msprop:Generator_TableVarName="tableFixedIncentiveDetails" msprop:Generator_RowChangedName="FixedIncentiveDetailsRowChanged" msprop:Generator_TablePropName="FixedIncentiveDetails" msprop:Generator_RowDeletingName="FixedIncentiveDetailsRowDeleting" msprop:Generator_RowChangingName="FixedIncentiveDetailsRowChanging" msprop:Generator_RowEvHandlerName="FixedIncentiveDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="FixedIncentiveDetailsRowDeleted" msprop:Generator_RowClassName="FixedIncentiveDetailsRow" msprop:Generator_UserTableName="FixedIncentiveDetails" msprop:Generator_RowEvArgName="FixedIncentiveDetailsRowChangeEvent">
+        <xs:element name="FixedIncentiveDetails" msprop:Generator_TableClassName="FixedIncentiveDetailsDataTable" msprop:Generator_TableVarName="tableFixedIncentiveDetails" msprop:Generator_TablePropName="FixedIncentiveDetails" msprop:Generator_RowDeletingName="FixedIncentiveDetailsRowDeleting" msprop:Generator_RowChangingName="FixedIncentiveDetailsRowChanging" msprop:Generator_RowEvHandlerName="FixedIncentiveDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="FixedIncentiveDetailsRowDeleted" msprop:Generator_UserTableName="FixedIncentiveDetails" msprop:Generator_RowChangedName="FixedIncentiveDetailsRowChanged" msprop:Generator_RowEvArgName="FixedIncentiveDetailsRowChangeEvent" msprop:Generator_RowClassName="FixedIncentiveDetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:int" minOccurs="0" />

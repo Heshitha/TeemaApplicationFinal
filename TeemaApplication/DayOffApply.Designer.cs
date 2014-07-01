@@ -1,6 +1,6 @@
 ﻿namespace TeemaApplication
 {
-    partial class DayOffApply
+    partial class frmDayOffApply
     {
         /// <summary>
         /// Required designer variable.
@@ -372,6 +372,7 @@
             this.btndayoffapply.TabIndex = 7;
             this.btndayoffapply.Text = "Apply ";
             this.btndayoffapply.UseVisualStyleBackColor = true;
+            this.btndayoffapply.Click += new System.EventHandler(this.btndayoffapply_Click);
             // 
             // label11
             // 
@@ -422,7 +423,7 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // DayOffApply
+            // frmDayOffApply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -433,7 +434,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DayOffApply";
+            this.Name = "frmDayOffApply";
             this.Text = "DayOffApply";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DayOffApply_MouseDown);
             this.grpEmployeeDetails.ResumeLayout(false);
