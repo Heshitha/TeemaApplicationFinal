@@ -280,6 +280,7 @@
             this.btnPrintForm.TabIndex = 38;
             this.btnPrintForm.Text = "Print Form";
             this.btnPrintForm.UseVisualStyleBackColor = true;
+            this.btnPrintForm.Click += new System.EventHandler(this.btnPrintForm_Click);
             // 
             // btnSubmit
             // 

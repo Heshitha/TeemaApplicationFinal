@@ -11,12 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TeemaApplication.Classes;
 using TeemaApplication.Datasets;
+using TeemaApplication.Reports;
 
 namespace TeemaApplication
 {
     public partial class CreateSalaryAdvance : Form
     {
         TeemaDBDataContext db = new TeemaDBDataContext();
+
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -181,7 +183,52 @@ namespace TeemaApplication
             txtFormNo.Text = saladv.SalaryAdvanceID.ToString();
        
         }
-       
 
+        private void printform()
+        {
+
+            int formno = Utilities.getIntValueFromTextBox(txtFormNo);
+
+
+            SalaryAdvance SalaryAdvance = db.SalaryAdvances.Where(sl => sl.SalaryAdvanceID == formno).SingleOrDefault();
+
+            SalaryAdvanceDataSet SalaryAdvanceDataSet = new SalaryAdvanceDataSet();
+
+            SalaryAdvanceDataSet.SalaryAdvanceDetailaRow SArow = SalaryAdvanceDataSet.SalaryAdvanceDetaila.NewSalaryAdvanceDetailaRow();
+
+            SArow.ReportID = SalaryAdvance.SalaryAdvanceID;
+            SArow.Department = SalaryAdvance.Department.DepartmentName;
+            SArow.CreatedBy = SalaryAdvance.UserAccount.Name;
+            SArow.CreatedDate = SalaryAdvance.CreatedDate.Value;
+            SArow.ModifiedBy = SalaryAdvance.UserAccount1.Name;
+            SArow.ModifiedDate = SalaryAdvance.ModifiedDate.Value;
+            SArow.ApprovedBy = "-Not Approved-";
+            
+
+            SalaryAdvanceDataSet.SalaryAdvanceDetaila.AddSalaryAdvanceDetailaRow(SArow);
+
+            foreach (SalaryAdvanceEmployeeDetail x in SalaryAdvance.SalaryAdvanceEmployeeDetails)
+            {
+                SalaryAdvanceDataSet.SalaryAdvanceEmployeeDetailsRow saemprow = SalaryAdvanceDataSet.SalaryAdvanceEmployeeDetails.NewSalaryAdvanceEmployeeDetailsRow();
+
+                saemprow.ReportID = x.SalaryAdvanceID;
+                saemprow.TokenNo = x.Employee.TokenNo;
+                saemprow.EmployeeName = x.Employee.Name;
+
+                SalaryAdvanceDataSet.SalaryAdvanceEmployeeDetails.AddSalaryAdvanceEmployeeDetailsRow(saemprow);
+
+            }
+
+            SalaryAdvanceReport rpt = new SalaryAdvanceReport();
+            rpt.SetDataSource(SalaryAdvanceDataSet);
+
+            frmReportViewer frm = new frmReportViewer(rpt);
+            frm.ShowDialog();
+        }
+
+        private void btnPrintForm_Click(object sender, EventArgs e)
+        {
+            printform();
+        }
     }
 }
