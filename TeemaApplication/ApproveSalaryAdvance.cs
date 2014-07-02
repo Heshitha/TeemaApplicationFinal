@@ -80,15 +80,15 @@ namespace TeemaApplication
             DataTable DataTable = new DataTable();
             DataTable.Columns.Add("TokenNo");
             DataTable.Columns.Add("Name");
-            DataTable.Columns.Add("RequestedAmount",typeof(double));
-            DataTable.Columns.Add("EPFSalary",typeof(double));
+            DataTable.Columns.Add("RequestAmount", typeof(double));
+            DataTable.Columns.Add("EPFSal", typeof(double));
             DataTable.Columns.Add("DayWages", typeof(double));
-            DataTable.Columns.Add("FixedInsentiveAllowance", typeof(double));
-            DataTable.Columns.Add("VariableInsentiveAllowance", typeof(double));
+            DataTable.Columns.Add("FixedInsentive", typeof(double));
+            DataTable.Columns.Add("VariableInsentive", typeof(double));
 
             foreach (SalaryAdvanceEmployeeDetail x in SalaryAdvance.SalaryAdvanceEmployeeDetails)
             {
-                DataTable.Rows.Add(x.Employee.TokenNo, x.Employee.Name, "", "", "", "", "");
+                DataTable.Rows.Add(x.Employee.TokenNo, x.Employee.Name, 0, 0, 0, 0, 0);
             }
             dgvEmployeeDetails.DataSource = DataTable;
         }
@@ -153,19 +153,6 @@ namespace TeemaApplication
         }
 
         // check requested amount breakdown is equal to requested amount
-        private void checkgridvalues()
-        {
-            foreach (DataGridViewRow row in dgvEmployeeDetails.Rows)
-            {
-                double requestedAmount = Convert.ToDouble(row.Cells["clmnRequestedAmount"].Value);
-                double EPFSalary = Convert.ToDouble(row.Cells["clmnEPFSalary"].Value);
-                double DayWages = Convert.ToDouble(row.Cells["clmnDayWages"].Value);
-                double FixedInsentiveAllowance = Convert.ToDouble(row.Cells["clmnFixedInsentiveAllowance"].Value);
-                double VariableInsentiveAllowance = Convert.ToDouble(row.Cells["clmnVariableInsentiveAllowance"].Value);
-
-
-
-            }
-        }
+       
     }
 }
