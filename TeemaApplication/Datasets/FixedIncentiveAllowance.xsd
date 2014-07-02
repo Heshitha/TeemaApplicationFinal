@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FixedIncentiveAllowance" targetNamespace="http://tempuri.org/FixedIncentiveAllowance.xsd" xmlns:mstns="http://tempuri.org/FixedIncentiveAllowance.xsd" xmlns="http://tempuri.org/FixedIncentiveAllowance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FixedIncentiveAllowance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FixedIncentiveAllowance" msprop:Generator_UserDSName="FixedIncentiveAllowance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FixedIncentiveDetails" msprop:Generator_TableClassName="FixedIncentiveDetailsDataTable" msprop:Generator_TableVarName="tableFixedIncentiveDetails" msprop:Generator_TablePropName="FixedIncentiveDetails" msprop:Generator_RowDeletingName="FixedIncentiveDetailsRowDeleting" msprop:Generator_RowChangingName="FixedIncentiveDetailsRowChanging" msprop:Generator_RowEvHandlerName="FixedIncentiveDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="FixedIncentiveDetailsRowDeleted" msprop:Generator_UserTableName="FixedIncentiveDetails" msprop:Generator_RowChangedName="FixedIncentiveDetailsRowChanged" msprop:Generator_RowEvArgName="FixedIncentiveDetailsRowChangeEvent" msprop:Generator_RowClassName="FixedIncentiveDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:string" minOccurs="0" />
+              <xs:element name="FixedIncentiveCategory" msprop:Generator_ColumnVarNameInTable="columnFixedIncentiveCategory" msprop:Generator_ColumnPropNameInRow="FixedIncentiveCategory" msprop:Generator_ColumnPropNameInTable="FixedIncentiveCategoryColumn" msprop:Generator_UserColumnName="FixedIncentiveCategory" type="xs:string" minOccurs="0" />
+              <xs:element name="SalaryFrom" msprop:Generator_ColumnVarNameInTable="columnSalaryFrom" msprop:Generator_ColumnPropNameInRow="SalaryFrom" msprop:Generator_ColumnPropNameInTable="SalaryFromColumn" msprop:Generator_UserColumnName="SalaryFrom" type="xs:string" minOccurs="0" />
+              <xs:element name="SalaryTo" msprop:Generator_ColumnVarNameInTable="columnSalaryTo" msprop:Generator_ColumnPropNameInRow="SalaryTo" msprop:Generator_ColumnPropNameInTable="SalaryToColumn" msprop:Generator_UserColumnName="SalaryTo" type="xs:string" minOccurs="0" />
+              <xs:element name="SalaryPeriod" msprop:Generator_ColumnVarNameInTable="columnSalaryPeriod" msprop:Generator_ColumnPropNameInRow="SalaryPeriod" msprop:Generator_ColumnPropNameInTable="SalaryPeriodColumn" msprop:Generator_UserColumnName="SalaryPeriod" type="xs:string" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" type="xs:string" minOccurs="0" />
+              <xs:element name="SubDepartment" msprop:Generator_ColumnVarNameInTable="columnSubDepartment" msprop:Generator_ColumnPropNameInRow="SubDepartment" msprop:Generator_ColumnPropNameInTable="SubDepartmentColumn" msprop:Generator_UserColumnName="SubDepartment" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_UserColumnName="CreatedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedBy" msprop:Generator_ColumnVarNameInTable="columnApprovedBy" msprop:Generator_ColumnPropNameInRow="ApprovedBy" msprop:Generator_ColumnPropNameInTable="ApprovedByColumn" msprop:Generator_UserColumnName="ApprovedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
