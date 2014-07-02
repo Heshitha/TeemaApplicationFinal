@@ -48,7 +48,6 @@
             this.clmnDayWages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnFixedInsentiveAllowance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnVariableInsentiveAllowance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPrintForm = new System.Windows.Forms.Button();
             this.btnApprove = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -241,30 +240,21 @@
             this.clmnVariableInsentiveAllowance.HeaderText = "Variable Insentive Allowance";
             this.clmnVariableInsentiveAllowance.Name = "clmnVariableInsentiveAllowance";
             // 
-            // btnPrintForm
-            // 
-            this.btnPrintForm.Location = new System.Drawing.Point(843, 369);
-            this.btnPrintForm.Name = "btnPrintForm";
-            this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
-            this.btnPrintForm.TabIndex = 44;
-            this.btnPrintForm.Text = "Print Form";
-            this.btnPrintForm.UseVisualStyleBackColor = true;
-            // 
             // btnApprove
             // 
-            this.btnApprove.Location = new System.Drawing.Point(762, 369);
+            this.btnApprove.Location = new System.Drawing.Point(843, 369);
             this.btnApprove.Name = "btnApprove";
             this.btnApprove.Size = new System.Drawing.Size(75, 23);
             this.btnApprove.TabIndex = 43;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // ApproveSalaryAdvance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 402);
-            this.Controls.Add(this.btnPrintForm);
             this.Controls.Add(this.btnApprove);
             this.Controls.Add(this.dgvEmployeeDetails);
             this.Controls.Add(this.btnClose);
@@ -306,7 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnDayWages;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnFixedInsentiveAllowance;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnVariableInsentiveAllowance;
-        private System.Windows.Forms.Button btnPrintForm;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.ComboBox cmbFormNo;
     }

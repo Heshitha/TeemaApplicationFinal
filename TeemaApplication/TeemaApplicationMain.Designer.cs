@@ -53,9 +53,11 @@
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineByEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.leaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGrantedLeavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.applyLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.approveLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,7 +258,9 @@
             // leaveToolStripMenuItem
             // 
             this.leaveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editGrantedLeavesToolStripMenuItem});
+            this.editGrantedLeavesToolStripMenuItem,
+            this.applyLeaveToolStripMenuItem,
+            this.approveLeaveToolStripMenuItem});
             this.leaveToolStripMenuItem.Name = "leaveToolStripMenuItem";
             this.leaveToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.leaveToolStripMenuItem.Text = "Leave";
@@ -267,6 +271,20 @@
             this.editGrantedLeavesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.editGrantedLeavesToolStripMenuItem.Text = "Edit Granted Leaves";
             this.editGrantedLeavesToolStripMenuItem.Click += new System.EventHandler(this.editGrantedLeavesToolStripMenuItem_Click);
+            // 
+            // applyLeaveToolStripMenuItem
+            // 
+            this.applyLeaveToolStripMenuItem.Name = "applyLeaveToolStripMenuItem";
+            this.applyLeaveToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.applyLeaveToolStripMenuItem.Text = "Apply Leave";
+            this.applyLeaveToolStripMenuItem.Click += new System.EventHandler(this.applyLeaveToolStripMenuItem_Click);
+            // 
+            // approveLeaveToolStripMenuItem
+            // 
+            this.approveLeaveToolStripMenuItem.Name = "approveLeaveToolStripMenuItem";
+            this.approveLeaveToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.approveLeaveToolStripMenuItem.Text = "Approve Leave";
+            this.approveLeaveToolStripMenuItem.Click += new System.EventHandler(this.approveLeaveToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -316,6 +334,8 @@
         private System.Windows.Forms.ToolStripMenuItem viewSecurityRoutineByEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem leaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGrantedLeavesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applyLeaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem approveLeaveToolStripMenuItem;
     }
 }
 
