@@ -126,6 +126,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\FixedIncentiveAllowanceDataSet.cs">
+      <DependentUpon>FixedIncentiveAllowanceDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\FixedIncentiveAllowanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FixedIncentiveAllowanceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\LeaveReportsDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +160,11 @@
     </Compile>
     <Compile Include="Datasets\PieceRateReportDataSet.Designer.cs">
       <DependentUpon>PieceRateReportDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\SalaryAdvanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaryAdvanceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\SecurityRoutineReportDataset.cs">
       <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
@@ -264,6 +278,12 @@
       <DependentUpon>PieceRateReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\SalaryAdvanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaryAdvanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\SecurityRoutineReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +389,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PieceRateReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SalaryAdvanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalaryAdvanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\SecurityRoutineReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SecurityRoutineReport.cs</LastGenOutput>
@@ -419,6 +443,17 @@
     <None Include="Datasets\EmployeeDataSet.xss">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\FixedIncentiveAllowanceDataSet.xsc">
+      <DependentUpon>FixedIncentiveAllowanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\FixedIncentiveAllowanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FixedIncentiveAllowanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\FixedIncentiveAllowanceDataSet.xss">
+      <DependentUpon>FixedIncentiveAllowanceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\LeaveReportsDataSet.xsc">
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
     </None>
@@ -462,6 +497,17 @@
     </None>
     <None Include="Datasets\PieceRateReportDataSet.xss">
       <DependentUpon>PieceRateReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SalaryAdvanceDataSet.xsc">
+      <DependentUpon>SalaryAdvanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SalaryAdvanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalaryAdvanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\SalaryAdvanceDataSet.xss">
+      <DependentUpon>SalaryAdvanceDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\SecurityRoutineReportDataset.xsc">
       <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
