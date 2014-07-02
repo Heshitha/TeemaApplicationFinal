@@ -479,7 +479,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRow AddFixedIncentiveDetailsRow(int ReportID, string FixedIncentiveCategory, string SalaryFrom, string SalaryTo, string SalaryPeriod, string Department, string SubDepartment, string CreatedBy, string CreatedDate, string ModifiedBy, string ModifiedDate, string ApprovedBy, string ApprovedDate) {
+            public FixedIncentiveDetailsRow AddFixedIncentiveDetailsRow(int ReportID, string FixedIncentiveCategory, System.DateTime SalaryFrom, System.DateTime SalaryTo, double SalaryPeriod, string Department, string SubDepartment, string CreatedBy, System.DateTime CreatedDate, string ModifiedBy, System.DateTime ModifiedDate, string ApprovedBy, System.DateTime ApprovedDate) {
                 FixedIncentiveDetailsRow rowFixedIncentiveDetailsRow = ((FixedIncentiveDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
@@ -539,11 +539,11 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnReportID);
                 this.columnFixedIncentiveCategory = new global::System.Data.DataColumn("FixedIncentiveCategory", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFixedIncentiveCategory);
-                this.columnSalaryFrom = new global::System.Data.DataColumn("SalaryFrom", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSalaryFrom = new global::System.Data.DataColumn("SalaryFrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalaryFrom);
-                this.columnSalaryTo = new global::System.Data.DataColumn("SalaryTo", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSalaryTo = new global::System.Data.DataColumn("SalaryTo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalaryTo);
-                this.columnSalaryPeriod = new global::System.Data.DataColumn("SalaryPeriod", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSalaryPeriod = new global::System.Data.DataColumn("SalaryPeriod", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalaryPeriod);
                 this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDepartment);
@@ -551,15 +551,15 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnSubDepartment);
                 this.columnCreatedBy = new global::System.Data.DataColumn("CreatedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedBy);
-                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedDate);
                 this.columnModifiedBy = new global::System.Data.DataColumn("ModifiedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModifiedBy);
-                this.columnModifiedDate = new global::System.Data.DataColumn("ModifiedDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnModifiedDate = new global::System.Data.DataColumn("ModifiedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModifiedDate);
                 this.columnApprovedBy = new global::System.Data.DataColumn("ApprovedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApprovedBy);
-                this.columnApprovedDate = new global::System.Data.DataColumn("ApprovedDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnApprovedDate = new global::System.Data.DataColumn("ApprovedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApprovedDate);
             }
             
@@ -736,10 +736,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SalaryFrom {
+            public System.DateTime SalaryFrom {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.SalaryFromColumn]));
+                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.SalaryFromColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SalaryFrom\' in table \'FixedIncentiveDetails\' is DBNull.", e);
@@ -752,10 +752,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SalaryTo {
+            public System.DateTime SalaryTo {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.SalaryToColumn]));
+                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.SalaryToColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SalaryTo\' in table \'FixedIncentiveDetails\' is DBNull.", e);
@@ -768,10 +768,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SalaryPeriod {
+            public double SalaryPeriod {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.SalaryPeriodColumn]));
+                        return ((double)(this[this.tableFixedIncentiveDetails.SalaryPeriodColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'SalaryPeriod\' in table \'FixedIncentiveDetails\' is DBNull.", e);
@@ -832,10 +832,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CreatedDate {
+            public System.DateTime CreatedDate {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.CreatedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.CreatedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
@@ -864,10 +864,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ModifiedDate {
+            public System.DateTime ModifiedDate {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.ModifiedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.ModifiedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ModifiedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
@@ -896,10 +896,10 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ApprovedDate {
+            public System.DateTime ApprovedDate {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.ApprovedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.ApprovedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ApprovedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
