@@ -849,6 +849,8 @@ namespace TeemaApplication.Datasets {
             
             private global::System.Data.DataColumn columnBankLoan;
             
+            private global::System.Data.DataColumn columnMisc;
+            
             private global::System.Data.DataColumn columnTotalDeduction;
             
             private global::System.Data.DataColumn columnNetSalary;
@@ -1146,6 +1148,14 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MiscColumn {
+                get {
+                    return this.columnMisc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TotalDeductionColumn {
                 get {
                     return this.columnTotalDeduction;
@@ -1269,6 +1279,7 @@ namespace TeemaApplication.Datasets {
                         double BankSaving, 
                         double MedicalIns, 
                         double BankLoan, 
+                        double Misc, 
                         double TotalDeduction, 
                         double NetSalary, 
                         double _RoundUpB_FBal_, 
@@ -1309,6 +1320,7 @@ namespace TeemaApplication.Datasets {
                         BankSaving,
                         MedicalIns,
                         BankLoan,
+                        Misc,
                         TotalDeduction,
                         NetSalary,
                         _RoundUpB_FBal_,
@@ -1369,6 +1381,7 @@ namespace TeemaApplication.Datasets {
                 this.columnBankSaving = base.Columns["BankSaving"];
                 this.columnMedicalIns = base.Columns["MedicalIns"];
                 this.columnBankLoan = base.Columns["BankLoan"];
+                this.columnMisc = base.Columns["Misc"];
                 this.columnTotalDeduction = base.Columns["TotalDeduction"];
                 this.columnNetSalary = base.Columns["NetSalary"];
                 this._columnRoundUpB_FBal_ = base.Columns["RoundUpB/FBal."];
@@ -1455,6 +1468,8 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnMedicalIns);
                 this.columnBankLoan = new global::System.Data.DataColumn("BankLoan", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBankLoan);
+                this.columnMisc = new global::System.Data.DataColumn("Misc", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMisc);
                 this.columnTotalDeduction = new global::System.Data.DataColumn("TotalDeduction", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalDeduction);
                 this.columnNetSalary = new global::System.Data.DataColumn("NetSalary", typeof(double), null, global::System.Data.MappingType.Element);
@@ -2595,6 +2610,22 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Misc {
+                get {
+                    try {
+                        return ((double)(this[this.tableBasicSalaryEmployeeDetails.MiscColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Misc\' in table \'BasicSalaryEmployeeDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBasicSalaryEmployeeDetails.MiscColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public double TotalDeduction {
                 get {
                     try {
@@ -3080,6 +3111,18 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBankLoanNull() {
                 this[this.tableBasicSalaryEmployeeDetails.BankLoanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMiscNull() {
+                return this.IsNull(this.tableBasicSalaryEmployeeDetails.MiscColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMiscNull() {
+                this[this.tableBasicSalaryEmployeeDetails.MiscColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
