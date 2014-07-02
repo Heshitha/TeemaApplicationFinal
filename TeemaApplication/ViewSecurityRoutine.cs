@@ -84,7 +84,36 @@ namespace TeemaApplication
 
         private void btnPrintReport_Click(object sender, EventArgs e)
         {
+            Branch branch = (Branch)cmbWorkingBranch.SelectedItem;
+            DateTime dt01 = dtpStartingDate.Value;
+            DateTime dt02 = dtpEndDate.Value;
 
+            DateTime startingDate = new DateTime(dt01.Year, dt01.Month, dt01.Day, 0, 0, 0);
+            DateTime endingDate = new DateTime(dt02.Year, dt02.Month, dt02.Day, 23, 59, 59);
+
+            var records = from x in db.EmployeeAttendances
+                          where x.Employee.Department.Branch == branch && x.DateAndTime >= startingDate && x.DateAndTime <= endingDate && (x.Mode == "Duty On" || x.Mode == "Duty Off") && x.Employee.Designation.Designation1.ToLower().Contains("security")
+                          select new
+                          {
+                              TokenNo = x.Employee.TokenNo,
+                              Device = x.FingerPrintDivice.DeviceName,
+                              Name = x.Employee.Name,
+                              DateTime = x.DateAndTime.Value
+                          };
+
+            SecurityRoutineReportDataset ds = new SecurityRoutineReportDataset();
+            ds.SecurityReportMain.AddSecurityReportMainRow(1, startingDate, endingDate, branch.BranchName, LoginDetails.LoggedUserName, DateTime.Now);
+
+            foreach (var rec in records)
+            {
+                ds.SecurityReportDetails.AddSecurityReportDetailsRow(1, rec.TokenNo, rec.Device, rec.Name, rec.DateTime);
+            }
+
+            SecurityRoutineReport rpt = new SecurityRoutineReport();
+            rpt.SetDataSource(ds);
+
+            frmReportViewer frm = new frmReportViewer(rpt);
+            frm.ShowDialog();
         }
     }
 }
