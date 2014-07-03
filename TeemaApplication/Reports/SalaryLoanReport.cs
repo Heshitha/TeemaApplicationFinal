@@ -16,14 +16,14 @@ namespace TeemaApplication.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class SalaryAdvanceReport : ReportClass {
+    public class SalaryLoanReport : ReportClass {
         
-        public SalaryAdvanceReport() {
+        public SalaryLoanReport() {
         }
         
         public override string ResourceName {
             get {
-                return "SalaryAdvanceReport.rpt";
+                return "SalaryLoanReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TeemaApplication.Reports {
         
         public override string FullResourceName {
             get {
-                return "TeemaApplication.Reports.SalaryAdvanceReport.rpt";
+                return "TeemaApplication.Reports.SalaryLoanReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TeemaApplication.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedSalaryAdvanceReport : Component, ICachedReport {
+    public class CachedSalaryLoanReport : Component, ICachedReport {
         
-        public CachedSalaryAdvanceReport() {
+        public CachedSalaryLoanReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TeemaApplication.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            SalaryAdvanceReport rpt = new SalaryAdvanceReport();
+            SalaryLoanReport rpt = new SalaryLoanReport();
             rpt.Site = this.Site;
             return rpt;
         }

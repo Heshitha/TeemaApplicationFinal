@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalaryLoanDateSet" targetNamespace="http://tempuri.org/SalaryLoanDateSet.xsd" xmlns:mstns="http://tempuri.org/SalaryLoanDateSet.xsd" xmlns="http://tempuri.org/SalaryLoanDateSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SalaryLoanDateSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SalaryLoanDateSet" msprop:Generator_UserDSName="SalaryLoanDateSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SalaryLoanDetails" msprop:Generator_TableClassName="SalaryLoanDetailsDataTable" msprop:Generator_TableVarName="tableSalaryLoanDetails" msprop:Generator_TablePropName="SalaryLoanDetails" msprop:Generator_RowDeletingName="SalaryLoanDetailsRowDeleting" msprop:Generator_RowChangingName="SalaryLoanDetailsRowChanging" msprop:Generator_RowEvHandlerName="SalaryLoanDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="SalaryLoanDetailsRowDeleted" msprop:Generator_UserTableName="SalaryLoanDetails" msprop:Generator_RowChangedName="SalaryLoanDetailsRowChanged" msprop:Generator_RowEvArgName="SalaryLoanDetailsRowChangeEvent" msprop:Generator_RowClassName="SalaryLoanDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:int" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" type="xs:string" minOccurs="0" />
+              <xs:element name="SubDepartment" msprop:Generator_ColumnVarNameInTable="columnSubDepartment" msprop:Generator_ColumnPropNameInRow="SubDepartment" msprop:Generator_ColumnPropNameInTable="SubDepartmentColumn" msprop:Generator_UserColumnName="SubDepartment" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateBy" msprop:Generator_ColumnVarNameInTable="columnCreateBy" msprop:Generator_ColumnPropNameInRow="CreateBy" msprop:Generator_ColumnPropNameInTable="CreateByColumn" msprop:Generator_UserColumnName="CreateBy" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedData" msprop:Generator_ColumnVarNameInTable="columnModifiedData" msprop:Generator_ColumnPropNameInRow="ModifiedData" msprop:Generator_ColumnPropNameInTable="ModifiedDataColumn" msprop:Generator_UserColumnName="ModifiedData" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApprovedBy" msprop:Generator_ColumnVarNameInTable="columnApprovedBy" msprop:Generator_ColumnPropNameInRow="ApprovedBy" msprop:Generator_ColumnPropNameInTable="ApprovedByColumn" msprop:Generator_UserColumnName="ApprovedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SalaryLoanEmployeeDetails" msprop:Generator_TableClassName="SalaryLoanEmployeeDetailsDataTable" msprop:Generator_TableVarName="tableSalaryLoanEmployeeDetails" msprop:Generator_TablePropName="SalaryLoanEmployeeDetails" msprop:Generator_RowDeletingName="SalaryLoanEmployeeDetailsRowDeleting" msprop:Generator_RowChangingName="SalaryLoanEmployeeDetailsRowChanging" msprop:Generator_RowEvHandlerName="SalaryLoanEmployeeDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="SalaryLoanEmployeeDetailsRowDeleted" msprop:Generator_UserTableName="SalaryLoanEmployeeDetails" msprop:Generator_RowChangedName="SalaryLoanEmployeeDetailsRowChanged" msprop:Generator_RowEvArgName="SalaryLoanEmployeeDetailsRowChangeEvent" msprop:Generator_RowClassName="SalaryLoanEmployeeDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:int" minOccurs="0" />
+              <xs:element name="TokenNo" msprop:Generator_ColumnVarNameInTable="columnTokenNo" msprop:Generator_ColumnPropNameInRow="TokenNo" msprop:Generator_ColumnPropNameInTable="TokenNoColumn" msprop:Generator_UserColumnName="TokenNo" type="xs:int" minOccurs="0" />
+              <xs:element name="EPFNo" msprop:Generator_ColumnVarNameInTable="columnEPFNo" msprop:Generator_ColumnPropNameInRow="EPFNo" msprop:Generator_ColumnPropNameInTable="EPFNoColumn" msprop:Generator_UserColumnName="EPFNo" type="xs:int" minOccurs="0" />
+              <xs:element name="EmployeeName" msprop:Generator_ColumnVarNameInTable="columnEmployeeName" msprop:Generator_ColumnPropNameInRow="EmployeeName" msprop:Generator_ColumnPropNameInTable="EmployeeNameColumn" msprop:Generator_UserColumnName="EmployeeName" type="xs:string" minOccurs="0" />
+              <xs:element name="RequestedAmount" msprop:Generator_ColumnVarNameInTable="columnRequestedAmount" msprop:Generator_ColumnPropNameInRow="RequestedAmount" msprop:Generator_ColumnPropNameInTable="RequestedAmountColumn" msprop:Generator_UserColumnName="RequestedAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="DeductionAmountInMonth" msprop:Generator_ColumnVarNameInTable="columnDeductionAmountInMonth" msprop:Generator_ColumnPropNameInRow="DeductionAmountInMonth" msprop:Generator_ColumnPropNameInTable="DeductionAmountInMonthColumn" msprop:Generator_UserColumnName="DeductionAmountInMonth" type="xs:double" minOccurs="0" />
+              <xs:element name="NumberOfMonth" msprop:Generator_ColumnVarNameInTable="columnNumberOfMonth" msprop:Generator_ColumnPropNameInRow="NumberOfMonth" msprop:Generator_ColumnPropNameInTable="NumberOfMonthColumn" msprop:Generator_UserColumnName="NumberOfMonth" type="xs:double" minOccurs="0" />
+              <xs:element name="DeductionSalaryPeriod" msprop:Generator_ColumnVarNameInTable="columnDeductionSalaryPeriod" msprop:Generator_ColumnPropNameInRow="DeductionSalaryPeriod" msprop:Generator_ColumnPropNameInTable="DeductionSalaryPeriodColumn" msprop:Generator_UserColumnName="DeductionSalaryPeriod" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

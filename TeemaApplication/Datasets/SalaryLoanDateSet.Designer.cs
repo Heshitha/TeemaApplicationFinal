@@ -20,19 +20,19 @@ namespace TeemaApplication.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FixedIncentiveAllowanceDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SalaryLoanDateSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FixedIncentiveAllowanceDataSet : global::System.Data.DataSet {
+    public partial class SalaryLoanDateSet : global::System.Data.DataSet {
         
-        private FixedIncentiveDetailsDataTable tableFixedIncentiveDetails;
+        private SalaryLoanDetailsDataTable tableSalaryLoanDetails;
         
-        private FixedIncentiveEmployeeDetailsDataTable tableFixedIncentiveEmployeeDetails;
+        private SalaryLoanEmployeeDetailsDataTable tableSalaryLoanEmployeeDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FixedIncentiveAllowanceDataSet() {
+        public SalaryLoanDateSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace TeemaApplication.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected FixedIncentiveAllowanceDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SalaryLoanDateSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,11 +56,11 @@ namespace TeemaApplication.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["FixedIncentiveDetails"] != null)) {
-                    base.Tables.Add(new FixedIncentiveDetailsDataTable(ds.Tables["FixedIncentiveDetails"]));
+                if ((ds.Tables["SalaryLoanDetails"] != null)) {
+                    base.Tables.Add(new SalaryLoanDetailsDataTable(ds.Tables["SalaryLoanDetails"]));
                 }
-                if ((ds.Tables["FixedIncentiveEmployeeDetails"] != null)) {
-                    base.Tables.Add(new FixedIncentiveEmployeeDetailsDataTable(ds.Tables["FixedIncentiveEmployeeDetails"]));
+                if ((ds.Tables["SalaryLoanEmployeeDetails"] != null)) {
+                    base.Tables.Add(new SalaryLoanEmployeeDetailsDataTable(ds.Tables["SalaryLoanEmployeeDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +84,9 @@ namespace TeemaApplication.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FixedIncentiveDetailsDataTable FixedIncentiveDetails {
+        public SalaryLoanDetailsDataTable SalaryLoanDetails {
             get {
-                return this.tableFixedIncentiveDetails;
+                return this.tableSalaryLoanDetails;
             }
         }
         
@@ -94,9 +94,9 @@ namespace TeemaApplication.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FixedIncentiveEmployeeDetailsDataTable FixedIncentiveEmployeeDetails {
+        public SalaryLoanEmployeeDetailsDataTable SalaryLoanEmployeeDetails {
             get {
-                return this.tableFixedIncentiveEmployeeDetails;
+                return this.tableSalaryLoanEmployeeDetails;
             }
         }
         
@@ -142,7 +142,7 @@ namespace TeemaApplication.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FixedIncentiveAllowanceDataSet cln = ((FixedIncentiveAllowanceDataSet)(base.Clone()));
+            SalaryLoanDateSet cln = ((SalaryLoanDateSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,11 +167,11 @@ namespace TeemaApplication.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["FixedIncentiveDetails"] != null)) {
-                    base.Tables.Add(new FixedIncentiveDetailsDataTable(ds.Tables["FixedIncentiveDetails"]));
+                if ((ds.Tables["SalaryLoanDetails"] != null)) {
+                    base.Tables.Add(new SalaryLoanDetailsDataTable(ds.Tables["SalaryLoanDetails"]));
                 }
-                if ((ds.Tables["FixedIncentiveEmployeeDetails"] != null)) {
-                    base.Tables.Add(new FixedIncentiveEmployeeDetailsDataTable(ds.Tables["FixedIncentiveEmployeeDetails"]));
+                if ((ds.Tables["SalaryLoanEmployeeDetails"] != null)) {
+                    base.Tables.Add(new SalaryLoanEmployeeDetailsDataTable(ds.Tables["SalaryLoanEmployeeDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +206,16 @@ namespace TeemaApplication.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFixedIncentiveDetails = ((FixedIncentiveDetailsDataTable)(base.Tables["FixedIncentiveDetails"]));
+            this.tableSalaryLoanDetails = ((SalaryLoanDetailsDataTable)(base.Tables["SalaryLoanDetails"]));
             if ((initTable == true)) {
-                if ((this.tableFixedIncentiveDetails != null)) {
-                    this.tableFixedIncentiveDetails.InitVars();
+                if ((this.tableSalaryLoanDetails != null)) {
+                    this.tableSalaryLoanDetails.InitVars();
                 }
             }
-            this.tableFixedIncentiveEmployeeDetails = ((FixedIncentiveEmployeeDetailsDataTable)(base.Tables["FixedIncentiveEmployeeDetails"]));
+            this.tableSalaryLoanEmployeeDetails = ((SalaryLoanEmployeeDetailsDataTable)(base.Tables["SalaryLoanEmployeeDetails"]));
             if ((initTable == true)) {
-                if ((this.tableFixedIncentiveEmployeeDetails != null)) {
-                    this.tableFixedIncentiveEmployeeDetails.InitVars();
+                if ((this.tableSalaryLoanEmployeeDetails != null)) {
+                    this.tableSalaryLoanEmployeeDetails.InitVars();
                 }
             }
         }
@@ -223,26 +223,26 @@ namespace TeemaApplication.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FixedIncentiveAllowanceDataSet";
+            this.DataSetName = "SalaryLoanDateSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FixedIncentiveAllowanceDataSet.xsd";
+            this.Namespace = "http://tempuri.org/SalaryLoanDateSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFixedIncentiveDetails = new FixedIncentiveDetailsDataTable();
-            base.Tables.Add(this.tableFixedIncentiveDetails);
-            this.tableFixedIncentiveEmployeeDetails = new FixedIncentiveEmployeeDetailsDataTable();
-            base.Tables.Add(this.tableFixedIncentiveEmployeeDetails);
+            this.tableSalaryLoanDetails = new SalaryLoanDetailsDataTable();
+            base.Tables.Add(this.tableSalaryLoanDetails);
+            this.tableSalaryLoanEmployeeDetails = new SalaryLoanEmployeeDetailsDataTable();
+            base.Tables.Add(this.tableSalaryLoanEmployeeDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFixedIncentiveDetails() {
+        private bool ShouldSerializeSalaryLoanDetails() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFixedIncentiveEmployeeDetails() {
+        private bool ShouldSerializeSalaryLoanEmployeeDetails() {
             return false;
         }
         
@@ -257,7 +257,7 @@ namespace TeemaApplication.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FixedIncentiveAllowanceDataSet ds = new FixedIncentiveAllowanceDataSet();
+            SalaryLoanDateSet ds = new SalaryLoanDateSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,39 +302,31 @@ namespace TeemaApplication.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FixedIncentiveDetailsRowChangeEventHandler(object sender, FixedIncentiveDetailsRowChangeEvent e);
+        public delegate void SalaryLoanDetailsRowChangeEventHandler(object sender, SalaryLoanDetailsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FixedIncentiveEmployeeDetailsRowChangeEventHandler(object sender, FixedIncentiveEmployeeDetailsRowChangeEvent e);
+        public delegate void SalaryLoanEmployeeDetailsRowChangeEventHandler(object sender, SalaryLoanEmployeeDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FixedIncentiveDetailsDataTable : global::System.Data.TypedTableBase<FixedIncentiveDetailsRow> {
+        public partial class SalaryLoanDetailsDataTable : global::System.Data.TypedTableBase<SalaryLoanDetailsRow> {
             
             private global::System.Data.DataColumn columnReportID;
-            
-            private global::System.Data.DataColumn columnFixedIncentiveCategory;
-            
-            private global::System.Data.DataColumn columnSalaryFrom;
-            
-            private global::System.Data.DataColumn columnSalaryTo;
-            
-            private global::System.Data.DataColumn columnSalaryPeriod;
             
             private global::System.Data.DataColumn columnDepartment;
             
             private global::System.Data.DataColumn columnSubDepartment;
             
-            private global::System.Data.DataColumn columnCreatedBy;
+            private global::System.Data.DataColumn columnCreateBy;
             
-            private global::System.Data.DataColumn columnCreatedDate;
+            private global::System.Data.DataColumn columnCreateDate;
             
             private global::System.Data.DataColumn columnModifiedBy;
             
-            private global::System.Data.DataColumn columnModifiedDate;
+            private global::System.Data.DataColumn columnModifiedData;
             
             private global::System.Data.DataColumn columnApprovedBy;
             
@@ -342,8 +334,8 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsDataTable() {
-                this.TableName = "FixedIncentiveDetails";
+            public SalaryLoanDetailsDataTable() {
+                this.TableName = "SalaryLoanDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -351,7 +343,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FixedIncentiveDetailsDataTable(global::System.Data.DataTable table) {
+            internal SalaryLoanDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -368,7 +360,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FixedIncentiveDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SalaryLoanDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -378,38 +370,6 @@ namespace TeemaApplication.Datasets {
             public global::System.Data.DataColumn ReportIDColumn {
                 get {
                     return this.columnReportID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FixedIncentiveCategoryColumn {
-                get {
-                    return this.columnFixedIncentiveCategory;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryFromColumn {
-                get {
-                    return this.columnSalaryFrom;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryToColumn {
-                get {
-                    return this.columnSalaryTo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryPeriodColumn {
-                get {
-                    return this.columnSalaryPeriod;
                 }
             }
             
@@ -431,17 +391,17 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CreatedByColumn {
+            public global::System.Data.DataColumn CreateByColumn {
                 get {
-                    return this.columnCreatedBy;
+                    return this.columnCreateBy;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CreatedDateColumn {
+            public global::System.Data.DataColumn CreateDateColumn {
                 get {
-                    return this.columnCreatedDate;
+                    return this.columnCreateDate;
                 }
             }
             
@@ -455,9 +415,9 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ModifiedDateColumn {
+            public global::System.Data.DataColumn ModifiedDataColumn {
                 get {
-                    return this.columnModifiedDate;
+                    return this.columnModifiedData;
                 }
             }
             
@@ -488,57 +448,53 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRow this[int index] {
+            public SalaryLoanDetailsRow this[int index] {
                 get {
-                    return ((FixedIncentiveDetailsRow)(this.Rows[index]));
+                    return ((SalaryLoanDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveDetailsRowChangeEventHandler FixedIncentiveDetailsRowChanging;
+            public event SalaryLoanDetailsRowChangeEventHandler SalaryLoanDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveDetailsRowChangeEventHandler FixedIncentiveDetailsRowChanged;
+            public event SalaryLoanDetailsRowChangeEventHandler SalaryLoanDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveDetailsRowChangeEventHandler FixedIncentiveDetailsRowDeleting;
+            public event SalaryLoanDetailsRowChangeEventHandler SalaryLoanDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveDetailsRowChangeEventHandler FixedIncentiveDetailsRowDeleted;
+            public event SalaryLoanDetailsRowChangeEventHandler SalaryLoanDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFixedIncentiveDetailsRow(FixedIncentiveDetailsRow row) {
+            public void AddSalaryLoanDetailsRow(SalaryLoanDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRow AddFixedIncentiveDetailsRow(int ReportID, string FixedIncentiveCategory, System.DateTime SalaryFrom, System.DateTime SalaryTo, double SalaryPeriod, string Department, string SubDepartment, string CreatedBy, System.DateTime CreatedDate, string ModifiedBy, System.DateTime ModifiedDate, string ApprovedBy, System.DateTime ApprovedDate) {
-                FixedIncentiveDetailsRow rowFixedIncentiveDetailsRow = ((FixedIncentiveDetailsRow)(this.NewRow()));
+            public SalaryLoanDetailsRow AddSalaryLoanDetailsRow(int ReportID, string Department, string SubDepartment, string CreateBy, System.DateTime CreateDate, string ModifiedBy, System.DateTime ModifiedData, string ApprovedBy, System.DateTime ApprovedDate) {
+                SalaryLoanDetailsRow rowSalaryLoanDetailsRow = ((SalaryLoanDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
-                        FixedIncentiveCategory,
-                        SalaryFrom,
-                        SalaryTo,
-                        SalaryPeriod,
                         Department,
                         SubDepartment,
-                        CreatedBy,
-                        CreatedDate,
+                        CreateBy,
+                        CreateDate,
                         ModifiedBy,
-                        ModifiedDate,
+                        ModifiedData,
                         ApprovedBy,
                         ApprovedDate};
-                rowFixedIncentiveDetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFixedIncentiveDetailsRow);
-                return rowFixedIncentiveDetailsRow;
+                rowSalaryLoanDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSalaryLoanDetailsRow);
+                return rowSalaryLoanDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FixedIncentiveDetailsDataTable cln = ((FixedIncentiveDetailsDataTable)(base.Clone()));
+                SalaryLoanDetailsDataTable cln = ((SalaryLoanDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -546,23 +502,19 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FixedIncentiveDetailsDataTable();
+                return new SalaryLoanDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnReportID = base.Columns["ReportID"];
-                this.columnFixedIncentiveCategory = base.Columns["FixedIncentiveCategory"];
-                this.columnSalaryFrom = base.Columns["SalaryFrom"];
-                this.columnSalaryTo = base.Columns["SalaryTo"];
-                this.columnSalaryPeriod = base.Columns["SalaryPeriod"];
                 this.columnDepartment = base.Columns["Department"];
                 this.columnSubDepartment = base.Columns["SubDepartment"];
-                this.columnCreatedBy = base.Columns["CreatedBy"];
-                this.columnCreatedDate = base.Columns["CreatedDate"];
+                this.columnCreateBy = base.Columns["CreateBy"];
+                this.columnCreateDate = base.Columns["CreateDate"];
                 this.columnModifiedBy = base.Columns["ModifiedBy"];
-                this.columnModifiedDate = base.Columns["ModifiedDate"];
+                this.columnModifiedData = base.Columns["ModifiedData"];
                 this.columnApprovedBy = base.Columns["ApprovedBy"];
                 this.columnApprovedDate = base.Columns["ApprovedDate"];
             }
@@ -572,26 +524,18 @@ namespace TeemaApplication.Datasets {
             private void InitClass() {
                 this.columnReportID = new global::System.Data.DataColumn("ReportID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReportID);
-                this.columnFixedIncentiveCategory = new global::System.Data.DataColumn("FixedIncentiveCategory", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFixedIncentiveCategory);
-                this.columnSalaryFrom = new global::System.Data.DataColumn("SalaryFrom", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryFrom);
-                this.columnSalaryTo = new global::System.Data.DataColumn("SalaryTo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryTo);
-                this.columnSalaryPeriod = new global::System.Data.DataColumn("SalaryPeriod", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryPeriod);
                 this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDepartment);
                 this.columnSubDepartment = new global::System.Data.DataColumn("SubDepartment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubDepartment);
-                this.columnCreatedBy = new global::System.Data.DataColumn("CreatedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreatedBy);
-                this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreatedDate);
+                this.columnCreateBy = new global::System.Data.DataColumn("CreateBy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreateBy);
+                this.columnCreateDate = new global::System.Data.DataColumn("CreateDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCreateDate);
                 this.columnModifiedBy = new global::System.Data.DataColumn("ModifiedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModifiedBy);
-                this.columnModifiedDate = new global::System.Data.DataColumn("ModifiedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModifiedDate);
+                this.columnModifiedData = new global::System.Data.DataColumn("ModifiedData", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModifiedData);
                 this.columnApprovedBy = new global::System.Data.DataColumn("ApprovedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApprovedBy);
                 this.columnApprovedDate = new global::System.Data.DataColumn("ApprovedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -600,28 +544,28 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRow NewFixedIncentiveDetailsRow() {
-                return ((FixedIncentiveDetailsRow)(this.NewRow()));
+            public SalaryLoanDetailsRow NewSalaryLoanDetailsRow() {
+                return ((SalaryLoanDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FixedIncentiveDetailsRow(builder);
+                return new SalaryLoanDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FixedIncentiveDetailsRow);
+                return typeof(SalaryLoanDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FixedIncentiveDetailsRowChanged != null)) {
-                    this.FixedIncentiveDetailsRowChanged(this, new FixedIncentiveDetailsRowChangeEvent(((FixedIncentiveDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanDetailsRowChanged != null)) {
+                    this.SalaryLoanDetailsRowChanged(this, new SalaryLoanDetailsRowChangeEvent(((SalaryLoanDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -629,8 +573,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FixedIncentiveDetailsRowChanging != null)) {
-                    this.FixedIncentiveDetailsRowChanging(this, new FixedIncentiveDetailsRowChangeEvent(((FixedIncentiveDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanDetailsRowChanging != null)) {
+                    this.SalaryLoanDetailsRowChanging(this, new SalaryLoanDetailsRowChangeEvent(((SalaryLoanDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -638,8 +582,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FixedIncentiveDetailsRowDeleted != null)) {
-                    this.FixedIncentiveDetailsRowDeleted(this, new FixedIncentiveDetailsRowChangeEvent(((FixedIncentiveDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanDetailsRowDeleted != null)) {
+                    this.SalaryLoanDetailsRowDeleted(this, new SalaryLoanDetailsRowChangeEvent(((SalaryLoanDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -647,14 +591,14 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FixedIncentiveDetailsRowDeleting != null)) {
-                    this.FixedIncentiveDetailsRowDeleting(this, new FixedIncentiveDetailsRowChangeEvent(((FixedIncentiveDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanDetailsRowDeleting != null)) {
+                    this.SalaryLoanDetailsRowDeleting(this, new SalaryLoanDetailsRowChangeEvent(((SalaryLoanDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFixedIncentiveDetailsRow(FixedIncentiveDetailsRow row) {
+            public void RemoveSalaryLoanDetailsRow(SalaryLoanDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -663,7 +607,7 @@ namespace TeemaApplication.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FixedIncentiveAllowanceDataSet ds = new FixedIncentiveAllowanceDataSet();
+                SalaryLoanDateSet ds = new SalaryLoanDateSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -681,7 +625,7 @@ namespace TeemaApplication.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FixedIncentiveDetailsDataTable";
+                attribute2.FixedValue = "SalaryLoanDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -727,7 +671,7 @@ namespace TeemaApplication.Datasets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FixedIncentiveEmployeeDetailsDataTable : global::System.Data.TypedTableBase<FixedIncentiveEmployeeDetailsRow> {
+        public partial class SalaryLoanEmployeeDetailsDataTable : global::System.Data.TypedTableBase<SalaryLoanEmployeeDetailsRow> {
             
             private global::System.Data.DataColumn columnReportID;
             
@@ -737,40 +681,18 @@ namespace TeemaApplication.Datasets {
             
             private global::System.Data.DataColumn columnEmployeeName;
             
-            private global::System.Data.DataColumn columnDesignation;
+            private global::System.Data.DataColumn columnRequestedAmount;
             
-            private global::System.Data.DataColumn columnEmployeeCategory;
+            private global::System.Data.DataColumn columnDeductionAmountInMonth;
             
-            private global::System.Data.DataColumn columnEmployeeGread;
+            private global::System.Data.DataColumn columnNumberOfMonth;
             
-            private global::System.Data.DataColumn columnFixedAmount;
-            
-            private global::System.Data.DataColumn columnLeaveDays;
-            
-            private global::System.Data.DataColumn columnNoPayDays;
-            
-            private global::System.Data.DataColumn columnLateAttendanceDays;
-            
-            private global::System.Data.DataColumn columnForLeaveDays;
-            
-            private global::System.Data.DataColumn columnForNoPayDays;
-            
-            private global::System.Data.DataColumn columnForLateAttendance;
-            
-            private global::System.Data.DataColumn columnSalaryAdvance;
-            
-            private global::System.Data.DataColumn columnSalaryLoan;
-            
-            private global::System.Data.DataColumn columnOther;
-            
-            private global::System.Data.DataColumn columnTotalDeduction;
-            
-            private global::System.Data.DataColumn columnTotalPayable;
+            private global::System.Data.DataColumn columnDeductionSalaryPeriod;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsDataTable() {
-                this.TableName = "FixedIncentiveEmployeeDetails";
+            public SalaryLoanEmployeeDetailsDataTable() {
+                this.TableName = "SalaryLoanEmployeeDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -778,7 +700,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FixedIncentiveEmployeeDetailsDataTable(global::System.Data.DataTable table) {
+            internal SalaryLoanEmployeeDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -795,7 +717,7 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FixedIncentiveEmployeeDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SalaryLoanEmployeeDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -834,121 +756,33 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DesignationColumn {
+            public global::System.Data.DataColumn RequestedAmountColumn {
                 get {
-                    return this.columnDesignation;
+                    return this.columnRequestedAmount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EmployeeCategoryColumn {
+            public global::System.Data.DataColumn DeductionAmountInMonthColumn {
                 get {
-                    return this.columnEmployeeCategory;
+                    return this.columnDeductionAmountInMonth;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EmployeeGreadColumn {
+            public global::System.Data.DataColumn NumberOfMonthColumn {
                 get {
-                    return this.columnEmployeeGread;
+                    return this.columnNumberOfMonth;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FixedAmountColumn {
+            public global::System.Data.DataColumn DeductionSalaryPeriodColumn {
                 get {
-                    return this.columnFixedAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LeaveDaysColumn {
-                get {
-                    return this.columnLeaveDays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NoPayDaysColumn {
-                get {
-                    return this.columnNoPayDays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LateAttendanceDaysColumn {
-                get {
-                    return this.columnLateAttendanceDays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ForLeaveDaysColumn {
-                get {
-                    return this.columnForLeaveDays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ForNoPayDaysColumn {
-                get {
-                    return this.columnForNoPayDays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ForLateAttendanceColumn {
-                get {
-                    return this.columnForLateAttendance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryAdvanceColumn {
-                get {
-                    return this.columnSalaryAdvance;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryLoanColumn {
-                get {
-                    return this.columnSalaryLoan;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OtherColumn {
-                get {
-                    return this.columnOther;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotalDeductionColumn {
-                get {
-                    return this.columnTotalDeduction;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotalPayableColumn {
-                get {
-                    return this.columnTotalPayable;
+                    return this.columnDeductionSalaryPeriod;
                 }
             }
             
@@ -963,82 +797,52 @@ namespace TeemaApplication.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsRow this[int index] {
+            public SalaryLoanEmployeeDetailsRow this[int index] {
                 get {
-                    return ((FixedIncentiveEmployeeDetailsRow)(this.Rows[index]));
+                    return ((SalaryLoanEmployeeDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveEmployeeDetailsRowChangeEventHandler FixedIncentiveEmployeeDetailsRowChanging;
+            public event SalaryLoanEmployeeDetailsRowChangeEventHandler SalaryLoanEmployeeDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveEmployeeDetailsRowChangeEventHandler FixedIncentiveEmployeeDetailsRowChanged;
+            public event SalaryLoanEmployeeDetailsRowChangeEventHandler SalaryLoanEmployeeDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveEmployeeDetailsRowChangeEventHandler FixedIncentiveEmployeeDetailsRowDeleting;
+            public event SalaryLoanEmployeeDetailsRowChangeEventHandler SalaryLoanEmployeeDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FixedIncentiveEmployeeDetailsRowChangeEventHandler FixedIncentiveEmployeeDetailsRowDeleted;
+            public event SalaryLoanEmployeeDetailsRowChangeEventHandler SalaryLoanEmployeeDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFixedIncentiveEmployeeDetailsRow(FixedIncentiveEmployeeDetailsRow row) {
+            public void AddSalaryLoanEmployeeDetailsRow(SalaryLoanEmployeeDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsRow AddFixedIncentiveEmployeeDetailsRow(
-                        int ReportID, 
-                        int TokenNo, 
-                        int EPFNo, 
-                        string EmployeeName, 
-                        string Designation, 
-                        string EmployeeCategory, 
-                        string EmployeeGread, 
-                        double FixedAmount, 
-                        double LeaveDays, 
-                        double NoPayDays, 
-                        double LateAttendanceDays, 
-                        double ForLeaveDays, 
-                        double ForNoPayDays, 
-                        double ForLateAttendance, 
-                        double SalaryAdvance, 
-                        double SalaryLoan, 
-                        double Other, 
-                        double TotalDeduction, 
-                        double TotalPayable) {
-                FixedIncentiveEmployeeDetailsRow rowFixedIncentiveEmployeeDetailsRow = ((FixedIncentiveEmployeeDetailsRow)(this.NewRow()));
+            public SalaryLoanEmployeeDetailsRow AddSalaryLoanEmployeeDetailsRow(int ReportID, int TokenNo, int EPFNo, string EmployeeName, double RequestedAmount, double DeductionAmountInMonth, double NumberOfMonth, double DeductionSalaryPeriod) {
+                SalaryLoanEmployeeDetailsRow rowSalaryLoanEmployeeDetailsRow = ((SalaryLoanEmployeeDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ReportID,
                         TokenNo,
                         EPFNo,
                         EmployeeName,
-                        Designation,
-                        EmployeeCategory,
-                        EmployeeGread,
-                        FixedAmount,
-                        LeaveDays,
-                        NoPayDays,
-                        LateAttendanceDays,
-                        ForLeaveDays,
-                        ForNoPayDays,
-                        ForLateAttendance,
-                        SalaryAdvance,
-                        SalaryLoan,
-                        Other,
-                        TotalDeduction,
-                        TotalPayable};
-                rowFixedIncentiveEmployeeDetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFixedIncentiveEmployeeDetailsRow);
-                return rowFixedIncentiveEmployeeDetailsRow;
+                        RequestedAmount,
+                        DeductionAmountInMonth,
+                        NumberOfMonth,
+                        DeductionSalaryPeriod};
+                rowSalaryLoanEmployeeDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSalaryLoanEmployeeDetailsRow);
+                return rowSalaryLoanEmployeeDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FixedIncentiveEmployeeDetailsDataTable cln = ((FixedIncentiveEmployeeDetailsDataTable)(base.Clone()));
+                SalaryLoanEmployeeDetailsDataTable cln = ((SalaryLoanEmployeeDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1046,7 +850,7 @@ namespace TeemaApplication.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FixedIncentiveEmployeeDetailsDataTable();
+                return new SalaryLoanEmployeeDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1056,21 +860,10 @@ namespace TeemaApplication.Datasets {
                 this.columnTokenNo = base.Columns["TokenNo"];
                 this.columnEPFNo = base.Columns["EPFNo"];
                 this.columnEmployeeName = base.Columns["EmployeeName"];
-                this.columnDesignation = base.Columns["Designation"];
-                this.columnEmployeeCategory = base.Columns["EmployeeCategory"];
-                this.columnEmployeeGread = base.Columns["EmployeeGread"];
-                this.columnFixedAmount = base.Columns["FixedAmount"];
-                this.columnLeaveDays = base.Columns["LeaveDays"];
-                this.columnNoPayDays = base.Columns["NoPayDays"];
-                this.columnLateAttendanceDays = base.Columns["LateAttendanceDays"];
-                this.columnForLeaveDays = base.Columns["ForLeaveDays"];
-                this.columnForNoPayDays = base.Columns["ForNoPayDays"];
-                this.columnForLateAttendance = base.Columns["ForLateAttendance"];
-                this.columnSalaryAdvance = base.Columns["SalaryAdvance"];
-                this.columnSalaryLoan = base.Columns["SalaryLoan"];
-                this.columnOther = base.Columns["Other"];
-                this.columnTotalDeduction = base.Columns["TotalDeduction"];
-                this.columnTotalPayable = base.Columns["TotalPayable"];
+                this.columnRequestedAmount = base.Columns["RequestedAmount"];
+                this.columnDeductionAmountInMonth = base.Columns["DeductionAmountInMonth"];
+                this.columnNumberOfMonth = base.Columns["NumberOfMonth"];
+                this.columnDeductionSalaryPeriod = base.Columns["DeductionSalaryPeriod"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1084,62 +877,40 @@ namespace TeemaApplication.Datasets {
                 base.Columns.Add(this.columnEPFNo);
                 this.columnEmployeeName = new global::System.Data.DataColumn("EmployeeName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployeeName);
-                this.columnDesignation = new global::System.Data.DataColumn("Designation", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDesignation);
-                this.columnEmployeeCategory = new global::System.Data.DataColumn("EmployeeCategory", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmployeeCategory);
-                this.columnEmployeeGread = new global::System.Data.DataColumn("EmployeeGread", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmployeeGread);
-                this.columnFixedAmount = new global::System.Data.DataColumn("FixedAmount", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFixedAmount);
-                this.columnLeaveDays = new global::System.Data.DataColumn("LeaveDays", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLeaveDays);
-                this.columnNoPayDays = new global::System.Data.DataColumn("NoPayDays", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNoPayDays);
-                this.columnLateAttendanceDays = new global::System.Data.DataColumn("LateAttendanceDays", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLateAttendanceDays);
-                this.columnForLeaveDays = new global::System.Data.DataColumn("ForLeaveDays", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnForLeaveDays);
-                this.columnForNoPayDays = new global::System.Data.DataColumn("ForNoPayDays", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnForNoPayDays);
-                this.columnForLateAttendance = new global::System.Data.DataColumn("ForLateAttendance", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnForLateAttendance);
-                this.columnSalaryAdvance = new global::System.Data.DataColumn("SalaryAdvance", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryAdvance);
-                this.columnSalaryLoan = new global::System.Data.DataColumn("SalaryLoan", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryLoan);
-                this.columnOther = new global::System.Data.DataColumn("Other", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOther);
-                this.columnTotalDeduction = new global::System.Data.DataColumn("TotalDeduction", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalDeduction);
-                this.columnTotalPayable = new global::System.Data.DataColumn("TotalPayable", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalPayable);
+                this.columnRequestedAmount = new global::System.Data.DataColumn("RequestedAmount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequestedAmount);
+                this.columnDeductionAmountInMonth = new global::System.Data.DataColumn("DeductionAmountInMonth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeductionAmountInMonth);
+                this.columnNumberOfMonth = new global::System.Data.DataColumn("NumberOfMonth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberOfMonth);
+                this.columnDeductionSalaryPeriod = new global::System.Data.DataColumn("DeductionSalaryPeriod", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeductionSalaryPeriod);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsRow NewFixedIncentiveEmployeeDetailsRow() {
-                return ((FixedIncentiveEmployeeDetailsRow)(this.NewRow()));
+            public SalaryLoanEmployeeDetailsRow NewSalaryLoanEmployeeDetailsRow() {
+                return ((SalaryLoanEmployeeDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FixedIncentiveEmployeeDetailsRow(builder);
+                return new SalaryLoanEmployeeDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FixedIncentiveEmployeeDetailsRow);
+                return typeof(SalaryLoanEmployeeDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FixedIncentiveEmployeeDetailsRowChanged != null)) {
-                    this.FixedIncentiveEmployeeDetailsRowChanged(this, new FixedIncentiveEmployeeDetailsRowChangeEvent(((FixedIncentiveEmployeeDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanEmployeeDetailsRowChanged != null)) {
+                    this.SalaryLoanEmployeeDetailsRowChanged(this, new SalaryLoanEmployeeDetailsRowChangeEvent(((SalaryLoanEmployeeDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1147,8 +918,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FixedIncentiveEmployeeDetailsRowChanging != null)) {
-                    this.FixedIncentiveEmployeeDetailsRowChanging(this, new FixedIncentiveEmployeeDetailsRowChangeEvent(((FixedIncentiveEmployeeDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanEmployeeDetailsRowChanging != null)) {
+                    this.SalaryLoanEmployeeDetailsRowChanging(this, new SalaryLoanEmployeeDetailsRowChangeEvent(((SalaryLoanEmployeeDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1156,8 +927,8 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FixedIncentiveEmployeeDetailsRowDeleted != null)) {
-                    this.FixedIncentiveEmployeeDetailsRowDeleted(this, new FixedIncentiveEmployeeDetailsRowChangeEvent(((FixedIncentiveEmployeeDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanEmployeeDetailsRowDeleted != null)) {
+                    this.SalaryLoanEmployeeDetailsRowDeleted(this, new SalaryLoanEmployeeDetailsRowChangeEvent(((SalaryLoanEmployeeDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1165,14 +936,14 @@ namespace TeemaApplication.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FixedIncentiveEmployeeDetailsRowDeleting != null)) {
-                    this.FixedIncentiveEmployeeDetailsRowDeleting(this, new FixedIncentiveEmployeeDetailsRowChangeEvent(((FixedIncentiveEmployeeDetailsRow)(e.Row)), e.Action));
+                if ((this.SalaryLoanEmployeeDetailsRowDeleting != null)) {
+                    this.SalaryLoanEmployeeDetailsRowDeleting(this, new SalaryLoanEmployeeDetailsRowChangeEvent(((SalaryLoanEmployeeDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFixedIncentiveEmployeeDetailsRow(FixedIncentiveEmployeeDetailsRow row) {
+            public void RemoveSalaryLoanEmployeeDetailsRow(SalaryLoanEmployeeDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1181,7 +952,7 @@ namespace TeemaApplication.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FixedIncentiveAllowanceDataSet ds = new FixedIncentiveAllowanceDataSet();
+                SalaryLoanDateSet ds = new SalaryLoanDateSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1199,7 +970,7 @@ namespace TeemaApplication.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FixedIncentiveEmployeeDetailsDataTable";
+                attribute2.FixedValue = "SalaryLoanEmployeeDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1243,15 +1014,15 @@ namespace TeemaApplication.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FixedIncentiveDetailsRow : global::System.Data.DataRow {
+        public partial class SalaryLoanDetailsRow : global::System.Data.DataRow {
             
-            private FixedIncentiveDetailsDataTable tableFixedIncentiveDetails;
+            private SalaryLoanDetailsDataTable tableSalaryLoanDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FixedIncentiveDetailsRow(global::System.Data.DataRowBuilder rb) : 
+            internal SalaryLoanDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFixedIncentiveDetails = ((FixedIncentiveDetailsDataTable)(this.Table));
+                this.tableSalaryLoanDetails = ((SalaryLoanDetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1259,79 +1030,14 @@ namespace TeemaApplication.Datasets {
             public int ReportID {
                 get {
                     try {
-                        return ((int)(this[this.tableFixedIncentiveDetails.ReportIDColumn]));
+                        return ((int)(this[this.tableSalaryLoanDetails.ReportIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.ReportIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FixedIncentiveCategory {
-                get {
-                    try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.FixedIncentiveCategoryColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FixedIncentiveCategory\' in table \'FixedIncentiveDetails\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveDetails.FixedIncentiveCategoryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime SalaryFrom {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.SalaryFromColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryFrom\' in table \'FixedIncentiveDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveDetails.SalaryFromColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime SalaryTo {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.SalaryToColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryTo\' in table \'FixedIncentiveDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveDetails.SalaryToColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double SalaryPeriod {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveDetails.SalaryPeriodColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryPeriod\' in table \'FixedIncentiveDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveDetails.SalaryPeriodColumn] = value;
+                    this[this.tableSalaryLoanDetails.ReportIDColumn] = value;
                 }
             }
             
@@ -1340,14 +1046,14 @@ namespace TeemaApplication.Datasets {
             public string Department {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.DepartmentColumn]));
+                        return ((string)(this[this.tableSalaryLoanDetails.DepartmentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.DepartmentColumn] = value;
+                    this[this.tableSalaryLoanDetails.DepartmentColumn] = value;
                 }
             }
             
@@ -1356,46 +1062,46 @@ namespace TeemaApplication.Datasets {
             public string SubDepartment {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.SubDepartmentColumn]));
+                        return ((string)(this[this.tableSalaryLoanDetails.SubDepartmentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SubDepartment\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubDepartment\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.SubDepartmentColumn] = value;
+                    this[this.tableSalaryLoanDetails.SubDepartmentColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CreatedBy {
+            public string CreateBy {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.CreatedByColumn]));
+                        return ((string)(this[this.tableSalaryLoanDetails.CreateByColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedBy\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreateBy\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.CreatedByColumn] = value;
+                    this[this.tableSalaryLoanDetails.CreateByColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime CreatedDate {
+            public System.DateTime CreateDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.CreatedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableSalaryLoanDetails.CreateDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreateDate\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.CreatedDateColumn] = value;
+                    this[this.tableSalaryLoanDetails.CreateDateColumn] = value;
                 }
             }
             
@@ -1404,30 +1110,30 @@ namespace TeemaApplication.Datasets {
             public string ModifiedBy {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.ModifiedByColumn]));
+                        return ((string)(this[this.tableSalaryLoanDetails.ModifiedByColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ModifiedBy\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ModifiedBy\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.ModifiedByColumn] = value;
+                    this[this.tableSalaryLoanDetails.ModifiedByColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ModifiedDate {
+            public System.DateTime ModifiedData {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.ModifiedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableSalaryLoanDetails.ModifiedDataColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ModifiedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ModifiedData\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.ModifiedDateColumn] = value;
+                    this[this.tableSalaryLoanDetails.ModifiedDataColumn] = value;
                 }
             }
             
@@ -1436,14 +1142,14 @@ namespace TeemaApplication.Datasets {
             public string ApprovedBy {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveDetails.ApprovedByColumn]));
+                        return ((string)(this[this.tableSalaryLoanDetails.ApprovedByColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ApprovedBy\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApprovedBy\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.ApprovedByColumn] = value;
+                    this[this.tableSalaryLoanDetails.ApprovedByColumn] = value;
                 }
             }
             
@@ -1452,186 +1158,138 @@ namespace TeemaApplication.Datasets {
             public System.DateTime ApprovedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableFixedIncentiveDetails.ApprovedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableSalaryLoanDetails.ApprovedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ApprovedDate\' in table \'FixedIncentiveDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApprovedDate\' in table \'SalaryLoanDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveDetails.ApprovedDateColumn] = value;
+                    this[this.tableSalaryLoanDetails.ApprovedDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsReportIDNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.ReportIDColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.ReportIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetReportIDNull() {
-                this[this.tableFixedIncentiveDetails.ReportIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFixedIncentiveCategoryNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.FixedIncentiveCategoryColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFixedIncentiveCategoryNull() {
-                this[this.tableFixedIncentiveDetails.FixedIncentiveCategoryColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryFromNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.SalaryFromColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryFromNull() {
-                this[this.tableFixedIncentiveDetails.SalaryFromColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryToNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.SalaryToColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryToNull() {
-                this[this.tableFixedIncentiveDetails.SalaryToColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryPeriodNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.SalaryPeriodColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryPeriodNull() {
-                this[this.tableFixedIncentiveDetails.SalaryPeriodColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.ReportIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDepartmentNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.DepartmentColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.DepartmentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDepartmentNull() {
-                this[this.tableFixedIncentiveDetails.DepartmentColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.DepartmentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSubDepartmentNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.SubDepartmentColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.SubDepartmentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSubDepartmentNull() {
-                this[this.tableFixedIncentiveDetails.SubDepartmentColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.SubDepartmentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCreatedByNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.CreatedByColumn);
+            public bool IsCreateByNull() {
+                return this.IsNull(this.tableSalaryLoanDetails.CreateByColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCreatedByNull() {
-                this[this.tableFixedIncentiveDetails.CreatedByColumn] = global::System.Convert.DBNull;
+            public void SetCreateByNull() {
+                this[this.tableSalaryLoanDetails.CreateByColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCreatedDateNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.CreatedDateColumn);
+            public bool IsCreateDateNull() {
+                return this.IsNull(this.tableSalaryLoanDetails.CreateDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCreatedDateNull() {
-                this[this.tableFixedIncentiveDetails.CreatedDateColumn] = global::System.Convert.DBNull;
+            public void SetCreateDateNull() {
+                this[this.tableSalaryLoanDetails.CreateDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsModifiedByNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.ModifiedByColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.ModifiedByColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetModifiedByNull() {
-                this[this.tableFixedIncentiveDetails.ModifiedByColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.ModifiedByColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsModifiedDateNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.ModifiedDateColumn);
+            public bool IsModifiedDataNull() {
+                return this.IsNull(this.tableSalaryLoanDetails.ModifiedDataColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetModifiedDateNull() {
-                this[this.tableFixedIncentiveDetails.ModifiedDateColumn] = global::System.Convert.DBNull;
+            public void SetModifiedDataNull() {
+                this[this.tableSalaryLoanDetails.ModifiedDataColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsApprovedByNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.ApprovedByColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.ApprovedByColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetApprovedByNull() {
-                this[this.tableFixedIncentiveDetails.ApprovedByColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.ApprovedByColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsApprovedDateNull() {
-                return this.IsNull(this.tableFixedIncentiveDetails.ApprovedDateColumn);
+                return this.IsNull(this.tableSalaryLoanDetails.ApprovedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetApprovedDateNull() {
-                this[this.tableFixedIncentiveDetails.ApprovedDateColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanDetails.ApprovedDateColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FixedIncentiveEmployeeDetailsRow : global::System.Data.DataRow {
+        public partial class SalaryLoanEmployeeDetailsRow : global::System.Data.DataRow {
             
-            private FixedIncentiveEmployeeDetailsDataTable tableFixedIncentiveEmployeeDetails;
+            private SalaryLoanEmployeeDetailsDataTable tableSalaryLoanEmployeeDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FixedIncentiveEmployeeDetailsRow(global::System.Data.DataRowBuilder rb) : 
+            internal SalaryLoanEmployeeDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFixedIncentiveEmployeeDetails = ((FixedIncentiveEmployeeDetailsDataTable)(this.Table));
+                this.tableSalaryLoanEmployeeDetails = ((SalaryLoanEmployeeDetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1639,15 +1297,14 @@ namespace TeemaApplication.Datasets {
             public int ReportID {
                 get {
                     try {
-                        return ((int)(this[this.tableFixedIncentiveEmployeeDetails.ReportIDColumn]));
+                        return ((int)(this[this.tableSalaryLoanEmployeeDetails.ReportIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'FixedIncentiveEmployeeDetails\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReportID\' in table \'SalaryLoanEmployeeDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.ReportIDColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.ReportIDColumn] = value;
                 }
             }
             
@@ -1656,15 +1313,14 @@ namespace TeemaApplication.Datasets {
             public int TokenNo {
                 get {
                     try {
-                        return ((int)(this[this.tableFixedIncentiveEmployeeDetails.TokenNoColumn]));
+                        return ((int)(this[this.tableSalaryLoanEmployeeDetails.TokenNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TokenNo\' in table \'FixedIncentiveEmployeeDetails\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TokenNo\' in table \'SalaryLoanEmployeeDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.TokenNoColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.TokenNoColumn] = value;
                 }
             }
             
@@ -1673,14 +1329,14 @@ namespace TeemaApplication.Datasets {
             public int EPFNo {
                 get {
                     try {
-                        return ((int)(this[this.tableFixedIncentiveEmployeeDetails.EPFNoColumn]));
+                        return ((int)(this[this.tableSalaryLoanEmployeeDetails.EPFNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EPFNo\' in table \'FixedIncentiveEmployeeDetails\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EPFNo\' in table \'SalaryLoanEmployeeDetails\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.EPFNoColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.EPFNoColumn] = value;
                 }
             }
             
@@ -1689,498 +1345,180 @@ namespace TeemaApplication.Datasets {
             public string EmployeeName {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveEmployeeDetails.EmployeeNameColumn]));
+                        return ((string)(this[this.tableSalaryLoanEmployeeDetails.EmployeeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'FixedIncentiveEmployeeDetails\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'SalaryLoanEmployeeDetails\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.EmployeeNameColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.EmployeeNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Designation {
+            public double RequestedAmount {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveEmployeeDetails.DesignationColumn]));
+                        return ((double)(this[this.tableSalaryLoanEmployeeDetails.RequestedAmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Designation\' in table \'FixedIncentiveEmployeeDetails\' is DB" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequestedAmount\' in table \'SalaryLoanEmployeeDetails\' is DB" +
                                 "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.DesignationColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.RequestedAmountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EmployeeCategory {
+            public double DeductionAmountInMonth {
                 get {
                     try {
-                        return ((string)(this[this.tableFixedIncentiveEmployeeDetails.EmployeeCategoryColumn]));
+                        return ((double)(this[this.tableSalaryLoanEmployeeDetails.DeductionAmountInMonthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeCategory\' in table \'FixedIncentiveEmployeeDetails\' " +
-                                "is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.EmployeeCategoryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EmployeeGread {
-                get {
-                    try {
-                        return ((string)(this[this.tableFixedIncentiveEmployeeDetails.EmployeeGreadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeGread\' in table \'FixedIncentiveEmployeeDetails\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.EmployeeGreadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double FixedAmount {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.FixedAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FixedAmount\' in table \'FixedIncentiveEmployeeDetails\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.FixedAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double LeaveDays {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.LeaveDaysColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LeaveDays\' in table \'FixedIncentiveEmployeeDetails\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.LeaveDaysColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double NoPayDays {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.NoPayDaysColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NoPayDays\' in table \'FixedIncentiveEmployeeDetails\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.NoPayDaysColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double LateAttendanceDays {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.LateAttendanceDaysColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LateAttendanceDays\' in table \'FixedIncentiveEmployeeDetails" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeductionAmountInMonth\' in table \'SalaryLoanEmployeeDetails" +
                                 "\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.LateAttendanceDaysColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.DeductionAmountInMonthColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ForLeaveDays {
+            public double NumberOfMonth {
                 get {
                     try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.ForLeaveDaysColumn]));
+                        return ((double)(this[this.tableSalaryLoanEmployeeDetails.NumberOfMonthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ForLeaveDays\' in table \'FixedIncentiveEmployeeDetails\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberOfMonth\' in table \'SalaryLoanEmployeeDetails\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.ForLeaveDaysColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.NumberOfMonthColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ForNoPayDays {
+            public double DeductionSalaryPeriod {
                 get {
                     try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.ForNoPayDaysColumn]));
+                        return ((double)(this[this.tableSalaryLoanEmployeeDetails.DeductionSalaryPeriodColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ForNoPayDays\' in table \'FixedIncentiveEmployeeDetails\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.ForNoPayDaysColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ForLateAttendance {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.ForLateAttendanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ForLateAttendance\' in table \'FixedIncentiveEmployeeDetails\'" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'DeductionSalaryPeriod\' in table \'SalaryLoanEmployeeDetails\'" +
                                 " is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFixedIncentiveEmployeeDetails.ForLateAttendanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double SalaryAdvance {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.SalaryAdvanceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryAdvance\' in table \'FixedIncentiveEmployeeDetails\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.SalaryAdvanceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double SalaryLoan {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.SalaryLoanColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryLoan\' in table \'FixedIncentiveEmployeeDetails\' is DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.SalaryLoanColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Other {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.OtherColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Other\' in table \'FixedIncentiveEmployeeDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.OtherColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double TotalDeduction {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.TotalDeductionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalDeduction\' in table \'FixedIncentiveEmployeeDetails\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.TotalDeductionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double TotalPayable {
-                get {
-                    try {
-                        return ((double)(this[this.tableFixedIncentiveEmployeeDetails.TotalPayableColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalPayable\' in table \'FixedIncentiveEmployeeDetails\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFixedIncentiveEmployeeDetails.TotalPayableColumn] = value;
+                    this[this.tableSalaryLoanEmployeeDetails.DeductionSalaryPeriodColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsReportIDNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.ReportIDColumn);
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.ReportIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetReportIDNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.ReportIDColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanEmployeeDetails.ReportIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTokenNoNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.TokenNoColumn);
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.TokenNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTokenNoNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.TokenNoColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanEmployeeDetails.TokenNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEPFNoNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.EPFNoColumn);
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.EPFNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEPFNoNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.EPFNoColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanEmployeeDetails.EPFNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEmployeeNameNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.EmployeeNameColumn);
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.EmployeeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEmployeeNameNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.EmployeeNameColumn] = global::System.Convert.DBNull;
+                this[this.tableSalaryLoanEmployeeDetails.EmployeeNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDesignationNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.DesignationColumn);
+            public bool IsRequestedAmountNull() {
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.RequestedAmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDesignationNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.DesignationColumn] = global::System.Convert.DBNull;
+            public void SetRequestedAmountNull() {
+                this[this.tableSalaryLoanEmployeeDetails.RequestedAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEmployeeCategoryNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.EmployeeCategoryColumn);
+            public bool IsDeductionAmountInMonthNull() {
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.DeductionAmountInMonthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEmployeeCategoryNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.EmployeeCategoryColumn] = global::System.Convert.DBNull;
+            public void SetDeductionAmountInMonthNull() {
+                this[this.tableSalaryLoanEmployeeDetails.DeductionAmountInMonthColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEmployeeGreadNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.EmployeeGreadColumn);
+            public bool IsNumberOfMonthNull() {
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.NumberOfMonthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEmployeeGreadNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.EmployeeGreadColumn] = global::System.Convert.DBNull;
+            public void SetNumberOfMonthNull() {
+                this[this.tableSalaryLoanEmployeeDetails.NumberOfMonthColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFixedAmountNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.FixedAmountColumn);
+            public bool IsDeductionSalaryPeriodNull() {
+                return this.IsNull(this.tableSalaryLoanEmployeeDetails.DeductionSalaryPeriodColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFixedAmountNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.FixedAmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLeaveDaysNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.LeaveDaysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLeaveDaysNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.LeaveDaysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNoPayDaysNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.NoPayDaysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNoPayDaysNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.NoPayDaysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLateAttendanceDaysNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.LateAttendanceDaysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLateAttendanceDaysNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.LateAttendanceDaysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsForLeaveDaysNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.ForLeaveDaysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetForLeaveDaysNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.ForLeaveDaysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsForNoPayDaysNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.ForNoPayDaysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetForNoPayDaysNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.ForNoPayDaysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsForLateAttendanceNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.ForLateAttendanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetForLateAttendanceNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.ForLateAttendanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryAdvanceNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.SalaryAdvanceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryAdvanceNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.SalaryAdvanceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryLoanNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.SalaryLoanColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryLoanNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.SalaryLoanColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOtherNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.OtherColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOtherNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.OtherColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTotalDeductionNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.TotalDeductionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTotalDeductionNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.TotalDeductionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTotalPayableNull() {
-                return this.IsNull(this.tableFixedIncentiveEmployeeDetails.TotalPayableColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTotalPayableNull() {
-                this[this.tableFixedIncentiveEmployeeDetails.TotalPayableColumn] = global::System.Convert.DBNull;
+            public void SetDeductionSalaryPeriodNull() {
+                this[this.tableSalaryLoanEmployeeDetails.DeductionSalaryPeriodColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2188,22 +1526,22 @@ namespace TeemaApplication.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FixedIncentiveDetailsRowChangeEvent : global::System.EventArgs {
+        public class SalaryLoanDetailsRowChangeEvent : global::System.EventArgs {
             
-            private FixedIncentiveDetailsRow eventRow;
+            private SalaryLoanDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRowChangeEvent(FixedIncentiveDetailsRow row, global::System.Data.DataRowAction action) {
+            public SalaryLoanDetailsRowChangeEvent(SalaryLoanDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveDetailsRow Row {
+            public SalaryLoanDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2222,22 +1560,22 @@ namespace TeemaApplication.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FixedIncentiveEmployeeDetailsRowChangeEvent : global::System.EventArgs {
+        public class SalaryLoanEmployeeDetailsRowChangeEvent : global::System.EventArgs {
             
-            private FixedIncentiveEmployeeDetailsRow eventRow;
+            private SalaryLoanEmployeeDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsRowChangeEvent(FixedIncentiveEmployeeDetailsRow row, global::System.Data.DataRowAction action) {
+            public SalaryLoanEmployeeDetailsRowChangeEvent(SalaryLoanEmployeeDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FixedIncentiveEmployeeDetailsRow Row {
+            public SalaryLoanEmployeeDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
