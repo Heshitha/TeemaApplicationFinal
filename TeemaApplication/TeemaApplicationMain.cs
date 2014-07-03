@@ -283,5 +283,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void approveDayOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDayOffApprove frm = new frmDayOffApprove();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

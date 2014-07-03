@@ -187,5 +187,11 @@ namespace TeemaApplication
         {
             adddayoffrequest();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            txtdayoffreason.Text = "";
+            searchEmployee();
+        }
     }
 }

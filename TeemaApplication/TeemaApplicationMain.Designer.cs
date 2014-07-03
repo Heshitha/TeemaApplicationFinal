@@ -57,9 +57,14 @@
             this.editGrantedLeavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applyLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approveLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.dayOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayOffApplyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.approveDayOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryLoanRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryLoanApproveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +79,8 @@
             this.fingerPrintDevicesToolStripMenuItem,
             this.securityToolStripMenuItem,
             this.leaveToolStripMenuItem,
-            this.dayOffToolStripMenuItem});
+            this.dayOffToolStripMenuItem,
+            this.salaryLoanToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(893, 24);
@@ -292,7 +298,8 @@
             // dayOffToolStripMenuItem
             // 
             this.dayOffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dayOffApplyToolStripMenuItem});
+            this.dayOffApplyToolStripMenuItem,
+            this.approveDayOffToolStripMenuItem});
             this.dayOffToolStripMenuItem.Name = "dayOffToolStripMenuItem";
             this.dayOffToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.dayOffToolStripMenuItem.Text = "Day Off";
@@ -300,9 +307,44 @@
             // dayOffApplyToolStripMenuItem
             // 
             this.dayOffApplyToolStripMenuItem.Name = "dayOffApplyToolStripMenuItem";
-            this.dayOffApplyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dayOffApplyToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.dayOffApplyToolStripMenuItem.Text = "Day Off Apply";
             this.dayOffApplyToolStripMenuItem.Click += new System.EventHandler(this.dayOffApplyToolStripMenuItem_Click);
+            // 
+            // approveDayOffToolStripMenuItem
+            // 
+            this.approveDayOffToolStripMenuItem.Name = "approveDayOffToolStripMenuItem";
+            this.approveDayOffToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.approveDayOffToolStripMenuItem.Text = "Approve Day Off";
+            this.approveDayOffToolStripMenuItem.Click += new System.EventHandler(this.approveDayOffToolStripMenuItem_Click);
+            // 
+            // salaryLoanToolStripMenuItem
+            // 
+            this.salaryLoanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salaryLoanRequestToolStripMenuItem,
+            this.salaryLoanApproveToolStripMenuItem,
+            this.loanInstallmentToolStripMenuItem});
+            this.salaryLoanToolStripMenuItem.Name = "salaryLoanToolStripMenuItem";
+            this.salaryLoanToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.salaryLoanToolStripMenuItem.Text = "Salary Loan";
+            // 
+            // salaryLoanRequestToolStripMenuItem
+            // 
+            this.salaryLoanRequestToolStripMenuItem.Name = "salaryLoanRequestToolStripMenuItem";
+            this.salaryLoanRequestToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.salaryLoanRequestToolStripMenuItem.Text = "Salary Loan Request";
+            // 
+            // salaryLoanApproveToolStripMenuItem
+            // 
+            this.salaryLoanApproveToolStripMenuItem.Name = "salaryLoanApproveToolStripMenuItem";
+            this.salaryLoanApproveToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.salaryLoanApproveToolStripMenuItem.Text = "Salary Loan Approve";
+            // 
+            // loanInstallmentToolStripMenuItem
+            // 
+            this.loanInstallmentToolStripMenuItem.Name = "loanInstallmentToolStripMenuItem";
+            this.loanInstallmentToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.loanInstallmentToolStripMenuItem.Text = "Loan Installment";
             // 
             // frmTeemaApplicationMain
             // 
@@ -356,6 +398,11 @@
         private System.Windows.Forms.ToolStripMenuItem approveLeaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dayOffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dayOffApplyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem approveDayOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryLoanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryLoanRequestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryLoanApproveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loanInstallmentToolStripMenuItem;
     }
 }
 
