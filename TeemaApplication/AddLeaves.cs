@@ -135,7 +135,7 @@ namespace TeemaApplication
             {
                 fillLeavesGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
