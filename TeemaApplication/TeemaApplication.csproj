@@ -167,6 +167,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalaryLoanDateSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\SalaryLoanInstalmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaryLoanInstalmentDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\SecurityRoutineReportDataset.cs">
       <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -613,6 +618,17 @@
     </None>
     <None Include="Datasets\SalaryLoanDateSet.xss">
       <DependentUpon>SalaryLoanDateSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SalaryLoanInstalmentDataSet.xsc">
+      <DependentUpon>SalaryLoanInstalmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\SalaryLoanInstalmentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalaryLoanInstalmentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\SalaryLoanInstalmentDataSet.xss">
+      <DependentUpon>SalaryLoanInstalmentDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\SecurityRoutineReportDataset.xsc">
       <DependentUpon>SecurityRoutineReportDataset.xsd</DependentUpon>
