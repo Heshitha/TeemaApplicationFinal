@@ -1343,7 +1343,7 @@
             this.Controls.Add(this.lblFormTopic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNewEmployee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Employee";
             this.Load += new System.EventHandler(this.frmAddNewEmployee_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmAddNewEmployee_MouseDown);

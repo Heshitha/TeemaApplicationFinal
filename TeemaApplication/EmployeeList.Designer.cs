@@ -252,6 +252,7 @@
             this.Controls.Add(this.lblFormTopic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmployeeList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeList";
             this.Load += new System.EventHandler(this.frmEmployeeList_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEmployeeList_MouseDown);
