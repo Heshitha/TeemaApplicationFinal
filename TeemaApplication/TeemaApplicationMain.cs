@@ -311,5 +311,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void deductionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeduction frm = new frmDeduction();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

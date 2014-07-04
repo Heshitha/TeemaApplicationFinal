@@ -77,6 +77,7 @@
       <Association Name="Employee_PersonalLeaveRecord" Member="PersonalLeaveRecords" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="PersonalLeaveRecord" />
       <Association Name="Employee_DayOffRecord" Member="DayOffRecords" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="DayOffRecord" />
       <Association Name="Employee_SalaryLoan" Member="SalaryLoans" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="SalaryLoan" />
+      <Association Name="Employee_Deduction" Member="Deductions" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Deduction" />
       <Association Name="Department_Employee" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
       <Association Name="Designation_Employee" Member="Designation" ThisKey="DesignationID" OtherKey="DesignationID" Type="Designation" IsForeignKey="true" />
       <Association Name="SubDepartment_Employee" Member="SubDepartment" ThisKey="SubDepartmentID" OtherKey="SubDepartmentID" Type="SubDepartment" IsForeignKey="true" />
@@ -163,6 +164,8 @@
       <Association Name="UserAccount_SalaryLoan2" Member="SalaryLoans2" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryLoan" />
       <Association Name="UserAccount_SalaryLoanInstallment" Member="SalaryLoanInstallments" ThisKey="UserID" OtherKey="CreatedBy" Type="SalaryLoanInstallment" />
       <Association Name="UserAccount_SalaryLoanInstallment1" Member="SalaryLoanInstallments1" ThisKey="UserID" OtherKey="ModifiedBy" Type="SalaryLoanInstallment" />
+      <Association Name="UserAccount_Deduction" Member="Deductions" ThisKey="UserID" OtherKey="CreatedBy" Type="Deduction" />
+      <Association Name="UserAccount_Deduction1" Member="Deductions1" ThisKey="UserID" OtherKey="ModifiedBy" Type="Deduction" />
     </Type>
   </Table>
   <Table Name="dbo.SalaryDetail" Member="SalaryDetails">
@@ -442,6 +445,32 @@
       <Association Name="SalaryLoan_SalaryLoanInstallment" Member="SalaryLoan" ThisKey="SalaryLoanID" OtherKey="SalaryLoanID" Type="SalaryLoan" IsForeignKey="true" />
       <Association Name="UserAccount_SalaryLoanInstallment" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
       <Association Name="UserAccount_SalaryLoanInstallment1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Deduction" Member="Deductions">
+    <Type Name="Deduction">
+      <Column Name="DeductionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payee" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="StampDuty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Meals" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WelfareShop" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WelfareContribution" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WelfareLoan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BankSaving" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MedicalIns" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BankLoan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Misc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="OtherDeduction" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_Deduction" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="UserAccount_Deduction" Member="UserAccount" ThisKey="CreatedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
+      <Association Name="UserAccount_Deduction1" Member="UserAccount1" ThisKey="ModifiedBy" OtherKey="UserID" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

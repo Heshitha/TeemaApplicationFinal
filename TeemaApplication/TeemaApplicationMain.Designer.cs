@@ -65,6 +65,7 @@
             this.salaryLoanApproveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.deductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,10 +81,11 @@
             this.securityToolStripMenuItem,
             this.leaveToolStripMenuItem,
             this.dayOffToolStripMenuItem,
-            this.salaryLoanToolStripMenuItem});
+            this.salaryLoanToolStripMenuItem,
+            this.deductionToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(893, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1216, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -349,11 +351,18 @@
             this.loanInstallmentToolStripMenuItem.Text = "Loan Installment";
             this.loanInstallmentToolStripMenuItem.Click += new System.EventHandler(this.loanInstallmentToolStripMenuItem_Click);
             // 
+            // deductionToolStripMenuItem
+            // 
+            this.deductionToolStripMenuItem.Name = "deductionToolStripMenuItem";
+            this.deductionToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.deductionToolStripMenuItem.Text = "Deduction";
+            this.deductionToolStripMenuItem.Click += new System.EventHandler(this.deductionToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 453);
+            this.ClientSize = new System.Drawing.Size(1216, 561);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -406,6 +415,7 @@
         private System.Windows.Forms.ToolStripMenuItem salaryLoanRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salaryLoanApproveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loanInstallmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deductionToolStripMenuItem;
     }
 }
 

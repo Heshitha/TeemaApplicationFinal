@@ -99,6 +99,9 @@ namespace TeemaApplication.Datasets
     partial void InsertSalaryLoanInstallment(SalaryLoanInstallment instance);
     partial void UpdateSalaryLoanInstallment(SalaryLoanInstallment instance);
     partial void DeleteSalaryLoanInstallment(SalaryLoanInstallment instance);
+    partial void InsertDeduction(Deduction instance);
+    partial void UpdateDeduction(Deduction instance);
+    partial void DeleteDeduction(Deduction instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -312,6 +315,14 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<SalaryLoanInstallment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Deduction> Deductions
+		{
+			get
+			{
+				return this.GetTable<Deduction>();
 			}
 		}
 	}
@@ -1409,6 +1420,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<SalaryLoan> _SalaryLoans;
 		
+		private EntitySet<Deduction> _Deductions;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1477,6 +1490,7 @@ namespace TeemaApplication.Datasets
 			this._PersonalLeaveRecords = new EntitySet<PersonalLeaveRecord>(new Action<PersonalLeaveRecord>(this.attach_PersonalLeaveRecords), new Action<PersonalLeaveRecord>(this.detach_PersonalLeaveRecords));
 			this._DayOffRecords = new EntitySet<DayOffRecord>(new Action<DayOffRecord>(this.attach_DayOffRecords), new Action<DayOffRecord>(this.detach_DayOffRecords));
 			this._SalaryLoans = new EntitySet<SalaryLoan>(new Action<SalaryLoan>(this.attach_SalaryLoans), new Action<SalaryLoan>(this.detach_SalaryLoans));
+			this._Deductions = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions), new Action<Deduction>(this.detach_Deductions));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -2057,6 +2071,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Deduction", Storage="_Deductions", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<Deduction> Deductions
+		{
+			get
+			{
+				return this._Deductions;
+			}
+			set
+			{
+				this._Deductions.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2374,6 +2401,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_SalaryLoans(SalaryLoan entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_Deductions(Deduction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_Deductions(Deduction entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -3190,6 +3229,10 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<SalaryLoanInstallment> _SalaryLoanInstallments1;
 		
+		private EntitySet<Deduction> _Deductions;
+		
+		private EntitySet<Deduction> _Deductions1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3250,6 +3293,8 @@ namespace TeemaApplication.Datasets
 			this._SalaryLoans2 = new EntitySet<SalaryLoan>(new Action<SalaryLoan>(this.attach_SalaryLoans2), new Action<SalaryLoan>(this.detach_SalaryLoans2));
 			this._SalaryLoanInstallments = new EntitySet<SalaryLoanInstallment>(new Action<SalaryLoanInstallment>(this.attach_SalaryLoanInstallments), new Action<SalaryLoanInstallment>(this.detach_SalaryLoanInstallments));
 			this._SalaryLoanInstallments1 = new EntitySet<SalaryLoanInstallment>(new Action<SalaryLoanInstallment>(this.attach_SalaryLoanInstallments1), new Action<SalaryLoanInstallment>(this.detach_SalaryLoanInstallments1));
+			this._Deductions = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions), new Action<Deduction>(this.detach_Deductions));
+			this._Deductions1 = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions1), new Action<Deduction>(this.detach_Deductions1));
 			OnCreated();
 		}
 		
@@ -3899,6 +3944,32 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Deduction", Storage="_Deductions", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<Deduction> Deductions
+		{
+			get
+			{
+				return this._Deductions;
+			}
+			set
+			{
+				this._Deductions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Deduction1", Storage="_Deductions1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<Deduction> Deductions1
+		{
+			get
+			{
+				return this._Deductions1;
+			}
+			set
+			{
+				this._Deductions1.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4418,6 +4489,30 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_SalaryLoanInstallments1(SalaryLoanInstallment entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_Deductions(Deduction entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_Deductions(Deduction entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_Deductions1(Deduction entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_Deductions1(Deduction entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
@@ -11022,6 +11117,623 @@ namespace TeemaApplication.Datasets
 					else
 					{
 						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Deduction")]
+	public partial class Deduction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DeductionID;
+		
+		private int _EmployeeID;
+		
+		private int _Year;
+		
+		private int _Month;
+		
+		private double _Payee;
+		
+		private double _StampDuty;
+		
+		private double _Meals;
+		
+		private double _WelfareShop;
+		
+		private double _WelfareContribution;
+		
+		private double _WelfareLoan;
+		
+		private double _BankSaving;
+		
+		private double _MedicalIns;
+		
+		private double _BankLoan;
+		
+		private double _Misc;
+		
+		private double _OtherDeduction;
+		
+		private int _CreatedBy;
+		
+		private System.DateTime _CreatedDate;
+		
+		private int _ModifiedBy;
+		
+		private System.DateTime _ModifiedDate;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDeductionIDChanging(int value);
+    partial void OnDeductionIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnYearChanging(int value);
+    partial void OnYearChanged();
+    partial void OnMonthChanging(int value);
+    partial void OnMonthChanged();
+    partial void OnPayeeChanging(double value);
+    partial void OnPayeeChanged();
+    partial void OnStampDutyChanging(double value);
+    partial void OnStampDutyChanged();
+    partial void OnMealsChanging(double value);
+    partial void OnMealsChanged();
+    partial void OnWelfareShopChanging(double value);
+    partial void OnWelfareShopChanged();
+    partial void OnWelfareContributionChanging(double value);
+    partial void OnWelfareContributionChanged();
+    partial void OnWelfareLoanChanging(double value);
+    partial void OnWelfareLoanChanged();
+    partial void OnBankSavingChanging(double value);
+    partial void OnBankSavingChanged();
+    partial void OnMedicalInsChanging(double value);
+    partial void OnMedicalInsChanged();
+    partial void OnBankLoanChanging(double value);
+    partial void OnBankLoanChanged();
+    partial void OnMiscChanging(double value);
+    partial void OnMiscChanged();
+    partial void OnOtherDeductionChanging(double value);
+    partial void OnOtherDeductionChanged();
+    partial void OnCreatedByChanging(int value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(int value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.DateTime value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public Deduction()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeductionID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DeductionID
+		{
+			get
+			{
+				return this._DeductionID;
+			}
+			set
+			{
+				if ((this._DeductionID != value))
+				{
+					this.OnDeductionIDChanging(value);
+					this.SendPropertyChanging();
+					this._DeductionID = value;
+					this.SendPropertyChanged("DeductionID");
+					this.OnDeductionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="Int NOT NULL")]
+		public int Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this.OnYearChanging(value);
+					this.SendPropertyChanging();
+					this._Year = value;
+					this.SendPropertyChanged("Year");
+					this.OnYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="Int NOT NULL")]
+		public int Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this.OnMonthChanging(value);
+					this.SendPropertyChanging();
+					this._Month = value;
+					this.SendPropertyChanged("Month");
+					this.OnMonthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payee", DbType="Float NOT NULL")]
+		public double Payee
+		{
+			get
+			{
+				return this._Payee;
+			}
+			set
+			{
+				if ((this._Payee != value))
+				{
+					this.OnPayeeChanging(value);
+					this.SendPropertyChanging();
+					this._Payee = value;
+					this.SendPropertyChanged("Payee");
+					this.OnPayeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StampDuty", DbType="Float NOT NULL")]
+		public double StampDuty
+		{
+			get
+			{
+				return this._StampDuty;
+			}
+			set
+			{
+				if ((this._StampDuty != value))
+				{
+					this.OnStampDutyChanging(value);
+					this.SendPropertyChanging();
+					this._StampDuty = value;
+					this.SendPropertyChanged("StampDuty");
+					this.OnStampDutyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Meals", DbType="Float NOT NULL")]
+		public double Meals
+		{
+			get
+			{
+				return this._Meals;
+			}
+			set
+			{
+				if ((this._Meals != value))
+				{
+					this.OnMealsChanging(value);
+					this.SendPropertyChanging();
+					this._Meals = value;
+					this.SendPropertyChanged("Meals");
+					this.OnMealsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WelfareShop", DbType="Float NOT NULL")]
+		public double WelfareShop
+		{
+			get
+			{
+				return this._WelfareShop;
+			}
+			set
+			{
+				if ((this._WelfareShop != value))
+				{
+					this.OnWelfareShopChanging(value);
+					this.SendPropertyChanging();
+					this._WelfareShop = value;
+					this.SendPropertyChanged("WelfareShop");
+					this.OnWelfareShopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WelfareContribution", DbType="Float NOT NULL")]
+		public double WelfareContribution
+		{
+			get
+			{
+				return this._WelfareContribution;
+			}
+			set
+			{
+				if ((this._WelfareContribution != value))
+				{
+					this.OnWelfareContributionChanging(value);
+					this.SendPropertyChanging();
+					this._WelfareContribution = value;
+					this.SendPropertyChanged("WelfareContribution");
+					this.OnWelfareContributionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WelfareLoan", DbType="Float NOT NULL")]
+		public double WelfareLoan
+		{
+			get
+			{
+				return this._WelfareLoan;
+			}
+			set
+			{
+				if ((this._WelfareLoan != value))
+				{
+					this.OnWelfareLoanChanging(value);
+					this.SendPropertyChanging();
+					this._WelfareLoan = value;
+					this.SendPropertyChanged("WelfareLoan");
+					this.OnWelfareLoanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankSaving", DbType="Float NOT NULL")]
+		public double BankSaving
+		{
+			get
+			{
+				return this._BankSaving;
+			}
+			set
+			{
+				if ((this._BankSaving != value))
+				{
+					this.OnBankSavingChanging(value);
+					this.SendPropertyChanging();
+					this._BankSaving = value;
+					this.SendPropertyChanged("BankSaving");
+					this.OnBankSavingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicalIns", DbType="Float NOT NULL")]
+		public double MedicalIns
+		{
+			get
+			{
+				return this._MedicalIns;
+			}
+			set
+			{
+				if ((this._MedicalIns != value))
+				{
+					this.OnMedicalInsChanging(value);
+					this.SendPropertyChanging();
+					this._MedicalIns = value;
+					this.SendPropertyChanged("MedicalIns");
+					this.OnMedicalInsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BankLoan", DbType="Float NOT NULL")]
+		public double BankLoan
+		{
+			get
+			{
+				return this._BankLoan;
+			}
+			set
+			{
+				if ((this._BankLoan != value))
+				{
+					this.OnBankLoanChanging(value);
+					this.SendPropertyChanging();
+					this._BankLoan = value;
+					this.SendPropertyChanged("BankLoan");
+					this.OnBankLoanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Misc", DbType="Float NOT NULL")]
+		public double Misc
+		{
+			get
+			{
+				return this._Misc;
+			}
+			set
+			{
+				if ((this._Misc != value))
+				{
+					this.OnMiscChanging(value);
+					this.SendPropertyChanging();
+					this._Misc = value;
+					this.SendPropertyChanged("Misc");
+					this.OnMiscChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherDeduction", DbType="Float NOT NULL")]
+		public double OtherDeduction
+		{
+			get
+			{
+				return this._OtherDeduction;
+			}
+			set
+			{
+				if ((this._OtherDeduction != value))
+				{
+					this.OnOtherDeductionChanging(value);
+					this.SendPropertyChanging();
+					this._OtherDeduction = value;
+					this.SendPropertyChanged("OtherDeduction");
+					this.OnOtherDeductionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int NOT NULL")]
+		public int CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int NOT NULL")]
+		public int ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Deduction", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.Deductions.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.Deductions.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Deduction", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.Deductions.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.Deductions.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(int);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Deduction1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.Deductions1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.Deductions1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(int);
 					}
 					this.SendPropertyChanged("UserAccount1");
 				}
