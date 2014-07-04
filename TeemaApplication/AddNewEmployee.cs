@@ -184,7 +184,7 @@ namespace TeemaApplication
 
                 db.SubmitChanges();
 
-                Utilities.ShowInformationBox("Successfully saved employee data to the data base.");
+                Utilities.ShowInformationBox("Successfully saved employee data.");
                 this.Dispose();
             }
             catch (Exception ex)
