@@ -59,12 +59,12 @@
             this.approveLeaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dayOffApplyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.approveDayOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryLoanRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryLoanApproveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -333,18 +333,21 @@
             this.salaryLoanRequestToolStripMenuItem.Name = "salaryLoanRequestToolStripMenuItem";
             this.salaryLoanRequestToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.salaryLoanRequestToolStripMenuItem.Text = "Salary Loan Request";
+            this.salaryLoanRequestToolStripMenuItem.Click += new System.EventHandler(this.salaryLoanRequestToolStripMenuItem_Click);
             // 
             // salaryLoanApproveToolStripMenuItem
             // 
             this.salaryLoanApproveToolStripMenuItem.Name = "salaryLoanApproveToolStripMenuItem";
             this.salaryLoanApproveToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.salaryLoanApproveToolStripMenuItem.Text = "Salary Loan Approve";
+            this.salaryLoanApproveToolStripMenuItem.Click += new System.EventHandler(this.salaryLoanApproveToolStripMenuItem_Click);
             // 
             // loanInstallmentToolStripMenuItem
             // 
             this.loanInstallmentToolStripMenuItem.Name = "loanInstallmentToolStripMenuItem";
             this.loanInstallmentToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.loanInstallmentToolStripMenuItem.Text = "Loan Installment";
+            this.loanInstallmentToolStripMenuItem.Click += new System.EventHandler(this.loanInstallmentToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 

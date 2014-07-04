@@ -290,5 +290,26 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void salaryLoanApproveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalaryLoanApproved frm = new frmSalaryLoanApproved();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void salaryLoanRequestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalaryLoanRequest frm = new frmSalaryLoanRequest();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void loanInstallmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalaryLoanInstallmentList frm = new frmSalaryLoanInstallmentList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

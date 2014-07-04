@@ -90,11 +90,6 @@
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbxDepartmentDetails = new System.Windows.Forms.GroupBox();
-            this.gbxFilterBy = new System.Windows.Forms.GroupBox();
-            this.chbUnFinished = new System.Windows.Forms.CheckBox();
-            this.chbUnApproved = new System.Windows.Forms.CheckBox();
-            this.chbFinished = new System.Windows.Forms.CheckBox();
-            this.chbApproved = new System.Windows.Forms.CheckBox();
             this.chbSearchFromSubDepartment = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cmbSubDepartment = new System.Windows.Forms.ComboBox();
@@ -102,6 +97,11 @@
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
             this.lblWorkingBranch = new System.Windows.Forms.Label();
+            this.gbxFilterBy = new System.Windows.Forms.GroupBox();
+            this.chbUnFinished = new System.Windows.Forms.CheckBox();
+            this.chbUnApproved = new System.Windows.Forms.CheckBox();
+            this.chbFinished = new System.Windows.Forms.CheckBox();
+            this.chbApproved = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -375,6 +375,7 @@
             this.gdvLoanDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvLoanDetails.Size = new System.Drawing.Size(602, 206);
             this.gdvLoanDetails.TabIndex = 24;
+            this.gdvLoanDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvLoanDetails_CellClick);
             // 
             // clm_Token_No
             // 
@@ -480,6 +481,7 @@
             this.txtRequested_Amount.TabIndex = 10;
             this.txtRequested_Amount.Text = "0";
             this.txtRequested_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRequested_Amount.TextChanged += new System.EventHandler(this.txtRequested_Amount_TextChanged);
             // 
             // dtpStarting_Date
             // 
@@ -583,6 +585,7 @@
             this.txtFixedIncentiveAllowance.TabIndex = 14;
             this.txtFixedIncentiveAllowance.Text = "0";
             this.txtFixedIncentiveAllowance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFixedIncentiveAllowance.TextChanged += new System.EventHandler(this.txtFixedIncentiveAllowance_TextChanged);
             // 
             // label8
             // 
@@ -601,6 +604,7 @@
             this.txtDayWages.TabIndex = 13;
             this.txtDayWages.Text = "0";
             this.txtDayWages.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDayWages.TextChanged += new System.EventHandler(this.txtDayWages_TextChanged);
             // 
             // label5
             // 
@@ -619,6 +623,7 @@
             this.txtTotalFromEPFSalary.TabIndex = 12;
             this.txtTotalFromEPFSalary.Text = "0";
             this.txtTotalFromEPFSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalFromEPFSalary.TextChanged += new System.EventHandler(this.txtTotalFromEPFSalary_TextChanged);
             // 
             // label4
             // 
@@ -756,71 +761,6 @@
             this.gbxDepartmentDetails.TabStop = false;
             this.gbxDepartmentDetails.Text = "Department Details";
             // 
-            // gbxFilterBy
-            // 
-            this.gbxFilterBy.Controls.Add(this.chbUnFinished);
-            this.gbxFilterBy.Controls.Add(this.chbUnApproved);
-            this.gbxFilterBy.Controls.Add(this.chbFinished);
-            this.gbxFilterBy.Controls.Add(this.chbApproved);
-            this.gbxFilterBy.Location = new System.Drawing.Point(96, 126);
-            this.gbxFilterBy.Name = "gbxFilterBy";
-            this.gbxFilterBy.Size = new System.Drawing.Size(185, 62);
-            this.gbxFilterBy.TabIndex = 9;
-            this.gbxFilterBy.TabStop = false;
-            this.gbxFilterBy.Text = "Filter By";
-            // 
-            // chbUnFinished
-            // 
-            this.chbUnFinished.AutoSize = true;
-            this.chbUnFinished.Checked = true;
-            this.chbUnFinished.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbUnFinished.Location = new System.Drawing.Point(81, 18);
-            this.chbUnFinished.Name = "chbUnFinished";
-            this.chbUnFinished.Size = new System.Drawing.Size(82, 17);
-            this.chbUnFinished.TabIndex = 5;
-            this.chbUnFinished.Text = "Un Finished";
-            this.chbUnFinished.UseVisualStyleBackColor = true;
-            this.chbUnFinished.CheckedChanged += new System.EventHandler(this.chbUnFinished_CheckedChanged);
-            // 
-            // chbUnApproved
-            // 
-            this.chbUnApproved.AutoSize = true;
-            this.chbUnApproved.Checked = true;
-            this.chbUnApproved.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbUnApproved.Location = new System.Drawing.Point(81, 41);
-            this.chbUnApproved.Name = "chbUnApproved";
-            this.chbUnApproved.Size = new System.Drawing.Size(89, 17);
-            this.chbUnApproved.TabIndex = 7;
-            this.chbUnApproved.Text = "Un Approved";
-            this.chbUnApproved.UseVisualStyleBackColor = true;
-            this.chbUnApproved.CheckedChanged += new System.EventHandler(this.chbUnApproved_CheckedChanged);
-            // 
-            // chbFinished
-            // 
-            this.chbFinished.AutoSize = true;
-            this.chbFinished.Checked = true;
-            this.chbFinished.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbFinished.Location = new System.Drawing.Point(6, 18);
-            this.chbFinished.Name = "chbFinished";
-            this.chbFinished.Size = new System.Drawing.Size(65, 17);
-            this.chbFinished.TabIndex = 4;
-            this.chbFinished.Text = "Finished";
-            this.chbFinished.UseVisualStyleBackColor = true;
-            this.chbFinished.CheckedChanged += new System.EventHandler(this.chbFinished_CheckedChanged);
-            // 
-            // chbApproved
-            // 
-            this.chbApproved.AutoSize = true;
-            this.chbApproved.Checked = true;
-            this.chbApproved.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbApproved.Location = new System.Drawing.Point(6, 41);
-            this.chbApproved.Name = "chbApproved";
-            this.chbApproved.Size = new System.Drawing.Size(72, 17);
-            this.chbApproved.TabIndex = 6;
-            this.chbApproved.Text = "Approved";
-            this.chbApproved.UseVisualStyleBackColor = true;
-            this.chbApproved.CheckedChanged += new System.EventHandler(this.chbApproved_CheckedChanged);
-            // 
             // chbSearchFromSubDepartment
             // 
             this.chbSearchFromSubDepartment.AutoSize = true;
@@ -895,6 +835,71 @@
             this.lblWorkingBranch.Size = new System.Drawing.Size(84, 13);
             this.lblWorkingBranch.TabIndex = 10;
             this.lblWorkingBranch.Text = "Working Branch";
+            // 
+            // gbxFilterBy
+            // 
+            this.gbxFilterBy.Controls.Add(this.chbUnFinished);
+            this.gbxFilterBy.Controls.Add(this.chbUnApproved);
+            this.gbxFilterBy.Controls.Add(this.chbFinished);
+            this.gbxFilterBy.Controls.Add(this.chbApproved);
+            this.gbxFilterBy.Location = new System.Drawing.Point(96, 126);
+            this.gbxFilterBy.Name = "gbxFilterBy";
+            this.gbxFilterBy.Size = new System.Drawing.Size(185, 62);
+            this.gbxFilterBy.TabIndex = 9;
+            this.gbxFilterBy.TabStop = false;
+            this.gbxFilterBy.Text = "Filter By";
+            // 
+            // chbUnFinished
+            // 
+            this.chbUnFinished.AutoSize = true;
+            this.chbUnFinished.Checked = true;
+            this.chbUnFinished.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbUnFinished.Location = new System.Drawing.Point(81, 18);
+            this.chbUnFinished.Name = "chbUnFinished";
+            this.chbUnFinished.Size = new System.Drawing.Size(82, 17);
+            this.chbUnFinished.TabIndex = 5;
+            this.chbUnFinished.Text = "Un Finished";
+            this.chbUnFinished.UseVisualStyleBackColor = true;
+            this.chbUnFinished.CheckedChanged += new System.EventHandler(this.chbUnFinished_CheckedChanged);
+            // 
+            // chbUnApproved
+            // 
+            this.chbUnApproved.AutoSize = true;
+            this.chbUnApproved.Checked = true;
+            this.chbUnApproved.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbUnApproved.Location = new System.Drawing.Point(81, 41);
+            this.chbUnApproved.Name = "chbUnApproved";
+            this.chbUnApproved.Size = new System.Drawing.Size(89, 17);
+            this.chbUnApproved.TabIndex = 7;
+            this.chbUnApproved.Text = "Un Approved";
+            this.chbUnApproved.UseVisualStyleBackColor = true;
+            this.chbUnApproved.CheckedChanged += new System.EventHandler(this.chbUnApproved_CheckedChanged);
+            // 
+            // chbFinished
+            // 
+            this.chbFinished.AutoSize = true;
+            this.chbFinished.Checked = true;
+            this.chbFinished.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbFinished.Location = new System.Drawing.Point(6, 18);
+            this.chbFinished.Name = "chbFinished";
+            this.chbFinished.Size = new System.Drawing.Size(65, 17);
+            this.chbFinished.TabIndex = 4;
+            this.chbFinished.Text = "Finished";
+            this.chbFinished.UseVisualStyleBackColor = true;
+            this.chbFinished.CheckedChanged += new System.EventHandler(this.chbFinished_CheckedChanged);
+            // 
+            // chbApproved
+            // 
+            this.chbApproved.AutoSize = true;
+            this.chbApproved.Checked = true;
+            this.chbApproved.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbApproved.Location = new System.Drawing.Point(6, 41);
+            this.chbApproved.Name = "chbApproved";
+            this.chbApproved.Size = new System.Drawing.Size(72, 17);
+            this.chbApproved.TabIndex = 6;
+            this.chbApproved.Text = "Approved";
+            this.chbApproved.UseVisualStyleBackColor = true;
+            this.chbApproved.CheckedChanged += new System.EventHandler(this.chbApproved_CheckedChanged);
             // 
             // frmSalaryLoanRequest
             // 

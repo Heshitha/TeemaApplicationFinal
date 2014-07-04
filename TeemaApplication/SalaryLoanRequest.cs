@@ -277,5 +277,88 @@ namespace TeemaApplication
                 Utilities.ShowExceptionBox(ex.Message);
             }
         }
+
+        private void calculateInstallmentAmount()
+        {
+            try
+            {
+                double requestedAmount = Utilities.getDoubleValueFromTextBox(txtRequested_Amount);
+                double fromEPFSalary = Utilities.getDoubleValueFromTextBox(txtTotalFromEPFSalary);
+                double dayWages = Utilities.getDoubleValueFromTextBox(txtDayWages);
+                double fixedIncentive = Utilities.getDoubleValueFromTextBox(txtFixedIncentiveAllowance);
+
+                double totalDeduction = fromEPFSalary + dayWages + fixedIncentive;
+                double realNoOfInstallment = requestedAmount / totalDeduction;
+                int noOfInstallment = Convert.ToInt32(Math.Ceiling(realNoOfInstallment));
+
+                txtDeductionAmountinMonth.Text = totalDeduction.ToString("0.00");
+                txtNumber_of_Month.Text = noOfInstallment.ToString();
+            }
+            catch (Exception)
+            {
+                txtNumber_of_Month.Text = "0";
+            }
+        }
+
+        private void gdvLoanDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int tokenNo = Convert.ToInt32(gdvLoanDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Employee emp = db.Employees.Where(em => em.TokenNo == tokenNo).SingleOrDefault();
+
+                if (emp != null)
+                {
+                    txtEmployeeName.Text = emp.Name;
+                    txtDesignation.Text = emp.Designation.Designation1;
+                    txtNIC_No.Text = emp.NICNo;
+                    txtEPF_No.Text = emp.EPFNo;
+                    txtToken_No.Text = emp.TokenNo.ToString();
+
+                    if (!gdvLoanDetails.Rows[e.RowIndex].Cells[2].Value.ToString().Equals("No Loan Requested."))
+                    {
+                        int loanID = Convert.ToInt32(gdvLoanDetails.Rows[e.RowIndex].Cells[2].Value.ToString());
+                        SalaryLoan salLoan = emp.SalaryLoans.Where(sl => sl.SalaryLoanID == loanID).SingleOrDefault();
+
+                        txtCSLLoanID.Text = salLoan.SalaryLoanID.ToString();
+                        txtCSLRequestedAmount.Text = salLoan.RequestedAmount.Value.ToString("0.00");
+                        txtCSLStartingDate.Text = salLoan.RequestedDate.Value.ToString("dd-MM-yyyy");
+                        txtCSLEpfSalary.Text = salLoan.TotalFromEPFSalary.Value.ToString("0.00");
+                        txtCSLDayWages.Text = salLoan.DayWagesAmount.Value.ToString("0.00");
+                        txtCSLFixedIncentiveAllowance.Text = salLoan.FixedIncentiveAmount.Value.ToString("0.00");
+                        txtCSLInstallmentAmount.Text = (salLoan.TotalFromEPFSalary + salLoan.DayWagesAmount + salLoan.FixedIncentiveAmount).Value.ToString("0.00");
+                        txtCSLNumberOfMonths.Text = salLoan.NoOfInstallment.Value.ToString();
+                    }
+                    else
+                    {
+                        resetCSLTextBoxes();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void txtRequested_Amount_TextChanged(object sender, EventArgs e)
+        {
+            calculateInstallmentAmount();
+        }
+
+        private void txtTotalFromEPFSalary_TextChanged(object sender, EventArgs e)
+        {
+            calculateInstallmentAmount();
+        }
+
+        private void txtDayWages_TextChanged(object sender, EventArgs e)
+        {
+            calculateInstallmentAmount();
+        }
+
+        private void txtFixedIncentiveAllowance_TextChanged(object sender, EventArgs e)
+        {
+            calculateInstallmentAmount();
+        }
     }
 }
