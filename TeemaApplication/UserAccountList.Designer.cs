@@ -35,6 +35,7 @@
             this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnPriviledge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxUserAccountList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAccountList)).BeginInit();
             this.SuspendLayout();
@@ -83,36 +84,60 @@
             this.clmnUserID.DataPropertyName = "UserID";
             this.clmnUserID.HeaderText = "User ID";
             this.clmnUserID.Name = "clmnUserID";
+            this.clmnUserID.ReadOnly = true;
             // 
             // clmnName
             // 
             this.clmnName.DataPropertyName = "Name";
             this.clmnName.HeaderText = "Name";
             this.clmnName.Name = "clmnName";
+            this.clmnName.ReadOnly = true;
             // 
             // clmnUserName
             // 
             this.clmnUserName.DataPropertyName = "UserName";
             this.clmnUserName.HeaderText = "User Name";
             this.clmnUserName.Name = "clmnUserName";
+            this.clmnUserName.ReadOnly = true;
             // 
             // clmnPriviledge
             // 
             this.clmnPriviledge.DataPropertyName = "Priviledge";
             this.clmnPriviledge.HeaderText = "Priviledge";
             this.clmnPriviledge.Name = "clmnPriviledge";
+            this.clmnPriviledge.ReadOnly = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(509, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 29;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmUserAccountList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 391);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbxUserAccountList);
             this.Controls.Add(this.lblFormTopic);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUserAccountList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Account List";
             this.Load += new System.EventHandler(this.frmUserAccountList_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUserAccountList_MouseDown);
             this.gbxUserAccountList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserAccountList)).EndInit();
             this.ResumeLayout(false);
@@ -129,5 +154,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnPriviledge;
+        private System.Windows.Forms.Button btnClose;
     }
 }

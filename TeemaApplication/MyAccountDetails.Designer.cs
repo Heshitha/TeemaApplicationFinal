@@ -196,6 +196,7 @@
             this.Controls.Add(this.lblFormTopic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMyAccountDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Account Details";
             this.Load += new System.EventHandler(this.frmMyAccountDetails_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMyAccountDetails_MouseDown);

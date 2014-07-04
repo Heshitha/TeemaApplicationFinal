@@ -31,12 +31,13 @@
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.gbxAccountDetails = new System.Windows.Forms.GroupBox();
+            this.cmbPriviledge = new System.Windows.Forms.ComboBox();
+            this.lblPriviledge = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.lblPriviledge = new System.Windows.Forms.Label();
-            this.cmbPriviledge = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxAccountDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,28 @@
             this.gbxAccountDetails.TabIndex = 15;
             this.gbxAccountDetails.TabStop = false;
             // 
+            // cmbPriviledge
+            // 
+            this.cmbPriviledge.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPriviledge.FormattingEnabled = true;
+            this.cmbPriviledge.Items.AddRange(new object[] {
+            "View Only",
+            "View And Insert Only",
+            "View, Insert And Edit"});
+            this.cmbPriviledge.Location = new System.Drawing.Point(103, 71);
+            this.cmbPriviledge.Name = "cmbPriviledge";
+            this.cmbPriviledge.Size = new System.Drawing.Size(151, 21);
+            this.cmbPriviledge.TabIndex = 8;
+            // 
+            // lblPriviledge
+            // 
+            this.lblPriviledge.AutoSize = true;
+            this.lblPriviledge.Location = new System.Drawing.Point(6, 74);
+            this.lblPriviledge.Name = "lblPriviledge";
+            this.lblPriviledge.Size = new System.Drawing.Size(53, 13);
+            this.lblPriviledge.TabIndex = 7;
+            this.lblPriviledge.Text = "Priviledge";
+            // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
@@ -106,39 +129,37 @@
             this.txtName.Size = new System.Drawing.Size(151, 20);
             this.txtName.TabIndex = 2;
             // 
-            // lblPriviledge
+            // btnClose
             // 
-            this.lblPriviledge.AutoSize = true;
-            this.lblPriviledge.Location = new System.Drawing.Point(6, 74);
-            this.lblPriviledge.Name = "lblPriviledge";
-            this.lblPriviledge.Size = new System.Drawing.Size(53, 13);
-            this.lblPriviledge.TabIndex = 7;
-            this.lblPriviledge.Text = "Priviledge";
-            // 
-            // cmbPriviledge
-            // 
-            this.cmbPriviledge.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPriviledge.FormattingEnabled = true;
-            this.cmbPriviledge.Items.AddRange(new object[] {
-            "View Only",
-            "View And Insert Only",
-            "View, Insert And Edit"});
-            this.cmbPriviledge.Location = new System.Drawing.Point(103, 71);
-            this.cmbPriviledge.Name = "cmbPriviledge";
-            this.cmbPriviledge.Size = new System.Drawing.Size(151, 21);
-            this.cmbPriviledge.TabIndex = 8;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(242, 7);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 42;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 182);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gbxAccountDetails);
             this.Controls.Add(this.lblFormTopic);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCreateAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Account";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCreateAccount_MouseDown);
             this.gbxAccountDetails.ResumeLayout(false);
             this.gbxAccountDetails.PerformLayout();
             this.ResumeLayout(false);
@@ -157,5 +178,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblPriviledge;
         private System.Windows.Forms.ComboBox cmbPriviledge;
+        private System.Windows.Forms.Button btnClose;
     }
 }
