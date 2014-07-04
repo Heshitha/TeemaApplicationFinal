@@ -95,6 +95,7 @@
             this.clmnW_loan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnBankSaving = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnMedical_Ins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnBankLoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnMisc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnAddDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -253,6 +254,7 @@
             this.btnUpsate.TabIndex = 42;
             this.btnUpsate.Text = "Update";
             this.btnUpsate.UseVisualStyleBackColor = true;
+            this.btnUpsate.Click += new System.EventHandler(this.btnUpsate_Click);
             // 
             // gdvDeduction
             // 
@@ -270,14 +272,19 @@
             this.clmnW_loan,
             this.clmnBankSaving,
             this.clmnMedical_Ins,
+            this.clmnBankLoan,
             this.clmnMisc,
             this.clmnAddDeduction,
             this.clmnTotal});
+            this.gdvDeduction.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gdvDeduction.Location = new System.Drawing.Point(305, 260);
             this.gdvDeduction.Name = "gdvDeduction";
+            this.gdvDeduction.ReadOnly = true;
             this.gdvDeduction.RowHeadersVisible = false;
+            this.gdvDeduction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gdvDeduction.Size = new System.Drawing.Size(570, 276);
             this.gdvDeduction.TabIndex = 40;
+            this.gdvDeduction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvDeduction_CellClick);
             // 
             // gbxDeduction
             // 
@@ -316,8 +323,11 @@
             // 
             this.txtTotal.Location = new System.Drawing.Point(385, 149);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(176, 20);
             this.txtTotal.TabIndex = 30;
+            this.txtTotal.Text = "0";
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -334,6 +344,9 @@
             this.txtAddDeduction.Name = "txtAddDeduction";
             this.txtAddDeduction.Size = new System.Drawing.Size(176, 20);
             this.txtAddDeduction.TabIndex = 28;
+            this.txtAddDeduction.Text = "0";
+            this.txtAddDeduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAddDeduction.Leave += new System.EventHandler(this.txtAddDeduction_Leave);
             // 
             // label14
             // 
@@ -350,6 +363,9 @@
             this.txtMisc.Name = "txtMisc";
             this.txtMisc.Size = new System.Drawing.Size(176, 20);
             this.txtMisc.TabIndex = 26;
+            this.txtMisc.Text = "0";
+            this.txtMisc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMisc.Leave += new System.EventHandler(this.txtMisc_Leave);
             // 
             // label13
             // 
@@ -366,6 +382,9 @@
             this.txtBankLoan.Name = "txtBankLoan";
             this.txtBankLoan.Size = new System.Drawing.Size(176, 20);
             this.txtBankLoan.TabIndex = 24;
+            this.txtBankLoan.Text = "0";
+            this.txtBankLoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBankLoan.Leave += new System.EventHandler(this.txtBankLoan_Leave);
             // 
             // label12
             // 
@@ -382,6 +401,9 @@
             this.txtMedical_Ins.Name = "txtMedical_Ins";
             this.txtMedical_Ins.Size = new System.Drawing.Size(176, 20);
             this.txtMedical_Ins.TabIndex = 22;
+            this.txtMedical_Ins.Text = "0";
+            this.txtMedical_Ins.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMedical_Ins.Leave += new System.EventHandler(this.txtMedical_Ins_Leave);
             // 
             // label11
             // 
@@ -398,6 +420,9 @@
             this.txtW_loan.Name = "txtW_loan";
             this.txtW_loan.Size = new System.Drawing.Size(176, 20);
             this.txtW_loan.TabIndex = 12;
+            this.txtW_loan.Text = "0";
+            this.txtW_loan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtW_loan.Leave += new System.EventHandler(this.txtW_loan_Leave);
             // 
             // txtWelfareCon
             // 
@@ -405,6 +430,9 @@
             this.txtWelfareCon.Name = "txtWelfareCon";
             this.txtWelfareCon.Size = new System.Drawing.Size(176, 20);
             this.txtWelfareCon.TabIndex = 20;
+            this.txtWelfareCon.Text = "0";
+            this.txtWelfareCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtWelfareCon.Leave += new System.EventHandler(this.txtWelfareCon_Leave);
             // 
             // label10
             // 
@@ -430,6 +458,9 @@
             this.txtBankSaving.Name = "txtBankSaving";
             this.txtBankSaving.Size = new System.Drawing.Size(176, 20);
             this.txtBankSaving.TabIndex = 18;
+            this.txtBankSaving.Text = "0";
+            this.txtBankSaving.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBankSaving.Leave += new System.EventHandler(this.txtBankSaving_Leave);
             // 
             // label8
             // 
@@ -446,6 +477,9 @@
             this.txtWelfareShop.Name = "txtWelfareShop";
             this.txtWelfareShop.Size = new System.Drawing.Size(176, 20);
             this.txtWelfareShop.TabIndex = 16;
+            this.txtWelfareShop.Text = "0";
+            this.txtWelfareShop.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtWelfareShop.Leave += new System.EventHandler(this.txtWelfareShop_Leave);
             // 
             // label5
             // 
@@ -462,6 +496,9 @@
             this.txtMeals.Name = "txtMeals";
             this.txtMeals.Size = new System.Drawing.Size(176, 20);
             this.txtMeals.TabIndex = 14;
+            this.txtMeals.Text = "0";
+            this.txtMeals.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMeals.Leave += new System.EventHandler(this.txtMeals_Leave);
             // 
             // label4
             // 
@@ -478,6 +515,9 @@
             this.txtStamp_Duty.Name = "txtStamp_Duty";
             this.txtStamp_Duty.Size = new System.Drawing.Size(176, 20);
             this.txtStamp_Duty.TabIndex = 12;
+            this.txtStamp_Duty.Text = "0";
+            this.txtStamp_Duty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStamp_Duty.Leave += new System.EventHandler(this.txtStamp_Duty_Leave);
             // 
             // txtStampDuty
             // 
@@ -494,6 +534,9 @@
             this.txtPayee.Name = "txtPayee";
             this.txtPayee.Size = new System.Drawing.Size(176, 20);
             this.txtPayee.TabIndex = 10;
+            this.txtPayee.Text = "0";
+            this.txtPayee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPayee.Leave += new System.EventHandler(this.txtPayee_Leave);
             // 
             // label1
             // 
@@ -704,78 +747,98 @@
             this.clmnTokenNo.DataPropertyName = "TokenNo";
             this.clmnTokenNo.HeaderText = "Token No";
             this.clmnTokenNo.Name = "clmnTokenNo";
+            this.clmnTokenNo.ReadOnly = true;
             // 
             // clmnEmployeeName
             // 
             this.clmnEmployeeName.DataPropertyName = "Name";
             this.clmnEmployeeName.HeaderText = "Employee Name";
             this.clmnEmployeeName.Name = "clmnEmployeeName";
+            this.clmnEmployeeName.ReadOnly = true;
             // 
             // clmnPayee
             // 
             this.clmnPayee.DataPropertyName = "Payee";
             this.clmnPayee.HeaderText = "Payee";
             this.clmnPayee.Name = "clmnPayee";
+            this.clmnPayee.ReadOnly = true;
             // 
             // clmnStampDuty
             // 
             this.clmnStampDuty.DataPropertyName = "StampDuty";
             this.clmnStampDuty.HeaderText = "Stamp Duty";
             this.clmnStampDuty.Name = "clmnStampDuty";
+            this.clmnStampDuty.ReadOnly = true;
             // 
             // clmnMeals
             // 
             this.clmnMeals.DataPropertyName = "Meals";
             this.clmnMeals.HeaderText = "Meals";
             this.clmnMeals.Name = "clmnMeals";
+            this.clmnMeals.ReadOnly = true;
             // 
             // clmnWelfareShop
             // 
             this.clmnWelfareShop.DataPropertyName = "WelfareShop";
             this.clmnWelfareShop.HeaderText = "Welfare Shop";
             this.clmnWelfareShop.Name = "clmnWelfareShop";
+            this.clmnWelfareShop.ReadOnly = true;
             // 
             // clmnWelfareCon
             // 
             this.clmnWelfareCon.DataPropertyName = "WelfareContribution";
             this.clmnWelfareCon.HeaderText = "Welfare Con.";
             this.clmnWelfareCon.Name = "clmnWelfareCon";
+            this.clmnWelfareCon.ReadOnly = true;
             // 
             // clmnW_loan
             // 
             this.clmnW_loan.DataPropertyName = "WelfareLoan";
             this.clmnW_loan.HeaderText = "W/ loan";
             this.clmnW_loan.Name = "clmnW_loan";
+            this.clmnW_loan.ReadOnly = true;
             // 
             // clmnBankSaving
             // 
             this.clmnBankSaving.DataPropertyName = "BankSaving";
             this.clmnBankSaving.HeaderText = "Bank Saving";
             this.clmnBankSaving.Name = "clmnBankSaving";
+            this.clmnBankSaving.ReadOnly = true;
             // 
             // clmnMedical_Ins
             // 
             this.clmnMedical_Ins.DataPropertyName = "MedicalInsurance";
             this.clmnMedical_Ins.HeaderText = "Medical Ins";
             this.clmnMedical_Ins.Name = "clmnMedical_Ins";
+            this.clmnMedical_Ins.ReadOnly = true;
+            // 
+            // clmnBankLoan
+            // 
+            this.clmnBankLoan.DataPropertyName = "BankLoan";
+            this.clmnBankLoan.HeaderText = "Bank Loan";
+            this.clmnBankLoan.Name = "clmnBankLoan";
+            this.clmnBankLoan.ReadOnly = true;
             // 
             // clmnMisc
             // 
             this.clmnMisc.DataPropertyName = "Misc";
             this.clmnMisc.HeaderText = "Misc";
             this.clmnMisc.Name = "clmnMisc";
+            this.clmnMisc.ReadOnly = true;
             // 
             // clmnAddDeduction
             // 
             this.clmnAddDeduction.DataPropertyName = "AddDeduction";
             this.clmnAddDeduction.HeaderText = "Add Deduction";
             this.clmnAddDeduction.Name = "clmnAddDeduction";
+            this.clmnAddDeduction.ReadOnly = true;
             // 
             // clmnTotal
             // 
             this.clmnTotal.DataPropertyName = "Total";
             this.clmnTotal.HeaderText = "Total";
             this.clmnTotal.Name = "clmnTotal";
+            this.clmnTotal.ReadOnly = true;
             // 
             // frmDeduction
             // 
@@ -882,6 +945,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnW_loan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnBankSaving;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnMedical_Ins;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnBankLoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnMisc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnAddDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTotal;
