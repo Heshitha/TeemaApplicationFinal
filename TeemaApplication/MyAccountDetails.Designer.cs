@@ -41,6 +41,7 @@
             this.lblUserID = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxAccountDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,18 +168,37 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(242, 7);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmMyAccountDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 234);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gbxAccountDetails);
             this.Controls.Add(this.lblFormTopic);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMyAccountDetails";
             this.Text = "My Account Details";
             this.Load += new System.EventHandler(this.frmMyAccountDetails_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMyAccountDetails_MouseDown);
             this.gbxAccountDetails.ResumeLayout(false);
             this.gbxAccountDetails.PerformLayout();
             this.ResumeLayout(false);
@@ -201,5 +221,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
     }
 }

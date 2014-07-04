@@ -265,6 +265,7 @@
             this.Name = "ApproveSalaryAdvance";
             this.Text = "ApproveSalaryAdvance";
             this.Load += new System.EventHandler(this.ApproveSalaryAdvance_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ApproveSalaryAdvance_MouseDown);
             this.gbxDepartmentDetails.ResumeLayout(false);
             this.gbxDepartmentDetails.PerformLayout();
             this.groupBox1.ResumeLayout(false);

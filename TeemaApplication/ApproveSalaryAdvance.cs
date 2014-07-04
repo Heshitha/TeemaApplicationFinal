@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -164,6 +165,15 @@ namespace TeemaApplication
                 fillcmbFormNo();
             }
             
+        }
+
+        private void ApproveSalaryAdvance_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
        
