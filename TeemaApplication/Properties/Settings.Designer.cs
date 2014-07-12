@@ -26,8 +26,8 @@ namespace TeemaApplication.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HESHITHA-PC;Initial Catalog=TeemaFinalDB;Persist Security Info=True;U" +
-            "ser ID=TeemaApplication;Password=teema")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.50;Initial Catalog=TeemaFinalDB;Persist Security Info=True;" +
+            "User ID=TeemaApplication;Password=teema")]
         public string TeemaFinalDBConnectionString {
             get {
                 return ((string)(this["TeemaFinalDBConnectionString"]));

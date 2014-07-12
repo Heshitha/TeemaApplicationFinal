@@ -64,8 +64,10 @@
             this.salaryLoanRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryLoanApproveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.deductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.basicSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generatedSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +84,8 @@
             this.leaveToolStripMenuItem,
             this.dayOffToolStripMenuItem,
             this.salaryLoanToolStripMenuItem,
-            this.deductionToolStripMenuItem});
+            this.deductionToolStripMenuItem,
+            this.basicSalaryToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1216, 24);
@@ -358,6 +361,21 @@
             this.deductionToolStripMenuItem.Text = "Deduction";
             this.deductionToolStripMenuItem.Click += new System.EventHandler(this.deductionToolStripMenuItem_Click);
             // 
+            // basicSalaryToolStripMenuItem
+            // 
+            this.basicSalaryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generatedSalaryToolStripMenuItem});
+            this.basicSalaryToolStripMenuItem.Name = "basicSalaryToolStripMenuItem";
+            this.basicSalaryToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.basicSalaryToolStripMenuItem.Text = "Basic Salary";
+            // 
+            // generatedSalaryToolStripMenuItem
+            // 
+            this.generatedSalaryToolStripMenuItem.Name = "generatedSalaryToolStripMenuItem";
+            this.generatedSalaryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.generatedSalaryToolStripMenuItem.Text = "Generated Salary";
+            this.generatedSalaryToolStripMenuItem.Click += new System.EventHandler(this.generatedSalaryToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +434,8 @@
         private System.Windows.Forms.ToolStripMenuItem salaryLoanApproveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loanInstallmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deductionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem basicSalaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generatedSalaryToolStripMenuItem;
     }
 }
 
