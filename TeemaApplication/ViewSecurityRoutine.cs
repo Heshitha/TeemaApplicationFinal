@@ -55,7 +55,7 @@ namespace TeemaApplication
             DateTime endingDate = new DateTime(dt02.Year, dt02.Month, dt02.Day, 23, 59, 59);
 
             var records = from x in db.EmployeeAttendances
-                          where x.Employee.Department.Branch == branch && x.DateAndTime >= startingDate && x.DateAndTime <= endingDate && (x.Mode == "Duty On" || x.Mode == "Duty Off") && x.Employee.Designation.Designation1.ToLower().Contains("security")
+                          where x.Employee.Department.Branch == branch && x.DateAndTime >= startingDate && x.DateAndTime <= endingDate && (x.Mode == "Go Out On" || x.Mode == "Go Out Off") && x.Employee.Designation.Designation1.ToLower().Contains("security")
                           select new
                           {
                               TokenNo = x.Employee.TokenNo,
@@ -92,7 +92,7 @@ namespace TeemaApplication
             DateTime endingDate = new DateTime(dt02.Year, dt02.Month, dt02.Day, 23, 59, 59);
 
             var records = from x in db.EmployeeAttendances
-                          where x.Employee.Department.Branch == branch && x.DateAndTime >= startingDate && x.DateAndTime <= endingDate && (x.Mode == "Duty On" || x.Mode == "Duty Off") && x.Employee.Designation.Designation1.ToLower().Contains("security")
+                          where x.Employee.Department.Branch == branch && x.DateAndTime >= startingDate && x.DateAndTime <= endingDate && (x.Mode == "Go Out On" || x.Mode == "Go Out Off") && x.Employee.Designation.Designation1.ToLower().Contains("security")
                           select new
                           {
                               TokenNo = x.Employee.TokenNo,

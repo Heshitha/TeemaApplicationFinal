@@ -109,28 +109,41 @@ namespace TeemaApplication
                 dt.Columns.Add("DIN");
                 dt.Columns.Add("VerifyMode");
 
+                List<int> lstInt = new List<int>();
+
                 foreach (Record r in lstRec)
                 {
+                    if (!lstInt.Contains(r.VerifyMode) && r.DIN == 9999)
+                    {
+                        lstInt.Add(r.VerifyMode);
+                    }
+
                     string mode = string.Empty;
                     switch (r.VerifyMode)
                     {
-                        case 1025:
+                        case 46:
                             mode = "In";
                             break;
-                        case 1281:
+                        case 47:
                             mode = "Out";
                             break;
-                        case 1:
+                        case 15:
                             mode = "Duty On";
                             break;
-                        case 257:
+                        case 23:
                             mode = "Duty Off";
                             break;
-                        case 513:
+                        case 24:
                             mode = "Overtime On";
                             break;
-                        case 769:
+                        case 25:
                             mode = "Overtime Off";
+                            break;
+                        case 27:
+                            mode = "Go Out On";
+                            break;
+                        case 26:
+                            mode = "Go Out Off";
                             break;
                         default:
                             mode = "Default Mode";
@@ -177,23 +190,29 @@ namespace TeemaApplication
                     string mode = string.Empty;
                     switch (rec.VerifyMode)
                     {
-                        case 1025:
+                        case 46:
                             mode = "In";
                             break;
-                        case 1281:
+                        case 47:
                             mode = "Out";
                             break;
-                        case 1:
+                        case 15:
                             mode = "Duty On";
                             break;
-                        case 257:
+                        case 23:
                             mode = "Duty Off";
                             break;
-                        case 513:
+                        case 24:
                             mode = "Overtime On";
                             break;
-                        case 769:
+                        case 25:
                             mode = "Overtime Off";
+                            break;
+                        case 27:
+                            mode = "Go Out On";
+                            break;
+                        case 26:
+                            mode = "Go Out Off";
                             break;
                         default:
                             mode = "Default Mode";
