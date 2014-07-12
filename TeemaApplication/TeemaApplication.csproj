@@ -162,6 +162,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\EmployeeAttendanceDataSet.cs">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\EmployeeAttendanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\EmployeeDataSet.cs">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -189,6 +198,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\MonthlyAttendanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\OvertimeReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -336,6 +350,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\BasicSalaryReport.cs">
       <AutoGen>True</AutoGen>
@@ -355,6 +370,12 @@
       <DependentUpon>DeductionReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\EmployeeAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeAttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\EmployeeReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,6 +392,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveApplyForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyAttendanceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\OverTimeRequestForm.cs">
@@ -539,6 +566,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeductionReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmployeeAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeAttendanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeReport.cs</LastGenOutput>
@@ -550,6 +581,10 @@
     <EmbeddedResource Include="Reports\LeaveApplyForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LeaveApplyForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonthlyAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyAttendanceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\OverTimeRequestForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -634,6 +669,17 @@
     <None Include="Datasets\DeductionDetailsDataSet.xss">
       <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xsc">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeAttendanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xss">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\EmployeeDataSet.xsc">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </None>
@@ -677,6 +723,17 @@
     </None>
     <None Include="Datasets\LeaveReportsDataSet.xss">
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xsc">
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthlyAttendanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xss">
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xsc">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>

@@ -16,14 +16,14 @@ namespace TeemaApplication.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class AttendanceReport : ReportClass {
+    public class MonthlyAttendanceReport : ReportClass {
         
-        public AttendanceReport() {
+        public MonthlyAttendanceReport() {
         }
         
         public override string ResourceName {
             get {
-                return "AttendanceReport.rpt";
+                return "MonthlyAttendanceReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TeemaApplication.Reports {
         
         public override string FullResourceName {
             get {
-                return "TeemaApplication.Reports.AttendanceReport.rpt";
+                return "TeemaApplication.Reports.MonthlyAttendanceReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace TeemaApplication.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedAttendanceReport : Component, ICachedReport {
+    public class CachedMonthlyAttendanceReport : Component, ICachedReport {
         
-        public CachedAttendanceReport() {
+        public CachedMonthlyAttendanceReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace TeemaApplication.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            AttendanceReport rpt = new AttendanceReport();
+            MonthlyAttendanceReport rpt = new MonthlyAttendanceReport();
             rpt.Site = this.Site;
             return rpt;
         }
