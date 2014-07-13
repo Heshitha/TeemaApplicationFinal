@@ -157,6 +157,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DayWagesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DeductionDetailsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,6 +258,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TeemaDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\VariableIncentiveDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DayOffApply.cs">
       <SubType>Form</SubType>
@@ -362,6 +372,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DayOffApprvealReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DayWagesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayWagesReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\DeductionReport.cs">
@@ -562,6 +578,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DayOffApprvealReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DayWagesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DayWagesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\DeductionReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeductionReport.cs</LastGenOutput>
@@ -657,6 +677,17 @@
     </None>
     <None Include="Datasets\DayOffApprvealDataSet.xss">
       <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DayWagesDataSet.xsc">
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DayWagesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DayWagesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DayWagesDataSet.xss">
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\DeductionDetailsDataSet.xsc">
       <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
@@ -841,6 +872,17 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TeemaDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xsc">
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VariableIncentiveDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xss">
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
