@@ -64,8 +64,9 @@
             this.salaryLoanRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryLoanApproveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.deductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.viewAttendanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,7 +226,8 @@
             // 
             this.fingerPrintDevicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewFingerPrintDevicesToolStripMenuItem,
-            this.loadAttendanceDetailsToolStripMenuItem});
+            this.loadAttendanceDetailsToolStripMenuItem,
+            this.viewAttendanceReportToolStripMenuItem});
             this.fingerPrintDevicesToolStripMenuItem.Name = "fingerPrintDevicesToolStripMenuItem";
             this.fingerPrintDevicesToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.fingerPrintDevicesToolStripMenuItem.Text = "Finger Print Devices";
@@ -358,6 +360,13 @@
             this.deductionToolStripMenuItem.Text = "Deduction";
             this.deductionToolStripMenuItem.Click += new System.EventHandler(this.deductionToolStripMenuItem_Click);
             // 
+            // viewAttendanceReportToolStripMenuItem
+            // 
+            this.viewAttendanceReportToolStripMenuItem.Name = "viewAttendanceReportToolStripMenuItem";
+            this.viewAttendanceReportToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.viewAttendanceReportToolStripMenuItem.Text = "View Attendance Report";
+            this.viewAttendanceReportToolStripMenuItem.Click += new System.EventHandler(this.viewAttendanceReportToolStripMenuItem_Click);
+            // 
             // frmTeemaApplicationMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +425,7 @@
         private System.Windows.Forms.ToolStripMenuItem salaryLoanApproveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loanInstallmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deductionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewAttendanceReportToolStripMenuItem;
     }
 }
 

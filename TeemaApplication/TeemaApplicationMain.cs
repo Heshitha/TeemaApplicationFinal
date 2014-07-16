@@ -318,5 +318,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void viewAttendanceReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAttendanceReport frm = new frmAttendanceReport();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
