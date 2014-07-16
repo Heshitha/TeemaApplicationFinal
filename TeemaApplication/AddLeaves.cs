@@ -34,6 +34,7 @@ namespace TeemaApplication
         private void frmAddLeaves_Load(object sender, EventArgs e)
         {
             cmbLeaveYear.SelectedIndex = cmbLeaveYear.Items.IndexOf(DateTime.Today.Year.ToString());
+            
             Utilities.fillBranchComboBox(db, cmbWorkingBranch);
         }
 

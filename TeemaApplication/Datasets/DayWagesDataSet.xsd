@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DayWagesDataSet" targetNamespace="http://tempuri.org/DayWagesDataSet.xsd" xmlns:mstns="http://tempuri.org/DayWagesDataSet.xsd" xmlns="http://tempuri.org/DayWagesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DayWagesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DayWagesDataSet" msprop:Generator_UserDSName="DayWagesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DayWagesDetails" msprop:Generator_TableClassName="DayWagesDetailsDataTable" msprop:Generator_TableVarName="tableDayWagesDetails" msprop:Generator_TablePropName="DayWagesDetails" msprop:Generator_RowDeletingName="DayWagesDetailsRowDeleting" msprop:Generator_RowChangingName="DayWagesDetailsRowChanging" msprop:Generator_RowEvHandlerName="DayWagesDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DayWagesDetailsRowDeleted" msprop:Generator_UserTableName="DayWagesDetails" msprop:Generator_RowChangedName="DayWagesDetailsRowChanged" msprop:Generator_RowEvArgName="DayWagesDetailsRowChangeEvent" msprop:Generator_RowClassName="DayWagesDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:int" minOccurs="0" />
+              <xs:element name="SalaryFrom" msprop:Generator_ColumnVarNameInTable="columnSalaryFrom" msprop:Generator_ColumnPropNameInRow="SalaryFrom" msprop:Generator_ColumnPropNameInTable="SalaryFromColumn" msprop:Generator_UserColumnName="SalaryFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SalaryTo" msprop:Generator_ColumnVarNameInTable="columnSalaryTo" msprop:Generator_ColumnPropNameInRow="SalaryTo" msprop:Generator_ColumnPropNameInTable="SalaryToColumn" msprop:Generator_UserColumnName="SalaryTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SalaryPeriod" msprop:Generator_ColumnVarNameInTable="columnSalaryPeriod" msprop:Generator_ColumnPropNameInRow="SalaryPeriod" msprop:Generator_ColumnPropNameInTable="SalaryPeriodColumn" msprop:Generator_UserColumnName="SalaryPeriod" type="xs:double" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" type="xs:string" minOccurs="0" />
+              <xs:element name="SubDepartment" msprop:Generator_ColumnVarNameInTable="columnSubDepartment" msprop:Generator_ColumnPropNameInRow="SubDepartment" msprop:Generator_ColumnPropNameInTable="SubDepartmentColumn" msprop:Generator_UserColumnName="SubDepartment" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateBy" msprop:Generator_ColumnVarNameInTable="columnCreateBy" msprop:Generator_ColumnPropNameInRow="CreateBy" msprop:Generator_ColumnPropNameInTable="CreateByColumn" msprop:Generator_UserColumnName="CreateBy" type="xs:string" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ModifiedDate" msprop:Generator_ColumnVarNameInTable="columnModifiedDate" msprop:Generator_ColumnPropNameInRow="ModifiedDate" msprop:Generator_ColumnPropNameInTable="ModifiedDateColumn" msprop:Generator_UserColumnName="ModifiedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApprovedBy" msprop:Generator_ColumnVarNameInTable="columnApprovedBy" msprop:Generator_ColumnPropNameInRow="ApprovedBy" msprop:Generator_ColumnPropNameInTable="ApprovedByColumn" msprop:Generator_UserColumnName="ApprovedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="ApprovedDate" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DayWagesEmployeeDetails" msprop:Generator_TableClassName="DayWagesEmployeeDetailsDataTable" msprop:Generator_TableVarName="tableDayWagesEmployeeDetails" msprop:Generator_TablePropName="DayWagesEmployeeDetails" msprop:Generator_RowDeletingName="DayWagesEmployeeDetailsRowDeleting" msprop:Generator_RowChangingName="DayWagesEmployeeDetailsRowChanging" msprop:Generator_RowEvHandlerName="DayWagesEmployeeDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DayWagesEmployeeDetailsRowDeleted" msprop:Generator_UserTableName="DayWagesEmployeeDetails" msprop:Generator_RowChangedName="DayWagesEmployeeDetailsRowChanged" msprop:Generator_RowEvArgName="DayWagesEmployeeDetailsRowChangeEvent" msprop:Generator_RowClassName="DayWagesEmployeeDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:int" minOccurs="0" />
+              <xs:element name="TokenNo" msprop:Generator_ColumnVarNameInTable="columnTokenNo" msprop:Generator_ColumnPropNameInRow="TokenNo" msprop:Generator_ColumnPropNameInTable="TokenNoColumn" msprop:Generator_UserColumnName="TokenNo" type="xs:int" minOccurs="0" />
+              <xs:element name="EPFNo" msprop:Generator_ColumnVarNameInTable="columnEPFNo" msprop:Generator_ColumnPropNameInRow="EPFNo" msprop:Generator_ColumnPropNameInTable="EPFNoColumn" msprop:Generator_UserColumnName="EPFNo" type="xs:int" minOccurs="0" />
+              <xs:element name="EmployeeName" msprop:Generator_ColumnVarNameInTable="columnEmployeeName" msprop:Generator_ColumnPropNameInRow="EmployeeName" msprop:Generator_ColumnPropNameInTable="EmployeeNameColumn" msprop:Generator_UserColumnName="EmployeeName" type="xs:string" minOccurs="0" />
+              <xs:element name="Designation" msprop:Generator_ColumnVarNameInTable="columnDesignation" msprop:Generator_ColumnPropNameInRow="Designation" msprop:Generator_ColumnPropNameInTable="DesignationColumn" msprop:Generator_UserColumnName="Designation" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeeCategory" msprop:Generator_ColumnVarNameInTable="columnEmployeeCategory" msprop:Generator_ColumnPropNameInRow="EmployeeCategory" msprop:Generator_ColumnPropNameInTable="EmployeeCategoryColumn" msprop:Generator_UserColumnName="EmployeeCategory" type="xs:string" minOccurs="0" />
+              <xs:element name="EmployeeGrade" msprop:Generator_ColumnVarNameInTable="columnEmployeeGrade" msprop:Generator_ColumnPropNameInRow="EmployeeGrade" msprop:Generator_ColumnPropNameInTable="EmployeeGradeColumn" msprop:Generator_UserColumnName="EmployeeGrade" type="xs:string" minOccurs="0" />
+              <xs:element name="DayWagesAmount" msprop:Generator_ColumnVarNameInTable="columnDayWagesAmount" msprop:Generator_ColumnPropNameInRow="DayWagesAmount" msprop:Generator_ColumnPropNameInTable="DayWagesAmountColumn" msprop:Generator_UserColumnName="DayWagesAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="NumberOfDayWages" msprop:Generator_ColumnVarNameInTable="columnNumberOfDayWages" msprop:Generator_ColumnPropNameInRow="NumberOfDayWages" msprop:Generator_ColumnPropNameInTable="NumberOfDayWagesColumn" msprop:Generator_UserColumnName="NumberOfDayWages" type="xs:double" minOccurs="0" />
+              <xs:element name="EPF_x002F_ETF_FixedAmount" msprop:Generator_ColumnVarNameInTable="_columnEPF_ETF_FixedAmount" msprop:Generator_ColumnPropNameInRow="_EPF_ETF_FixedAmount" msprop:Generator_ColumnPropNameInTable="_EPF_ETF_FixedAmountColumn" msprop:Generator_UserColumnName="EPF/ETF_FixedAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="EPF_x002F_ETF_PayAmount" msprop:Generator_ColumnVarNameInTable="_columnEPF_ETF_PayAmount" msprop:Generator_ColumnPropNameInRow="_EPF_ETF_PayAmount" msprop:Generator_ColumnPropNameInTable="_EPF_ETF_PayAmountColumn" msprop:Generator_UserColumnName="EPF/ETF_PayAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="EPF_8" msprop:Generator_ColumnVarNameInTable="columnEPF_8" msprop:Generator_ColumnPropNameInRow="EPF_8" msprop:Generator_ColumnPropNameInTable="EPF_8Column" msprop:Generator_UserColumnName="EPF_8" type="xs:double" minOccurs="0" />
+              <xs:element name="EPF_12" msprop:Generator_ColumnVarNameInTable="columnEPF_12" msprop:Generator_ColumnPropNameInRow="EPF_12" msprop:Generator_ColumnPropNameInTable="EPF_12Column" msprop:Generator_UserColumnName="EPF_12" type="xs:double" minOccurs="0" />
+              <xs:element name="ETF_3" msprop:Generator_ColumnVarNameInTable="columnETF_3" msprop:Generator_ColumnPropNameInRow="ETF_3" msprop:Generator_ColumnPropNameInTable="ETF_3Column" msprop:Generator_UserColumnName="ETF_3" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

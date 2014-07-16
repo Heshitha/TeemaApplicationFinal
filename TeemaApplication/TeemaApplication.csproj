@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\new\</PublishUrl>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,6 +24,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>1</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -49,6 +53,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ADEA0821F3746D56D0A9C3A8BBF672DE943FA6E0</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>53814C941DD0B3F04F2F6D58BD418F76A681156B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>3AD6669FAEEE52C1E70CB2F75D7CC69EFD68F2B5</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>TeemaApplication_TemporaryKey.pfx</ManifestKeyFile>
@@ -164,6 +170,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DayWagesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DeductionDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\EmployeeAttendanceDataSet.cs">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\EmployeeAttendanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\EmployeeDataSet.cs">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -178,10 +203,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FixedIncentiveDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\GenerateSalaryDataSet.cs">
+      <DependentUpon>GenerateSalaryDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\GenerateSalaryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateSalaryDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\LeaveReportsDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\MonthlyAttendanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\OvertimeReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -233,6 +272,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeemaDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\VariableIncentiveDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DayOffApply.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +318,12 @@
     </Compile>
     <Compile Include="FingerPrintDevices.Designer.cs">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateBasicSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateBasicSalary.Designer.cs">
+      <DependentUpon>GenerateBasicSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="LeaveApply.cs">
       <SubType>Form</SubType>
@@ -337,6 +387,24 @@
       <DependentUpon>DayOffApprvealReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\DayWagesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayWagesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DeductionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeductionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EmployeeAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeAttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\EmployeeReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -353,6 +421,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveApplyForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlyAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyAttendanceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\OverTimeRequestForm.cs">
@@ -484,6 +558,9 @@
     <EmbeddedResource Include="FingerPrintDevices.resx">
       <DependentUpon>FingerPrintDevices.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerateBasicSalary.resx">
+      <DependentUpon>GenerateBasicSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LeaveApply.resx">
       <DependentUpon>LeaveApply.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,6 +588,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DayOffApprvealReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DayWagesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DayWagesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DeductionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeductionReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmployeeAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeAttendanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\EmployeeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EmployeeReport.cs</LastGenOutput>
@@ -522,6 +611,10 @@
     <EmbeddedResource Include="Reports\LeaveApplyForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LeaveApplyForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonthlyAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyAttendanceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\OverTimeRequestForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -602,6 +695,39 @@
     <None Include="Datasets\DayOffApprvealDataSet.xss">
       <DependentUpon>DayOffApprvealDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\DayWagesDataSet.xsc">
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DayWagesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DayWagesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DayWagesDataSet.xss">
+      <DependentUpon>DayWagesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DeductionDetailsDataSet.xsc">
+      <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DeductionDetailsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeductionDetailsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DeductionDetailsDataSet.xss">
+      <DependentUpon>DeductionDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xsc">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeAttendanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\EmployeeAttendanceDataSet.xss">
+      <DependentUpon>EmployeeAttendanceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\EmployeeDataSet.xsc">
       <DependentUpon>EmployeeDataSet.xsd</DependentUpon>
     </None>
@@ -624,6 +750,17 @@
     <None Include="Datasets\FixedIncentiveDataSet.xss">
       <DependentUpon>FixedIncentiveDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Datasets\GenerateSalaryDataSet.xsc">
+      <DependentUpon>GenerateSalaryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\GenerateSalaryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateSalaryDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\GenerateSalaryDataSet.xss">
+      <DependentUpon>GenerateSalaryDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\LeaveReportsDataSet.xsc">
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
     </None>
@@ -634,6 +771,17 @@
     </None>
     <None Include="Datasets\LeaveReportsDataSet.xss">
       <DependentUpon>LeaveReportsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xsc">
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthlyAttendanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\MonthlyAttendanceDataSet.xss">
+      <DependentUpon>MonthlyAttendanceDataSet.xsd</DependentUpon>
     </None>
     <None Include="Datasets\OvertimeReportDataSet.xsc">
       <DependentUpon>OvertimeReportDataSet.xsd</DependentUpon>
@@ -742,6 +890,17 @@
       <LastGenOutput>TeemaDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xsc">
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VariableIncentiveDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\VariableIncentiveDataSet.xss">
+      <DependentUpon>VariableIncentiveDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -764,6 +923,21 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
       <Visible>False</Visible>
       <Group>
@@ -989,6 +1163,206 @@
     <None Include="Resources\Notification-Boxes_03.png" />
   </ItemGroup>
   <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="FlashControlV71">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
