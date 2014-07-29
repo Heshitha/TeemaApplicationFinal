@@ -31,6 +31,8 @@
             this.lblFormTopic = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.chbSearchFromSubDepartment = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbSubDepartment = new System.Windows.Forms.ComboBox();
@@ -38,8 +40,6 @@
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
             this.lblWorkingBranch = new System.Windows.Forms.Label();
-            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvAttendanceDetails = new System.Windows.Forms.DataGridView();
             this.clmnEPFNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +99,23 @@
             this.gbxDepartmentDetails.TabIndex = 46;
             this.gbxDepartmentDetails.TabStop = false;
             this.gbxDepartmentDetails.Text = "Department Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Date";
+            // 
+            // dtpDateTime
+            // 
+            this.dtpDateTime.Location = new System.Drawing.Point(96, 125);
+            this.dtpDateTime.Name = "dtpDateTime";
+            this.dtpDateTime.Size = new System.Drawing.Size(185, 20);
+            this.dtpDateTime.TabIndex = 7;
+            this.dtpDateTime.ValueChanged += new System.EventHandler(this.dtpDateTime_ValueChanged);
             // 
             // chbSearchFromSubDepartment
             // 
@@ -175,23 +192,6 @@
             this.lblWorkingBranch.TabIndex = 0;
             this.lblWorkingBranch.Text = "Working Branch";
             // 
-            // dtpDateTime
-            // 
-            this.dtpDateTime.Location = new System.Drawing.Point(96, 125);
-            this.dtpDateTime.Name = "dtpDateTime";
-            this.dtpDateTime.Size = new System.Drawing.Size(185, 20);
-            this.dtpDateTime.TabIndex = 7;
-            this.dtpDateTime.ValueChanged += new System.EventHandler(this.dtpDateTime_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Date";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvAttendanceDetails);
@@ -218,6 +218,7 @@
             this.dgvAttendanceDetails.Name = "dgvAttendanceDetails";
             this.dgvAttendanceDetails.ReadOnly = true;
             this.dgvAttendanceDetails.RowHeadersVisible = false;
+            this.dgvAttendanceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAttendanceDetails.Size = new System.Drawing.Size(549, 457);
             this.dgvAttendanceDetails.TabIndex = 0;
             // 

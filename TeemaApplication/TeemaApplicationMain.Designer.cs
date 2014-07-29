@@ -50,6 +50,7 @@
             this.fingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewFingerPrintDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadAttendanceDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAttendanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSecurityRoutineByEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,7 @@
             this.loanInstallmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deductionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.viewAttendanceReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryCalculationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@
             this.leaveToolStripMenuItem,
             this.dayOffToolStripMenuItem,
             this.salaryLoanToolStripMenuItem,
-            this.deductionToolStripMenuItem});
+            this.deductionToolStripMenuItem,
+            this.salaryCalculationToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1216, 24);
@@ -246,6 +248,13 @@
             this.loadAttendanceDetailsToolStripMenuItem.Text = "Load Attendance Details";
             this.loadAttendanceDetailsToolStripMenuItem.Click += new System.EventHandler(this.loadAttendanceDetailsToolStripMenuItem_Click);
             // 
+            // viewAttendanceReportToolStripMenuItem
+            // 
+            this.viewAttendanceReportToolStripMenuItem.Name = "viewAttendanceReportToolStripMenuItem";
+            this.viewAttendanceReportToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.viewAttendanceReportToolStripMenuItem.Text = "View Attendance Report";
+            this.viewAttendanceReportToolStripMenuItem.Click += new System.EventHandler(this.viewAttendanceReportToolStripMenuItem_Click);
+            // 
             // securityToolStripMenuItem
             // 
             this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -360,12 +369,12 @@
             this.deductionToolStripMenuItem.Text = "Deduction";
             this.deductionToolStripMenuItem.Click += new System.EventHandler(this.deductionToolStripMenuItem_Click);
             // 
-            // viewAttendanceReportToolStripMenuItem
+            // salaryCalculationToolStripMenuItem
             // 
-            this.viewAttendanceReportToolStripMenuItem.Name = "viewAttendanceReportToolStripMenuItem";
-            this.viewAttendanceReportToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.viewAttendanceReportToolStripMenuItem.Text = "View Attendance Report";
-            this.viewAttendanceReportToolStripMenuItem.Click += new System.EventHandler(this.viewAttendanceReportToolStripMenuItem_Click);
+            this.salaryCalculationToolStripMenuItem.Name = "salaryCalculationToolStripMenuItem";
+            this.salaryCalculationToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.salaryCalculationToolStripMenuItem.Text = "Salary Calculation";
+            this.salaryCalculationToolStripMenuItem.Click += new System.EventHandler(this.salaryCalculationToolStripMenuItem_Click);
             // 
             // frmTeemaApplicationMain
             // 
@@ -426,6 +435,7 @@
         private System.Windows.Forms.ToolStripMenuItem loanInstallmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deductionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAttendanceReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaryCalculationToolStripMenuItem;
     }
 }
 

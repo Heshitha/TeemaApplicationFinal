@@ -57,9 +57,6 @@ namespace TeemaApplication.Datasets
     partial void InsertVariableIncentiveAllowance(VariableIncentiveAllowance instance);
     partial void UpdateVariableIncentiveAllowance(VariableIncentiveAllowance instance);
     partial void DeleteVariableIncentiveAllowance(VariableIncentiveAllowance instance);
-    partial void InsertOverTimeRecord(OverTimeRecord instance);
-    partial void UpdateOverTimeRecord(OverTimeRecord instance);
-    partial void DeleteOverTimeRecord(OverTimeRecord instance);
     partial void InsertOvertimeEmployeeDetail(OvertimeEmployeeDetail instance);
     partial void UpdateOvertimeEmployeeDetail(OvertimeEmployeeDetail instance);
     partial void DeleteOvertimeEmployeeDetail(OvertimeEmployeeDetail instance);
@@ -102,6 +99,12 @@ namespace TeemaApplication.Datasets
     partial void InsertDeduction(Deduction instance);
     partial void UpdateDeduction(Deduction instance);
     partial void DeleteDeduction(Deduction instance);
+    partial void InsertWorkOtherLocation(WorkOtherLocation instance);
+    partial void UpdateWorkOtherLocation(WorkOtherLocation instance);
+    partial void DeleteWorkOtherLocation(WorkOtherLocation instance);
+    partial void InsertOverTimeRecord(OverTimeRecord instance);
+    partial void UpdateOverTimeRecord(OverTimeRecord instance);
+    partial void DeleteOverTimeRecord(OverTimeRecord instance);
     #endregion
 		
 		public TeemaDBDataContext() : 
@@ -203,14 +206,6 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<VariableIncentiveAllowance>();
-			}
-		}
-		
-		public System.Data.Linq.Table<OverTimeRecord> OverTimeRecords
-		{
-			get
-			{
-				return this.GetTable<OverTimeRecord>();
 			}
 		}
 		
@@ -323,6 +318,22 @@ namespace TeemaApplication.Datasets
 			get
 			{
 				return this.GetTable<Deduction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<WorkOtherLocation> WorkOtherLocations
+		{
+			get
+			{
+				return this.GetTable<WorkOtherLocation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<OverTimeRecord> OverTimeRecords
+		{
+			get
+			{
+				return this.GetTable<OverTimeRecord>();
 			}
 		}
 	}
@@ -1422,6 +1433,8 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<Deduction> _Deductions;
 		
+		private EntitySet<WorkOtherLocation> _WorkOtherLocations;
+		
 		private EntityRef<Department> _Department;
 		
 		private EntityRef<Designation> _Designation;
@@ -1491,6 +1504,7 @@ namespace TeemaApplication.Datasets
 			this._DayOffRecords = new EntitySet<DayOffRecord>(new Action<DayOffRecord>(this.attach_DayOffRecords), new Action<DayOffRecord>(this.detach_DayOffRecords));
 			this._SalaryLoans = new EntitySet<SalaryLoan>(new Action<SalaryLoan>(this.attach_SalaryLoans), new Action<SalaryLoan>(this.detach_SalaryLoans));
 			this._Deductions = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions), new Action<Deduction>(this.detach_Deductions));
+			this._WorkOtherLocations = new EntitySet<WorkOtherLocation>(new Action<WorkOtherLocation>(this.attach_WorkOtherLocations), new Action<WorkOtherLocation>(this.detach_WorkOtherLocations));
 			this._Department = default(EntityRef<Department>);
 			this._Designation = default(EntityRef<Designation>);
 			this._SubDepartment = default(EntityRef<SubDepartment>);
@@ -2084,6 +2098,19 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_WorkOtherLocation", Storage="_WorkOtherLocations", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<WorkOtherLocation> WorkOtherLocations
+		{
+			get
+			{
+				return this._WorkOtherLocations;
+			}
+			set
+			{
+				this._WorkOtherLocations.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Department_Employee", Storage="_Department", ThisKey="DepartmentID", OtherKey="DepartmentID", IsForeignKey=true)]
 		public Department Department
 		{
@@ -2413,6 +2440,18 @@ namespace TeemaApplication.Datasets
 		}
 		
 		private void detach_Deductions(Deduction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_WorkOtherLocations(WorkOtherLocation entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_WorkOtherLocations(WorkOtherLocation entity)
 		{
 			this.SendPropertyChanging();
 			entity.Employee = null;
@@ -3177,12 +3216,6 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<VariableIncentiveAllowance> _VariableIncentiveAllowances1;
 		
-		private EntitySet<OverTimeRecord> _OverTimeRecords;
-		
-		private EntitySet<OverTimeRecord> _OverTimeRecords1;
-		
-		private EntitySet<OverTimeRecord> _OverTimeRecords2;
-		
 		private EntitySet<OvertimeEmployeeDetail> _OvertimeEmployeeDetails;
 		
 		private EntitySet<OvertimeEmployeeDetail> _OvertimeEmployeeDetails1;
@@ -3233,6 +3266,16 @@ namespace TeemaApplication.Datasets
 		
 		private EntitySet<Deduction> _Deductions1;
 		
+		private EntitySet<WorkOtherLocation> _WorkOtherLocations;
+		
+		private EntitySet<WorkOtherLocation> _WorkOtherLocations1;
+		
+		private EntitySet<OverTimeRecord> _OverTimeRecords;
+		
+		private EntitySet<OverTimeRecord> _OverTimeRecords1;
+		
+		private EntitySet<OverTimeRecord> _OverTimeRecords2;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3267,9 +3310,6 @@ namespace TeemaApplication.Datasets
 			this._SalaryDetails1 = new EntitySet<SalaryDetail>(new Action<SalaryDetail>(this.attach_SalaryDetails1), new Action<SalaryDetail>(this.detach_SalaryDetails1));
 			this._VariableIncentiveAllowances = new EntitySet<VariableIncentiveAllowance>(new Action<VariableIncentiveAllowance>(this.attach_VariableIncentiveAllowances), new Action<VariableIncentiveAllowance>(this.detach_VariableIncentiveAllowances));
 			this._VariableIncentiveAllowances1 = new EntitySet<VariableIncentiveAllowance>(new Action<VariableIncentiveAllowance>(this.attach_VariableIncentiveAllowances1), new Action<VariableIncentiveAllowance>(this.detach_VariableIncentiveAllowances1));
-			this._OverTimeRecords = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords), new Action<OverTimeRecord>(this.detach_OverTimeRecords));
-			this._OverTimeRecords1 = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords1), new Action<OverTimeRecord>(this.detach_OverTimeRecords1));
-			this._OverTimeRecords2 = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords2), new Action<OverTimeRecord>(this.detach_OverTimeRecords2));
 			this._OvertimeEmployeeDetails = new EntitySet<OvertimeEmployeeDetail>(new Action<OvertimeEmployeeDetail>(this.attach_OvertimeEmployeeDetails), new Action<OvertimeEmployeeDetail>(this.detach_OvertimeEmployeeDetails));
 			this._OvertimeEmployeeDetails1 = new EntitySet<OvertimeEmployeeDetail>(new Action<OvertimeEmployeeDetail>(this.attach_OvertimeEmployeeDetails1), new Action<OvertimeEmployeeDetail>(this.detach_OvertimeEmployeeDetails1));
 			this._SalaryAdvances = new EntitySet<SalaryAdvance>(new Action<SalaryAdvance>(this.attach_SalaryAdvances), new Action<SalaryAdvance>(this.detach_SalaryAdvances));
@@ -3295,6 +3335,11 @@ namespace TeemaApplication.Datasets
 			this._SalaryLoanInstallments1 = new EntitySet<SalaryLoanInstallment>(new Action<SalaryLoanInstallment>(this.attach_SalaryLoanInstallments1), new Action<SalaryLoanInstallment>(this.detach_SalaryLoanInstallments1));
 			this._Deductions = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions), new Action<Deduction>(this.detach_Deductions));
 			this._Deductions1 = new EntitySet<Deduction>(new Action<Deduction>(this.attach_Deductions1), new Action<Deduction>(this.detach_Deductions1));
+			this._WorkOtherLocations = new EntitySet<WorkOtherLocation>(new Action<WorkOtherLocation>(this.attach_WorkOtherLocations), new Action<WorkOtherLocation>(this.detach_WorkOtherLocations));
+			this._WorkOtherLocations1 = new EntitySet<WorkOtherLocation>(new Action<WorkOtherLocation>(this.attach_WorkOtherLocations1), new Action<WorkOtherLocation>(this.detach_WorkOtherLocations1));
+			this._OverTimeRecords = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords), new Action<OverTimeRecord>(this.detach_OverTimeRecords));
+			this._OverTimeRecords1 = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords1), new Action<OverTimeRecord>(this.detach_OverTimeRecords1));
+			this._OverTimeRecords2 = new EntitySet<OverTimeRecord>(new Action<OverTimeRecord>(this.attach_OverTimeRecords2), new Action<OverTimeRecord>(this.detach_OverTimeRecords2));
 			OnCreated();
 		}
 		
@@ -3603,45 +3648,6 @@ namespace TeemaApplication.Datasets
 			set
 			{
 				this._VariableIncentiveAllowances1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord", Storage="_OverTimeRecords", ThisKey="UserID", OtherKey="ApprovedBy")]
-		public EntitySet<OverTimeRecord> OverTimeRecords
-		{
-			get
-			{
-				return this._OverTimeRecords;
-			}
-			set
-			{
-				this._OverTimeRecords.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord1", Storage="_OverTimeRecords1", ThisKey="UserID", OtherKey="CreatedBy")]
-		public EntitySet<OverTimeRecord> OverTimeRecords1
-		{
-			get
-			{
-				return this._OverTimeRecords1;
-			}
-			set
-			{
-				this._OverTimeRecords1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord2", Storage="_OverTimeRecords2", ThisKey="UserID", OtherKey="ModifiedBy")]
-		public EntitySet<OverTimeRecord> OverTimeRecords2
-		{
-			get
-			{
-				return this._OverTimeRecords2;
-			}
-			set
-			{
-				this._OverTimeRecords2.Assign(value);
 			}
 		}
 		
@@ -3970,6 +3976,71 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_WorkOtherLocation", Storage="_WorkOtherLocations", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<WorkOtherLocation> WorkOtherLocations
+		{
+			get
+			{
+				return this._WorkOtherLocations;
+			}
+			set
+			{
+				this._WorkOtherLocations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_WorkOtherLocation1", Storage="_WorkOtherLocations1", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<WorkOtherLocation> WorkOtherLocations1
+		{
+			get
+			{
+				return this._WorkOtherLocations1;
+			}
+			set
+			{
+				this._WorkOtherLocations1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord", Storage="_OverTimeRecords", ThisKey="UserID", OtherKey="ApprovedBy")]
+		public EntitySet<OverTimeRecord> OverTimeRecords
+		{
+			get
+			{
+				return this._OverTimeRecords;
+			}
+			set
+			{
+				this._OverTimeRecords.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord1", Storage="_OverTimeRecords1", ThisKey="UserID", OtherKey="CreatedBy")]
+		public EntitySet<OverTimeRecord> OverTimeRecords1
+		{
+			get
+			{
+				return this._OverTimeRecords1;
+			}
+			set
+			{
+				this._OverTimeRecords1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord2", Storage="_OverTimeRecords2", ThisKey="UserID", OtherKey="ModifiedBy")]
+		public EntitySet<OverTimeRecord> OverTimeRecords2
+		{
+			get
+			{
+				return this._OverTimeRecords2;
+			}
+			set
+			{
+				this._OverTimeRecords2.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4180,42 +4251,6 @@ namespace TeemaApplication.Datasets
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
-		}
-		
-		private void attach_OverTimeRecords(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount = this;
-		}
-		
-		private void detach_OverTimeRecords(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount = null;
-		}
-		
-		private void attach_OverTimeRecords1(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount1 = this;
-		}
-		
-		private void detach_OverTimeRecords1(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount1 = null;
-		}
-		
-		private void attach_OverTimeRecords2(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount2 = this;
-		}
-		
-		private void detach_OverTimeRecords2(OverTimeRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserAccount2 = null;
 		}
 		
 		private void attach_OvertimeEmployeeDetails(OvertimeEmployeeDetail entity)
@@ -4516,6 +4551,66 @@ namespace TeemaApplication.Datasets
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount1 = null;
+		}
+		
+		private void attach_WorkOtherLocations(WorkOtherLocation entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_WorkOtherLocations(WorkOtherLocation entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_WorkOtherLocations1(WorkOtherLocation entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_WorkOtherLocations1(WorkOtherLocation entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_OverTimeRecords(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = this;
+		}
+		
+		private void detach_OverTimeRecords(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount = null;
+		}
+		
+		private void attach_OverTimeRecords1(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = this;
+		}
+		
+		private void detach_OverTimeRecords1(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount1 = null;
+		}
+		
+		private void attach_OverTimeRecords2(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount2 = this;
+		}
+		
+		private void detach_OverTimeRecords2(OverTimeRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserAccount2 = null;
 		}
 	}
 	
@@ -5321,435 +5416,6 @@ namespace TeemaApplication.Datasets
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OverTimeRecord")]
-	public partial class OverTimeRecord : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _OTID;
-		
-		private System.DateTime _OvertimeDate;
-		
-		private string _Supervisor;
-		
-		private string _Reason;
-		
-		private System.Nullable<int> _ApprovedBy;
-		
-		private System.Nullable<System.DateTime> _ApprovedDate;
-		
-		private int _CreatedBy;
-		
-		private System.DateTime _CreatedDate;
-		
-		private int _ModifiedBy;
-		
-		private System.DateTime _ModifiedDate;
-		
-		private EntitySet<OvertimeEmployeeDetail> _OvertimeEmployeeDetails;
-		
-		private EntityRef<UserAccount> _UserAccount;
-		
-		private EntityRef<UserAccount> _UserAccount1;
-		
-		private EntityRef<UserAccount> _UserAccount2;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnOTIDChanging(int value);
-    partial void OnOTIDChanged();
-    partial void OnOvertimeDateChanging(System.DateTime value);
-    partial void OnOvertimeDateChanged();
-    partial void OnSupervisorChanging(string value);
-    partial void OnSupervisorChanged();
-    partial void OnReasonChanging(string value);
-    partial void OnReasonChanged();
-    partial void OnApprovedByChanging(System.Nullable<int> value);
-    partial void OnApprovedByChanged();
-    partial void OnApprovedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnApprovedDateChanged();
-    partial void OnCreatedByChanging(int value);
-    partial void OnCreatedByChanged();
-    partial void OnCreatedDateChanging(System.DateTime value);
-    partial void OnCreatedDateChanged();
-    partial void OnModifiedByChanging(int value);
-    partial void OnModifiedByChanged();
-    partial void OnModifiedDateChanging(System.DateTime value);
-    partial void OnModifiedDateChanged();
-    #endregion
-		
-		public OverTimeRecord()
-		{
-			this._OvertimeEmployeeDetails = new EntitySet<OvertimeEmployeeDetail>(new Action<OvertimeEmployeeDetail>(this.attach_OvertimeEmployeeDetails), new Action<OvertimeEmployeeDetail>(this.detach_OvertimeEmployeeDetails));
-			this._UserAccount = default(EntityRef<UserAccount>);
-			this._UserAccount1 = default(EntityRef<UserAccount>);
-			this._UserAccount2 = default(EntityRef<UserAccount>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OTID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int OTID
-		{
-			get
-			{
-				return this._OTID;
-			}
-			set
-			{
-				if ((this._OTID != value))
-				{
-					this.OnOTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OTID = value;
-					this.SendPropertyChanged("OTID");
-					this.OnOTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OvertimeDate", DbType="DateTime NOT NULL")]
-		public System.DateTime OvertimeDate
-		{
-			get
-			{
-				return this._OvertimeDate;
-			}
-			set
-			{
-				if ((this._OvertimeDate != value))
-				{
-					this.OnOvertimeDateChanging(value);
-					this.SendPropertyChanging();
-					this._OvertimeDate = value;
-					this.SendPropertyChanged("OvertimeDate");
-					this.OnOvertimeDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Supervisor
-		{
-			get
-			{
-				return this._Supervisor;
-			}
-			set
-			{
-				if ((this._Supervisor != value))
-				{
-					this.OnSupervisorChanging(value);
-					this.SendPropertyChanging();
-					this._Supervisor = value;
-					this.SendPropertyChanged("Supervisor");
-					this.OnSupervisorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Reason
-		{
-			get
-			{
-				return this._Reason;
-			}
-			set
-			{
-				if ((this._Reason != value))
-				{
-					this.OnReasonChanging(value);
-					this.SendPropertyChanging();
-					this._Reason = value;
-					this.SendPropertyChanged("Reason");
-					this.OnReasonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="Int")]
-		public System.Nullable<int> ApprovedBy
-		{
-			get
-			{
-				return this._ApprovedBy;
-			}
-			set
-			{
-				if ((this._ApprovedBy != value))
-				{
-					if (this._UserAccount.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnApprovedByChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovedBy = value;
-					this.SendPropertyChanged("ApprovedBy");
-					this.OnApprovedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ApprovedDate
-		{
-			get
-			{
-				return this._ApprovedDate;
-			}
-			set
-			{
-				if ((this._ApprovedDate != value))
-				{
-					this.OnApprovedDateChanging(value);
-					this.SendPropertyChanging();
-					this._ApprovedDate = value;
-					this.SendPropertyChanged("ApprovedDate");
-					this.OnApprovedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int NOT NULL")]
-		public int CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					if (this._UserAccount1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCreatedByChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedBy = value;
-					this.SendPropertyChanged("CreatedBy");
-					this.OnCreatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int NOT NULL")]
-		public int ModifiedBy
-		{
-			get
-			{
-				return this._ModifiedBy;
-			}
-			set
-			{
-				if ((this._ModifiedBy != value))
-				{
-					if (this._UserAccount2.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnModifiedByChanging(value);
-					this.SendPropertyChanging();
-					this._ModifiedBy = value;
-					this.SendPropertyChanged("ModifiedBy");
-					this.OnModifiedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime ModifiedDate
-		{
-			get
-			{
-				return this._ModifiedDate;
-			}
-			set
-			{
-				if ((this._ModifiedDate != value))
-				{
-					this.OnModifiedDateChanging(value);
-					this.SendPropertyChanging();
-					this._ModifiedDate = value;
-					this.SendPropertyChanged("ModifiedDate");
-					this.OnModifiedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OverTimeRecord_OvertimeEmployeeDetail", Storage="_OvertimeEmployeeDetails", ThisKey="OTID", OtherKey="OTID")]
-		public EntitySet<OvertimeEmployeeDetail> OvertimeEmployeeDetails
-		{
-			get
-			{
-				return this._OvertimeEmployeeDetails;
-			}
-			set
-			{
-				this._OvertimeEmployeeDetails.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord", Storage="_UserAccount", ThisKey="ApprovedBy", OtherKey="UserID", IsForeignKey=true)]
-		public UserAccount UserAccount
-		{
-			get
-			{
-				return this._UserAccount.Entity;
-			}
-			set
-			{
-				UserAccount previousValue = this._UserAccount.Entity;
-				if (((previousValue != value) 
-							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._UserAccount.Entity = null;
-						previousValue.OverTimeRecords.Remove(this);
-					}
-					this._UserAccount.Entity = value;
-					if ((value != null))
-					{
-						value.OverTimeRecords.Add(this);
-						this._ApprovedBy = value.UserID;
-					}
-					else
-					{
-						this._ApprovedBy = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("UserAccount");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord1", Storage="_UserAccount1", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
-		public UserAccount UserAccount1
-		{
-			get
-			{
-				return this._UserAccount1.Entity;
-			}
-			set
-			{
-				UserAccount previousValue = this._UserAccount1.Entity;
-				if (((previousValue != value) 
-							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._UserAccount1.Entity = null;
-						previousValue.OverTimeRecords1.Remove(this);
-					}
-					this._UserAccount1.Entity = value;
-					if ((value != null))
-					{
-						value.OverTimeRecords1.Add(this);
-						this._CreatedBy = value.UserID;
-					}
-					else
-					{
-						this._CreatedBy = default(int);
-					}
-					this.SendPropertyChanged("UserAccount1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord2", Storage="_UserAccount2", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
-		public UserAccount UserAccount2
-		{
-			get
-			{
-				return this._UserAccount2.Entity;
-			}
-			set
-			{
-				UserAccount previousValue = this._UserAccount2.Entity;
-				if (((previousValue != value) 
-							|| (this._UserAccount2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._UserAccount2.Entity = null;
-						previousValue.OverTimeRecords2.Remove(this);
-					}
-					this._UserAccount2.Entity = value;
-					if ((value != null))
-					{
-						value.OverTimeRecords2.Add(this);
-						this._ModifiedBy = value.UserID;
-					}
-					else
-					{
-						this._ModifiedBy = default(int);
-					}
-					this.SendPropertyChanged("UserAccount2");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_OvertimeEmployeeDetails(OvertimeEmployeeDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.OverTimeRecord = this;
-		}
-		
-		private void detach_OvertimeEmployeeDetails(OvertimeEmployeeDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.OverTimeRecord = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OvertimeEmployeeDetails")]
 	public partial class OvertimeEmployeeDetail : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5782,11 +5448,11 @@ namespace TeemaApplication.Datasets
 		
 		private EntityRef<Employee> _Employee;
 		
-		private EntityRef<OverTimeRecord> _OverTimeRecord;
-		
 		private EntityRef<UserAccount> _UserAccount;
 		
 		private EntityRef<UserAccount> _UserAccount1;
+		
+		private EntityRef<OverTimeRecord> _OverTimeRecord;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5821,9 +5487,9 @@ namespace TeemaApplication.Datasets
 		public OvertimeEmployeeDetail()
 		{
 			this._Employee = default(EntityRef<Employee>);
-			this._OverTimeRecord = default(EntityRef<OverTimeRecord>);
 			this._UserAccount = default(EntityRef<UserAccount>);
 			this._UserAccount1 = default(EntityRef<UserAccount>);
+			this._OverTimeRecord = default(EntityRef<OverTimeRecord>);
 			OnCreated();
 		}
 		
@@ -6117,40 +5783,6 @@ namespace TeemaApplication.Datasets
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OverTimeRecord_OvertimeEmployeeDetail", Storage="_OverTimeRecord", ThisKey="OTID", OtherKey="OTID", IsForeignKey=true)]
-		public OverTimeRecord OverTimeRecord
-		{
-			get
-			{
-				return this._OverTimeRecord.Entity;
-			}
-			set
-			{
-				OverTimeRecord previousValue = this._OverTimeRecord.Entity;
-				if (((previousValue != value) 
-							|| (this._OverTimeRecord.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._OverTimeRecord.Entity = null;
-						previousValue.OvertimeEmployeeDetails.Remove(this);
-					}
-					this._OverTimeRecord.Entity = value;
-					if ((value != null))
-					{
-						value.OvertimeEmployeeDetails.Add(this);
-						this._OTID = value.OTID;
-					}
-					else
-					{
-						this._OTID = default(int);
-					}
-					this.SendPropertyChanged("OverTimeRecord");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OvertimeEmployeeDetail", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
 		public UserAccount UserAccount
 		{
@@ -6215,6 +5847,40 @@ namespace TeemaApplication.Datasets
 						this._ModifiedBy = default(int);
 					}
 					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OverTimeRecord_OvertimeEmployeeDetail", Storage="_OverTimeRecord", ThisKey="OTID", OtherKey="OTID", IsForeignKey=true)]
+		public OverTimeRecord OverTimeRecord
+		{
+			get
+			{
+				return this._OverTimeRecord.Entity;
+			}
+			set
+			{
+				OverTimeRecord previousValue = this._OverTimeRecord.Entity;
+				if (((previousValue != value) 
+							|| (this._OverTimeRecord.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._OverTimeRecord.Entity = null;
+						previousValue.OvertimeEmployeeDetails.Remove(this);
+					}
+					this._OverTimeRecord.Entity = value;
+					if ((value != null))
+					{
+						value.OvertimeEmployeeDetails.Add(this);
+						this._OTID = value.OTID;
+					}
+					else
+					{
+						this._OTID = default(int);
+					}
+					this.SendPropertyChanged("OverTimeRecord");
 				}
 			}
 		}
@@ -11758,6 +11424,884 @@ namespace TeemaApplication.Datasets
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WorkOtherLocations")]
+	public partial class WorkOtherLocation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WorkOtherLocationID;
+		
+		private int _EmployeeID;
+		
+		private System.Nullable<System.DateTime> _WorkOLFrom;
+		
+		private System.Nullable<System.DateTime> _WorkOLTo;
+		
+		private string _WorkOLReason;
+		
+		private string _WorkOLLocation;
+		
+		private System.Nullable<int> _CreatedBy;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _ModifiedBy;
+		
+		private System.Nullable<System.DateTime> _ModifiedDate;
+		
+		private System.Nullable<int> _ApprovedBy;
+		
+		private EntityRef<Employee> _Employee;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWorkOtherLocationIDChanging(int value);
+    partial void OnWorkOtherLocationIDChanged();
+    partial void OnEmployeeIDChanging(int value);
+    partial void OnEmployeeIDChanged();
+    partial void OnWorkOLFromChanging(System.Nullable<System.DateTime> value);
+    partial void OnWorkOLFromChanged();
+    partial void OnWorkOLToChanging(System.Nullable<System.DateTime> value);
+    partial void OnWorkOLToChanged();
+    partial void OnWorkOLReasonChanging(string value);
+    partial void OnWorkOLReasonChanged();
+    partial void OnWorkOLLocationChanging(string value);
+    partial void OnWorkOLLocationChanged();
+    partial void OnCreatedByChanging(System.Nullable<int> value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(System.Nullable<int> value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifiedDateChanged();
+    partial void OnApprovedByChanging(System.Nullable<int> value);
+    partial void OnApprovedByChanged();
+    #endregion
+		
+		public WorkOtherLocation()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkOtherLocationID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int WorkOtherLocationID
+		{
+			get
+			{
+				return this._WorkOtherLocationID;
+			}
+			set
+			{
+				if ((this._WorkOtherLocationID != value))
+				{
+					this.OnWorkOtherLocationIDChanging(value);
+					this.SendPropertyChanging();
+					this._WorkOtherLocationID = value;
+					this.SendPropertyChanged("WorkOtherLocationID");
+					this.OnWorkOtherLocationIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeID", DbType="Int NOT NULL")]
+		public int EmployeeID
+		{
+			get
+			{
+				return this._EmployeeID;
+			}
+			set
+			{
+				if ((this._EmployeeID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeID = value;
+					this.SendPropertyChanged("EmployeeID");
+					this.OnEmployeeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkOLFrom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> WorkOLFrom
+		{
+			get
+			{
+				return this._WorkOLFrom;
+			}
+			set
+			{
+				if ((this._WorkOLFrom != value))
+				{
+					this.OnWorkOLFromChanging(value);
+					this.SendPropertyChanging();
+					this._WorkOLFrom = value;
+					this.SendPropertyChanged("WorkOLFrom");
+					this.OnWorkOLFromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkOLTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> WorkOLTo
+		{
+			get
+			{
+				return this._WorkOLTo;
+			}
+			set
+			{
+				if ((this._WorkOLTo != value))
+				{
+					this.OnWorkOLToChanging(value);
+					this.SendPropertyChanging();
+					this._WorkOLTo = value;
+					this.SendPropertyChanged("WorkOLTo");
+					this.OnWorkOLToChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkOLReason", DbType="VarChar(500)")]
+		public string WorkOLReason
+		{
+			get
+			{
+				return this._WorkOLReason;
+			}
+			set
+			{
+				if ((this._WorkOLReason != value))
+				{
+					this.OnWorkOLReasonChanging(value);
+					this.SendPropertyChanging();
+					this._WorkOLReason = value;
+					this.SendPropertyChanged("WorkOLReason");
+					this.OnWorkOLReasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkOLLocation", DbType="VarChar(500)")]
+		public string WorkOLLocation
+		{
+			get
+			{
+				return this._WorkOLLocation;
+			}
+			set
+			{
+				if ((this._WorkOLLocation != value))
+				{
+					this.OnWorkOLLocationChanging(value);
+					this.SendPropertyChanging();
+					this._WorkOLLocation = value;
+					this.SendPropertyChanged("WorkOLLocation");
+					this.OnWorkOLLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int")]
+		public System.Nullable<int> CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int")]
+		public System.Nullable<int> ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="Int")]
+		public System.Nullable<int> ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					this.OnApprovedByChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedBy = value;
+					this.SendPropertyChanged("ApprovedBy");
+					this.OnApprovedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_WorkOtherLocation", Storage="_Employee", ThisKey="EmployeeID", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.WorkOtherLocations.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOtherLocations.Add(this);
+						this._EmployeeID = value.EmployeeID;
+					}
+					else
+					{
+						this._EmployeeID = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_WorkOtherLocation", Storage="_UserAccount", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.WorkOtherLocations.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOtherLocations.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_WorkOtherLocation1", Storage="_UserAccount1", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.WorkOtherLocations1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOtherLocations1.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OverTimeRecord")]
+	public partial class OverTimeRecord : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _OTID;
+		
+		private System.DateTime _OvertimeDate;
+		
+		private string _Supervisor;
+		
+		private string _Reason;
+		
+		private System.Nullable<int> _Type;
+		
+		private System.Nullable<int> _ApprovedBy;
+		
+		private System.Nullable<System.DateTime> _ApprovedDate;
+		
+		private int _CreatedBy;
+		
+		private System.DateTime _CreatedDate;
+		
+		private int _ModifiedBy;
+		
+		private System.DateTime _ModifiedDate;
+		
+		private EntitySet<OvertimeEmployeeDetail> _OvertimeEmployeeDetails;
+		
+		private EntityRef<UserAccount> _UserAccount;
+		
+		private EntityRef<UserAccount> _UserAccount1;
+		
+		private EntityRef<UserAccount> _UserAccount2;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOTIDChanging(int value);
+    partial void OnOTIDChanged();
+    partial void OnOvertimeDateChanging(System.DateTime value);
+    partial void OnOvertimeDateChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnReasonChanging(string value);
+    partial void OnReasonChanged();
+    partial void OnTypeChanging(System.Nullable<int> value);
+    partial void OnTypeChanged();
+    partial void OnApprovedByChanging(System.Nullable<int> value);
+    partial void OnApprovedByChanged();
+    partial void OnApprovedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnApprovedDateChanged();
+    partial void OnCreatedByChanging(int value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnModifiedByChanging(int value);
+    partial void OnModifiedByChanged();
+    partial void OnModifiedDateChanging(System.DateTime value);
+    partial void OnModifiedDateChanged();
+    #endregion
+		
+		public OverTimeRecord()
+		{
+			this._OvertimeEmployeeDetails = new EntitySet<OvertimeEmployeeDetail>(new Action<OvertimeEmployeeDetail>(this.attach_OvertimeEmployeeDetails), new Action<OvertimeEmployeeDetail>(this.detach_OvertimeEmployeeDetails));
+			this._UserAccount = default(EntityRef<UserAccount>);
+			this._UserAccount1 = default(EntityRef<UserAccount>);
+			this._UserAccount2 = default(EntityRef<UserAccount>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OTID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int OTID
+		{
+			get
+			{
+				return this._OTID;
+			}
+			set
+			{
+				if ((this._OTID != value))
+				{
+					this.OnOTIDChanging(value);
+					this.SendPropertyChanging();
+					this._OTID = value;
+					this.SendPropertyChanged("OTID");
+					this.OnOTIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OvertimeDate", DbType="DateTime NOT NULL")]
+		public System.DateTime OvertimeDate
+		{
+			get
+			{
+				return this._OvertimeDate;
+			}
+			set
+			{
+				if ((this._OvertimeDate != value))
+				{
+					this.OnOvertimeDateChanging(value);
+					this.SendPropertyChanging();
+					this._OvertimeDate = value;
+					this.SendPropertyChanged("OvertimeDate");
+					this.OnOvertimeDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Reason
+		{
+			get
+			{
+				return this._Reason;
+			}
+			set
+			{
+				if ((this._Reason != value))
+				{
+					this.OnReasonChanging(value);
+					this.SendPropertyChanging();
+					this._Reason = value;
+					this.SendPropertyChanged("Reason");
+					this.OnReasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
+		public System.Nullable<int> Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="Int")]
+		public System.Nullable<int> ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					if (this._UserAccount.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnApprovedByChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedBy = value;
+					this.SendPropertyChanged("ApprovedBy");
+					this.OnApprovedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ApprovedDate
+		{
+			get
+			{
+				return this._ApprovedDate;
+			}
+			set
+			{
+				if ((this._ApprovedDate != value))
+				{
+					this.OnApprovedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedDate = value;
+					this.SendPropertyChanged("ApprovedDate");
+					this.OnApprovedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int NOT NULL")]
+		public int CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._UserAccount1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedBy", DbType="Int NOT NULL")]
+		public int ModifiedBy
+		{
+			get
+			{
+				return this._ModifiedBy;
+			}
+			set
+			{
+				if ((this._ModifiedBy != value))
+				{
+					if (this._UserAccount2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnModifiedByChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedBy = value;
+					this.SendPropertyChanged("ModifiedBy");
+					this.OnModifiedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModifiedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime ModifiedDate
+		{
+			get
+			{
+				return this._ModifiedDate;
+			}
+			set
+			{
+				if ((this._ModifiedDate != value))
+				{
+					this.OnModifiedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ModifiedDate = value;
+					this.SendPropertyChanged("ModifiedDate");
+					this.OnModifiedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OverTimeRecord_OvertimeEmployeeDetail", Storage="_OvertimeEmployeeDetails", ThisKey="OTID", OtherKey="OTID")]
+		public EntitySet<OvertimeEmployeeDetail> OvertimeEmployeeDetails
+		{
+			get
+			{
+				return this._OvertimeEmployeeDetails;
+			}
+			set
+			{
+				this._OvertimeEmployeeDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord", Storage="_UserAccount", ThisKey="ApprovedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount
+		{
+			get
+			{
+				return this._UserAccount.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount.Entity = null;
+						previousValue.OverTimeRecords.Remove(this);
+					}
+					this._UserAccount.Entity = value;
+					if ((value != null))
+					{
+						value.OverTimeRecords.Add(this);
+						this._ApprovedBy = value.UserID;
+					}
+					else
+					{
+						this._ApprovedBy = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord1", Storage="_UserAccount1", ThisKey="CreatedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount1
+		{
+			get
+			{
+				return this._UserAccount1.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount1.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount1.Entity = null;
+						previousValue.OverTimeRecords1.Remove(this);
+					}
+					this._UserAccount1.Entity = value;
+					if ((value != null))
+					{
+						value.OverTimeRecords1.Add(this);
+						this._CreatedBy = value.UserID;
+					}
+					else
+					{
+						this._CreatedBy = default(int);
+					}
+					this.SendPropertyChanged("UserAccount1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_OverTimeRecord2", Storage="_UserAccount2", ThisKey="ModifiedBy", OtherKey="UserID", IsForeignKey=true)]
+		public UserAccount UserAccount2
+		{
+			get
+			{
+				return this._UserAccount2.Entity;
+			}
+			set
+			{
+				UserAccount previousValue = this._UserAccount2.Entity;
+				if (((previousValue != value) 
+							|| (this._UserAccount2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserAccount2.Entity = null;
+						previousValue.OverTimeRecords2.Remove(this);
+					}
+					this._UserAccount2.Entity = value;
+					if ((value != null))
+					{
+						value.OverTimeRecords2.Add(this);
+						this._ModifiedBy = value.UserID;
+					}
+					else
+					{
+						this._ModifiedBy = default(int);
+					}
+					this.SendPropertyChanged("UserAccount2");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OvertimeEmployeeDetails(OvertimeEmployeeDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.OverTimeRecord = this;
+		}
+		
+		private void detach_OvertimeEmployeeDetails(OvertimeEmployeeDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.OverTimeRecord = null;
 		}
 	}
 }

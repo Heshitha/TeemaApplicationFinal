@@ -56,9 +56,12 @@ namespace TeemaApplication
             Utilities.fillDepartmentComboBox((Branch)cmbWorkingBranch.SelectedItem, cmbDepartment);
             Utilities.fillSubDepartmentComboBox((Department)cmbDepartment.SelectedItem, cmbSubDepartment);
 
+            EmployeeUtilities.fillDesignationComboBox(db, cmbDesignation);
+
             employeeID = employee.EmployeeID;
             cmbWorkingBranch.SelectedItem = employee.Department.Branch;
             cmbDepartment.SelectedItem = employee.Department;
+            cmbDepartment.Text = employee.Department.DepartmentName;
             chbAssignToSubDepartment.Checked = employee.IsAssignedToSubDepartment;
             cmbSubDepartment.Enabled = employee.IsAssignedToSubDepartment ? true : false;
             cmbSubDepartment.SelectedItem = employee.IsAssignedToSubDepartment ? employee.SubDepartment : null;
@@ -66,6 +69,7 @@ namespace TeemaApplication
             rdbGenderMale.Checked = employee.Gender == "Male" ? true : false;
             rdbGenderFemale.Checked = employee.Gender == "Female" ? true : false;
             cmbDesignation.SelectedItem = employee.Designation;
+            cmbDesignation.Text = employee.Designation.Designation1;
             txtTokenNo.Text = employee.TokenNo.ToString();
             txtEPFNo.Text = employee.EPFNo;
             txtNICNo.Text = employee.NICNo;
@@ -76,6 +80,7 @@ namespace TeemaApplication
             chbPieceRate.Checked = employee.IsPieceRateApply;
 
             cmbDateRateOfSalary.Text = employee.SalaryDetail.DateRateOfSalary.ToString();
+            cmbDateRateOfSalary.SelectedIndex = cmbDepartment.Items.IndexOf(employee.SalaryDetail.DateRateOfSalary.ToString());
             txtDayWagesDayRate.Text = employee.SalaryDetail.DayRate.ToString("0.00");
             txtDayWagesTotalEPFSalary.Text = employee.SalaryDetail.EPFETFTotalSalary.ToString("0.00");
             txtBasicSalary.Text = employee.SalaryDetail.BasicSalary.ToString("0.00");

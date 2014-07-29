@@ -64,7 +64,7 @@ namespace TeemaApplication
                     lstEmployee = ((Department)cmbDepartment.SelectedItem).Employees;
                 }
 
-                DateTime dt = DateTime.Today;
+                DateTime dt = dtpDateTime.Value;
 
                 DateTime startDate = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
                 DateTime endDate = new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 59);
@@ -81,9 +81,24 @@ namespace TeemaApplication
                 {
                     try
                     {
-                        DateTime enteredTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate).FirstOrDefault().DateAndTime.Value;
-                        DateTime leaveTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate && at.Mode == "Out").FirstOrDefault().DateAndTime.Value;
-                        dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, enteredTime.ToString("HH:mm"), leaveTime.ToString("HH:mm"), "Working Day");
+                        PersonalLeaveRecord perLeave = emp.PersonalLeaveRecords.Where(pl => (pl.LeaveFrom <= startDate && pl.LeaveTo >= endDate) || (pl.LeaveFrom == startDate) || (pl.LeaveTo == endDate)).SingleOrDefault();
+
+                        WorkOtherLocation worOther = emp.WorkOtherLocations.Where(wo => (wo.WorkOLFrom <= startDate && wo.WorkOLTo >= endDate) || (wo.WorkOLFrom == startDate) || (wo.WorkOLTo == endDate)).SingleOrDefault();
+
+                        if (perLeave != null)
+                        {
+                            dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, "00:00", "00:00", perLeave.LeaveType + " Leave");
+                        }
+                        else if (worOther != null)
+                        {
+                            dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, "00:00", "00:00", "Work Other Loc");
+                        }
+                        else
+                        {
+                            DateTime enteredTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate).FirstOrDefault().DateAndTime.Value;
+                            DateTime leaveTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate && at.Mode == "Out").FirstOrDefault().DateAndTime.Value;
+                            dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, enteredTime.ToString("HH:mm"), leaveTime.ToString("HH:mm"), "Working Day");
+                        }
                     }
                     catch (Exception)
                     {
@@ -161,7 +176,7 @@ namespace TeemaApplication
                     lstEmployee = ((Department)cmbDepartment.SelectedItem).Employees;
                 }
 
-                DateTime dt = DateTime.Today;
+                DateTime dt = dtpDateTime.Value;
 
                 DateTime startDate = new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0);
                 DateTime endDate = new DateTime(dt.Year, dt.Month, dt.Day, 23, 59, 59);
@@ -172,11 +187,26 @@ namespace TeemaApplication
                 {
                     try
                     {
-                        DateTime enteredTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate).FirstOrDefault().DateAndTime.Value;
-                        DateTime leaveTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate && at.Mode == "Out").FirstOrDefault().DateAndTime.Value;
-                        //dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, enteredTime.ToString("HH:mm"), leaveTime.ToString("HH:mm"), "Working Day");
-                        i++;
-                        amds.DailyAttendanceDetails.AddDailyAttendanceDetailsRow(i, emp.TokenNo, Convert.ToInt32(emp.EPFNo), emp.Name, startDate, enteredTime, leaveTime, "Working Day");
+                        PersonalLeaveRecord perLeave = emp.PersonalLeaveRecords.Where(pl => (pl.LeaveFrom <= startDate && pl.LeaveTo >= endDate) || (pl.LeaveFrom == startDate) || (pl.LeaveTo == endDate)).SingleOrDefault();
+
+                        WorkOtherLocation worOther = emp.WorkOtherLocations.Where(wo => (wo.WorkOLFrom <= startDate && wo.WorkOLTo >= endDate) || (wo.WorkOLFrom == startDate) || (wo.WorkOLTo == endDate)).SingleOrDefault();
+
+                        if (perLeave != null)
+                        {
+                            amds.DailyAttendanceDetails.AddDailyAttendanceDetailsRow(i, emp.TokenNo, Convert.ToInt32(emp.EPFNo), emp.Name, startDate, new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0), new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0), perLeave.LeaveType + " Leave");
+                        }
+                        else if (worOther != null)
+                        {
+                            amds.DailyAttendanceDetails.AddDailyAttendanceDetailsRow(i, emp.TokenNo, Convert.ToInt32(emp.EPFNo), emp.Name, startDate, new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0), new DateTime(dt.Year, dt.Month, dt.Day, 0, 0, 0), "Work Other Loc");
+                        }
+                        else
+                        {
+                            DateTime enteredTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate).FirstOrDefault().DateAndTime.Value;
+                            DateTime leaveTime = emp.EmployeeAttendances.Where(at => at.DateAndTime.Value >= startDate && at.DateAndTime.Value <= endDate && at.Mode == "Out").FirstOrDefault().DateAndTime.Value;
+                            //dataTable.Rows.Add(emp.EPFNo, emp.TokenNo, emp.Name, enteredTime.ToString("HH:mm"), leaveTime.ToString("HH:mm"), "Working Day");
+                            i++;
+                            amds.DailyAttendanceDetails.AddDailyAttendanceDetailsRow(i, emp.TokenNo, Convert.ToInt32(emp.EPFNo), emp.Name, startDate, enteredTime, leaveTime, "Working Day");
+                        }
                     }
                     catch (Exception)
                     {
@@ -192,7 +222,6 @@ namespace TeemaApplication
             }
             catch (Exception)
             {
-
             }
         }
     }

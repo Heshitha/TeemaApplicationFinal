@@ -135,11 +135,25 @@ namespace TeemaApplication
         {
             if (true)
             {
+                int overTimeType = 0;
+                if (cmbType.Text == "Single")
+                {
+                    overTimeType = 1;
+                }
+                else if (cmbType.Text == "Double")
+                {
+                    overTimeType = 2;
+                }
+                else if (cmbType.Text == "Triple")
+                {
+                    overTimeType = 3;
+                }
                 OverTimeRecord otRecord = new OverTimeRecord
                     {
                         OvertimeDate = dtpOvertimeDate.Value,
                         Supervisor = txtSupervisor.Text,
                         Reason = txtReason.Text,
+                        Type = overTimeType,
                         CreatedBy = LoginDetails.LoggedUsedID,
                         CreatedDate = DateTime.Now,
                         ModifiedBy = LoginDetails.LoggedUsedID,

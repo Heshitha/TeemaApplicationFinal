@@ -52,7 +52,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGeneratedSalary = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
             this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnEPFNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +90,8 @@
             this.clmnNetPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnEPF12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnETF3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnPrintSalaryReport = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails.SuspendLayout();
             this.gbxSalaryMonth.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -415,26 +416,9 @@
             this.dgvGeneratedSalary.Name = "dgvGeneratedSalary";
             this.dgvGeneratedSalary.ReadOnly = true;
             this.dgvGeneratedSalary.RowHeadersVisible = false;
+            this.dgvGeneratedSalary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGeneratedSalary.Size = new System.Drawing.Size(852, 578);
             this.dgvGeneratedSalary.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1140, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 55;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // clmnTokenNo
             // 
@@ -702,11 +686,40 @@
             this.clmnETF3.Name = "clmnETF3";
             this.clmnETF3.ReadOnly = true;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::TeemaApplication.Properties.Resources.Notification_Boxes_03;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(1140, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 55;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnPrintSalaryReport
+            // 
+            this.btnPrintSalaryReport.Location = new System.Drawing.Point(184, 395);
+            this.btnPrintSalaryReport.Name = "btnPrintSalaryReport";
+            this.btnPrintSalaryReport.Size = new System.Drawing.Size(115, 23);
+            this.btnPrintSalaryReport.TabIndex = 56;
+            this.btnPrintSalaryReport.Text = "Print Salary Report";
+            this.btnPrintSalaryReport.UseVisualStyleBackColor = true;
+            this.btnPrintSalaryReport.Click += new System.EventHandler(this.btnPrintSalaryReport_Click);
+            // 
             // frmGenerateBasicSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 658);
+            this.Controls.Add(this.btnPrintSalaryReport);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -797,5 +810,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnNetPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnEPF12;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnETF3;
+        private System.Windows.Forms.Button btnPrintSalaryReport;
     }
 }

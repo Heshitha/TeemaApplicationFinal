@@ -325,5 +325,12 @@ namespace TeemaApplication
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void salaryCalculationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGenerateBasicSalary frm = new frmGenerateBasicSalary();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

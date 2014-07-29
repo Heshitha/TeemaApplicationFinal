@@ -45,6 +45,9 @@
             this.dtpOvertimeDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvEmployeeDetails = new System.Windows.Forms.DataGridView();
+            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnPrintForm = new System.Windows.Forms.Button();
             this.gbxDepartmentDetails = new System.Windows.Forms.GroupBox();
@@ -55,9 +58,8 @@
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.cmbWorkingBranch = new System.Windows.Forms.ComboBox();
             this.lblWorkingBranch = new System.Windows.Forms.Label();
-            this.clmnEntitled = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmnTokenNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetails)).BeginInit();
@@ -93,6 +95,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cmbType);
             this.groupBox1.Controls.Add(this.txtFormNo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtReason);
@@ -107,7 +111,7 @@
             this.groupBox1.Controls.Add(this.dtpOvertimeDate);
             this.groupBox1.Location = new System.Drawing.Point(12, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 176);
+            this.groupBox1.Size = new System.Drawing.Size(295, 203);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overtime Details";
@@ -219,7 +223,7 @@
             this.groupBox2.Controls.Add(this.dgvEmployeeDetails);
             this.groupBox2.Location = new System.Drawing.Point(313, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(538, 307);
+            this.groupBox2.Size = new System.Drawing.Size(538, 334);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employees";
@@ -237,12 +241,34 @@
             this.dgvEmployeeDetails.Location = new System.Drawing.Point(6, 19);
             this.dgvEmployeeDetails.Name = "dgvEmployeeDetails";
             this.dgvEmployeeDetails.RowHeadersVisible = false;
-            this.dgvEmployeeDetails.Size = new System.Drawing.Size(526, 282);
+            this.dgvEmployeeDetails.Size = new System.Drawing.Size(526, 309);
             this.dgvEmployeeDetails.TabIndex = 0;
+            // 
+            // clmnEntitled
+            // 
+            this.clmnEntitled.DataPropertyName = "Entitled";
+            this.clmnEntitled.FalseValue = "False";
+            this.clmnEntitled.HeaderText = "Entitled";
+            this.clmnEntitled.Name = "clmnEntitled";
+            this.clmnEntitled.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmnEntitled.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clmnEntitled.TrueValue = "True";
+            // 
+            // clmnTokenNo
+            // 
+            this.clmnTokenNo.DataPropertyName = "TokenNo";
+            this.clmnTokenNo.HeaderText = "Token No";
+            this.clmnTokenNo.Name = "clmnTokenNo";
+            // 
+            // clmnEmployeeName
+            // 
+            this.clmnEmployeeName.DataPropertyName = "Name";
+            this.clmnEmployeeName.HeaderText = "Name";
+            this.clmnEmployeeName.Name = "clmnEmployeeName";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(695, 358);
+            this.btnSubmit.Location = new System.Drawing.Point(695, 383);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 30;
@@ -253,7 +279,7 @@
             // btnPrintForm
             // 
             this.btnPrintForm.Enabled = false;
-            this.btnPrintForm.Location = new System.Drawing.Point(776, 358);
+            this.btnPrintForm.Location = new System.Drawing.Point(776, 383);
             this.btnPrintForm.Name = "btnPrintForm";
             this.btnPrintForm.Size = new System.Drawing.Size(75, 23);
             this.btnPrintForm.TabIndex = 32;
@@ -353,33 +379,36 @@
             this.lblWorkingBranch.TabIndex = 0;
             this.lblWorkingBranch.Text = "Working Branch";
             // 
-            // clmnEntitled
+            // label8
             // 
-            this.clmnEntitled.DataPropertyName = "Entitled";
-            this.clmnEntitled.FalseValue = "False";
-            this.clmnEntitled.HeaderText = "Entitled";
-            this.clmnEntitled.Name = "clmnEntitled";
-            this.clmnEntitled.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmnEntitled.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.clmnEntitled.TrueValue = "True";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "OT Type";
             // 
-            // clmnTokenNo
+            // cmbType
             // 
-            this.clmnTokenNo.DataPropertyName = "TokenNo";
-            this.clmnTokenNo.HeaderText = "Token No";
-            this.clmnTokenNo.Name = "clmnTokenNo";
-            // 
-            // clmnEmployeeName
-            // 
-            this.clmnEmployeeName.DataPropertyName = "Name";
-            this.clmnEmployeeName.HeaderText = "Name";
-            this.clmnEmployeeName.Name = "clmnEmployeeName";
+            this.cmbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.Enabled = false;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Single",
+            "Double",
+            "Triple"});
+            this.cmbType.Location = new System.Drawing.Point(87, 175);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(202, 21);
+            this.cmbType.TabIndex = 13;
             // 
             // frmCreateOverTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 393);
+            this.ClientSize = new System.Drawing.Size(863, 420);
             this.Controls.Add(this.gbxDepartmentDetails);
             this.Controls.Add(this.btnPrintForm);
             this.Controls.Add(this.btnSubmit);
@@ -435,5 +464,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn clmnEntitled;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnTokenNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnEmployeeName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }
